@@ -217,6 +217,17 @@ export function VSLSection() {
         </div>
       </div>
       
+      <div className="mt-8 flex justify-center">
+        <Image
+          src="https://i.imgur.com/o8id6M2.png"
+          alt="Selo de Garantia"
+          width={600}
+          height={155}
+          className="rounded-lg shadow-md"
+          data-ai-hint="guarantee badge"
+        />
+      </div>
+
       {showBuyButton && (
         <div className="mt-8 text-center">
           <Button 
@@ -226,16 +237,6 @@ export function VSLSection() {
           >
             QUERO MINHA BÊNÇÃO AGORA
           </Button>
-          <div className="mt-8 flex justify-center">
-            <Image
-              src="https://i.imgur.com/o8id6M2.png"
-              alt="Selo de Garantia"
-              width={600}
-              height={155}
-              className="rounded-lg shadow-md"
-              data-ai-hint="guarantee badge"
-            />
-          </div>
         </div>
       )}
     </section>

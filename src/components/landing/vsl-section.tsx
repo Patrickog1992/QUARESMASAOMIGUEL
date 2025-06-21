@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
+import Image from 'next/image';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
@@ -15,7 +15,7 @@ export function VSLSection() {
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [showBuyButton, setShowBuyButton] = useState(true);
+  const [showBuyButton, setShowBuyButton] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -122,6 +122,10 @@ export function VSLSection() {
     }
   };
 
+  const handleBuyClick = () => {
+    window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
+  };
+
   const handleMouseEnter = () => {
     if (!isMuted) {
       setShowControls(true);
@@ -185,9 +189,6 @@ export function VSLSection() {
             (showControls || !isPlaying) ? "opacity-100" : "opacity-0"
           )}
         >
-          <div className="w-full mt-2">
-            <Progress value={progress} className="h-1 pointer-events-none" />
-          </div>
           <div 
             className="flex items-center justify-between text-white pointer-events-auto"
             onClick={(e) => e.stopPropagation()}
@@ -210,22 +211,34 @@ export function VSLSection() {
               </div>
             </div>
           </div>
+          <div className="w-full mt-2">
+            <Progress value={progress} className="h-1 pointer-events-none" />
+          </div>
         </div>
       </div>
       
       {showBuyButton && (
         <div className="mt-8 text-center">
           <Button 
-            asChild
             size="lg" 
             className="font-bold text-lg md:text-xl py-6 md:py-8 px-8 md:px-12 uppercase animate-pulse shadow-lg"
+            onClick={handleBuyClick}
           >
-            <Link href="https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2">
-              QUERO MINHA BÊNÇÃO AGORA
-            </Link>
+            QUERO MINHA BÊNÇÃO AGORA
           </Button>
         </div>
       )}
+
+      <div className="mt-8 flex justify-center">
+        <Image
+          src="https://images2.imgbox.com/9e/a0/p1oITfbz_o.jpg"
+          alt="Selo de Garantia"
+          width={600}
+          height={155}
+          className="rounded-lg shadow-md"
+          data-ai-hint="guarantee badge"
+        />
+      </div>
     </section>
   );
 }

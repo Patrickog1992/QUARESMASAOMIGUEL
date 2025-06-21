@@ -20,42 +20,44 @@ export function VSLSection() {
     const video = videoRef.current;
     if (!video) return;
 
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
+    const onPlay = () => setIsPlaying(true);
+    const onPause = () => setIsPlaying(false);
     
-    const updateTime = () => {
-      if (!video) return;
-      setCurrentTime(video.currentTime);
-      if (video.currentTime > (24 * 60 + 20)) {
+    const onTimeUpdate = () => {
+      const currentVideo = videoRef.current;
+      if (!currentVideo) return;
+      setCurrentTime(currentVideo.currentTime);
+      if (currentVideo.currentTime > (24 * 60 + 20)) {
         setShowBuyButton(true);
       }
     };
 
-    const handleLoadedMetadata = () => {
-      if(video) setDuration(video.duration);
+    const onLoadedMetadata = () => {
+      const currentVideo = videoRef.current;
+      if (currentVideo && isFinite(currentVideo.duration)) {
+        setDuration(currentVideo.duration);
+      }
     };
 
-    video.addEventListener('play', handlePlay);
-    video.addEventListener('pause', handlePause);
-    video.addEventListener('timeupdate', updateTime);
-    video.addEventListener('loadedmetadata', handleLoadedMetadata);
+    video.addEventListener('play', onPlay);
+    video.addEventListener('pause', onPause);
+    video.addEventListener('timeupdate', onTimeUpdate);
+    video.addEventListener('loadedmetadata', onLoadedMetadata);
 
-    // Muted autoplay is generally allowed
     video.muted = true;
     const playPromise = video.play();
-    if(playPromise !== undefined){
+    if (playPromise !== undefined) {
       playPromise.catch(error => {
         console.warn("Autoplay was prevented:", error);
         setIsPlaying(false);
-        // User might need to click to start, overlay handles this
       });
     }
 
     return () => {
-      video.removeEventListener('play', handlePlay);
-      video.removeEventListener('pause', handlePause);
-      video.removeEventListener('timeupdate', updateTime);
-      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      video.removeEventListener('play', onPlay);
+      video.removeEventListener('pause', onPause);
+      video.removeEventListener('timeupdate', onTimeUpdate);
+      video.removeEventListener('loadedmetadata', onLoadedMetadata);
     };
   }, []);
 
@@ -63,14 +65,12 @@ export function VSLSection() {
     const video = videoRef.current;
     if (video) {
       if (video.muted) {
-        // First interaction unmutes and ensures video is playing
         video.muted = false;
         setIsMuted(false);
         if (video.paused) {
           video.play();
         }
       } else {
-        // Subsequent interactions toggle play/pause
         if (video.paused) {
           video.play();
         } else {
@@ -111,7 +111,7 @@ export function VSLSection() {
 
         {/* Visual-only progress bar at the bottom */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-500/50 pointer-events-none">
-          <div className="h-full bg-primary transition-all duration-150 ease-linear" style={{ width: `${progress}%` }} />
+          <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
         </div>
       </div>
 

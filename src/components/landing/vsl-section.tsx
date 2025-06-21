@@ -189,9 +189,7 @@ export function VSLSection() {
             (showControls || !isPlaying) ? "opacity-100" : "opacity-0"
           )}
         >
-          <div className="w-full mb-2">
-            <Progress value={progress} className="h-1 pointer-events-none" />
-          </div>
+          <Progress value={progress} className="h-1 pointer-events-none mb-2" />
           <div 
             className="flex items-center justify-between text-white pointer-events-auto"
             onClick={(e) => e.stopPropagation()}

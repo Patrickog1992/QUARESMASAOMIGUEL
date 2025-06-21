@@ -2,9 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Volume2, Volume1, VolumeX, Play, Pause } from 'lucide-react';
+import { Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Slider } from '@/components/ui/slider';
 
 export function VSLSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -12,7 +11,6 @@ export function VSLSection() {
   const [currentTime, setCurrentTime] = useState(0);
   const [showBuyButton, setShowBuyButton] = useState(false);
   const [volume, setVolume] = useState(0);
-  const [lastVolume, setLastVolume] = useState(1);
   const [isInitialMute, setIsInitialMute] = useState(true);
   const [showControls, setShowControls] = useState(false);
 
@@ -102,29 +100,11 @@ export function VSLSection() {
     }
   };
 
-  const handleVolumeChange = (value: number[]) => {
-    const newVolume = value[0];
-    setVolume(newVolume);
-    if(newVolume > 0) {
-        setIsInitialMute(false);
-    }
-  };
-
-  const toggleMute = () => {
-    if (volume > 0) {
-      setLastVolume(volume);
-      setVolume(0);
-    } else {
-      setVolume(lastVolume > 0 ? lastVolume : 1);
-    }
-  };
-
   const handleBuyClick = () => {
     window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
   };
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
-  const VolumeIcon = volume === 0 ? VolumeX : volume < 0.5 ? Volume1 : Volume2;
 
   return (
     <section className="mb-12 md:mb-20">
@@ -159,25 +139,6 @@ export function VSLSection() {
         <div 
           className={`absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 ${showControls && !isInitialMute ? 'opacity-100' : 'opacity-0'}`}
         >
-          {/* Bottom Controls */}
-          <div className="flex items-center gap-4 text-white mb-2">
-            <button onClick={togglePlayPause} className="focus:outline-none">
-              {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
-            </button>
-            <div className="flex items-center gap-2 w-24">
-              <button onClick={toggleMute} className="focus:outline-none">
-                 <VolumeIcon className="h-6 w-6" />
-              </button>
-              <Slider
-                value={[volume]}
-                max={1}
-                step={0.05}
-                onValueChange={handleVolumeChange}
-                className="w-full"
-              />
-            </div>
-          </div>
-          
           {/* Progress Bar */}
           <div className="w-full h-1 bg-gray-500/50 rounded-full">
             <div className="h-full bg-primary rounded-full" style={{ width: `${progress}%` }} />

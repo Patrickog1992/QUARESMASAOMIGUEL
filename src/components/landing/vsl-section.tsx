@@ -103,17 +103,6 @@ export function VSLSection() {
       }
     }
   };
-  
-  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      const progressBar = e.currentTarget;
-      const clickPosition = e.clientX - progressBar.getBoundingClientRect().left;
-      const progressBarWidth = progressBar.offsetWidth;
-      const seekTime = (clickPosition / progressBarWidth) * videoRef.current.duration;
-      videoRef.current.currentTime = seekTime;
-    }
-  };
 
   return (
     <section className="mb-12 md:mb-20">
@@ -123,12 +112,12 @@ export function VSLSection() {
         onMouseLeave={() => setShowControls(false)}
         onClick={handleVideoClick}
       >
-        <div className="relative pt-[56.25%]">
+        <div className="aspect-video">
           <video
             ref={videoRef}
             loop
             src="https://d3s1jrfpp0f48y.cloudfront.net/k3skl7%2Ffile%2Fd7b16a9ef5c155558a07bf3cf02a8f44_0a7d1df4ce1b6a0ee4d801525406d2a8.mp4?response-content-disposition=inline%3Bfilename%3D%22d7b16a9ef5c155558a07bf3cf02a8f44_0a7d1df4ce1b6a0ee4d801525406d2a8.mp4%22%3B&response-content-type=video%2Fmp4&Expires=1750537178&Signature=Zlm9kIqG2pVQG759chJijnn~oYePWjaa2NHlTn4LFYl2FrHX0sKiKpVFpz0d-yOd6w2zXJ3lyOd~mFQ-aDcfWmr4ZOduA8SuoV5LF30r~W1u~hb4bkZx9aP3XkplRmVWypAQ0b2XP9FsLxtwc-A5Cch7xXv6ElDty8vACTuW1gWXTN~8a5rCgFpIT9yYhJhPpZSF1o2EqGLOr2ALA~g4e2iBPoAcUho61DJrYR2LZQ3EopGYTM~JXYTUNeisUZeOCTGmatjdptDRsHNjvUtCBfjBnTPrqwdZpRCzeFTNktiigHvzKyJNujLWu~atVCzOMkn1JqOE8ppkPnxgTbfyNA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
-            className="absolute top-0 left-0 h-full w-full object-contain pointer-events-none"
+            className="w-full h-full object-contain pointer-events-none"
             onTimeUpdate={handleTimeUpdate}
           >
             Seu navegador não suporta a tag de vídeo.
@@ -154,11 +143,8 @@ export function VSLSection() {
           )}
           onClick={(e) => e.stopPropagation()}
         >
-          <div 
-            className="w-full cursor-pointer group/progress"
-            onClick={handleSeek}
-          >
-            <Progress value={progress} className="h-1 group-hover/progress:h-2 transition-all duration-200" />
+          <div className="w-full">
+            <Progress value={progress} className="h-1" />
           </div>
 
           <div className="flex items-center justify-between text-white mt-2">

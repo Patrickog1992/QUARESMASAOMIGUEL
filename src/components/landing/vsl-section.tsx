@@ -164,8 +164,8 @@ export function VSLSection() {
               onClick={unmuteVideo}
             >
               <VolumeX className="h-12 w-12 text-primary mb-4 animate-bounce" />
-              <p className="text-primary text-xl font-bold uppercase tracking-wider">
-                Clique para ouvir
+              <p className="text-primary text-xl font-bold uppercase tracking-wider text-center px-4">
+                Uma bênção espera por você clique para ouvir
               </p>
             </div>
           )}

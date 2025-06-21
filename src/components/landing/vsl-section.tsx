@@ -26,7 +26,7 @@ export function VSLSection() {
     const updateTime = () => {
       if (!video) return;
       setCurrentTime(video.currentTime);
-      if (video.currentTime > (24 * 60 + 20) && !showBuyButton) {
+      if (video.currentTime > (24 * 60 + 20)) {
         setShowBuyButton(true);
       }
     };
@@ -57,7 +57,7 @@ export function VSLSection() {
       video.removeEventListener('timeupdate', updateTime);
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
     };
-  }, [showBuyButton]);
+  }, []);
 
   const handleUserInteraction = () => {
     const video = videoRef.current;
@@ -94,7 +94,6 @@ export function VSLSection() {
           src={videoSrc}
           className="w-full h-full"
           playsInline
-          // No controls attribute to hide default controls
         />
         
         {isMuted && (
@@ -103,7 +102,7 @@ export function VSLSection() {
           >
             <div className="text-center p-4 rounded-lg text-primary">
               <Volume2 className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 animate-pulse" />
-              <p className="text-lg sm:text-xl font-bold uppercase tracking-wider text-center">
+              <p className="text-xl md:text-2xl font-bold uppercase tracking-wider text-center drop-shadow-lg">
                 UMA BENÇÃO ESPERA POR VOCÊ<br/>CLIQUE PARA OUVIR
               </p>
             </div>
@@ -112,7 +111,7 @@ export function VSLSection() {
 
         {/* Visual-only progress bar at the bottom */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-500/50 pointer-events-none">
-          <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
+          <div className="h-full bg-primary transition-all duration-150 ease-linear" style={{ width: `${progress}%` }} />
         </div>
       </div>
 

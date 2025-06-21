@@ -2,14 +2,12 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Slider } from '@/components/ui/slider';
 
 export function VSLSection() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(1);
-  const [isMuted, setIsMuted] = useState(true); // Start muted for autoplay
+  const [isMuted, setIsMuted] = useState(true);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [showBuyButton, setShowBuyButton] = useState(false);
@@ -34,7 +32,7 @@ export function VSLSection() {
     };
 
     const handleLoadedMetadata = () => {
-      setDuration(video.duration);
+      if(video) setDuration(video.duration);
     };
 
     video.addEventListener('play', handlePlay);
@@ -42,11 +40,13 @@ export function VSLSection() {
     video.addEventListener('timeupdate', updateTime);
     video.addEventListener('loadedmetadata', handleLoadedMetadata);
 
-    // Try to play programmatically, as `autoPlay` attribute can be unreliable
-    video.play().catch(error => {
-      console.warn("Autoplay was prevented:", error);
-      setIsPlaying(false);
-    });
+    const playPromise = video.play();
+    if(playPromise !== undefined){
+      playPromise.catch(error => {
+        console.warn("Autoplay was prevented:", error);
+        setIsPlaying(false);
+      });
+    }
 
     return () => {
       video.removeEventListener('play', handlePlay);
@@ -56,47 +56,15 @@ export function VSLSection() {
     };
   }, [showBuyButton]);
 
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-        // Unmute if user interacts to play
-        if(videoRef.current.muted) {
-          videoRef.current.muted = false;
-          setIsMuted(false);
-        }
+  const handleUserInteraction = () => {
+    const video = videoRef.current;
+    if (video) {
+      if (video.paused) {
+        video.play();
       }
-    }
-  };
-
-  const handleVolumeChange = (value: number[]) => {
-    if (videoRef.current) {
-      const newVolume = value[0] / 100;
-      videoRef.current.volume = newVolume;
-      setVolume(newVolume);
-      if (newVolume > 0) {
+      if (video.muted) {
+        video.muted = false;
         setIsMuted(false);
-        videoRef.current.muted = false;
-      } else {
-        setIsMuted(true);
-        videoRef.current.muted = true;
-      }
-    }
-  };
-  
-  const toggleMute = () => {
-    if (videoRef.current) {
-      const newMutedState = !isMuted;
-      videoRef.current.muted = newMutedState;
-      setIsMuted(newMutedState);
-      if (!newMutedState) {
-        if (videoRef.current.volume === 0) {
-          const defaultVolume = 0.5;
-          videoRef.current.volume = defaultVolume;
-          setVolume(defaultVolume);
-        }
       }
     }
   };
@@ -105,60 +73,38 @@ export function VSLSection() {
     window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
   };
 
-  const formatTime = (timeInSeconds: number) => {
-    if (isNaN(timeInSeconds) || timeInSeconds < 0) {
-      return '00:00';
-    }
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = Math.floor(timeInSeconds % 60);
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-  };
-
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
     <section className="mb-12 md:mb-20">
-      <div className="relative overflow-hidden rounded-lg shadow-2xl bg-black group/video">
+      <div className="relative overflow-hidden rounded-lg shadow-2xl bg-black">
         <video
           ref={videoRef}
           src={videoSrc}
-          className="w-full h-full cursor-pointer"
-          onClick={togglePlay}
-          onDoubleClick={() => videoRef.current?.requestFullscreen()}
+          className="w-full h-full"
+          onClick={handleUserInteraction}
           autoPlay
           muted
           playsInline
         />
-
-        {/* Non-interactive progress bar */}
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-500/50 pointer-events-none">
-          <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
-        </div>
-
-        <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover/video:opacity-100 transition-opacity duration-300 flex flex-col justify-end pointer-events-none">
-          <div className="p-4 space-y-2 pointer-events-auto">
-            <div className="flex items-center justify-between text-white">
-              <div className="flex items-center gap-4">
-                <button onClick={togglePlay} className="text-white">
-                  {isPlaying ? <Pause size={24} /> : <Play size={24} />}
-                </button>
-                <div className="flex items-center gap-2 w-28">
-                  <button onClick={toggleMute}>
-                    {isMuted || volume === 0 ? <VolumeX size={24} /> : <Volume2 size={24} />}
-                  </button>
-                  <Slider
-                    value={[isMuted ? 0 : volume * 100]}
-                    onValueChange={handleVolumeChange}
-                    max={100}
-                    step={1}
-                  />
-                </div>
-              </div>
-              <div className="text-sm font-mono">
-                {formatTime(currentTime)} / {formatTime(duration)}
-              </div>
+        
+        {isMuted && (
+          <div 
+            className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 text-white cursor-pointer"
+            onClick={handleUserInteraction}
+          >
+            <div className="text-center p-4 rounded-lg">
+              <Volume2 className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 animate-pulse" />
+              <p className="text-lg sm:text-xl font-bold uppercase tracking-wider text-center">
+                UMA BENÇÃO ESPERA POR VOCÊ<br/>CLIQUE PARA OUVIR
+              </p>
             </div>
           </div>
+        )}
+
+        {/* Visual-only progress bar at the bottom */}
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-500/50 pointer-events-none">
+          <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
         </div>
       </div>
 

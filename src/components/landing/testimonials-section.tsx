@@ -4,7 +4,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 1,
     name: 'Frei Gilson',
-    avatarUrl: 'https://yt3.googleusercontent.com/ytc/AIdro_k4m_g_V3s-5h7z2t-Y-0g0Q4D8c4b9B6A9Z8E=s900-c-k-c0x00ffffff-no-rj',
+    avatarUrl: 'https://www.diocesedecolatina.org.br/wp-content/uploads/2023/08/IMG_8295.jpg',
     avatarHint: 'priest portrait',
     text: 'A Quaresma do Padre Pio é uma das experiências espirituais mais fortes que já vivi. Quando comecei a praticar essas orações, percebi mudanças reais na minha vida e na vida das pessoas que oravam comigo. Se você está aqui, é porque seu anjo quer te mostrar esse caminho 🙏',
     likes: 2134,

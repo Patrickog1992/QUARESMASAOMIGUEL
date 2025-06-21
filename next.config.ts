@@ -16,6 +16,22 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.diocesedecolatina.org.br',
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.padrereginaldomanzotti.org.br',
+      },
+      {
+        protocol: 'https',
+        hostname: 's2.glbimg.com',
+      },
     ],
   },
 };

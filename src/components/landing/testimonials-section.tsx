@@ -4,7 +4,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 1,
     name: 'Frei Gilson',
-    avatarUrl: 'https://www.diocesedecolatina.org.br/wp-content/uploads/2023/08/IMG_8295.jpg',
+    avatarUrl: 'https://placehold.co/100x100.png',
     avatarHint: 'priest portrait',
     text: 'A Quaresma do Padre Pio é uma das experiências espirituais mais fortes que já vivi. Quando comecei a praticar essas orações, percebi mudanças reais na minha vida e na vida das pessoas que oravam comigo. Se você está aqui, é porque seu anjo quer te mostrar esse caminho 🙏',
     likes: 2134,
@@ -25,7 +25,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 3,
     name: 'Marcelo Rossi',
-    avatarUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Padre_Marcelo_Rossi_no_Hallel_de_Franca_2019.jpg/800px-Padre_Marcelo_Rossi_no_Hallel_de_Franca_2019.jpg',
+    avatarUrl: 'https://placehold.co/100x100.png',
     avatarHint: 'priest portrait',
     text: 'Eu vivi o que está nesse vídeo. A Quaresma do Padre Pio não é só um livro, é um encontro real com Deus. Quem fizer com fé, vai sentir a mudança. Assista até o final e se permita viver essa experiência!',
     likes: 2001,
@@ -46,7 +46,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 5,
     name: 'Reginaldo Manzotti',
-    avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1XpD_xG1qP8L2hJ6w_X_tV6wR3Y_N5nQ&s',
+    avatarUrl: 'https://placehold.co/100x100.png',
     avatarHint: 'priest portrait',
     text: 'Essa oração reacendeu minha fé. A Quaresma do Padre Pio é mais do que uma devoção, é um presente direto do Céu. Se você está aqui, é porque essa bênção também é para você. Receba com fé!',
     likes: 1654,
@@ -67,7 +67,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 7,
     name: 'Fábio de Melo',
-    avatarUrl: 'https://s2.glbimg.com/AYM2m0mJsiq9aK_A7sA4coKlw5E=/e.glbimg.com/og/ed/f/original/2020/09/25/padre-fabio-de-melo.jpeg',
+    avatarUrl: 'https://placehold.co/100x100.png',
     avatarHint: 'priest portrait',
     text: 'Essa oração tocou meu coração de um jeito que não consigo explicar. Que mais pessoas tenham essa chance. É forte demais.',
     likes: 1361,

@@ -15,7 +15,7 @@ export function VSLSection() {
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [showBuyButton, setShowBuyButton] = useState(false);
+  const [showBuyButton, setShowBuyButton] = useState(true);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -185,6 +185,9 @@ export function VSLSection() {
             (showControls || !isPlaying) ? "opacity-100" : "opacity-0"
           )}
         >
+          <div className="w-full mt-2">
+            <Progress value={progress} className="h-1 pointer-events-none" />
+          </div>
           <div 
             className="flex items-center justify-between text-white pointer-events-auto"
             onClick={(e) => e.stopPropagation()}
@@ -206,10 +209,6 @@ export function VSLSection() {
                 />
               </div>
             </div>
-          </div>
-
-          <div className="w-full mt-2">
-            <Progress value={progress} className="h-1 pointer-events-none" />
           </div>
         </div>
       </div>

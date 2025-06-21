@@ -62,13 +62,20 @@ export function VSLSection() {
   const handleUserInteraction = () => {
     const video = videoRef.current;
     if (video) {
-      if (video.paused) {
-        video.play();
-        setIsPlaying(true);
-      }
       if (video.muted) {
+        // First interaction unmutes and ensures video is playing
         video.muted = false;
         setIsMuted(false);
+        if (video.paused) {
+          video.play();
+        }
+      } else {
+        // Subsequent interactions toggle play/pause
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
       }
     }
   };
@@ -81,22 +88,20 @@ export function VSLSection() {
 
   return (
     <section className="mb-12 md:mb-20">
-      <div className="relative overflow-hidden rounded-lg shadow-2xl bg-black">
+      <div className="relative overflow-hidden rounded-lg shadow-2xl bg-black cursor-pointer" onClick={handleUserInteraction}>
         <video
           ref={videoRef}
           src={videoSrc}
           className="w-full h-full"
-          onClick={handleUserInteraction}
           playsInline
           // No controls attribute to hide default controls
         />
         
         {isMuted && (
           <div 
-            className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 cursor-pointer"
-            onClick={handleUserInteraction}
+            className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60"
           >
-            <div className="text-center p-4 rounded-lg text-accent">
+            <div className="text-center p-4 rounded-lg text-primary">
               <Volume2 className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 animate-pulse" />
               <p className="text-lg sm:text-xl font-bold uppercase tracking-wider text-center">
                 UMA BENÇÃO ESPERA POR VOCÊ<br/>CLIQUE PARA OUVIR
@@ -107,7 +112,7 @@ export function VSLSection() {
 
         {/* Visual-only progress bar at the bottom */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-500/50 pointer-events-none">
-          <div className="h-full bg-accent" style={{ width: `${progress}%` }} />
+          <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
         </div>
       </div>
 

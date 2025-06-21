@@ -40,11 +40,14 @@ export function VSLSection() {
     video.addEventListener('timeupdate', updateTime);
     video.addEventListener('loadedmetadata', handleLoadedMetadata);
 
+    // Muted autoplay is generally allowed
+    video.muted = true;
     const playPromise = video.play();
     if(playPromise !== undefined){
       playPromise.catch(error => {
         console.warn("Autoplay was prevented:", error);
         setIsPlaying(false);
+        // User might need to click to start, overlay handles this
       });
     }
 
@@ -61,6 +64,7 @@ export function VSLSection() {
     if (video) {
       if (video.paused) {
         video.play();
+        setIsPlaying(true);
       }
       if (video.muted) {
         video.muted = false;
@@ -83,17 +87,16 @@ export function VSLSection() {
           src={videoSrc}
           className="w-full h-full"
           onClick={handleUserInteraction}
-          autoPlay
-          muted
           playsInline
+          // No controls attribute to hide default controls
         />
         
         {isMuted && (
           <div 
-            className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 text-white cursor-pointer"
+            className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 cursor-pointer"
             onClick={handleUserInteraction}
           >
-            <div className="text-center p-4 rounded-lg">
+            <div className="text-center p-4 rounded-lg text-accent">
               <Volume2 className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 animate-pulse" />
               <p className="text-lg sm:text-xl font-bold uppercase tracking-wider text-center">
                 UMA BENÇÃO ESPERA POR VOCÊ<br/>CLIQUE PARA OUVIR
@@ -104,7 +107,7 @@ export function VSLSection() {
 
         {/* Visual-only progress bar at the bottom */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-500/50 pointer-events-none">
-          <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
+          <div className="h-full bg-accent" style={{ width: `${progress}%` }} />
         </div>
       </div>
 

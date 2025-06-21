@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
@@ -14,6 +15,7 @@ export function VSLSection() {
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [showBuyButton, setShowBuyButton] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -111,6 +113,12 @@ export function VSLSection() {
         const progressPercentage = (currentTime / duration) * 100;
         setProgress(progressPercentage);
       }
+
+      // Show button at 24 minutes and 20 seconds
+      const showButtonTime = 24 * 60 + 20; // 1460 seconds
+      if (!showBuyButton && currentTime >= showButtonTime) {
+        setShowBuyButton(true);
+      }
     }
   };
 
@@ -173,7 +181,7 @@ export function VSLSection() {
 
         <div 
           className={cn(
-            "absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 pointer-events-none",
+            "absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300",
             (showControls || !isPlaying) ? "opacity-100" : "opacity-0"
           )}
         >
@@ -200,11 +208,25 @@ export function VSLSection() {
             </div>
           </div>
 
-          <div className="w-full pointer-events-none mt-2">
-            <Progress value={progress} className="h-1" />
+          <div className="w-full mt-2">
+            <Progress value={progress} className="h-1 pointer-events-none" />
           </div>
         </div>
       </div>
+      
+      {showBuyButton && (
+        <div className="mt-8 text-center">
+          <Button 
+            asChild
+            size="lg" 
+            className="font-bold text-lg md:text-xl py-6 md:py-8 px-8 md:px-12 uppercase animate-pulse shadow-lg"
+          >
+            <Link href="https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2">
+              QUERO MINHA BÊNÇÃO AGORA
+            </Link>
+          </Button>
+        </div>
+      )}
     </section>
   );
 }

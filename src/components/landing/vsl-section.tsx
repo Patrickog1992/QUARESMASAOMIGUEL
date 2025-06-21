@@ -1,17 +1,14 @@
 export function VSLSection() {
   return (
     <section className="mb-12 md:mb-20">
-      <div className="rounded-lg shadow-2xl overflow-hidden">
-        <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
-          <iframe
-            id="js_video_iframe"
-            src="https://jumpshare.com/embed/jlQnaieHvAHRbTgPHvLE?autoplay=1&muted=1"
-            frameBorder="0"
-            allow="autoplay; fullscreen"
-            allowFullScreen
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-          ></iframe>
-        </div>
+      <div className="aspect-video overflow-hidden rounded-lg shadow-2xl">
+        <iframe
+          id="js_video_iframe"
+          src="https://jumpshare.com/embed/jlQnaieHvAHRbTgPHvLE?autoplay=1&muted=1"
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          className="h-full w-full border-0"
+        ></iframe>
       </div>
     </section>
   );

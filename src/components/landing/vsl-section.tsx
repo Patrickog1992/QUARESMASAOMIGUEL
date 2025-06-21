@@ -20,13 +20,15 @@ export function VSLSection() {
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.muted = true;
-      videoRef.current.play().then(() => {
-        setIsPlaying(true);
-        setIsMuted(true);
-      }).catch(error => {
-        console.error("O autoplay foi bloqueado pelo navegador:", error);
-        setIsPlaying(false);
-      });
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          // Autoplay started
+        }).catch(error => {
+          console.error("O autoplay foi bloqueado pelo navegador:", error);
+          setIsPlaying(false);
+        });
+      }
     }
   }, []);
 
@@ -35,25 +37,19 @@ export function VSLSection() {
     if (videoRef.current) {
       if (videoRef.current.paused) {
         videoRef.current.play();
-        setIsPlaying(true);
       } else {
         videoRef.current.pause();
-        setIsPlaying(false);
       }
     }
   };
   
   const handleVideoClick = () => {
     if (videoRef.current) {
-      // If muted, the overlay click handler (unmuteVideo) is called instead.
-      // This only toggles play/pause if audio is already on.
       if (!isMuted) {
         if (videoRef.current.paused) {
           videoRef.current.play();
-          setIsPlaying(true);
         } else {
           videoRef.current.pause();
-          setIsPlaying(false);
         }
       }
     }
@@ -68,12 +64,9 @@ export function VSLSection() {
             videoRef.current.volume = 1;
             setVolume(1);
         }
-        // Ensure video plays when unmuted
         if (videoRef.current.paused) {
           videoRef.current.play();
-          setIsPlaying(true);
         }
-        setShowControls(false);
     }
   };
 
@@ -83,12 +76,10 @@ export function VSLSection() {
       videoRef.current.volume = newVolume;
       setVolume(newVolume);
       
-      if (newVolume > 0 && videoRef.current.muted) {
-        videoRef.current.muted = false;
-        setIsMuted(false);
-      } else if (newVolume === 0 && !videoRef.current.muted) {
-         videoRef.current.muted = true;
-         setIsMuted(true);
+      const newMutedState = newVolume === 0;
+      if (isMuted !== newMutedState) {
+        videoRef.current.muted = newMutedState;
+        setIsMuted(newMutedState);
       }
     }
   };
@@ -96,13 +87,14 @@ export function VSLSection() {
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (videoRef.current) {
-        if(videoRef.current.muted){
-          unmuteVideo(e);
-          return;
-        }
-        const newMutedState = !videoRef.current.muted;
+        const newMutedState = !isMuted;
         videoRef.current.muted = newMutedState;
         setIsMuted(newMutedState);
+        if(!newMutedState && volume === 0) {
+            const newVolume = 1;
+            setVolume(newVolume);
+            videoRef.current.volume = newVolume;
+        }
     }
   };
 
@@ -114,7 +106,6 @@ export function VSLSection() {
         setProgress(progressPercentage);
       }
 
-      // Show button at 24 minutes and 20 seconds
       const showButtonTime = 24 * 60 + 20; // 1460 seconds
       if (!showBuyButton && currentTime >= showButtonTime) {
         setShowBuyButton(true);
@@ -166,6 +157,8 @@ export function VSLSection() {
             src="https://d3s1jrfpp0f48y.cloudfront.net/k3skl7%2Ffile%2Fd7b16a9ef5c155558a07bf3cf02a8f44_0a7d1df4ce1b6a0ee4d801525406d2a8.mp4?response-content-disposition=inline%3Bfilename%3D%22d7b16a9ef5c155558a07bf3cf02a8f44_0a7d1df4ce1b6a0ee4d801525406d2a8.mp4%22%3B&response-content-type=video%2Fmp4&Expires=1750537178&Signature=Zlm9kIqG2pVQG759chJijnn~oYePWjaa2NHlTn4LFYl2FrHX0sKiKpVFpz0d-yOd6w2zXJ3lyOd~mFQ-aDcfWmr4ZOduA8SuoV5LF30r~W1u~hb4bkZx9aP3XkplRmVWypAQ0b2XP9FsLxtwc-A5Cch7xXv6ElDty8vACTuW1gWXTN~8a5rCgFpIT9yYhJhPpZSF1o2EqGLOr2ALA~g4e2iBPoAcUho61DJrYR2LZQ3EopGYTM~JXYTUNeisUZeOCTGmatjdptDRsHNjvUtCBfjBnTPrqwdZpRCzeFTNktiigHvzKyJNujLWu~atVCzOMkn1JqOE8ppkPnxgTbfyNA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
             className="w-full h-full object-contain"
             onTimeUpdate={handleTimeUpdate}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
           >
             Seu navegador não suporta a tag de vídeo.
           </video>
@@ -189,29 +182,30 @@ export function VSLSection() {
             (showControls || !isPlaying) ? "opacity-100" : "opacity-0"
           )}
         >
-          <div 
-            className="flex items-center justify-between text-white pointer-events-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center gap-2">
-              <Button onClick={togglePlayPause} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
-                  {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
-              </Button>
-              <div className="flex items-center gap-2 w-24">
-                <Button onClick={toggleMute} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
-                    {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+          <div className="flex flex-col gap-2" onClick={(e) => e.stopPropagation()}>
+            <div 
+              className="flex items-center justify-between text-white pointer-events-auto"
+            >
+              <div className="flex items-center gap-2">
+                <Button onClick={togglePlayPause} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
+                    {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
                 </Button>
-                <Slider 
-                  min={0}
-                  max={1}
-                  step={0.05}
-                  value={[isMuted ? 0 : volume]}
-                  onValueChange={handleVolumeChange}
-                />
+                <div className="flex items-center gap-2 w-24">
+                  <Button onClick={toggleMute} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
+                      {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+                  </Button>
+                  <Slider 
+                    min={0}
+                    max={1}
+                    step={0.05}
+                    value={[isMuted ? 0 : volume]}
+                    onValueChange={handleVolumeChange}
+                  />
+                </div>
               </div>
             </div>
+            <Progress value={progress} className="h-1 pointer-events-none" />
           </div>
-          <Progress value={progress} className="h-1 mt-2 pointer-events-none" />
         </div>
       </div>
       

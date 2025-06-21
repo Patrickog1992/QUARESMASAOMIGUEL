@@ -2,15 +2,19 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Volume2 } from 'lucide-react';
+import { Volume2, Volume1, VolumeX, Play, Pause } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Slider } from '@/components/ui/slider';
 
 export function VSLSection() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [showBuyButton, setShowBuyButton] = useState(false);
+  const [volume, setVolume] = useState(0);
+  const [lastVolume, setLastVolume] = useState(1);
+  const [isInitialMute, setIsInitialMute] = useState(true);
+  const [showControls, setShowControls] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -24,18 +28,26 @@ export function VSLSection() {
     const onPause = () => setIsPlaying(false);
     
     const onTimeUpdate = () => {
-      const currentVideo = videoRef.current;
-      if (!currentVideo) return;
-      setCurrentTime(currentVideo.currentTime);
-      if (currentVideo.currentTime > (24 * 60 + 20)) {
-        setShowBuyButton(true);
+      if (videoRef.current) {
+        setCurrentTime(videoRef.current.currentTime);
+        if (videoRef.current.currentTime > (24 * 60 + 20)) {
+          setShowBuyButton(true);
+        }
       }
     };
 
     const onLoadedMetadata = () => {
-      const currentVideo = videoRef.current;
-      if (currentVideo && isFinite(currentVideo.duration)) {
-        setDuration(currentVideo.duration);
+      if (videoRef.current && isFinite(videoRef.current.duration)) {
+        setDuration(videoRef.current.duration);
+      }
+    };
+    
+    const onVolumeChange = () => {
+      if(videoRef.current) {
+        setVolume(videoRef.current.volume);
+        if(!videoRef.current.muted && videoRef.current.volume > 0) {
+            setIsInitialMute(false);
+        }
       }
     };
 
@@ -43,6 +55,7 @@ export function VSLSection() {
     video.addEventListener('pause', onPause);
     video.addEventListener('timeupdate', onTimeUpdate);
     video.addEventListener('loadedmetadata', onLoadedMetadata);
+    video.addEventListener('volumechange', onVolumeChange);
 
     video.muted = true;
     const playPromise = video.play();
@@ -58,25 +71,51 @@ export function VSLSection() {
       video.removeEventListener('pause', onPause);
       video.removeEventListener('timeupdate', onTimeUpdate);
       video.removeEventListener('loadedmetadata', onLoadedMetadata);
+      video.removeEventListener('volumechange', onVolumeChange);
     };
   }, []);
 
-  const handleUserInteraction = () => {
+  useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      if (video.muted) {
-        video.muted = false;
-        setIsMuted(false);
+        video.volume = volume;
+        video.muted = volume === 0;
+    }
+  }, [volume]);
+
+  const togglePlayPause = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isInitialMute) {
+        setIsInitialMute(false);
+        setVolume(1);
         if (video.paused) {
-          video.play();
+            video.play();
         }
-      } else {
+    } else {
         if (video.paused) {
           video.play();
         } else {
           video.pause();
         }
-      }
+    }
+  };
+
+  const handleVolumeChange = (value: number[]) => {
+    const newVolume = value[0];
+    setVolume(newVolume);
+    if(newVolume > 0) {
+        setIsInitialMute(false);
+    }
+  };
+
+  const toggleMute = () => {
+    if (volume > 0) {
+      setLastVolume(volume);
+      setVolume(0);
+    } else {
+      setVolume(lastVolume > 0 ? lastVolume : 1);
     }
   };
 
@@ -85,20 +124,27 @@ export function VSLSection() {
   };
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+  const VolumeIcon = volume === 0 ? VolumeX : volume < 0.5 ? Volume1 : Volume2;
 
   return (
     <section className="mb-12 md:mb-20">
-      <div className="relative overflow-hidden rounded-lg shadow-2xl bg-black cursor-pointer" onClick={handleUserInteraction}>
+      <div 
+        className="relative overflow-hidden rounded-lg shadow-2xl bg-black group/video" 
+        onMouseEnter={() => setShowControls(true)}
+        onMouseLeave={() => setShowControls(false)}
+      >
         <video
           ref={videoRef}
           src={videoSrc}
           className="w-full h-full"
           playsInline
+          onClick={togglePlayPause}
         />
         
-        {isMuted && (
+        {isInitialMute && (
           <div 
-            className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60"
+            className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 cursor-pointer"
+            onClick={togglePlayPause}
           >
             <div className="text-center p-4 rounded-lg text-primary">
               <Volume2 className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 animate-bounce" />
@@ -109,9 +155,33 @@ export function VSLSection() {
           </div>
         )}
 
-        {/* Visual-only progress bar at the bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-500/50 pointer-events-none">
-          <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
+        {/* Custom Controls */}
+        <div 
+          className={`absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 ${showControls && !isInitialMute ? 'opacity-100' : 'opacity-0'}`}
+        >
+          {/* Progress Bar */}
+          <div className="w-full h-1 bg-gray-500/50 rounded-full mb-2">
+            <div className="h-full bg-primary rounded-full" style={{ width: `${progress}%` }} />
+          </div>
+
+          {/* Bottom Controls */}
+          <div className="flex items-center gap-4 text-white">
+            <button onClick={togglePlayPause} className="focus:outline-none">
+              {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
+            </button>
+            <div className="flex items-center gap-2 w-24">
+              <button onClick={toggleMute} className="focus:outline-none">
+                 <VolumeIcon className="h-6 w-6" />
+              </button>
+              <Slider
+                value={[volume]}
+                max={1}
+                step={0.05}
+                onValueChange={handleVolumeChange}
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
       </div>
 

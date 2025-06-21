@@ -189,31 +189,29 @@ export function VSLSection() {
             (showControls || !isPlaying) ? "opacity-100" : "opacity-0"
           )}
         >
-          <div className="flex flex-col gap-2">
-            <div 
-              className="flex items-center justify-between text-white pointer-events-auto"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex items-center gap-2">
-                <Button onClick={togglePlayPause} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
-                    {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
+          <div 
+            className="flex items-center justify-between text-white pointer-events-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-2">
+              <Button onClick={togglePlayPause} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
+                  {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
+              </Button>
+              <div className="flex items-center gap-2 w-24">
+                <Button onClick={toggleMute} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
+                    {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
                 </Button>
-                <div className="flex items-center gap-2 w-24">
-                  <Button onClick={toggleMute} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
-                      {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
-                  </Button>
-                  <Slider 
-                    min={0}
-                    max={1}
-                    step={0.05}
-                    value={[isMuted ? 0 : volume]}
-                    onValueChange={handleVolumeChange}
-                  />
-                </div>
+                <Slider 
+                  min={0}
+                  max={1}
+                  step={0.05}
+                  value={[isMuted ? 0 : volume]}
+                  onValueChange={handleVolumeChange}
+                />
               </div>
             </div>
-            <Progress value={progress} className="h-1 pointer-events-none" />
           </div>
+          <Progress value={progress} className="h-1 mt-2 pointer-events-none" />
         </div>
       </div>
       

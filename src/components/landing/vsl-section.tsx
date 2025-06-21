@@ -159,13 +159,8 @@ export function VSLSection() {
         <div 
           className={`absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 ${showControls && !isInitialMute ? 'opacity-100' : 'opacity-0'}`}
         >
-          {/* Progress Bar */}
-          <div className="w-full h-1 bg-gray-500/50 rounded-full mb-2">
-            <div className="h-full bg-primary rounded-full" style={{ width: `${progress}%` }} />
-          </div>
-
           {/* Bottom Controls */}
-          <div className="flex items-center gap-4 text-white">
+          <div className="flex items-center gap-4 text-white mb-2">
             <button onClick={togglePlayPause} className="focus:outline-none">
               {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
             </button>
@@ -181,6 +176,11 @@ export function VSLSection() {
                 className="w-full"
               />
             </div>
+          </div>
+          
+          {/* Progress Bar */}
+          <div className="w-full h-1 bg-gray-500/50 rounded-full">
+            <div className="h-full bg-primary rounded-full" style={{ width: `${progress}%` }} />
           </div>
         </div>
       </div>

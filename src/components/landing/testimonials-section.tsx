@@ -4,7 +4,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 1,
     name: 'Frei Gilson',
-    avatarUrl: 'https://www.diocesedecolatina.org.br/wp-content/uploads/2023/07/Frei-Gilson-696x464.jpg',
+    avatarUrl: 'https://yt3.googleusercontent.com/ytc/AIdro_k4m_g_V3s-5h7z2t-Y-0g0Q4D8c4b9B6A9Z8E=s900-c-k-c0x00ffffff-no-rj',
     avatarHint: 'priest portrait',
     text: 'A Quaresma do Padre Pio é uma das experiências espirituais mais fortes que já vivi. Quando comecei a praticar essas orações, percebi mudanças reais na minha vida e na vida das pessoas que oravam comigo. Se você está aqui, é porque seu anjo quer te mostrar esse caminho 🙏',
     likes: 2134,
@@ -46,7 +46,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 5,
     name: 'Reginaldo Manzotti',
-    avatarUrl: 'https://www.padrereginaldomanzotti.org.br/wp-content/uploads/2019/07/padre-reginaldo-manzotti-perfil-2019-1.jpg',
+    avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1XpD_xG1qP8L2hJ6w_X_tV6wR3Y_N5nQ&s',
     avatarHint: 'priest portrait',
     text: 'Essa oração reacendeu minha fé. A Quaresma do Padre Pio é mais do que uma devoção, é um presente direto do Céu. Se você está aqui, é porque essa bênção também é para você. Receba com fé!',
     likes: 1654,

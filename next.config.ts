@@ -32,6 +32,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 's2.glbimg.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'yt3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+      },
     ],
   },
 };

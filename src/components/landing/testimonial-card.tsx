@@ -1,4 +1,4 @@
-import { ThumbsUp } from 'lucide-react';
+import { ThumbsUp, Heart } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 
@@ -42,8 +42,9 @@ export function TestimonialCard({ testimonial, isReply = false }: TestimonialCar
           <button className="hover:underline font-bold">Responder</button>
           <span aria-hidden="true">·</span>
           <span className="flex items-center gap-1">
-            <ThumbsUp className="h-3 w-3 text-primary" />
-            {likes.toLocaleString('pt-BR')}
+            <ThumbsUp className="h-3 w-3 text-blue-500" />
+            <Heart className="h-3 w-3 text-red-500" fill="currentColor" />
+            <span className="ml-1">{likes.toLocaleString('pt-BR')}</span>
           </span>
           <span aria-hidden="true">·</span>
           <span>{time}</span>

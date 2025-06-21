@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
+import { Progress } from '@/components/ui/progress';
 import { cn } from '@/lib/utils';
 
 export function VSLSection() {
@@ -12,6 +13,7 @@ export function VSLSection() {
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -26,7 +28,8 @@ export function VSLSection() {
     }
   }, []);
 
-  const togglePlayPause = () => {
+  const togglePlayPause = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (videoRef.current) {
       if (videoRef.current.paused) {
         videoRef.current.play();
@@ -37,8 +40,21 @@ export function VSLSection() {
       }
     }
   };
+  
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  }
 
-  const unmuteVideo = () => {
+  const unmuteVideo = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (videoRef.current) {
         videoRef.current.muted = false;
         setIsMuted(false);
@@ -56,7 +72,8 @@ export function VSLSection() {
       setVolume(newVolume);
       
       if (newVolume > 0 && videoRef.current.muted) {
-        unmuteVideo();
+        videoRef.current.muted = false;
+        setIsMuted(false);
       } else if (newVolume === 0 && !videoRef.current.muted) {
          videoRef.current.muted = true;
          setIsMuted(true);
@@ -64,10 +81,11 @@ export function VSLSection() {
     }
   };
 
-  const toggleMute = () => {
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (videoRef.current) {
         if(videoRef.current.muted){
-          unmuteVideo();
+          unmuteVideo(e);
           return;
         }
         const newMutedState = !videoRef.current.muted;
@@ -76,31 +94,50 @@ export function VSLSection() {
     }
   };
 
+  const handleTimeUpdate = () => {
+    if (videoRef.current) {
+      const { currentTime, duration } = videoRef.current;
+      if (duration) {
+        const progressPercentage = (currentTime / duration) * 100;
+        setProgress(progressPercentage);
+      }
+    }
+  };
+  
+  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    if (videoRef.current) {
+      const progressBar = e.currentTarget;
+      const clickPosition = e.clientX - progressBar.getBoundingClientRect().left;
+      const progressBarWidth = progressBar.offsetWidth;
+      const seekTime = (clickPosition / progressBarWidth) * videoRef.current.duration;
+      videoRef.current.currentTime = seekTime;
+    }
+  };
+
   return (
     <section className="mb-12 md:mb-20">
       <div 
-        className="relative overflow-hidden rounded-lg shadow-2xl group"
+        className="relative overflow-hidden rounded-lg shadow-2xl group bg-black cursor-pointer"
         onMouseEnter={() => setShowControls(true)}
         onMouseLeave={() => setShowControls(false)}
+        onClick={handleVideoClick}
       >
-        <div className="relative pt-[56.25%] bg-black">
+        <div className="relative pt-[56.25%]">
           <video
             ref={videoRef}
             loop
             src="https://d3s1jrfpp0f48y.cloudfront.net/k3skl7%2Ffile%2Fd7b16a9ef5c155558a07bf3cf02a8f44_0a7d1df4ce1b6a0ee4d801525406d2a8.mp4?response-content-disposition=inline%3Bfilename%3D%22d7b16a9ef5c155558a07bf3cf02a8f44_0a7d1df4ce1b6a0ee4d801525406d2a8.mp4%22%3B&response-content-type=video%2Fmp4&Expires=1750537178&Signature=Zlm9kIqG2pVQG759chJijnn~oYePWjaa2NHlTn4LFYl2FrHX0sKiKpVFpz0d-yOd6w2zXJ3lyOd~mFQ-aDcfWmr4ZOduA8SuoV5LF30r~W1u~hb4bkZx9aP3XkplRmVWypAQ0b2XP9FsLxtwc-A5Cch7xXv6ElDty8vACTuW1gWXTN~8a5rCgFpIT9yYhJhPpZSF1o2EqGLOr2ALA~g4e2iBPoAcUho61DJrYR2LZQ3EopGYTM~JXYTUNeisUZeOCTGmatjdptDRsHNjvUtCBfjBnTPrqwdZpRCzeFTNktiigHvzKyJNujLWu~atVCzOMkn1JqOE8ppkPnxgTbfyNA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ"
-            className="absolute top-0 left-0 h-full w-full object-cover cursor-pointer"
-            onClick={togglePlayPause}
+            className="absolute top-0 left-0 h-full w-full object-contain pointer-events-none"
+            onTimeUpdate={handleTimeUpdate}
           >
             Seu navegador não suporta a tag de vídeo.
           </video>
           
           {isMuted && (
             <div 
-              className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 cursor-pointer"
-              onClick={(e) => {
-                e.stopPropagation();
-                unmuteVideo();
-              }}
+              className="absolute inset-0 flex flex-col items-center justify-center bg-black/60"
+              onClick={unmuteVideo}
             >
               <VolumeX className="h-12 w-12 text-white mb-4" />
               <p className="text-white text-xl font-bold uppercase tracking-wider">
@@ -110,29 +147,39 @@ export function VSLSection() {
           )}
         </div>
 
-        <div className={cn(
-            "absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100",
-            showControls && "opacity-100"
-        )}>
-            <div className="flex items-center gap-4 text-white">
-                <Button onClick={togglePlayPause} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
-                    {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
-                </Button>
+        <div 
+          className={cn(
+            "absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300",
+            (showControls || !isPlaying) ? "opacity-100" : "opacity-0"
+          )}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div 
+            className="w-full cursor-pointer group/progress"
+            onClick={handleSeek}
+          >
+            <Progress value={progress} className="h-1 group-hover/progress:h-2 transition-all duration-200" />
+          </div>
 
-                <div className="flex items-center gap-2 w-32">
-                  <Button onClick={toggleMute} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
-                      {isMuted ? <VolumeX className="h-6 w-6" /> : <Volume2 className="h-6 w-6" />}
-                  </Button>
-                  <Slider 
-                    min={0}
-                    max={1}
-                    step={0.05}
-                    value={[isMuted ? 0 : volume]}
-                    onValueChange={handleVolumeChange}
-                    className="w-full"
-                  />
-                </div>
+          <div className="flex items-center justify-between text-white mt-2">
+            <div className="flex items-center gap-2">
+              <Button onClick={togglePlayPause} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
+                  {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
+              </Button>
+              <div className="flex items-center gap-2 w-24">
+                <Button onClick={toggleMute} variant="ghost" size="icon" className="text-white hover:bg-white/20 hover:text-white">
+                    {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+                </Button>
+                <Slider 
+                  min={0}
+                  max={1}
+                  step={0.05}
+                  value={[isMuted ? 0 : volume]}
+                  onValueChange={handleVolumeChange}
+                />
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </section>

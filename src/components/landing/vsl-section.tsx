@@ -228,11 +228,11 @@ export function VSLSection() {
           </Button>
           <div className="mt-8 flex justify-center">
             <Image
-              src="https://images2.imgbox.com/9e/a0/p1oITfbz_o.jpg"
+              src="https://i.imgur.com/o8id6M2.png"
               alt="Selo de Garantia"
               width={600}
               height={155}
-              className="rounded-lg shadow-md mix-blend-multiply"
+              className="rounded-lg shadow-md"
               data-ai-hint="guarantee badge"
             />
           </div>

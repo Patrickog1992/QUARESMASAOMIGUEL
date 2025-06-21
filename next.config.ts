@@ -48,6 +48,12 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images2.imgbox.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.imgur.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

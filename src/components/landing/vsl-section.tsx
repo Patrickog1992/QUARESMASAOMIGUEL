@@ -101,7 +101,7 @@ export function VSLSection() {
             className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60"
           >
             <div className="text-center p-4 rounded-lg text-primary">
-              <Volume2 className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 animate-pulse" />
+              <Volume2 className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 animate-bounce" />
               <p className="text-xl md:text-2xl font-bold uppercase tracking-wider text-center drop-shadow-lg">
                 UMA BENÇÃO ESPERA POR VOCÊ<br/>CLIQUE PARA OUVIR
               </p>

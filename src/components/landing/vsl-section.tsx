@@ -10,9 +10,8 @@ export function VSLSection() {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [showBuyButton, setShowBuyButton] = useState(false);
-  const [volume, setVolume] = useState(0);
   const [isInitialMute, setIsInitialMute] = useState(true);
-  const [showControls, setShowControls] = useState(false);
+  const [showProgress, setShowProgress] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -26,9 +25,13 @@ export function VSLSection() {
     const onPause = () => setIsPlaying(false);
     
     const onTimeUpdate = () => {
-      if (videoRef.current) {
-        setCurrentTime(videoRef.current.currentTime);
-        if (videoRef.current.currentTime > (24 * 60 + 20)) {
+      const vid = videoRef.current;
+      if (vid) {
+        // A simple check to avoid frequent state updates if the change is negligible
+        if (Math.abs(vid.currentTime - currentTime) > 0.1) {
+          setCurrentTime(vid.currentTime);
+        }
+        if (vid.currentTime > (24 * 60 + 20)) {
           setShowBuyButton(true);
         }
       }
@@ -39,21 +42,11 @@ export function VSLSection() {
         setDuration(videoRef.current.duration);
       }
     };
-    
-    const onVolumeChange = () => {
-      if(videoRef.current) {
-        setVolume(videoRef.current.volume);
-        if(!videoRef.current.muted && videoRef.current.volume > 0) {
-            setIsInitialMute(false);
-        }
-      }
-    };
 
     video.addEventListener('play', onPlay);
     video.addEventListener('pause', onPause);
     video.addEventListener('timeupdate', onTimeUpdate);
     video.addEventListener('loadedmetadata', onLoadedMetadata);
-    video.addEventListener('volumechange', onVolumeChange);
 
     video.muted = true;
     const playPromise = video.play();
@@ -69,17 +62,9 @@ export function VSLSection() {
       video.removeEventListener('pause', onPause);
       video.removeEventListener('timeupdate', onTimeUpdate);
       video.removeEventListener('loadedmetadata', onLoadedMetadata);
-      video.removeEventListener('volumechange', onVolumeChange);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-        video.volume = volume;
-        video.muted = volume === 0;
-    }
-  }, [volume]);
 
   const togglePlayPause = () => {
     const video = videoRef.current;
@@ -87,7 +72,7 @@ export function VSLSection() {
 
     if (isInitialMute) {
         setIsInitialMute(false);
-        setVolume(1);
+        video.muted = false;
         if (video.paused) {
             video.play();
         }
@@ -105,13 +90,13 @@ export function VSLSection() {
   };
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
-
+  
   return (
     <section className="mb-12 md:mb-20">
       <div 
-        className="relative overflow-hidden rounded-lg shadow-2xl bg-black group/video" 
-        onMouseEnter={() => setShowControls(true)}
-        onMouseLeave={() => setShowControls(false)}
+        className="relative overflow-hidden rounded-lg shadow-2xl bg-black group/video"
+        onMouseEnter={() => setShowProgress(true)}
+        onMouseLeave={() => setShowProgress(false)}
       >
         <video
           ref={videoRef}
@@ -135,11 +120,10 @@ export function VSLSection() {
           </div>
         )}
 
-        {/* Custom Controls */}
+        {/* Custom Progress Bar */}
         <div 
-          className={`absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 ${showControls && !isInitialMute ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute bottom-0 left-0 right-0 p-2 sm:p-4 transition-opacity duration-300 ${showProgress && !isInitialMute ? 'opacity-100' : 'opacity-0'}`}
         >
-          {/* Progress Bar */}
           <div className="w-full h-1 bg-gray-500/50 rounded-full">
             <div className="h-full bg-primary rounded-full" style={{ width: `${progress}%` }} />
           </div>
@@ -161,7 +145,7 @@ export function VSLSection() {
         <div className="mt-8 text-center">
           <Button 
             size="lg" 
-            className="font-bold text-lg md:text-xl py-6 md:py-8 px-8 md:px-12 uppercase animate-pulse shadow-lg"
+            className="font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
             onClick={handleBuyClick}
           >
             QUERO RECEBER A QUARESMA DO PADRE PIO

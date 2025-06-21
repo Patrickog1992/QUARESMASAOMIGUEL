@@ -226,19 +226,18 @@ export function VSLSection() {
           >
             QUERO MINHA BÊNÇÃO AGORA
           </Button>
+          <div className="mt-8 flex justify-center">
+            <Image
+              src="https://images2.imgbox.com/9e/a0/p1oITfbz_o.jpg"
+              alt="Selo de Garantia"
+              width={600}
+              height={155}
+              className="rounded-lg shadow-md mix-blend-multiply"
+              data-ai-hint="guarantee badge"
+            />
+          </div>
         </div>
       )}
-
-      <div className="mt-8 flex justify-center">
-        <Image
-          src="https://images2.imgbox.com/9e/a0/p1oITfbz_o.jpg"
-          alt="Selo de Garantia"
-          width={600}
-          height={155}
-          className="rounded-lg shadow-md"
-          data-ai-hint="guarantee badge"
-        />
-      </div>
     </section>
   );
 }

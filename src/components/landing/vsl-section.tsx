@@ -139,7 +139,7 @@ export function VSLSection() {
               className="absolute inset-0 flex flex-col items-center justify-center bg-black/60"
               onClick={unmuteVideo}
             >
-              <VolumeX className="h-12 w-12 text-white mb-4" />
+              <VolumeX className="h-12 w-12 text-white mb-4 animate-bounce" />
               <p className="text-white text-xl font-bold uppercase tracking-wider">
                 Clique para ouvir
               </p>

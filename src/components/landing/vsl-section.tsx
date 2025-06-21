@@ -9,9 +9,9 @@ import { Slider } from '@/components/ui/slider';
 export function VSLSection() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
-  const [isMuted, setIsMuted] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [isMuted, setIsMuted] = useState(true); // Start muted for autoplay
   const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
   const [showBuyButton, setShowBuyButton] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -22,10 +22,12 @@ export function VSLSection() {
     const video = videoRef.current;
     if (!video) return;
 
-    const updateProgress = () => {
-      if (!video.duration) return;
-      const progress = (video.currentTime / video.duration) * 100;
-      setProgress(progress);
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    
+    const updateTime = () => {
+      if (!video) return;
+      setCurrentTime(video.currentTime);
       if (video.currentTime > (24 * 60 + 20) && !showBuyButton) {
         setShowBuyButton(true);
       }
@@ -35,14 +37,22 @@ export function VSLSection() {
       setDuration(video.duration);
     };
 
-    video.addEventListener('timeupdate', updateProgress);
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+    video.addEventListener('timeupdate', updateTime);
     video.addEventListener('loadedmetadata', handleLoadedMetadata);
-    video.addEventListener('ended', () => setIsPlaying(false));
+
+    // Try to play programmatically, as `autoPlay` attribute can be unreliable
+    video.play().catch(error => {
+      console.warn("Autoplay was prevented:", error);
+      setIsPlaying(false);
+    });
 
     return () => {
-      video.removeEventListener('timeupdate', updateProgress);
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
+      video.removeEventListener('timeupdate', updateTime);
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      video.removeEventListener('ended', () => setIsPlaying(false));
     };
   }, [showBuyButton]);
 
@@ -52,8 +62,12 @@ export function VSLSection() {
         videoRef.current.pause();
       } else {
         videoRef.current.play();
+        // Unmute if user interacts to play
+        if(videoRef.current.muted) {
+          videoRef.current.muted = false;
+          setIsMuted(false);
+        }
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -78,7 +92,6 @@ export function VSLSection() {
       videoRef.current.muted = newMutedState;
       setIsMuted(newMutedState);
       if (!newMutedState) {
-        // If unmuting and volume is 0, set to a default value
         if (videoRef.current.volume === 0) {
           const defaultVolume = 0.5;
           videoRef.current.volume = defaultVolume;
@@ -88,14 +101,6 @@ export function VSLSection() {
     }
   };
 
-  const handleProgressChange = (value: number[]) => {
-    if (videoRef.current && duration > 0) {
-      const newTime = (value[0] / 100) * duration;
-      videoRef.current.currentTime = newTime;
-      setProgress(value[0]);
-    }
-  };
-  
   const handleBuyClick = () => {
     window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
   };
@@ -109,6 +114,8 @@ export function VSLSection() {
     return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
   };
 
+  const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+
   return (
     <section className="mb-12 md:mb-20">
       <div className="relative overflow-hidden rounded-lg shadow-2xl bg-black group/video">
@@ -118,17 +125,18 @@ export function VSLSection() {
           className="w-full h-full cursor-pointer"
           onClick={togglePlay}
           onDoubleClick={() => videoRef.current?.requestFullscreen()}
+          autoPlay
+          muted
+          playsInline
         />
+
+        {/* Non-interactive progress bar */}
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-500/50 pointer-events-none">
+          <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
+        </div>
 
         <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover/video:opacity-100 transition-opacity duration-300 flex flex-col justify-end pointer-events-none">
           <div className="p-4 space-y-2 pointer-events-auto">
-             <Slider
-                value={[progress]}
-                onValueChange={handleProgressChange}
-                max={100}
-                step={0.1}
-                className="w-full h-2"
-              />
             <div className="flex items-center justify-between text-white">
               <div className="flex items-center gap-4">
                 <button onClick={togglePlay} className="text-white">
@@ -147,7 +155,7 @@ export function VSLSection() {
                 </div>
               </div>
               <div className="text-sm font-mono">
-                {formatTime(videoRef.current?.currentTime || 0)} / {formatTime(duration)}
+                {formatTime(currentTime)} / {formatTime(duration)}
               </div>
             </div>
           </div>

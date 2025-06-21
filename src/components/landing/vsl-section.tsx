@@ -1,7 +1,7 @@
 export function VSLSection() {
   return (
     <section className="mb-12 md:mb-20">
-      <div className="max-w-4xl mx-auto rounded-lg shadow-2xl overflow-hidden">
+      <div className="rounded-lg shadow-2xl overflow-hidden">
         <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
           <iframe
             id="js_video_iframe"

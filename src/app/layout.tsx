@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { DisableDevTools } from '@/components/disable-devtools';
 
 export const metadata: Metadata = {
-  title: 'Quaresma do Padre Pio',
+  title: 'A Quaresma do Padre Pio',
   description: 'Hoje pode ser o dia da sua vitória: descubra como restaurar sua saúde e sua vida',
 };
 

@@ -38,17 +38,26 @@ export function VSLSection() {
     }
   };
 
+  const unmuteVideo = () => {
+    if (videoRef.current) {
+        videoRef.current.muted = false;
+        setIsMuted(false);
+        if (videoRef.current.volume === 0) {
+            videoRef.current.volume = 1;
+            setVolume(1);
+        }
+    }
+  };
+
   const handleVolumeChange = (value: number[]) => {
     if (videoRef.current) {
       const newVolume = value[0];
       videoRef.current.volume = newVolume;
       setVolume(newVolume);
       
-      const isCurrentlyMuted = videoRef.current.muted;
-      if (newVolume > 0 && isCurrentlyMuted) {
-        videoRef.current.muted = false;
-        setIsMuted(false);
-      } else if (newVolume === 0 && !isCurrentlyMuted) {
+      if (newVolume > 0 && videoRef.current.muted) {
+        unmuteVideo();
+      } else if (newVolume === 0 && !videoRef.current.muted) {
          videoRef.current.muted = true;
          setIsMuted(true);
       }
@@ -57,14 +66,13 @@ export function VSLSection() {
 
   const toggleMute = () => {
     if (videoRef.current) {
+        if(videoRef.current.muted){
+          unmuteVideo();
+          return;
+        }
         const newMutedState = !videoRef.current.muted;
         videoRef.current.muted = newMutedState;
         setIsMuted(newMutedState);
-        
-        if (!newMutedState && videoRef.current.volume === 0) {
-            videoRef.current.volume = 1;
-            setVolume(1);
-        }
     }
   };
 
@@ -85,6 +93,21 @@ export function VSLSection() {
           >
             Seu navegador não suporta a tag de vídeo.
           </video>
+          
+          {isMuted && (
+            <div 
+              className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                unmuteVideo();
+              }}
+            >
+              <VolumeX className="h-12 w-12 text-white mb-4" />
+              <p className="text-white text-xl font-bold uppercase tracking-wider">
+                Clique para ouvir
+              </p>
+            </div>
+          )}
         </div>
 
         <div className={cn(

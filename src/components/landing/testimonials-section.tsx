@@ -142,7 +142,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 15,
     name: 'Rafaela Martins',
-    avatarUrl: 'https://placehold.co/100x100.png',
+    avatarUrl: 'https://thumbs2.imgbox.com/dd/55/H0rZXQVM_t.jpg',
     avatarHint: 'woman portrait',
     text: 'Confiei e hoje estou vivendo meu milagre! 🙏😭 Glória a Deus!',
     likes: 354,
@@ -151,7 +151,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 16,
     name: 'Ricardo Pereira',
-    avatarUrl: 'https://placehold.co/100x100.png',
+    avatarUrl: 'https://thumbs2.imgbox.com/48/18/9JtnHEjz_t.png',
     avatarHint: 'man portrait',
     text: 'Senti meu anjo tocando minha cabeça na oração de ontem às 3h! Que loucura! 🙌',
     likes: 322,

@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { DisableDevTools } from '@/components/disable-devtools';
 
 export const metadata: Metadata = {
   title: 'Quaresma do Padre Pio',
@@ -20,6 +21,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
+        <DisableDevTools />
         {children}
         <Toaster />
       </body>

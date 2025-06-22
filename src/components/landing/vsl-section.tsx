@@ -6,7 +6,7 @@ import { Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function VSLSection() {
-  const [showVideo, setShowVideo] = useState(false);
+  const [isUnmuted, setIsUnmuted] = useState(false);
   const [showBuyButton, setShowBuyButton] = useState(false);
   const videoId = '6i77T4HnUEY';
 
@@ -19,32 +19,35 @@ export function VSLSection() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handlePlay = () => {
-    setShowVideo(true);
+  const handleUnmute = () => {
+    setIsUnmuted(true);
   };
 
   const handleBuyClick = () => {
     window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
   };
   
+  const baseUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0`;
+  const videoSrc = isUnmuted ? `${baseUrl}&mute=0` : `${baseUrl}&mute=1`;
+
   return (
     <section className="mb-12 md:mb-20">
       <div 
         className="relative overflow-hidden rounded-lg shadow-2xl bg-black aspect-video"
       >
-        {showVideo ? (
-          <iframe
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&rel=0&showinfo=0&modestbranding=1&iv_load_policy=3`}
-            className="w-full h-full absolute top-0 left-0"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="YouTube video player"
-          ></iframe>
-        ) : (
+        <iframe
+          src={videoSrc}
+          className="w-full h-full absolute top-0 left-0"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Quaresma do Padre Pio"
+        ></iframe>
+
+        {!isUnmuted && (
           <div 
             className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 cursor-pointer"
-            onClick={handlePlay}
+            onClick={handleUnmute}
           >
             <div className="text-center p-4 rounded-lg">
               <Volume2 className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 animate-bounce text-primary" />

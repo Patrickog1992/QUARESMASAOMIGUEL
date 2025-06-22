@@ -37,7 +37,7 @@ export function VSLSection() {
   return (
     <section className="mb-12 md:mb-20">
        {/* Container for the Converte.ai player */}
-      <div className="relative overflow-hidden rounded-lg shadow-2xl bg-black">
+      <div className="relative overflow-hidden rounded-lg shadow-2xl">
         <div id="vid_685797132aa650383f53bc95" style={{ position: 'relative', width: '100%', padding: '125% 0 0' }}>
           <img
             id="thumb_685797132aa650383f53bc95"

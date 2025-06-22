@@ -1,5 +1,5 @@
 import { HeroSectionNova } from '@/components/landing/hero-section-nova';
-import { VSLSection } from '@/components/landing/vsl-section';
+import { VSLSectionNova } from '@/components/landing/vsl-section-nova';
 import { TestimonialsSection } from '@/components/landing/testimonials-section';
 import { Footer } from '@/components/landing/footer';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default function NovaPaginaPage() {
+export default function ArcanjoMiguelPage() {
   return (
     <div className="dark relative flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
       <TopBanner />
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
         <HeroSectionNova />
-        <VSLSection />
+        <VSLSectionNova />
         <TestimonialsSection />
       </main>
       <Footer />

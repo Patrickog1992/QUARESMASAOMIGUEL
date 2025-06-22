@@ -27,29 +27,28 @@ export function SalesPopup() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
     const showRandomNotification = () => {
       const randomName = names[Math.floor(Math.random() * names.length)];
       const randomLocation = locations[Math.floor(Math.random() * locations.length)];
       setNotification({ name: randomName, location: randomLocation });
       setIsVisible(true);
 
-      // Hide after a few seconds
+      // Hide after 5 seconds
       setTimeout(() => {
         setIsVisible(false);
-      }, 5000); // visible for 5 seconds
+      }, 5000);
+
+      // Schedule the next notification in 15 seconds
+      timeoutId = setTimeout(showRandomNotification, 15000);
     };
 
-    // Initial delay
-    let timeoutId = setTimeout(showRandomNotification, 7000);
-
-    const intervalId = setInterval(() => {
-      // Set up the next notification
-      timeoutId = setTimeout(showRandomNotification, Math.random() * 8000 + 6000); // next one in 6-14 seconds
-    }, 12000); // cycle every 12 seconds
+    // Initial delay before the first notification
+    timeoutId = setTimeout(showRandomNotification, 8000);
 
     return () => {
       clearTimeout(timeoutId);
-      clearInterval(intervalId);
     };
   }, []);
 
@@ -60,14 +59,14 @@ export function SalesPopup() {
   return (
     <div
       className={cn(
-        'fixed bottom-4 left-4 z-50 w-full max-w-sm transition-transform duration-500 ease-in-out',
-        isVisible ? 'translate-x-0' : '-translate-x-[calc(100%+2rem)]'
+        'fixed bottom-4 right-4 z-50 w-full max-w-xs transition-transform duration-500 ease-in-out',
+        isVisible ? 'translate-x-0' : 'translate-x-[calc(100%+2rem)]'
       )}
     >
       <Card className="bg-accent text-accent-foreground shadow-lg">
-        <CardContent className="p-4 flex items-center gap-3">
-          <CheckCircle className="h-6 w-6 shrink-0" />
-          <p className="text-sm font-semibold">
+        <CardContent className="p-3 flex items-center gap-3">
+          <CheckCircle className="h-5 w-5 shrink-0" />
+          <p className="text-xs font-semibold">
             {notification.name} {notification.location} acabou de receber as orações.
           </p>
         </CardContent>

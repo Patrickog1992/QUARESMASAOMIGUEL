@@ -2,13 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function VSLSection() {
-  const [isUnmuted, setIsUnmuted] = useState(false);
   const [showBuyButton, setShowBuyButton] = useState(false);
-  const videoId = '6i77T4HnUEY';
 
   useEffect(() => {
     // Show the buy button after 24 minutes and 20 seconds
@@ -16,50 +13,43 @@ export function VSLSection() {
       setShowBuyButton(true);
     }, (24 * 60 + 20) * 1000);
 
-    return () => clearTimeout(timer);
+    const scriptId = 'scr_685797132aa650383f53bc95';
+    // Avoid appending the script if it already exists
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = 'https://scripts.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685797132aa650383f53bc95/player.js';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+    
+    return () => {
+      clearTimeout(timer);
+      // We don't remove the script on unmount because the player might be needed
+      // again and re-initializing could cause issues.
+    };
   }, []);
-
-  const handleUnmute = () => {
-    setIsUnmuted(true);
-  };
 
   const handleBuyClick = () => {
     window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
   };
-  
-  const baseUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0`;
-  const videoSrc = isUnmuted ? `${baseUrl}&mute=0` : `${baseUrl}&mute=1`;
 
   return (
     <section className="mb-12 md:mb-20">
-      <div 
-        className="relative overflow-hidden rounded-lg shadow-2xl bg-black aspect-video"
-      >
-        <iframe
-          src={videoSrc}
-          className="w-full h-full absolute top-0 left-0"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Quaresma do Padre Pio"
-        ></iframe>
-
-        {!isUnmuted && (
-          <div 
-            className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 cursor-pointer"
-            onClick={handleUnmute}
-          >
-            <div className="text-center p-4 rounded-lg">
-              <Volume2 className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-4 animate-bounce text-primary" />
-              <p className="text-xl md:text-2xl font-bold uppercase tracking-wider text-center drop-shadow-lg text-yellow-400">
-                UMA BENÇÃO ESPERA POR VOCÊ
-              </p>
-               <p className="mt-2 text-lg md:text-xl font-bold uppercase tracking-wider text-center drop-shadow-lg text-white">
-                CLIQUE PARA OUVIR
-              </p>
-            </div>
-          </div>
-        )}
+       {/* Container for the Converte.ai player */}
+      <div className="relative overflow-hidden rounded-lg shadow-2xl bg-black">
+        <div id="vid_685797132aa650383f53bc95" style={{ position: 'relative', width: '100%', padding: '125% 0 0' }}>
+          <img
+            id="thumb_685797132aa650383f53bc95"
+            src="https://images.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685797132aa650383f53bc95/thumbnail.jpg"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            alt="thumbnail"
+          />
+          <div
+            id="backdrop_685797132aa650383f53bc95"
+            style={{ WebkitBackdropFilter: 'blur(5px)', backdropFilter: 'blur(5px)', position: 'absolute', top: 0, height: '100%', width: '100%' }}
+          ></div>
+        </div>
       </div>
 
       <div className="mt-8 flex justify-center">
@@ -75,8 +65,8 @@ export function VSLSection() {
 
       {showBuyButton && (
         <div className="mt-8 text-center">
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
             onClick={handleBuyClick}
           >

@@ -13,7 +13,7 @@ export function HeroSectionNova() {
         </h1>
       </Card>
       
-      <div className="space-y-2 text-md md:text-lg text-foreground/90 max-w-3xl font-medium mt-6">
+      <div className="space-y-2 text-md md:text-lg text-foreground/90 max-w-3xl font-bold mt-6">
         <p>- Frei Gilson traduziu todas as orações</p>
         <p>- Essas orações estavam guardadas a 7 chaves dentro de arquivos secretos do vaticano</p>
         <p>- Mas somente hoje você pode ter acesso a todas elas</p>

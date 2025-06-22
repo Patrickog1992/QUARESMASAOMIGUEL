@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'Descubra as orações secretas que estavam guardadas a 7 chaves no vaticano.',
 };
 
-export default function NovaPagina() {
+export default function NovaPaginaPage() {
   return (
     <div className="relative flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
       <BackgroundPattern />

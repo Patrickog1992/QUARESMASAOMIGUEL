@@ -1,5 +1,4 @@
-import { HeroSectionNova } from '@/components/landing/hero-section-nova';
-import { VSLSectionNova } from '@/components/landing/vsl-section-nova';
+import { OfferSection } from '@/components/landing/offer-section';
 import { TestimonialsSection } from '@/components/landing/testimonials-section';
 import { Footer } from '@/components/landing/footer';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
@@ -8,7 +7,7 @@ import { TopBanner } from '@/components/landing/top-banner';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '40 Orações Secretas - Toque do Arcanjo Miguel',
+  title: 'Oferta Especial - 40 Orações Secretas',
   description: 'Descubra as orações secretas que estavam guardadas a 7 chaves no vaticano.',
 };
 
@@ -20,8 +19,7 @@ export default function ArcanjoMiguel2Page() {
       <TopBanner />
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
-        <HeroSectionNova />
-        <VSLSectionNova />
+        <OfferSection />
         <TestimonialsSection />
       </main>
       <Footer />

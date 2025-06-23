@@ -23,7 +23,7 @@ export function OfferSection() {
   const seconds = String(timeLeft % 60).padStart(2, '0');
 
   const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/6d4a8c2c-5933-4ec4-a873-585f75d81a8b', '_self');
+    window.open('https://pay.kirvano.com/80aac1c2-c705-436a-a44e-36aa62049297', '_self');
   };
 
   return (

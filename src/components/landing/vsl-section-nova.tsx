@@ -31,7 +31,7 @@ export function VSLSectionNova() {
   }, []);
 
   const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/ed283a56-afef-4bfe-a586-da6a94993d9b', '_self');
+    window.open('https://pay.kirvano.com/6d4a8c2c-5933-4ec4-a873-585f75d81a8b', '_self');
   };
 
   return (

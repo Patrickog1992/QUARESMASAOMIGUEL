@@ -29,10 +29,10 @@ export function OfferSection() {
   return (
     <section className="flex flex-col items-center text-center mb-12 md:mb-20">
       <Card className="bg-accent text-accent-foreground p-3 md:p-4 rounded-xl shadow-lg mb-8 max-w-3xl w-full">
-        <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold flex items-center justify-center gap-3 md:gap-4">
+        <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold flex flex-wrap items-center justify-center gap-3 md:gap-4">
           <Timer className="h-8 w-8 sm:h-10 sm:w-10 shrink-0" />
-          <span>
-            DESCONTO ESPECIAL QUE ACABA EM: {minutes}:{seconds}
+          <span className="text-center">
+            DESCONTO ESPECIAL DE <span className="line-through">R$47,00</span> por R$27,00: {minutes}:{seconds}
           </span>
         </h1>
       </Card>

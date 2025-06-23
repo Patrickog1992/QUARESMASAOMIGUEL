@@ -32,7 +32,7 @@ export function OfferSection() {
         <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold flex flex-wrap items-center justify-center gap-3 md:gap-4">
           <Timer className="h-8 w-8 sm:h-10 sm:w-10 shrink-0" />
           <span className="text-center">
-            DESCONTO ESPECIAL DE <span className="line-through">R$47,00</span> por R$27,00: {minutes}:{seconds}
+            DESCONTO ESPECIAL DE <span className="line-through">R$47,00</span> por R$27,00 que acaba em: {minutes}:{seconds}
           </span>
         </h1>
       </Card>

@@ -28,7 +28,7 @@ export function OfferSection() {
 
   return (
     <section className="flex flex-col items-center text-center mb-12 md:mb-20">
-      <Card className="bg-destructive text-destructive-foreground p-3 md:p-4 rounded-xl shadow-lg mb-8 max-w-3xl w-full">
+      <Card className="bg-accent text-accent-foreground p-3 md:p-4 rounded-xl shadow-lg mb-8 max-w-3xl w-full">
         <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold flex items-center justify-center gap-3 md:gap-4">
           <Timer className="h-8 w-8 sm:h-10 sm:w-10 shrink-0" />
           <span>

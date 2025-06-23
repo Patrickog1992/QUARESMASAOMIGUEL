@@ -8,7 +8,7 @@ export function HeroSectionNova() {
         <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold flex items-center justify-center gap-3 md:gap-4">
           <Shield className="h-8 w-8 sm:h-10 sm:w-10 shrink-0" />
           <span>
-            40 orações secretas: pessoas choram ao ouvir as orações por alguns segundos e sentem o toque do Arcanjo Miguel
+            OS SEGREDOS QUE O VATICANO NÃO QUER QUE VOCÊ SAIBA
           </span>
         </h1>
       </Card>

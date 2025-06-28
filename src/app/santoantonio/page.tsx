@@ -161,7 +161,7 @@ export default function SantoAntonioPage() {
   return (
     <div className="bg-white text-black font-sans">
       <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 sticky top-0 shrink-0">
-        <div className="flex items-center gap-4 flex-1">
+        <div className="flex items-center gap-4 shrink-0">
           <Menu className="h-6 w-6 text-neutral-800" />
           <Image
             src="https://classic.exame.com/wp-content/uploads/2017/08/new-youtube-logo-840x402.jpg"
@@ -171,8 +171,10 @@ export default function SantoAntonioPage() {
             className="object-contain"
             data-ai-hint="youtube logo"
           />
-          <div className="w-full max-w-lg mx-4 hidden sm:flex">
-            <Input 
+        </div>
+        <div className="hidden sm:flex flex-1 justify-center px-4">
+          <div className="w-full max-w-lg flex">
+            <Input
               placeholder="Pesquisar"
               className="bg-gray-100 border-neutral-300 rounded-l-full rounded-r-none h-10 px-4 flex-1 focus:ring-1 focus:ring-blue-500 border-r-0"
             />
@@ -181,7 +183,8 @@ export default function SantoAntonioPage() {
             </Button>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 shrink-0">
+          <Search className="h-6 w-6 text-neutral-800 sm:hidden" />
           <UserCircle className="h-8 w-8 text-neutral-800" />
         </div>
       </header>

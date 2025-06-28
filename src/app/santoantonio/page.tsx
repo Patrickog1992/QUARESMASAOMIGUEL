@@ -135,6 +135,14 @@ export default function SantoAntonioPage() {
   const [viewerCount, setViewerCount] = useState(55452);
   const [displayedMessages, setDisplayedMessages] = useState(allChatMessages.slice(0, 15));
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [liveTime, setLiveTime] = useState('');
+
+  useEffect(() => {
+    const now = new Date();
+    const time = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    const date = now.toLocaleDateString('pt-BR');
+    setLiveTime(`às ${time}, ${date}`);
+  }, []);
 
   useEffect(() => {
     const countInterval = setInterval(() => {
@@ -168,7 +176,7 @@ export default function SantoAntonioPage() {
         <div className="flex items-center gap-4">
           <Menu className="h-6 w-6 text-neutral-800" />
           <Image
-            src="https://i.pinimg.com/1200x/10/0d/92/100d925f120c7b3c1a53b2aaea2ec11c.jpg"
+            src="https://classic.exame.com/wp-content/uploads/2017/08/new-youtube-logo-840x402.jpg"
             alt="YouTube Logo"
             width={90}
             height={20}
@@ -198,7 +206,7 @@ export default function SantoAntonioPage() {
             <p className="text-neutral-400">[Simulação de Vídeo]</p>
           </div>
           <h1 className="text-xl font-bold mb-1 break-words">
-            Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo às 01:08, 28/06/2025.
+            Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
           </h1>
           <div className="text-sm text-neutral-600 mb-4">
             <span className="font-bold">{viewerCount.toLocaleString('pt-BR')} assistindo agora</span>
@@ -222,7 +230,7 @@ export default function SantoAntonioPage() {
 
         {/* Chat Section */}
         <div className="w-full lg:w-96 lg:max-w-sm flex-shrink-0">
-          <div className="bg-gray-50 rounded-lg border border-neutral-200 h-[calc(100vh-120px)] flex flex-col">
+          <div className="bg-gray-50 rounded-lg border border-neutral-200 h-[500px] lg:h-[calc(100vh-120px)] flex flex-col">
             <div className="p-4 border-b border-neutral-200">
               <h2 className="font-bold">Live chat</h2>
             </div>

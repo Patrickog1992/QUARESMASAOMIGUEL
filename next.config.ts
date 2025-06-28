@@ -66,6 +66,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'xn--oraaosecreta-mdb.site',
       },
+      {
+        protocol: 'https',
+        hostname: 'classic.exame.com',
+      },
     ],
   },
 };

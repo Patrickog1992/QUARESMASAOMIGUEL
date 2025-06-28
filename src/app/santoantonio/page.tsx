@@ -188,7 +188,7 @@ export default function SantoAntonioPage() {
 
       <main className="grid grid-cols-1 lg:grid-cols-[1fr_402px] flex-grow overflow-hidden">
         {/* Video and Info Section */}
-        <div className="flex flex-col overflow-y-auto px-4 lg:px-6 py-4">
+        <div className="flex flex-col px-4 lg:px-6 py-4">
           <div
             id="video-container"
             className="relative w-full bg-black"

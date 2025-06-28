@@ -181,8 +181,8 @@ export default function SantoAntonioPage() {
         </div>
       </header>
 
-      <main className="grid grid-cols-1 lg:grid-cols-3 max-w-screen-2xl mx-auto p-4 gap-6">
-        <div className="lg:col-span-2">
+      <main className="grid grid-cols-1 lg:grid-cols-[1fr_402px] p-4 lg:p-6 gap-6">
+        <div>
           <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
             <div id="vid_685f710952325b14a81dc1dd" style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}>
               {/* The converte.ai script will inject the player here. */}
@@ -214,11 +214,11 @@ export default function SantoAntonioPage() {
         </div>
 
         <div className="w-full">
-          <div className="border rounded-lg flex flex-col h-full">
+          <div className="border rounded-lg flex flex-col">
             <div className="p-4 border-b">
               <h2 className="font-bold">Live chat</h2>
             </div>
-            <div className="flex-1 overflow-y-auto p-2">
+            <div className="flex-1 overflow-y-auto p-2" style={{maxHeight: 'calc(100vh - 250px)'}}>
               <div className="flex flex-col gap-2">
                 {displayedMessages.map((msg, index) => (
                   <ChatMessage key={index} {...msg} />

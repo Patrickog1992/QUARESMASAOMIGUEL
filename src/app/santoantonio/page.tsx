@@ -121,7 +121,6 @@ const allChatMessages = [
 const ChatMessage = ({ name, message, isSupport = false }: { name: string; message: string; isSupport?: boolean }) => (
   <div className="flex items-start gap-2 p-2 hover:bg-gray-200/50 rounded-md">
     <Avatar className="h-6 w-6">
-      <AvatarImage src={`https://i.pravatar.cc/32?u=${name}`} alt={name} />
       <AvatarFallback>{name.charAt(0)}</AvatarFallback>
     </Avatar>
     <div className="flex-1">

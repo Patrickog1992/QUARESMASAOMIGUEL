@@ -170,9 +170,9 @@ export default function SantoAntonioPage() {
   }, [displayedMessages]);
 
   return (
-    <div className="bg-white text-black min-h-screen font-sans">
+    <div className="bg-white text-black h-screen max-h-screen font-sans flex flex-col">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 sticky top-0 z-10">
+      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10">
         <div className="flex items-center gap-4">
           <Menu className="h-6 w-6 text-neutral-800" />
           <Image
@@ -199,9 +199,9 @@ export default function SantoAntonioPage() {
       </header>
 
       {/* Main Content */}
-      <main className="flex flex-col lg:flex-row p-4 gap-4">
+      <main className="flex flex-col lg:flex-row p-4 gap-4 flex-1 overflow-y-auto lg:overflow-y-hidden">
         {/* Video Section */}
-        <div className="flex-1">
+        <div className="flex-1 lg:overflow-y-auto">
           <div className="aspect-video bg-black rounded-lg mb-4 flex items-center justify-center">
             <p className="text-neutral-400">[Simulação de Vídeo]</p>
           </div>
@@ -230,7 +230,7 @@ export default function SantoAntonioPage() {
 
         {/* Chat Section */}
         <div className="w-full lg:w-96 lg:max-w-sm flex-shrink-0">
-          <div className="bg-gray-50 rounded-lg border border-neutral-200 h-[500px] lg:h-[calc(100vh-120px)] flex flex-col">
+          <div className="bg-gray-50 rounded-lg border border-neutral-200 h-[500px] lg:h-full flex flex-col">
             <div className="p-4 border-b border-neutral-200">
               <h2 className="font-bold">Live chat</h2>
             </div>

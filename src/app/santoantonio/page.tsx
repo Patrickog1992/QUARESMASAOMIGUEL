@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Menu, Search, Smile, UserCircle } from 'lucide-react';
@@ -15,7 +16,7 @@ import { Badge } from '@/components/ui/badge';
 //   description: 'A oração de Santo Antônio escondida pela Maçonaria.',
 // };
 
-const chatMessages = [
+const allChatMessages = [
   { name: 'Roberto Silva', message: 'Que Deus abençoe a todos! 🙏 Em nome de jesus' },
   { name: 'Carla Fernandes', message: 'Cheguei agora, o que tá acontecendo? Já começou?' },
   { name: 'Ediene Silva', message: 'ó Jesus e Maria fortalece minha vida e a de João Batista na união vinda de vós pelo espírito santo amém' },
@@ -131,6 +132,35 @@ const ChatMessage = ({ name, message, isSupport = false }: { name: string; messa
 );
 
 export default function SantoAntonioPage() {
+  const [viewerCount, setViewerCount] = useState(55452);
+  const [displayedMessages, setDisplayedMessages] = useState(allChatMessages.slice(0, 15));
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const countInterval = setInterval(() => {
+      setViewerCount(prevCount => prevCount + Math.floor(Math.random() * 21) - 10);
+    }, 3000);
+
+    let messageIndex = 15;
+    const messageInterval = setInterval(() => {
+      if (messageIndex < allChatMessages.length) {
+        setDisplayedMessages(prevMessages => [...prevMessages, allChatMessages[messageIndex]]);
+        messageIndex++;
+      } else {
+        clearInterval(messageInterval);
+      }
+    }, 2500);
+
+    return () => {
+      clearInterval(countInterval);
+      clearInterval(messageInterval);
+    };
+  }, []);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [displayedMessages]);
+
   return (
     <div className="bg-white text-black min-h-screen font-sans">
       {/* Header */}
@@ -171,12 +201,12 @@ export default function SantoAntonioPage() {
             Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo às 01:08, 28/06/2025.
           </h1>
           <div className="text-sm text-neutral-600 mb-4">
-            <span className="font-bold">55.452 assistindo agora</span>
+            <span className="font-bold">{viewerCount.toLocaleString('pt-BR')} assistindo agora</span>
           </div>
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
               <Avatar>
-                <AvatarImage src="https://yt3.ggpht.com/ytc/AIdro_k3w_q8d-PQ1G1kL2Zo_3Bx-i2a-2jJdeN5fA=s48-c-k-c0x00ffffff-no-rj" alt="Fernando Lisboa" />
+                <AvatarImage src="https://xn--oraaosecreta-mdb.site/live/images/osa_foto_perfil_padre.webp" alt="Fernando Lisboa" />
                 <AvatarFallback>FL</AvatarFallback>
               </Avatar>
               <div>
@@ -198,9 +228,10 @@ export default function SantoAntonioPage() {
             </div>
             <ScrollArea className="flex-1 p-2">
               <div className="flex flex-col gap-2">
-                {chatMessages.map((msg, index) => (
+                {displayedMessages.map((msg, index) => (
                   <ChatMessage key={index} name={msg.name} message={msg.message} isSupport={msg.isSupport} />
                 ))}
+                <div ref={messagesEndRef} />
               </div>
             </ScrollArea>
             <div className="p-4 border-t border-neutral-200">
@@ -208,6 +239,7 @@ export default function SantoAntonioPage() {
                 <Input
                   placeholder="Chat..."
                   className="bg-white border-neutral-300 rounded-full h-10 pl-4 pr-10"
+                  disabled
                 />
                 <Smile className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-500" />
               </div>

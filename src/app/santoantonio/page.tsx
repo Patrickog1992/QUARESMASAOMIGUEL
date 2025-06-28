@@ -189,9 +189,9 @@ export default function SantoAntonioPage() {
           <div className="w-full max-w-lg flex">
             <Input
               placeholder="Pesquisar"
-              className="bg-gray-100 border-neutral-300 rounded-l-full rounded-r-none h-10 px-4 flex-1 focus:ring-1 focus:ring-blue-500 border-r-0"
+              className="bg-white border-neutral-300 rounded-l-full rounded-r-none h-10 px-4 flex-1 focus:ring-1 focus:ring-blue-500 border-r-0"
             />
-            <Button variant="secondary" className="bg-gray-100 hover:bg-gray-200 rounded-r-full rounded-l-none h-10 px-6 border border-neutral-300 border-l-0">
+            <Button variant="secondary" className="bg-white hover:bg-gray-100 rounded-r-full rounded-l-none h-10 px-6 border border-neutral-300 border-l-0">
               <Search className="h-5 w-5" />
             </Button>
           </div>
@@ -250,18 +250,18 @@ export default function SantoAntonioPage() {
         </div>
 
         {/* Chat Section */}
-        <div className="w-full border-t lg:border-t-0 lg:border-l flex flex-col max-h-screen">
+        <div className="w-full border-t lg:border-t-0 lg:border-l flex flex-col">
           <div className="p-4 border-b shrink-0">
             <h2 className="font-bold">Live chat</h2>
           </div>
-          <div className="flex-1 overflow-y-auto p-2">
+          <div className="flex-1 p-2">
             <div className="flex flex-col gap-2">
               {allChatMessages.map((msg, index) => (
                 <ChatMessage key={index} {...msg} />
               ))}
             </div>
           </div>
-          <div className="p-4 border-t bg-gray-50 shrink-0">
+          <div className="p-4 border-t bg-white shrink-0">
             <div className="relative">
               <Input
                 placeholder="Chat..."

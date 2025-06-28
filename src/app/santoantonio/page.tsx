@@ -135,18 +135,6 @@ export default function SantoAntonioPage() {
   const [liveTime, setLiveTime] = useState('');
 
   useEffect(() => {
-    const scriptId = "converteai-v4-script-santoantonio";
-    if (document.getElementById(scriptId)) {
-        return; 
-    }
-    const s = document.createElement("script");
-    s.id = scriptId;
-    s.src = "https://scripts.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685f710952325b14a81dc1dd/v4/player.js";
-    s.async = true;
-    document.head.appendChild(s);
-  }, []);
-
-  useEffect(() => {
     const now = new Date();
     const time = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     const date = now.toLocaleDateString('pt-BR');

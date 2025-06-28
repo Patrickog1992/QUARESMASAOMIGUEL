@@ -194,7 +194,7 @@ export default function SantoAntonioPage() {
         <div className="flex flex-col px-4 lg:px-6 py-4">
           <div
             id="video-container"
-            className="relative w-full bg-black"
+            className="relative w-full bg-black aspect-video"
           >
             <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
           </div>
@@ -225,11 +225,11 @@ export default function SantoAntonioPage() {
         </div>
 
         {/* Chat Section */}
-        <div className="w-full border-t lg:border-t-0 lg:border-l">
+        <div className="w-full border-t lg:border-t-0 lg:border-l flex flex-col max-h-screen">
           <div className="p-4 border-b shrink-0">
             <h2 className="font-bold">Live chat</h2>
           </div>
-          <div className="p-2">
+          <div className="flex-1 overflow-y-auto p-2">
             <div className="flex flex-col gap-2">
               {allChatMessages.map((msg, index) => (
                 <ChatMessage key={index} {...msg} />

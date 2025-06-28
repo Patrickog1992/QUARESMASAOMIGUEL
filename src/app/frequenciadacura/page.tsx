@@ -226,7 +226,7 @@ export default function FrequenciaDaCuraPage() {
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">
-              As frequências da cura de Santo Antônio | Live Ao Vivo {liveTime && `${liveTime}.`}
+              Padre Fernando Lisboa | As frequências da cura oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
             </h1>
             <div className="text-sm text-neutral-600 mb-4">
               <span className="font-bold">{viewerCount.toLocaleString('pt-BR')} assistindo agora</span>

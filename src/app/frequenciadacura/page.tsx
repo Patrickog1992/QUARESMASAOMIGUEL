@@ -83,7 +83,7 @@ const allChatMessages: ChatMessageData[] = [
   { name: 'Priscila', message: '🙌🙌🙌' },
   { name: 'Denise Rocha', message: 'Não é à toa que a Maçonaria escondeu isso' },
   { name: 'Heloísa Cardoso', message: 'Deus escolheu o momento certo pra revelar isso' },
-  { name: 'Paulo G.', message: 'Eu sabia que os maçons escondiam algo secreto...' },
+  { name: 'Paulo G.', message: 'Eu sabia que los maçons escondiam algo secreto...' },
   { name: 'Lívia Santos', message: 'Então é isso que os judeus usam há séculos pra atrair riqueza? 😮✨' },
   { name: 'Ruth Cardoso', message: 'Eu sabia que o Neymar tinha esses segredinhos' },
   { name: 'Carlos M.', message: 'Luciano Huck?? Nunca imaginei ele envolvido nisso 😳' },
@@ -132,15 +132,7 @@ const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }
 export default function FrequenciaDaCuraPage() {
   const [viewerCount] = useState(55452);
   const [liveTime, setLiveTime] = useState('');
-  const [showBuyButton, setShowBuyButton] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowBuyButton(true);
-    }, (7 * 60 + 45) * 1000); // 7 minutes and 45 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
+  const [showBuyButton] = useState(true);
 
   useEffect(() => {
     const now = new Date();

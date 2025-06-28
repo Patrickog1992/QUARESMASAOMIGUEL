@@ -183,7 +183,7 @@ export default function SantoAntonioPage() {
       </header>
 
       <main className="flex flex-col lg:flex-row flex-1 overflow-hidden">
-        <div className="flex-1 p-4 overflow-y-auto">
+        <div className="flex-1 p-4">
           <div className="aspect-video bg-black rounded-lg mb-4">
             <div id="vid-685f710952325b14a81dc1dd" style={{ display: 'block', margin: '0 auto', width: '100%', height: '100%' }}></div>
           </div>

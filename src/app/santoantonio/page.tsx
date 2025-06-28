@@ -159,9 +159,9 @@ export default function SantoAntonioPage() {
   }, []);
 
   return (
-    <div className="bg-white text-black font-sans h-screen flex flex-col">
+    <div className="bg-white text-black font-sans">
       <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 sticky top-0 shrink-0">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-1">
           <Menu className="h-6 w-6 text-neutral-800" />
           <Image
             src="https://classic.exame.com/wp-content/uploads/2017/08/new-youtube-logo-840x402.jpg"
@@ -171,31 +171,30 @@ export default function SantoAntonioPage() {
             className="object-contain"
             data-ai-hint="youtube logo"
           />
-        </div>
-        <div className="flex-1 max-w-2xl mx-4 hidden sm:flex">
-          <Input 
-            placeholder="Pesquisar"
-            className="bg-gray-100 border-neutral-300 rounded-l-full rounded-r-none h-10 px-4 flex-1 focus:ring-1 focus:ring-blue-500 border-r-0"
-          />
-          <Button variant="secondary" className="bg-gray-100 hover:bg-gray-200 rounded-r-full rounded-l-none h-10 px-6 border border-neutral-300 border-l-0">
-            <Search className="h-5 w-5" />
-          </Button>
+          <div className="w-full max-w-lg mx-4 hidden sm:flex">
+            <Input 
+              placeholder="Pesquisar"
+              className="bg-gray-100 border-neutral-300 rounded-l-full rounded-r-none h-10 px-4 flex-1 focus:ring-1 focus:ring-blue-500 border-r-0"
+            />
+            <Button variant="secondary" className="bg-gray-100 hover:bg-gray-200 rounded-r-full rounded-l-none h-10 px-6 border border-neutral-300 border-l-0">
+              <Search className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
         <div className="flex items-center gap-4">
           <UserCircle className="h-8 w-8 text-neutral-800" />
         </div>
       </header>
 
-      <main className="grid grid-cols-1 lg:grid-cols-[1fr_402px] flex-grow overflow-hidden">
+      <main className="grid grid-cols-1 lg:grid-cols-[1fr_402px]">
         {/* Video and Info Section */}
         <div className="flex flex-col px-4 lg:px-6 py-4">
           <div
             id="video-container"
             className="relative w-full bg-black"
-            dangerouslySetInnerHTML={{
-              __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>`
-            }}
-          />
+          >
+            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
+          </div>
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">
@@ -223,11 +222,11 @@ export default function SantoAntonioPage() {
         </div>
 
         {/* Chat Section */}
-        <div className="w-full border-l flex flex-col overflow-hidden">
+        <div className="w-full border-t lg:border-t-0 lg:border-l">
           <div className="p-4 border-b shrink-0">
             <h2 className="font-bold">Live chat</h2>
           </div>
-          <div className="flex-1 overflow-y-auto p-2">
+          <div className="p-2">
             <div className="flex flex-col gap-2">
               {allChatMessages.map((msg, index) => (
                 <ChatMessage key={index} {...msg} />
@@ -249,3 +248,5 @@ export default function SantoAntonioPage() {
     </div>
   );
 }
+
+    

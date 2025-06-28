@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Menu, Search, Smile, UserCircle } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -171,10 +171,6 @@ export default function FrequenciaDaCuraPage() {
     window.open('https://pay.kirvano.com/2d0b11fd-7cc5-4e38-bbbe-04158ec5a79e', '_self');
   };
   
-  const videoPlayer = useMemo(() => {
-    return <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685fefad80579a0ff032f65c" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />;
-  }, []);
-
   return (
     <div className="bg-white text-black font-sans">
       <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 sticky top-0 shrink-0">
@@ -213,7 +209,7 @@ export default function FrequenciaDaCuraPage() {
             id="video-container"
             className="relative w-full aspect-video"
           >
-            {videoPlayer}
+            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685fefad80579a0ff032f65c" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
           </div>
 
           <div className="mt-8 text-center">

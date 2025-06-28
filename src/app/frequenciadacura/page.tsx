@@ -129,18 +129,41 @@ const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }
   </div>
 );
 
-export default function FrequenciaDaCuraPage() {
-  const [viewerCount] = useState(55452);
-  const [liveTime, setLiveTime] = useState('');
-  const [showBuyButton, setShowBuyButton] = useState(false);
+const BuyButton = () => {
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
+    // Show after 5 seconds for testing
     const timer = setTimeout(() => {
-      setShowBuyButton(true);
-    }, 5000); // 5 seconds for testing
+      setShow(true);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
+
+  const handleBuyClick = () => {
+    window.open('https://pay.kirvano.com/2d0b11fd-7cc5-4e38-bbbe-04158ec5a79e', '_self');
+  };
+  
+  // Reserve space to prevent layout shift
+  if (!show) {
+    return <div className="h-[76px] md:h-[92px]" />;
+  }
+
+  return (
+    <Button
+      size="lg"
+      className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
+      onClick={handleBuyClick}
+    >
+      EU QUERO A FREQUÊNCIA
+    </Button>
+  );
+};
+
+export default function FrequenciaDaCuraPage() {
+  const [viewerCount] = useState(55452);
+  const [liveTime, setLiveTime] = useState('');
 
   useEffect(() => {
     const now = new Date();
@@ -166,10 +189,6 @@ export default function FrequenciaDaCuraPage() {
       }
     };
   }, []);
-
-  const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/2d0b11fd-7cc5-4e38-bbbe-04158ec5a79e', '_self');
-  };
   
   return (
     <div className="bg-white text-black font-sans">
@@ -213,15 +232,7 @@ export default function FrequenciaDaCuraPage() {
           </div>
 
           <div className="mt-8 text-center">
-            {showBuyButton && (
-                <Button
-                    size="lg"
-                    className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
-                    onClick={handleBuyClick}
-                >
-                    EU QUERO A FREQUÊNCIA
-                </Button>
-            )}
+            <BuyButton />
           </div>
 
           <div className="mt-4">

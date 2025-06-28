@@ -7,7 +7,7 @@ import { TopBanner } from '@/components/landing/top-banner';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Oferta Especial - 40 Orações Secretas',
+  title: 'Oferta Especial - Orações Secretas',
   description: 'Descubra as orações secretas que estavam guardadas a 7 chaves no vaticano.',
 };
 

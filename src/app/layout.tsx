@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { DisableDevTools } from '@/components/disable-devtools';
 
 export const metadata: Metadata = {
-  title: 'A Quaresma do Padre Pio',
-  description: 'Hoje pode ser o dia da sua vitória: descubra como restaurar sua saúde e sua vida',
+  title: 'Orações Secretas',
+  description: 'Hoje pode ser o dia da sua vitória: descubra as orações secretas para restaurar sua saúde e sua vida',
 };
 
 export default function RootLayout({

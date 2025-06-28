@@ -8,7 +8,7 @@ import { TopBanner } from '@/components/landing/top-banner';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '40 Orações Secretas - Toque do Arcanjo Miguel',
+  title: 'Orações Secretas - Toque do Arcanjo Miguel',
   description: 'Descubra as orações secretas que estavam guardadas a 7 chaves no vaticano.',
 };
 

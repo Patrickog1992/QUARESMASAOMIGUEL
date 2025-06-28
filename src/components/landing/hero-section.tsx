@@ -7,11 +7,11 @@ export function HeroSection() {
       <Card className="bg-accent text-accent-foreground p-2 md:p-4 rounded-xl shadow-lg mb-8 max-w-2xl w-full">
         <h1 className="font-headline text-lg sm:text-2xl md:text-4xl font-bold uppercase tracking-wide flex items-center justify-center gap-2 md:gap-3">
           <BookOpen className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10" />
-          <span className="whitespace-nowrap">Quaresma do Padre Pio</span>
+          <span className="whitespace-nowrap">Orações Secretas</span>
         </h1>
       </Card>
       <h2 className="font-headline text-xl md:text-3xl font-bold max-w-3xl">
-        Hoje pode ser o dia da sua vitória: descubra como restaurar sua saúde e sua vida
+        Hoje pode ser o dia da sua vitória: descubra as orações secretas para restaurar sua saúde e sua vida
       </h2>
       <p className="mt-4 text-primary font-bold uppercase tracking-wider animate-pulse md:text-lg">
         VEJA O VÍDEO

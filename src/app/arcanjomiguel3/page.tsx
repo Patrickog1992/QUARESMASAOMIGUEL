@@ -7,8 +7,8 @@ import { TopBanner } from '@/components/landing/top-banner';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Oferta Especial - 40 Orações Secretas',
-  description: 'Aproveite o desconto especial nas 40 orações secretas.',
+  title: 'Oferta Especial - Orações Secretas',
+  description: 'Aproveite o desconto especial nas orações secretas.',
 };
 
 export const dynamic = 'force-dynamic';

@@ -70,7 +70,7 @@ export function VSLSection() {
             className="font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
             onClick={handleBuyClick}
           >
-            QUERO RECEBER A QUARESMA DO PADRE PIO
+            QUERO RECEBER AS ORAÇÕES SECRETAS
           </Button>
         </div>
       )}

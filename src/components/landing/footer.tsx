@@ -10,7 +10,7 @@ export function Footer() {
           <Link href="#" className="hover:text-foreground transition-colors">Política de Devolução</Link>
         </div>
         <p className="text-xs">
-          ©︎ 2025 Quaresma do Padre Pio. Todos os direitos reservados.
+          ©︎ 2025 Orações Secretas. Todos os direitos reservados.
         </p>
       </div>
     </footer>

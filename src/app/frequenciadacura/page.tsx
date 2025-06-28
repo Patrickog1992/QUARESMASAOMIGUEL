@@ -168,7 +168,7 @@ export default function FrequenciaDaCuraPage() {
   }, []);
 
   const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/42887aa4-262c-435e-b91c-42a8f8f4d849', '_self');
+    window.open('https://pay.kirvano.com/2d0b11fd-7cc5-4e38-bbbe-04158ec5a79e', '_self');
   };
 
   return (

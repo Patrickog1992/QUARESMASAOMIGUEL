@@ -1,20 +1,12 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Menu, Search, Smile, UserCircle } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Badge } from '@/components/ui/badge';
-
-// Using a simplified metadata approach for client components
-// export const metadata: Metadata = {
-//   title: 'Oração de Santo Antônio | Ao Vivo',
-//   description: 'A oração de Santo Antônio escondida pela Maçonaria.',
-// };
 
 type ChatMessageData = {
   name: string;
@@ -125,10 +117,10 @@ const allChatMessages: ChatMessageData[] = [
   { name: 'Patrícia Silveira', message: 'Padre, é verdade que a oração funciona até pra quem tá afastado da fé? 😢' },
 ];
 
-const ChatMessage = ({ name, message, avatarUrl, isSupport = false }: { name: string; message: string; avatarUrl?: string; isSupport?: boolean }) => (
+const ChatMessage = ({ name, message, avatarUrl, isSupport = false }: ChatMessageData) => (
   <div className="flex items-start gap-2 p-2 hover:bg-gray-200/50 rounded-md">
     <Avatar className="h-6 w-6">
-      {avatarUrl ? <AvatarImage src={avatarUrl} alt={name} /> : <AvatarFallback>{name.charAt(0)}</AvatarFallback>}
+      {avatarUrl ? <AvatarImage src={avatarUrl} alt={name} /> : <AvatarFallback className="bg-neutral-300 text-black text-xs">{name.charAt(0)}</AvatarFallback>}
     </Avatar>
     <div className="flex-1">
       <span className={`text-sm font-semibold ${isSupport ? 'text-yellow-500' : 'text-neutral-500'}`}>{name}</span>
@@ -139,11 +131,14 @@ const ChatMessage = ({ name, message, avatarUrl, isSupport = false }: { name: st
 
 export default function SantoAntonioPage() {
   const [viewerCount, setViewerCount] = useState(55452);
-  const [displayedMessages, setDisplayedMessages] = useState<ChatMessageData[]>(allChatMessages.slice(0, 15));
+  const [displayedMessages, setDisplayedMessages] = useState<ChatMessageData[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [liveTime, setLiveTime] = useState('');
 
   useEffect(() => {
+    // Set initial messages
+    setDisplayedMessages(allChatMessages.slice(0, 15));
+
     const now = new Date();
     const time = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     const date = now.toLocaleDateString('pt-BR');
@@ -161,7 +156,8 @@ export default function SantoAntonioPage() {
         setDisplayedMessages(prevMessages => [...prevMessages, allChatMessages[messageIndex]]);
         messageIndex++;
       } else {
-        clearInterval(messageInterval);
+        // Optional: loop comments
+        // messageIndex = 0;
       }
     }, 2500);
 
@@ -205,9 +201,9 @@ export default function SantoAntonioPage() {
       </header>
 
       {/* Main Content */}
-      <main className="flex flex-col lg:flex-row p-4 gap-4 flex-1 overflow-hidden">
+      <main className="flex flex-col lg:flex-row flex-1 overflow-hidden">
         {/* Video Section */}
-        <div className="lg:flex-1 lg:overflow-y-auto">
+        <div className="flex-1 p-4 overflow-y-auto">
           <div className="aspect-video bg-black rounded-lg mb-4 flex items-center justify-center">
             <p className="text-neutral-400">[Simulação de Vídeo]</p>
           </div>
@@ -235,8 +231,8 @@ export default function SantoAntonioPage() {
         </div>
 
         {/* Chat Section */}
-        <div className="w-full lg:w-96 lg:max-w-sm flex-shrink-0 flex flex-col flex-1 min-h-0 lg:flex-none">
-          <div className="bg-gray-50 rounded-lg border border-neutral-200 h-full flex flex-col">
+        <div className="w-full lg:w-96 lg:max-w-sm flex flex-col flex-shrink-0 border-t lg:border-t-0 lg:border-l border-neutral-200">
+          <div className="bg-gray-50 h-full flex flex-col min-h-0">
             <div className="p-4 border-b border-neutral-200">
               <h2 className="font-bold">Live chat</h2>
             </div>
@@ -248,7 +244,7 @@ export default function SantoAntonioPage() {
                 <div ref={messagesEndRef} />
               </div>
             </ScrollArea>
-            <div className="p-4 border-t border-neutral-200">
+            <div className="p-4 border-t border-neutral-200 bg-gray-50">
               <div className="relative">
                 <Input
                   placeholder="Chat..."

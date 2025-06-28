@@ -185,16 +185,7 @@ export default function SantoAntonioPage() {
         <div className="lg:col-span-2">
           <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
             <div id="vid_685f710952325b14a81dc1dd" style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}>
-              <img
-                id="thumb_685f710952325b14a81dc1dd"
-                src="https://images.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685f710952325b14a81dc1dd/thumbnail.jpg"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                alt="Video Thumbnail"
-              />
-              <div
-                id="backdrop_685f710952325b14a81dc1dd"
-                style={{ WebkitBackdropFilter: 'blur(5px)', backdropFilter: 'blur(5px)', position: 'absolute', top: 0, height: '100%', width: '100%' }}
-              ></div>
+              {/* The converte.ai script will inject the player here. */}
             </div>
           </div>
           <div className="mt-4">
@@ -223,11 +214,11 @@ export default function SantoAntonioPage() {
         </div>
 
         <div className="w-full">
-          <div className="border rounded-lg flex flex-col">
+          <div className="border rounded-lg flex flex-col h-full">
             <div className="p-4 border-b">
               <h2 className="font-bold">Live chat</h2>
             </div>
-            <div className="p-2">
+            <div className="flex-1 overflow-y-auto p-2">
               <div className="flex flex-col gap-2">
                 {displayedMessages.map((msg, index) => (
                   <ChatMessage key={index} {...msg} />

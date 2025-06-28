@@ -150,12 +150,12 @@ export default function FrequenciaDaCuraPage() {
   }, []);
   
   useEffect(() => {
-    const scriptId = "vturb-player-script-685f710952325b14a81dc1dd";
+    const scriptId = "vturb-player-script-685fefad80579a0ff032f65c";
     if (document.getElementById(scriptId)) return;
 
     const script = document.createElement("script");
     script.id = scriptId;
-    script.src = "https://scripts.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685f710952325b14a81dc1dd/v4/player.js";
+    script.src = "https://scripts.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685fefad80579a0ff032f65c/v4/player.js";
     script.async = true;
     document.head.appendChild(script);
 
@@ -209,7 +209,7 @@ export default function FrequenciaDaCuraPage() {
             id="video-container"
             className="relative w-full bg-black aspect-video"
           >
-            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
+            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685fefad80579a0ff032f65c" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
           </div>
 
           <div className="mt-8 text-center">
@@ -226,7 +226,7 @@ export default function FrequenciaDaCuraPage() {
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">
-              Padre Fernando Lisboa | As Frequências da Cura: a oração escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
+              As frequências da cura de Santo Antônio | Live Ao Vivo {liveTime && `${liveTime}.`}
             </h1>
             <div className="text-sm text-neutral-600 mb-4">
               <span className="font-bold">{viewerCount.toLocaleString('pt-BR')} assistindo agora</span>

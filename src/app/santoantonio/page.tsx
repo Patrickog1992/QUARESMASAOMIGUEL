@@ -191,7 +191,7 @@ export default function SantoAntonioPage() {
         <div className="flex flex-col overflow-y-auto px-4 lg:px-6 py-4">
           <div
             id="video-container"
-            className="relative w-full aspect-video bg-black"
+            className="relative w-full bg-black"
             dangerouslySetInnerHTML={{
               __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>`
             }}

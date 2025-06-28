@@ -131,7 +131,6 @@ const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }
 
 export default function SantoAntonioPage() {
   const [viewerCount] = useState(55452);
-  const [displayedMessages] = useState<ChatMessageData[]>(allChatMessages);
   const [liveTime, setLiveTime] = useState('');
 
   useEffect(() => {
@@ -140,10 +139,28 @@ export default function SantoAntonioPage() {
     const date = now.toLocaleDateString('pt-BR');
     setLiveTime(`às ${time}, ${date}`);
   }, []);
+  
+  useEffect(() => {
+    const scriptId = "vturb-player-script-685f710952325b14a81dc1dd";
+    if (document.getElementById(scriptId)) return;
+
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.src = "https://scripts.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685f710952325b14a81dc1dd/v4/player.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      const existingScript = document.getElementById(scriptId);
+      if (existingScript && existingScript.parentNode) {
+        existingScript.parentNode.removeChild(existingScript);
+      }
+    };
+  }, []);
 
   return (
-    <div className="bg-white text-black font-sans">
-      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 sticky top-0">
+    <div className="bg-white text-black font-sans h-screen flex flex-col">
+      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 sticky top-0 shrink-0">
         <div className="flex items-center gap-4">
           <Menu className="h-6 w-6 text-neutral-800" />
           <Image
@@ -169,13 +186,17 @@ export default function SantoAntonioPage() {
         </div>
       </header>
 
-      <main className="grid grid-cols-1 lg:grid-cols-[1fr_402px] p-4 lg:p-6 gap-6">
-        <div>
-          <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
-            <div id="vid_685f710952325b14a81dc1dd" style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}>
-              Coloque o video aqui
-            </div>
-          </div>
+      <main className="grid grid-cols-1 lg:grid-cols-[1fr_402px] flex-grow overflow-hidden">
+        {/* Video and Info Section */}
+        <div className="flex flex-col overflow-y-auto px-4 lg:px-6 py-4">
+          <div
+            id="video-container"
+            className="relative w-full aspect-video bg-black"
+            dangerouslySetInnerHTML={{
+              __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>`
+            }}
+          />
+
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">
               Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
@@ -201,27 +222,26 @@ export default function SantoAntonioPage() {
           </div>
         </div>
 
-        <div className="w-full">
-          <div className="border rounded-lg flex flex-col">
-            <div className="p-4 border-b">
-              <h2 className="font-bold">Live chat</h2>
+        {/* Chat Section */}
+        <div className="w-full border-l flex flex-col overflow-hidden">
+          <div className="p-4 border-b shrink-0">
+            <h2 className="font-bold">Live chat</h2>
+          </div>
+          <div className="flex-1 overflow-y-auto p-2">
+            <div className="flex flex-col gap-2">
+              {allChatMessages.map((msg, index) => (
+                <ChatMessage key={index} {...msg} />
+              ))}
             </div>
-            <div className="flex-1 overflow-y-auto p-2" style={{maxHeight: 'calc(100vh - 250px)'}}>
-              <div className="flex flex-col gap-2">
-                {displayedMessages.map((msg, index) => (
-                  <ChatMessage key={index} {...msg} />
-                ))}
-              </div>
-            </div>
-            <div className="p-4 border-t bg-gray-50">
-              <div className="relative">
-                <Input
-                  placeholder="Chat..."
-                  className="bg-white border-neutral-300 rounded-full h-10 pl-4 pr-10"
-                  disabled
-                />
-                <Smile className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-500" />
-              </div>
+          </div>
+          <div className="p-4 border-t bg-gray-50 shrink-0">
+            <div className="relative">
+              <Input
+                placeholder="Chat..."
+                className="bg-white border-neutral-300 rounded-full h-10 pl-4 pr-10"
+                disabled
+              />
+              <Smile className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-500" />
             </div>
           </div>
         </div>

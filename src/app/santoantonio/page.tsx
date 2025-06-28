@@ -185,7 +185,7 @@ export default function SantoAntonioPage() {
         <div>
           <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
             <div id="vid_685f710952325b14a81dc1dd" style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}>
-              {/* The converte.ai script will inject the player here. */}
+              Coloque o video aqui
             </div>
           </div>
           <div className="mt-4">

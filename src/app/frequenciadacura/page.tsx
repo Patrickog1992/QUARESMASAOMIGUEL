@@ -137,7 +137,7 @@ export default function FrequenciaDaCuraPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (36 * 60 + 38) * 1000); // 36 minutes and 38 seconds
+    }, (7 * 60 + 45) * 1000); // 7 minutes and 45 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -207,7 +207,7 @@ export default function FrequenciaDaCuraPage() {
         <div className="flex flex-col px-4 lg:px-6 py-4">
           <div
             id="video-container"
-            className="relative w-full bg-black aspect-video"
+            className="relative w-full aspect-video"
           >
             <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685fefad80579a0ff032f65c" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
           </div>
@@ -219,7 +219,7 @@ export default function FrequenciaDaCuraPage() {
                     className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
                     onClick={handleBuyClick}
                 >
-                    EU QUERO ESSAS ORAÇÕES
+                    EU QUERO A FREQUÊNCIA
                 </Button>
             )}
           </div>

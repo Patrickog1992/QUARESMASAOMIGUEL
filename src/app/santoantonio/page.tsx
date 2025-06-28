@@ -203,6 +203,16 @@ export default function SantoAntonioPage() {
             <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
           </div>
 
+          <div className="mt-8 text-center">
+            <Button
+              size="lg"
+              className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
+              onClick={handleBuyClick}
+            >
+              EU QUERO ESSAS ORAÇÕES
+            </Button>
+          </div>
+
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">
               Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
@@ -225,16 +235,6 @@ export default function SantoAntonioPage() {
                 Inscrever-se
               </Button>
             </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <Button
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
-              onClick={handleBuyClick}
-            >
-              EU QUERO ESSAS ORAÇÕES
-            </Button>
           </div>
         </div>
 

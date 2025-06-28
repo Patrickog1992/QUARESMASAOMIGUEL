@@ -183,8 +183,19 @@ export default function SantoAntonioPage() {
 
       <main className="grid grid-cols-1 lg:grid-cols-3 max-w-screen-2xl mx-auto p-4 gap-6">
         <div className="lg:col-span-2">
-          <div className="aspect-video bg-black rounded-lg mb-4">
-            <div id="vid-685f710952325b14a81dc1dd" style={{ display: 'block', margin: '0 auto', width: '100%', height: '100%' }}></div>
+          <div className="relative overflow-hidden rounded-lg shadow-lg mb-4">
+            <div id="vid_685f710952325b14a81dc1dd" style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}>
+              <img
+                id="thumb_685f710952325b14a81dc1dd"
+                src="https://images.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685f710952325b14a81dc1dd/thumbnail.jpg"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                alt="Video Thumbnail"
+              />
+              <div
+                id="backdrop_685f710952325b14a81dc1dd"
+                style={{ WebkitBackdropFilter: 'blur(5px)', backdropFilter: 'blur(5px)', position: 'absolute', top: 0, height: '100%', width: '100%' }}
+              ></div>
+            </div>
           </div>
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">

@@ -15,29 +15,6 @@ import { Badge } from '@/components/ui/badge';
 //   description: 'A oração de Santo Antônio escondida pela Maçonaria.',
 // };
 
-const YoutubeLogo = () => (
-  <svg
-    width="90"
-    height="20"
-    viewBox="0 0 90 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M27.99 19.14a2.9 2.9 0 01-2.05-.85 2.87 2.87 0 01-.85-2.05V3.76a2.87 2.87 0 01.85-2.05 2.9 2.9 0 012.05-.85c.78 0 1.45.29 2.05.85a2.87 2.87 0 01.85 2.05v12.48a2.87 2.87 0 01-.85 2.05 2.9 2.9 0 01-2.05.85zm0-2.3c.31 0 .58-.1.79-.31a2.12 2.12 0 00.32-.8V4.18a2.12 2.12 0 00-.32-.8 2.39 2.39 0 00-.79-.32 2.39 2.39 0 00-.8.32 2.12 2.12 0 00-.31.8v11.64c0 .33.1.6.31.8.22.22.49.31.8.31zM34.58 19.14a2.9 2.9 0 01-2.05-.85 2.87 2.87 0 01-.85-2.05V3.76a2.87 2.87 0 01.85-2.05 2.9 2.9 0 012.05-.85c.78 0 1.45.29 2.05.85a2.87 2.87 0 01.85 2.05v12.48a2.87 2.87 0 01-.85 2.05 2.9 2.9 0 01-2.05.85zm0-2.3c.31 0 .58-.1.79-.31a2.12 2.12 0 00.32-.8V4.18a2.12 2.12 0 00-.32-.8 2.39 2.39 0 00-.79-.32 2.39 2.39 0 00-.8.32 2.12 2.12 0 00-.31.8v11.64c0 .33.1.6.31.8.22.22.49.31.8.31zM44.49 19.34a5.2 5.2 0 01-2.33-.48 4.01 4.01 0 01-1.72-1.42l1.9-1.2a1.86 1.86 0 00.9.83c.32.17.66.25 1.02.25.38 0 .69-.07.9-.22.22-.15.33-.35.33-.61 0-.2-.07-.37-.2-.51a1.2 1.2 0 00-.53-.33 5.99 5.99 0 00-1.1-.33 8.33 8.33 0 01-2.14-.7 3.5 3.5 0 01-1.37-1.28c-.33-.5-.5-1.1-.5-1.81 0-.8.25-1.5.74-2.12a4.4 4.4 0 012-1.47 5.2 5.2 0 012.6-.53c.87 0 1.67.18 2.4.54a4.2 4.2 0 011.8 1.5l-1.98 1.2a2.3 2.3 0 00-1-.87 2.2 2.2 0 00-1.12-.31c-.39 0-.69.07-.89.22s-.3.35-.3.6c0 .2.06.36.19.49.13.13.3.24.52.34.22.09.5.18.84.28a7.83 7.83 0 012.21.72 3.4 3.4 0 011.6 1.5c.36.57.54 1.25.54 2.04 0 .84-.25 1.57-.74 2.19a4.47 4.47 0 01-2.04 1.47 5.7 5.7 0 01-2.8.54zM53.64 19.14a4.42 4.42 0 01-3.2-1.3l-.1.94-2.5.3V.94h2.55v11.75c0 .6.14 1.04.43 1.32.29.28.67.43 1.15.43.43 0 .78-.1 1.06-.3a2.3 2.3 0 00.67-.8V.94h2.55v17.4h-2.1l-.2-1.25a4.15 4.15 0 01-3.23 1.95zM60.7 13.94l-1.95-9.3h2.7l1.05 4.95c.18.87.32 1.55.42 2.05h.1c.07-.5.2-1.18.4-2.05l1.1-4.95h2.7l-1.94 9.3v5.4h-2.5v-5.4zM67.8 19.14a4.91 4.91 0 01-3.52-1.45A4.91 4.91 0 0162.83 14a4.91 4.91 0 011.45-3.52A4.91 4.91 0 0167.8 9a4.91 4.91 0 013.52 1.45A4.91 4.91 0 0172.77 14a4.91 4.91 0 01-1.45 3.52A4.91 4.91 0 0167.8 19.14zm0-2.29c.6 0 1.1-.2 1.52-.61.42-.4.63-.94.63-1.61 0-.67-.21-1.2-.63-1.6a2.12 2.12 0 00-1.52-.62 2.12 2.12 0 00-1.52.62c-.42.4-.63.93-.63 1.6 0 .67.21 1.2.63 1.61.42.4.92.61 1.52.61zM78.68 19.14a2.76 2.76 0 01-1.97-.83 2.8 2.8 0 01-.83-2V.94h2.55v15.22c0 .4.1.7.32.88.22.18.5.28.85.28.35 0 .63-.1.85-.28.22-.18.33-.48.33-.88V.94h2.55v15.37a2.8 2.8 0 01-.83 2 2.76 2.76 0 01-1.97.83zM89.04 19.34a5.2 5.2 0 01-2.33-.48 4.01 4.01 0 01-1.72-1.42l1.9-1.2a1.86 1.86 0 00.9.83c.32.17.66.25 1.02.25.38 0 .69-.07.9-.22.22-.15.33-.35.33-.61 0-.2-.07-.37-.2-.51a1.2 1.2 0 00-.53-.33 5.99 5.99 0 00-1.1-.33 8.33 8.33 0 01-2.14-.7 3.5 3.5 0 01-1.37-1.28c-.33-.5-.5-1.1-.5-1.81 0-.8.25-1.5.74-2.12a4.4 4.4 0 012-1.47 5.2 5.2 0 012.6-.53c.87 0 1.67.18 2.4.54a4.2 4.2 0 011.8 1.5l-1.98 1.2a2.3 2.3 0 00-1-.87 2.2 2.2 0 00-1.12-.31c-.39 0-.69.07-.89.22s-.3.35-.3.6c0 .2.06.36.19.49.13.13.3.24.52.34.22.09.5.18.84.28a7.83 7.83 0 012.21.72 3.4 3.4 0 011.6 1.5c.36.57.54 1.25.54 2.04 0 .84-.25 1.57-.74 2.19a4.47 4.47 0 01-2.04 1.47 5.7 5.7 0 01-2.8.54z"
-      fill="#fff"
-    ></path>
-    <path
-      d="M17.43 19.34c-1.72 0-3.1-.42-4.14-1.25a4.7 4.7 0 01-1.55-3.36h2.6c.07.86.4 1.52 1 1.97.6.45 1.38.68 2.34.68.8 0 1.47-.2 2.01-.6.54-.4.81-1 .81-1.81V.94h2.55v11.7c0 1.5-.42 2.62-1.25 3.36s-1.95 1.1-3.37 1.1A10.3 10.3 0 0115 18l.1-.95-2.5-.3v-2.1l.35.15c.53.22 1.1.33 1.7.33.63 0 1.16-.14 1.59-.43.43-.28.64-.7.64-1.25V.94h2.55v11.7c0 1.5-.42 2.62-1.25 3.36a3.8 3.8 0 01-2.73 1.11z"
-      fill="#fff"
-    ></path>
-    <path
-      d="M9.81 19.14a4.03 4.03 0 01-2.9-1.2A4.03 4.03 0 015.7.02l.15 2.85A1.8 1.8 0 006.37 14a1.8 1.8 0 001.35 1.79V19.14zM0 14a7 7 0 012.05-5.02A7 7 0 017.07 4a7 7 0 015.02 2.05A7 7 0 0114.14 14a7 7 0 01-2.05 5.02A7 7 0 017.07 21.07a7 7 0 01-5.02-2.05A7 7 0 010 14zm7.07-11.14a4.13 4.13 0 00-2.9 1.2 4.13 4.13 0 00-1.2 2.9c0 1.15.4 2.15 1.2 2.9a4.13 4.13 0 002.9 1.2c1.15 0 2.15-.4 2.9-1.2a4.13 4.13 0 001.2-2.9 4.13 4.13 0 00-1.2-2.9 4.13 4.13 0 00-2.9-1.2z"
-      fill="#FF0000"
-    ></path>
-  </svg>
-);
-
 const chatMessages = [
   { name: 'Roberto Silva', message: 'Que Deus abençoe a todos! 🙏 Em nome de jesus' },
   { name: 'Carla Fernandes', message: 'Cheguei agora, o que tá acontecendo? Já começou?' },
@@ -141,38 +118,45 @@ const chatMessages = [
 ];
 
 const ChatMessage = ({ name, message, isSupport = false }: { name: string; message: string; isSupport?: boolean }) => (
-  <div className="flex items-start gap-2 p-2 hover:bg-white/10 rounded-md">
+  <div className="flex items-start gap-2 p-2 hover:bg-gray-200/50 rounded-md">
     <Avatar className="h-6 w-6">
       <AvatarImage src={`https://i.pravatar.cc/32?u=${name}`} alt={name} />
       <AvatarFallback>{name.charAt(0)}</AvatarFallback>
     </Avatar>
     <div className="flex-1">
-      <span className={`text-sm font-semibold ${isSupport ? 'text-yellow-400' : 'text-neutral-400'}`}>{name}</span>
-      <p className="text-sm text-white break-words">{message}</p>
+      <span className={`text-sm font-semibold ${isSupport ? 'text-yellow-500' : 'text-neutral-500'}`}>{name}</span>
+      <p className="text-sm text-black break-words">{message}</p>
     </div>
   </div>
 );
 
 export default function SantoAntonioPage() {
   return (
-    <div className="bg-[#0f0f0f] text-white min-h-screen font-sans">
+    <div className="bg-white text-black min-h-screen font-sans">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 py-2 bg-[#212121] border-b border-neutral-700 sticky top-0 z-10">
+      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 sticky top-0 z-10">
         <div className="flex items-center gap-4">
-          <Menu className="h-6 w-6 text-white" />
-          <YoutubeLogo />
+          <Menu className="h-6 w-6 text-neutral-800" />
+          <Image
+            src="https://i.pinimg.com/1200x/10/0d/92/100d925f120c7b3c1a53b2aaea2ec11c.jpg"
+            alt="YouTube Logo"
+            width={90}
+            height={20}
+            className="object-contain"
+            data-ai-hint="youtube logo"
+          />
         </div>
         <div className="flex-1 max-w-2xl mx-4 hidden sm:flex">
           <Input 
             placeholder="Pesquisar"
-            className="bg-[#121212] border-neutral-700 rounded-l-full rounded-r-none h-10 px-4 flex-1 focus:ring-1 focus:ring-blue-500"
+            className="bg-gray-100 border-neutral-300 rounded-l-full rounded-r-none h-10 px-4 flex-1 focus:ring-1 focus:ring-blue-500 border-r-0"
           />
-          <Button variant="secondary" className="bg-neutral-700 hover:bg-neutral-600 rounded-r-full rounded-l-none h-10 px-6 border-l-0">
+          <Button variant="secondary" className="bg-gray-100 hover:bg-gray-200 rounded-r-full rounded-l-none h-10 px-6 border border-neutral-300 border-l-0">
             <Search className="h-5 w-5" />
           </Button>
         </div>
         <div className="flex items-center gap-4">
-          <UserCircle className="h-8 w-8 text-white" />
+          <UserCircle className="h-8 w-8 text-neutral-800" />
         </div>
       </header>
 
@@ -183,9 +167,12 @@ export default function SantoAntonioPage() {
           <div className="aspect-video bg-black rounded-lg mb-4 flex items-center justify-center">
             <p className="text-neutral-400">[Simulação de Vídeo]</p>
           </div>
-          <h1 className="text-xl font-bold mb-2 break-words">
+          <h1 className="text-xl font-bold mb-1 break-words">
             Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo às 01:08, 28/06/2025.
           </h1>
+          <div className="text-sm text-neutral-600 mb-4">
+            <span className="font-bold">55.452 assistindo agora</span>
+          </div>
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
               <Avatar>
@@ -194,10 +181,10 @@ export default function SantoAntonioPage() {
               </Avatar>
               <div>
                 <p className="font-semibold">Fernando Lisboa</p>
-                <p className="text-sm text-neutral-400">96 mil inscritos</p>
+                <p className="text-sm text-neutral-600">96 mil inscritos</p>
               </div>
             </div>
-            <Button className="bg-white text-black font-semibold hover:bg-neutral-200 rounded-full">
+            <Button className="bg-black text-white font-semibold hover:bg-neutral-800 rounded-full">
               Inscrever-se
             </Button>
           </div>
@@ -205,8 +192,8 @@ export default function SantoAntonioPage() {
 
         {/* Chat Section */}
         <div className="w-full lg:w-96 lg:max-w-sm flex-shrink-0">
-          <div className="bg-[#181818] rounded-lg border border-neutral-700 h-[calc(100vh-120px)] flex flex-col">
-            <div className="p-4 border-b border-neutral-700">
+          <div className="bg-gray-50 rounded-lg border border-neutral-200 h-[calc(100vh-120px)] flex flex-col">
+            <div className="p-4 border-b border-neutral-200">
               <h2 className="font-bold">Live chat</h2>
             </div>
             <ScrollArea className="flex-1 p-2">
@@ -216,13 +203,13 @@ export default function SantoAntonioPage() {
                 ))}
               </div>
             </ScrollArea>
-            <div className="p-4 border-t border-neutral-700">
+            <div className="p-4 border-t border-neutral-200">
               <div className="relative">
                 <Input
                   placeholder="Chat..."
-                  className="bg-[#121212] border-neutral-600 rounded-full h-10 pl-4 pr-10"
+                  className="bg-white border-neutral-300 rounded-full h-10 pl-4 pr-10"
                 />
-                <Smile className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+                <Smile className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-500" />
               </div>
             </div>
           </div>

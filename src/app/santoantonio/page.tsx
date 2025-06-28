@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Menu, Search, Smile, UserCircle } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -130,9 +130,8 @@ const ChatMessage = ({ name, message, avatarUrl, isSupport = false }: ChatMessag
 );
 
 export default function SantoAntonioPage() {
-  const [viewerCount, setViewerCount] = useState(55452);
-  const [displayedMessages, setDisplayedMessages] = useState<ChatMessageData[]>([]);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [viewerCount] = useState(55452);
+  const [displayedMessages] = useState<ChatMessageData[]>(allChatMessages);
   const [liveTime, setLiveTime] = useState('');
 
   useEffect(() => {
@@ -148,36 +147,11 @@ export default function SantoAntonioPage() {
   }, []);
 
   useEffect(() => {
-    setDisplayedMessages(allChatMessages.slice(0, 15));
-
     const now = new Date();
     const time = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     const date = now.toLocaleDateString('pt-BR');
     setLiveTime(`às ${time}, ${date}`);
   }, []);
-
-  useEffect(() => {
-    const countInterval = setInterval(() => {
-      setViewerCount(prevCount => prevCount + Math.floor(Math.random() * 21) - 10);
-    }, 3000);
-
-    let messageIndex = 15;
-    const messageInterval = setInterval(() => {
-      if (messageIndex < allChatMessages.length) {
-        setDisplayedMessages(prevMessages => [...prevMessages, allChatMessages[messageIndex]]);
-        messageIndex++;
-      }
-    }, 2500);
-
-    return () => {
-      clearInterval(countInterval);
-      clearInterval(messageInterval);
-    };
-  }, []);
-
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [displayedMessages]);
 
   return (
     <div className="bg-white text-black h-screen max-h-screen font-sans flex flex-col">
@@ -244,7 +218,6 @@ export default function SantoAntonioPage() {
               {displayedMessages.map((msg, index) => (
                 <ChatMessage key={index} {...msg} />
               ))}
-              <div ref={messagesEndRef} />
             </div>
           </ScrollArea>
           <div className="p-4 border-t border-neutral-200 bg-gray-50 flex-shrink-0">

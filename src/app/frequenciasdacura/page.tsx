@@ -22,7 +22,7 @@ const allChatMessages: ChatMessageData[] = [
   { name: 'Terezinha Souza', message: 'Amém, meu Deus! Só Tu és fiel ❤️', avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg', avatarHint: 'woman portrait' },
   { name: 'Sueli Andrade', message: 'Nossa, entrei bem na hora da oração… Graças a Deus 😇😇' },
   { name: 'André Luiz', message: 'Deus é maravilhoso! Amém 🙌', avatarUrl: 'https://thumbs2.imgbox.com/7b/b0/gsYWvBdF_t.jpg', avatarHint: 'man portrait' },
-  { name: 'Paulo César', message: 'Santo Antônio, guia nossos passos!' },
+  { name: 'Paulo César', message: 'Senhor, guia nossos passos!' },
   { name: 'Vera Lúcia', message: 'Abençoa, Senhor, cada família conectada nessa live 🙌🙌🙌' },
   { name: 'Iracema Nogueira', message: '❤️❤️❤️❤️❤️' },
   { name: 'Claudete Ferreira', message: 'Amén!! 🙏🙏🙏' },
@@ -30,7 +30,7 @@ const allChatMessages: ChatMessageData[] = [
   { name: 'Regina Célia', message: 'Glória a Ti, Senhor! Estamos prontos 🙏', avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg', avatarHint: 'woman portrait' },
   { name: 'Marta de Jesus', message: 'Comecei a assistir agora… alguém já usou essa oração?' },
   { name: 'Eliane Ramos', message: '🙏🙏🙏' },
-  { name: 'Equipe de Suporte', message: 'Sim, Marta! Milhares de pessoas já estão relatando curas, bênçãos financeiras e restauração familiar com essa Oração de 7 minutos de Santo Antônio. 🙌📿', isSupport: true },
+  { name: 'Equipe de Suporte', message: 'Sim, Marta! Milhares de pessoas já estão relatando curas, bênçãos financeiras e restauração familiar com as Frequências da Cura. 🙌📿', isSupport: true },
   { name: 'Joana Lima', message: 'Amém, glória a Deus!', avatarUrl: 'https://thumbs2.imgbox.com/87/54/0dMM6ESV_t.png', avatarHint: 'woman portrait' },
   { name: 'Neide Souza', message: 'Amém, amém, amém!!!' },
   { name: 'Paulo Vieira', message: '😇😇😇😇😇😇', avatarUrl: 'https://thumbs2.imgbox.com/48/18/9JtnHEjz_t.png', avatarHint: 'man portrait' },
@@ -39,7 +39,7 @@ const allChatMessages: ChatMessageData[] = [
   { name: 'Jacinta Feitosa', message: 'Bom dia peço oração pela minha família, minha filha, meu esposo e a mim. Principalmente pela conversão do meu esposo, livrai-nos de todos os perigos. E que o Espírito Santo esteja conosco.' },
   { name: 'Maria Rita', message: 'Aqui é a Maria Rita de Aparecida - SP. Peço oração para quitar 80 mil em dívidas de cartão de crédito e para abençoar os estudos dos netos…' },
   { name: 'Severiana Amorim', message: 'peço orações pela minha família' },
-  { name: 'Cláudio Teixeira', message: 'Santo Antônio, me ajuda a pagar meu aluguel esse mês.' },
+  { name: 'Cláudio Teixeira', message: 'Senhor, me ajuda a pagar meu aluguel esse mês.' },
   { name: 'Lucas Bernardes', message: 'Sou de Goiânia. Posso pedir oração pelo meu negócio?', avatarUrl: 'https://thumbs2.imgbox.com/72/dc/GT3YxWwY_t.jpg', avatarHint: 'man portrait' },
   { name: 'Marta Helena', message: 'Alguém mais sentindo uma paz diferente nesse momento?', avatarUrl: 'https://thumbs2.imgbox.com/da/67/ajSKP3eY_t.jpg', avatarHint: 'woman portrait' },
   { name: 'Adriana Lins', message: 'Amados irmãos, vamos orar com fé 🙏' },
@@ -57,7 +57,7 @@ const allChatMessages: ChatMessageData[] = [
   { name: 'Beatriz Santos', message: 'pela cirurgia do coração da minha netinha Ária. Jesus eu confio em vós. 🙏🙏🙏🙏' },
   { name: 'Denize Michelle', message: 'Pelo meu matrimônio, meus filhos' },
   { name: 'Semirames', message: 'Rezo pela minha vida profissional, que Deus faça o melhor por mim.' },
-  { name: 'Sandra', message: 'Padre, peça a Santo Antônio pra trazer meu marido de volta… ele saiu de casa faz 2 meses 😢' },
+  { name: 'Sandra', message: 'Padre, reze pra trazer meu marido de volta… ele saiu de casa faz 2 meses 😢' },
   { name: 'Carlos Eduardo', message: 'Ore pela minha mãe, Padre… ela está lutando contra um câncer e precisa de forças 🙏📿', avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg', avatarHint: 'man portrait' },
   { name: 'Dona Terezinha', message: 'Peço oração pela minha filha que está com depressão… que Deus cure o coração dela 🙏' },
   { name: 'Cida Ramos', message: 'Amém! Que bênção 🙏' },
@@ -226,7 +226,7 @@ export default function FrequenciasDaCuraPage() {
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">
-              Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
+              Padre Fernando Lisboa | As Frequências da Cura: a oração escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
             </h1>
             <div className="text-sm text-neutral-600 mb-4">
               <span className="font-bold">{viewerCount.toLocaleString('pt-BR')} assistindo agora</span>

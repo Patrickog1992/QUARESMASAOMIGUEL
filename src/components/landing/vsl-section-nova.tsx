@@ -8,10 +8,10 @@ export function VSLSectionNova() {
   const [showBuyButton, setShowBuyButton] = useState(false);
 
   useEffect(() => {
-    // Show the buy button after 13 minutes and 35 seconds
+    // Temporarily show the buy button after 1 second for review
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (13 * 60 + 35) * 1000);
+    }, 1000);
 
     const scriptId = 'scr_68580daef5d522f5f216ce24';
     // Avoid appending the script if it already exists

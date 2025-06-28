@@ -132,7 +132,15 @@ const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }
 export default function FrequenciaDaCuraPage() {
   const [viewerCount] = useState(55452);
   const [liveTime, setLiveTime] = useState('');
-  const [showBuyButton] = useState(true);
+  const [showBuyButton, setShowBuyButton] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBuyButton(true);
+    }, (7 * 60 + 45) * 1000); // 7 minutes and 45 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const now = new Date();

@@ -136,7 +136,18 @@ export default function SantoAntonioPage() {
   const [liveTime, setLiveTime] = useState('');
 
   useEffect(() => {
-    // Set initial messages
+    const scriptId = "converteai-v4-script-santoantonio";
+    if (document.getElementById(scriptId)) {
+        return; 
+    }
+    const s = document.createElement("script");
+    s.id = scriptId;
+    s.src = "https://scripts.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685f710952325b14a81dc1dd/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+  }, []);
+
+  useEffect(() => {
     setDisplayedMessages(allChatMessages.slice(0, 15));
 
     const now = new Date();
@@ -155,9 +166,6 @@ export default function SantoAntonioPage() {
       if (messageIndex < allChatMessages.length) {
         setDisplayedMessages(prevMessages => [...prevMessages, allChatMessages[messageIndex]]);
         messageIndex++;
-      } else {
-        // Optional: loop comments
-        // messageIndex = 0;
       }
     }, 2500);
 
@@ -173,7 +181,6 @@ export default function SantoAntonioPage() {
 
   return (
     <div className="bg-white text-black h-screen max-h-screen font-sans flex flex-col">
-      {/* Header */}
       <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 flex-shrink-0">
         <div className="flex items-center gap-4">
           <Menu className="h-6 w-6 text-neutral-800" />
@@ -200,12 +207,10 @@ export default function SantoAntonioPage() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="flex flex-col lg:flex-row flex-1 overflow-hidden">
-        {/* Video Section */}
         <div className="flex-1 p-4 overflow-y-auto">
-          <div className="aspect-video bg-black rounded-lg mb-4 flex items-center justify-center">
-            <p className="text-neutral-400">[Simulação de Vídeo]</p>
+          <div className="bg-black rounded-lg mb-4">
+            <div id="vid-685f710952325b14a81dc1dd" style={{ display: 'block', margin: '0 auto', width: '100%' }}></div>
           </div>
           <h1 className="text-xl font-bold mb-1 break-words">
             Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
@@ -230,29 +235,26 @@ export default function SantoAntonioPage() {
           </div>
         </div>
 
-        {/* Chat Section */}
-        <div className="w-full lg:w-96 lg:max-w-sm flex flex-col flex-shrink-0 border-t lg:border-t-0 lg:border-l border-neutral-200">
-          <div className="bg-gray-50 h-full flex flex-col min-h-0">
-            <div className="p-4 border-b border-neutral-200">
-              <h2 className="font-bold">Live chat</h2>
+        <div className="w-full lg:w-96 lg:max-w-sm flex flex-col flex-shrink-0 border-t lg:border-t-0 lg:border-l border-neutral-200 bg-gray-50">
+          <div className="p-4 border-b border-neutral-200 flex-shrink-0">
+            <h2 className="font-bold">Live chat</h2>
+          </div>
+          <ScrollArea className="flex-1 p-2">
+            <div className="flex flex-col gap-2">
+              {displayedMessages.map((msg, index) => (
+                <ChatMessage key={index} {...msg} />
+              ))}
+              <div ref={messagesEndRef} />
             </div>
-            <ScrollArea className="flex-1 p-2">
-              <div className="flex flex-col gap-2">
-                {displayedMessages.map((msg, index) => (
-                  <ChatMessage key={index} name={msg.name} message={msg.message} isSupport={msg.isSupport} avatarUrl={msg.avatarUrl} />
-                ))}
-                <div ref={messagesEndRef} />
-              </div>
-            </ScrollArea>
-            <div className="p-4 border-t border-neutral-200 bg-gray-50">
-              <div className="relative">
-                <Input
-                  placeholder="Chat..."
-                  className="bg-white border-neutral-300 rounded-full h-10 pl-4 pr-10"
-                  disabled
-                />
-                <Smile className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-500" />
-              </div>
+          </ScrollArea>
+          <div className="p-4 border-t border-neutral-200 bg-gray-50 flex-shrink-0">
+            <div className="relative">
+              <Input
+                placeholder="Chat..."
+                className="bg-white border-neutral-300 rounded-full h-10 pl-4 pr-10"
+                disabled
+              />
+              <Smile className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-500" />
             </div>
           </div>
         </div>

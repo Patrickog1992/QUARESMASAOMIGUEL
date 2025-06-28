@@ -132,6 +132,15 @@ const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }
 export default function SantoAntonioPage() {
   const [viewerCount] = useState(55452);
   const [liveTime, setLiveTime] = useState('');
+  const [showBuyButton, setShowBuyButton] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBuyButton(true);
+    }, (36 * 60 + 38) * 1000); // 36 minutes and 38 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const now = new Date();
@@ -203,15 +212,17 @@ export default function SantoAntonioPage() {
             <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
           </div>
 
-          <div className="mt-8 text-center">
-            <Button
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
-              onClick={handleBuyClick}
-            >
-              EU QUERO ESSAS ORAÇÕES
-            </Button>
-          </div>
+          {showBuyButton && (
+            <div className="mt-8 text-center">
+              <Button
+                size="lg"
+                className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
+                onClick={handleBuyClick}
+              >
+                EU QUERO ESSAS ORAÇÕES
+              </Button>
+            </div>
+          )}
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">

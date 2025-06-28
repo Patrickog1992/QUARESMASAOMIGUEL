@@ -6,7 +6,6 @@ import { Menu, Search, Smile, UserCircle } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { ScrollArea } from '@/components/ui/scroll-area';
 
 type ChatMessageData = {
   name: string;
@@ -155,8 +154,8 @@ export default function SantoAntonioPage() {
   }, []);
 
   return (
-    <div className="bg-white text-black h-screen max-h-screen font-sans flex flex-col">
-      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 flex-shrink-0">
+    <div className="bg-white text-black font-sans">
+      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 sticky top-0">
         <div className="flex items-center gap-4">
           <Menu className="h-6 w-6 text-neutral-800" />
           <Image
@@ -182,53 +181,57 @@ export default function SantoAntonioPage() {
         </div>
       </header>
 
-      <main className="flex flex-col lg:flex-row flex-1 overflow-hidden">
-        <div className="flex-1 p-4">
+      <main className="grid grid-cols-1 lg:grid-cols-3 max-w-screen-2xl mx-auto p-4 gap-6">
+        <div className="lg:col-span-2">
           <div className="aspect-video bg-black rounded-lg mb-4">
             <div id="vid-685f710952325b14a81dc1dd" style={{ display: 'block', margin: '0 auto', width: '100%', height: '100%' }}></div>
           </div>
-          <h1 className="text-xl font-bold mb-1 break-words">
-            Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
-          </h1>
-          <div className="text-sm text-neutral-600 mb-4">
-            <span className="font-bold">{viewerCount.toLocaleString('pt-BR')} assistindo agora</span>
-          </div>
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-3">
-              <Avatar>
-                <AvatarImage src="https://xn--oraaosecreta-mdb.site/live/images/osa_foto_perfil_padre.webp" alt="Fernando Lisboa" />
-                <AvatarFallback>FL</AvatarFallback>
-              </Avatar>
-              <div>
-                <p className="font-semibold">Fernando Lisboa</p>
-                <p className="text-sm text-neutral-600">96 mil inscritos</p>
-              </div>
+          <div className="mt-4">
+            <h1 className="text-xl font-bold mb-1 break-words">
+              Padre Fernando Lisboa | A oração de Santo Antônio escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
+            </h1>
+            <div className="text-sm text-neutral-600 mb-4">
+              <span className="font-bold">{viewerCount.toLocaleString('pt-BR')} assistindo agora</span>
             </div>
-            <Button className="bg-black text-white font-semibold hover:bg-neutral-800 rounded-full">
-              Inscrever-se
-            </Button>
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-3">
+                <Avatar>
+                  <AvatarImage src="https://xn--oraaosecreta-mdb.site/live/images/osa_foto_perfil_padre.webp" alt="Fernando Lisboa" />
+                  <AvatarFallback>FL</AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="font-semibold">Fernando Lisboa</p>
+                  <p className="text-sm text-neutral-600">96 mil inscritos</p>
+                </div>
+              </div>
+              <Button className="bg-black text-white font-semibold hover:bg-neutral-800 rounded-full">
+                Inscrever-se
+              </Button>
+            </div>
           </div>
         </div>
 
-        <div className="w-full lg:w-96 lg:max-w-sm flex flex-col flex-shrink-0 border-t lg:border-t-0 lg:border-l border-neutral-200 bg-gray-50">
-          <div className="p-4 border-b border-neutral-200 flex-shrink-0">
-            <h2 className="font-bold">Live chat</h2>
-          </div>
-          <ScrollArea className="flex-1 p-2">
-            <div className="flex flex-col gap-2">
-              {displayedMessages.map((msg, index) => (
-                <ChatMessage key={index} {...msg} />
-              ))}
+        <div className="w-full">
+          <div className="border rounded-lg flex flex-col">
+            <div className="p-4 border-b">
+              <h2 className="font-bold">Live chat</h2>
             </div>
-          </ScrollArea>
-          <div className="p-4 border-t border-neutral-200 bg-gray-50 flex-shrink-0">
-            <div className="relative">
-              <Input
-                placeholder="Chat..."
-                className="bg-white border-neutral-300 rounded-full h-10 pl-4 pr-10"
-                disabled
-              />
-              <Smile className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-500" />
+            <div className="p-2">
+              <div className="flex flex-col gap-2">
+                {displayedMessages.map((msg, index) => (
+                  <ChatMessage key={index} {...msg} />
+                ))}
+              </div>
+            </div>
+            <div className="p-4 border-t bg-gray-50">
+              <div className="relative">
+                <Input
+                  placeholder="Chat..."
+                  className="bg-white border-neutral-300 rounded-full h-10 pl-4 pr-10"
+                  disabled
+                />
+                <Smile className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-500" />
+              </div>
             </div>
           </div>
         </div>

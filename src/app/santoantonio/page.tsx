@@ -145,9 +145,8 @@ const BuyButton = () => {
     window.open('https://pay.kirvano.com/42887aa4-262c-435e-b91c-42a8f8f4d849', '_self');
   };
   
-  // Reserve space to prevent layout shift
   if (!show) {
-    return <div className="h-[76px] md:h-[92px]" />;
+    return null;
   }
 
   return (

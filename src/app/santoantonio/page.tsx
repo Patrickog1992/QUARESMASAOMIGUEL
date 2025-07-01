@@ -129,18 +129,41 @@ const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }
   </div>
 );
 
-export default function SantoAntonioPage() {
-  const [viewerCount] = useState(55452);
-  const [liveTime, setLiveTime] = useState('');
-  const [showBuyButton, setShowBuyButton] = useState(false);
+const BuyButton = () => {
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
+    // Show after 36 minutes and 38 seconds
     const timer = setTimeout(() => {
-      setShowBuyButton(true);
-    }, (36 * 60 + 38) * 1000); // 36 minutes and 38 seconds
+      setShow(true);
+    }, (36 * 60 + 38) * 1000); 
 
     return () => clearTimeout(timer);
   }, []);
+
+  const handleBuyClick = () => {
+    window.open('https://pay.kirvano.com/42887aa4-262c-435e-b91c-42a8f8f4d849', '_self');
+  };
+  
+  // Reserve space to prevent layout shift
+  if (!show) {
+    return <div className="h-[76px] md:h-[92px]" />;
+  }
+
+  return (
+    <Button
+      size="lg"
+      className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
+      onClick={handleBuyClick}
+    >
+      EU QUERO ESSAS ORAÇÕES
+    </Button>
+  );
+};
+
+export default function SantoAntonioPage() {
+  const [viewerCount] = useState(55452);
+  const [liveTime, setLiveTime] = useState('');
 
   useEffect(() => {
     const now = new Date();
@@ -166,10 +189,6 @@ export default function SantoAntonioPage() {
       }
     };
   }, []);
-
-  const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/42887aa4-262c-435e-b91c-42a8f8f4d849', '_self');
-  };
 
   return (
     <div className="bg-white text-black font-sans">
@@ -211,18 +230,10 @@ export default function SantoAntonioPage() {
           >
             <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-6863f7c5ec24f4447b69eed2" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>` }} />
           </div>
-
-          {showBuyButton && (
-            <div className="mt-8 text-center">
-              <Button
-                size="lg"
-                className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
-                onClick={handleBuyClick}
-              >
-                EU QUERO ESSAS ORAÇÕES
-              </Button>
-            </div>
-          )}
+          
+          <div className="mt-8 text-center">
+            <BuyButton />
+          </div>
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">

@@ -1,5 +1,5 @@
 import { HeroSectionArcanjoMiguel } from '@/components/landing/hero-section-arcanjomiguel';
-import { VSLSectionNova } from '@/components/landing/vsl-section-nova';
+import { VSLSectionArcanjoMiguel } from '@/components/landing/vsl-section-arcanjomiguel';
 import { TestimonialsSection } from '@/components/landing/testimonials-section';
 import { Footer } from '@/components/landing/footer';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
@@ -21,7 +21,7 @@ export default function ArcanjoMiguelPage() {
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
         <HeroSectionArcanjoMiguel />
-        <VSLSectionNova />
+        <VSLSectionArcanjoMiguel />
         <TestimonialsSection />
       </main>
       <Footer />

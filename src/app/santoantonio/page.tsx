@@ -150,12 +150,12 @@ export default function SantoAntonioPage() {
   }, []);
   
   useEffect(() => {
-    const scriptId = "vturb-player-script-685f710952325b14a81dc1dd";
+    const scriptId = "vturb-player-script-6863f7c5ec24f4447b69eed2";
     if (document.getElementById(scriptId)) return;
 
     const script = document.createElement("script");
     script.id = scriptId;
-    script.src = "https://scripts.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685f710952325b14a81dc1dd/v4/player.js";
+    script.src = "https://scripts.converteai.net/ba88e257-ee82-4efe-bc55-87bc87882ad1/players/6863f7c5ec24f4447b69eed2/v4/player.js";
     script.async = true;
     document.head.appendChild(script);
 
@@ -209,7 +209,7 @@ export default function SantoAntonioPage() {
             id="video-container"
             className="relative w-full bg-black aspect-video"
           >
-            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
+            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-6863f7c5ec24f4447b69eed2" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>` }} />
           </div>
 
           {showBuyButton && (

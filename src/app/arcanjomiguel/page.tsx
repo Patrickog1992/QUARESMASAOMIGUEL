@@ -5,12 +5,6 @@ import { Footer } from '@/components/landing/footer';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
 import { SalesPopup } from '@/components/landing/sales-popup';
 import { TopBanner } from '@/components/landing/top-banner';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Orações Secretas - Toque do Arcanjo Miguel',
-  description: 'Descubra as orações secretas que estavam guardadas a 7 chaves no vaticano.',
-};
 
 export const dynamic = 'force-dynamic';
 

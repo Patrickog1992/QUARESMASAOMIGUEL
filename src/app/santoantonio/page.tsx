@@ -133,10 +133,10 @@ const BuyButton = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // Show after 5 seconds for testing
+    // Show after 36 minutes and 38 seconds
     const timer = setTimeout(() => {
       setShow(true);
-    }, 5000); 
+    }, (36 * 60 + 38) * 1000); 
 
     return () => clearTimeout(timer);
   }, []);

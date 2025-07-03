@@ -136,7 +136,7 @@ const BuyButton = () => {
     // Show after 36 minutes and 38 seconds
     const timer = setTimeout(() => {
       setShow(true);
-    }, (36 * 60 + 38) * 1000); 
+    }, 1000); 
 
     return () => clearTimeout(timer);
   }, []);

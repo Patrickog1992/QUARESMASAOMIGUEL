@@ -19,12 +19,12 @@ export default function CancaoNovaQuizPage() {
             data-ai-hint="sacred manuscript"
           />
 
-          <h1 className="text-2xl md:text-4xl font-bold text-blue-600 mb-4">
+          <h1 className="text-2xl md:text-4xl font-bold text-blue-600 mb-4 uppercase">
             Descubra o Manuscrito Sagrado Capaz de Transformar SUA Vida em Apenas 7 Dias...
           </h1>
           
           <p className="text-lg md:text-xl text-foreground/90 mb-8">
-            Você foi guiado(a) até AQUI por um motivo Divino. Em poucos minutos, Descubra o manuscrito sagrado Que foi Destinado para sua Cura!
+            Você foi guiado(a) até AQUI por um motivo divino. Em poucos minutos, Descubra o manuscrito sagrado que foi destinado para sua cura!
           </p>
           
           <Image
@@ -36,7 +36,7 @@ export default function CancaoNovaQuizPage() {
             data-ai-hint="divine guidance"
           />
           
-          <Button size="lg" className="font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal">
+          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal">
             Continuar
           </Button>
         </div>

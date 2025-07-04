@@ -18,21 +18,20 @@ export default function CancaoNovaVideoPage() {
     script.async = true;
     document.head.appendChild(script);
 
-    // The vturb player likely handles showing the button.
-    // This is a fallback timer.
+    // Show button at 29 minutes and 13 seconds.
     const timer = setTimeout(() => {
         setShowButton(true);
-    }, (15 * 60) * 1000); 
+    }, (29 * 60 + 13) * 1000); 
 
     return () => {
       clearTimeout(timer);
     };
   }, []);
 
-  const videoHtml = `<vturb-smartplayer id="vid-6867df691dde06edc9041e7e" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+  const videoHtml = `<vturb-smartplayer id="vid-6867df691dde06edc9041e7e" vtn-autoplay="true" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
   const handleCheckoutClick = () => {
-    window.open('https://pay.kirvano.com/80aac1c2-c705-436a-a44e-36aa62049297', '_self');
+    window.open('https://pay.kirvano.com/bd3ab7c5-a8ac-4e1e-ba5e-150da54872a0', '_self');
   };
 
   return (
@@ -63,12 +62,10 @@ export default function CancaoNovaVideoPage() {
                  {showButton ? (
                     <Button
                         size="lg"
-                        className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center"
+                        className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center w-full max-w-md"
                         onClick={handleCheckoutClick}
                         >
-                        <span className="mr-2" role="img" aria-label="hands praying">🙌</span>
-                        Quero Acessar o Manuscrito Agora
-                        <span className="ml-2" role="img" aria-label="hands praying">🙌</span>
+                        EU QUERO OS MANUSCRITOS
                     </Button>
                  ) : (
                     <div className="h-[76px] md:h-[92px]" />

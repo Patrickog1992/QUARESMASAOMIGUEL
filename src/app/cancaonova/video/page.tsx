@@ -11,7 +11,7 @@ export default function CancaoNovaVideoPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowButton(true);
-    }, (29 * 60 + 13) * 1000); // 29 minutes and 13 seconds
+    }, 10 * 1000); // 10 seconds
 
     return () => clearTimeout(timer);
   }, []);

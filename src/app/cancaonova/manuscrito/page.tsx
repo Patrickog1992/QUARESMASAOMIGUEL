@@ -3,12 +3,9 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
+import Link from 'next/link';
 
 export default function CancaoNovaManuscritoPage() {
-
-  const handleAccessClick = () => {
-    window.open('https://pay.kirvano.com/80aac1c2-c705-436a-a44e-36aa62049297', '_self');
-  };
 
   return (
     <div className="dark relative flex flex-col min-h-screen bg-blue-50 text-foreground overflow-x-hidden">
@@ -40,16 +37,16 @@ export default function CancaoNovaManuscritoPage() {
             className="mx-auto mb-8 rounded-lg shadow-lg"
             data-ai-hint="sacred manuscript pages"
           />
-
-          <Button
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
-            onClick={handleAccessClick}
-          >
-            <span className="mr-2" role="img" aria-label="hands praying">🙌</span>
-            Acessar Meu Manuscrito Sagrado
-            <span className="ml-2" role="img" aria-label="hands praying">🙌</span>
-          </Button>
+          <Link href="/cancaonova/video">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
+            >
+              <span className="mr-2" role="img" aria-label="hands praying">🙌</span>
+              Acessar Meu Manuscrito Sagrado
+              <span className="ml-2" role="img" aria-label="hands praying">🙌</span>
+            </Button>
+          </Link>
         </div>
       </main>
     </div>

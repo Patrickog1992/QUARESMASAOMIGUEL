@@ -19,7 +19,7 @@ export default function CancaoNovaQuizPage() {
             data-ai-hint="sacred manuscript"
           />
 
-          <h1 className="text-2xl md:text-4xl font-bold text-primary mb-4">
+          <h1 className="text-2xl md:text-4xl font-bold text-blue-600 mb-4">
             Descubra o Manuscrito Sagrado Capaz de Transformar SUA Vida em Apenas 7 Dias...
           </h1>
           

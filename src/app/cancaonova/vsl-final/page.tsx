@@ -6,10 +6,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const quizOptions = [
-  { emoji: '😃', text: 'Sim, algo relacionado a água/deserto', link: '/desconto' },
-  { emoji: '😯', text: 'Sonhos com curas ou mensagens', link: '/desconto' },
-  { emoji: '😉', text: 'Nada, mas sinto que algo está por vir', link: '/desconto' },
-  { emoji: '😔', text: 'Não acredito nisso', link: '/desconto' },
+  { emoji: '😃', text: 'Sim, algo relacionado a água/deserto', link: '/cancaonova/manuscrito' },
+  { emoji: '😯', text: 'Sonhos com curas ou mensagens', link: '/cancaonova/manuscrito' },
+  { emoji: '😉', text: 'Nada, mas sinto que algo está por vir', link: '/cancaonova/manuscrito' },
+  { emoji: '😔', text: 'Não acredito nisso', link: '/cancaonova/manuscrito' },
 ];
 
 export default function CancaoNovaVSLFinalPage() {

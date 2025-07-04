@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
 
@@ -24,7 +25,7 @@ export default function CancaoNovaQuizPage() {
           </h1>
           
           <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-            Você foi guiado(a) até aqui por um motivo divino. Em poucos minutos, descubra o manuscrito sagrado que foi destinado para sua cura!
+            Você foi guiado(a) até aqui por um motivo divino. em poucos minutos, descubra o manuscrito sagrado que foi destinado para sua cura!
           </p>
           
           <Image
@@ -36,9 +37,11 @@ export default function CancaoNovaQuizPage() {
             data-ai-hint="divine guidance"
           />
           
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal">
-            Continuar
-          </Button>
+          <Link href="/cancaonova/quiz">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal">
+              Continuar
+            </Button>
+          </Link>
         </div>
       </main>
     </div>

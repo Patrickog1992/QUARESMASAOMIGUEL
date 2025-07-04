@@ -6,7 +6,7 @@ import { BackgroundPattern } from '@/components/landing/background-pattern';
 
 export default function CancaoNovaQuizPage() {
   return (
-    <div className="dark relative flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="dark relative flex flex-col min-h-screen bg-blue-50 text-foreground overflow-x-hidden">
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center">
         <div className="max-w-2xl w-full">
@@ -23,8 +23,8 @@ export default function CancaoNovaQuizPage() {
             Descubra o Manuscrito Sagrado Capaz de Transformar SUA Vida em Apenas 7 Dias...
           </h1>
           
-          <p className="text-lg md:text-xl text-foreground/90 mb-8">
-            Você foi guiado(a) até AQUI por um motivo divino. Em poucos minutos, Descubra o manuscrito sagrado que foi destinado para sua cura!
+          <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
+            Você foi guiado(a) até aqui por um motivo divino. Em poucos minutos, descubra o manuscrito sagrado que foi destinado para sua cura!
           </p>
           
           <Image

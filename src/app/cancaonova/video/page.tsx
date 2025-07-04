@@ -6,7 +6,7 @@ import { BackgroundPattern } from '@/components/landing/background-pattern';
 import Image from 'next/image';
 
 export default function CancaoNovaVideoPage() {
-  const [showButton, setShowButton] = useState(false);
+  const [showButton, setShowButton] = useState(true);
 
   useEffect(() => {
     const scriptId = "vturb-player-script-6867df691dde06edc9041e7e";

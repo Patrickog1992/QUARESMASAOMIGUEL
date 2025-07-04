@@ -6,7 +6,15 @@ import { BackgroundPattern } from '@/components/landing/background-pattern';
 import Image from 'next/image';
 
 export default function CancaoNovaVideoPage() {
-  const [showButton, setShowButton] = useState(true);
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowButton(true);
+    }, (29 * 60 + 13) * 1000); // 29 minutes and 13 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const scriptId = "vturb-player-script-6867df691dde06edc9041e7e";

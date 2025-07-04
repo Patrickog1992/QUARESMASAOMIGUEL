@@ -27,7 +27,7 @@ export default function CancaoNovaVSLFinalPage() {
             data-ai-hint="sacred manuscript"
           />
           <h1 className="text-2xl md:text-3xl font-bold text-blue-600 mb-8">
-            Qual dessas situações mais te aflinge Atualmente?
+            Já teve um sonho ou coincidência inexplicável recentemente?
           </h1>
 
           <div className="space-y-4">

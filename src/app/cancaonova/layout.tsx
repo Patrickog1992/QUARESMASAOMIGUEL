@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { DisableDevTools } from '@/components/disable-devtools';
 
 export const metadata: Metadata = {
-  title: 'Canção Nova - Orações Secretas',
-  description: 'Descubra as orações secretas da Canção Nova.',
+  title: 'Manuscrito Sagrado - Quiz Divino',
+  description: 'Descubra o manuscrito sagrado que pode transformar sua vida.',
 };
 
 export default function CancaoNovaLayout({

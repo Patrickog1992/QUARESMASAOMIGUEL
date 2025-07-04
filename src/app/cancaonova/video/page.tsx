@@ -5,17 +5,7 @@ import { Button } from '@/components/ui/button';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
 import Image from 'next/image';
 
-export default function CancaoNovaVideoPage() {
-  const [showButton, setShowButton] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowButton(true);
-    }, 10 * 1000); // 10 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
-
+const VideoPlayer = () => {
   useEffect(() => {
     const scriptId = "vturb-player-script-6867df691dde06edc9041e7e";
     if (document.getElementById(scriptId)) return;
@@ -26,13 +16,50 @@ export default function CancaoNovaVideoPage() {
     script.async = true;
     document.head.appendChild(script);
   }, []);
-
+  
   const videoHtml = `<vturb-smartplayer id="vid-6867df691dde06edc9041e7e" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
-  const handleCheckoutClick = () => {
-    window.open('https://pay.kirvano.com/bd3ab7c5-a8ac-4e1e-ba5e-150da54872a0', '_self');
-  };
+  return (
+    <div 
+      className="relative overflow-hidden rounded-lg shadow-2xl mx-auto w-full max-w-sm"
+      dangerouslySetInnerHTML={{ __html: videoHtml }}
+    />
+  );
+};
 
+const TimedCheckoutButton = () => {
+    const [showButton, setShowButton] = useState(false);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setShowButton(true);
+      }, 10 * 1000); // 10 seconds
+  
+      return () => clearTimeout(timer);
+    }, []);
+
+    const handleCheckoutClick = () => {
+        window.open('https://pay.kirvano.com/bd3ab7c5-a8ac-4e1e-ba5e-150da54872a0', '_self');
+    };
+    
+    return (
+        <div className="mt-8 text-center">
+            {showButton ? (
+            <Button
+                size="lg"
+                className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center w-full max-w-md"
+                onClick={handleCheckoutClick}
+                >
+                EU QUERO OS MANUSCRITOS
+            </Button>
+            ) : (
+            <div className="h-[76px] md:h-[92px]" />
+            )}
+        </div>
+    );
+};
+
+export default function CancaoNovaVideoPage() {
   return (
     <div className="dark relative flex flex-col min-h-screen bg-blue-50 text-foreground overflow-x-hidden">
       <BackgroundPattern />
@@ -52,24 +79,9 @@ export default function CancaoNovaVideoPage() {
                 Em Apenas 7 Dias...
             </h1>
             
-            <div 
-                className="relative overflow-hidden rounded-lg shadow-2xl mx-auto w-full max-w-sm"
-                dangerouslySetInnerHTML={{ __html: videoHtml }}
-            />
+            <VideoPlayer />
             
-            <div className="mt-8 text-center">
-                 {showButton ? (
-                    <Button
-                        size="lg"
-                        className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center w-full max-w-md"
-                        onClick={handleCheckoutClick}
-                        >
-                        EU QUERO OS MANUSCRITOS
-                    </Button>
-                 ) : (
-                    <div className="h-[76px] md:h-[92px]" />
-                 )}
-            </div>
+            <TimedCheckoutButton />
         </div>
       </main>
     </div>

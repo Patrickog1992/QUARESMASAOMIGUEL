@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const quizOptions = [
   { emoji: '🥺', text: 'Dor física (doenças crônicas, limitações)', link: '/cancaonova/vsl' },
@@ -17,6 +18,14 @@ export default function CancaoNovaQuizStep2Page() {
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center">
         <div className="max-w-2xl w-full">
+          <Image
+            src="https://i.imgur.com/oU1Etag.png"
+            alt="Manuscrito Sagrado"
+            width={500}
+            height={150}
+            className="mx-auto mb-8 rounded-lg"
+            data-ai-hint="sacred manuscript"
+          />
           <h1 className="text-2xl md:text-3xl font-bold text-blue-600 mb-8">
             Qual dessas situações mais te aflige Atualmente?
           </h1>

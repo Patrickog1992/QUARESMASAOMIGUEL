@@ -42,7 +42,7 @@ export default function CancaoNovaVSLIntroPage() {
           </h2>
 
           <Link href="/cancaonova/vsl-final"> 
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 px-8 uppercase shadow-lg h-auto whitespace-normal">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 px-8 uppercase shadow-lg h-auto whitespace-normal text-center">
               Continuar
             </Button>
           </Link>

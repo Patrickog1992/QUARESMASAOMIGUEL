@@ -36,7 +36,7 @@ export default function CancaoNovaVSLFinalPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full h-auto py-4 px-6 text-left justify-start text-md md:text-lg bg-white hover:bg-blue-100 border-blue-200"
+                  className="w-full h-auto py-4 px-6 text-center text-md md:text-lg bg-white hover:bg-blue-100 border-blue-200"
                 >
                   <span className="text-2xl mr-4">{option.emoji}</span>
                   <span>{option.text}</span>

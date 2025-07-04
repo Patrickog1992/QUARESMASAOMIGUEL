@@ -63,7 +63,7 @@ export default function CancaoNovaVideoPage() {
                  {showButton ? (
                     <Button
                         size="lg"
-                        className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
+                        className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center"
                         onClick={handleCheckoutClick}
                         >
                         <span className="mr-2" role="img" aria-label="hands praying">🙌</span>

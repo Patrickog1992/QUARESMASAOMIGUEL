@@ -38,7 +38,7 @@ export default function CancaoNovaQuizPage() {
           />
           
           <Link href="/cancaonova/quiz">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center">
               Continuar
             </Button>
           </Link>

@@ -28,7 +28,7 @@ export default function CancaoNovaVideoPage() {
     };
   }, []);
 
-  const videoHtml = `<vturb-smartplayer id="vid-6867df691dde06edc9041e7e" vtn-autoplay="true" vtn-muted="true" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+  const videoHtml = `<vturb-smartplayer id="vid-6867df691dde06edc9041e7e" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
   const handleCheckoutClick = () => {
     window.open('https://pay.kirvano.com/bd3ab7c5-a8ac-4e1e-ba5e-150da54872a0', '_self');

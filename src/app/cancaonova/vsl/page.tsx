@@ -29,12 +29,12 @@ export default function CancaoNovaVSLIntroPage() {
           </p>
 
           <Image
-            src="https://i.imgur.com/kH10s2j.jpg" 
-            alt="Bíblia aberta"
+            src="https://i.imgur.com/YyJCqnd.jpeg" 
+            alt="Jesus apontando para o céu"
             width={600}
             height={400}
             className="mx-auto mb-8 rounded-lg shadow-lg"
-            data-ai-hint="bible open"
+            data-ai-hint="Jesus pointing"
           />
 
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-8">

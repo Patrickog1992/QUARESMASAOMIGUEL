@@ -6,7 +6,7 @@ import { BackgroundPattern } from '@/components/landing/background-pattern';
 import Image from 'next/image';
 
 export default function CancaoNovaVideoPage() {
-  const [showButton, setShowButton] = useState(false);
+  const [showButton, setShowButton] = useState(true);
 
   useEffect(() => {
     const scriptId = "vturb-player-script-6867df691dde06edc9041e7e";
@@ -17,15 +17,6 @@ export default function CancaoNovaVideoPage() {
     script.src = "https://scripts.converteai.net/ba88e257-ee82-4efe-bc55-87bc87882ad1/players/6867df691dde06edc9041e7e/v4/player.js";
     script.async = true;
     document.head.appendChild(script);
-
-    // Show button at 29 minutes and 13 seconds.
-    const timer = setTimeout(() => {
-        setShowButton(true);
-    }, (29 * 60 + 13) * 1000); 
-
-    return () => {
-      clearTimeout(timer);
-    };
   }, []);
 
   const videoHtml = `<vturb-smartplayer id="vid-6867df691dde06edc9041e7e" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;

@@ -40,8 +40,8 @@ export default function UpsellPage() {
                 <CardContent className="flex-grow flex flex-col justify-between">
                   <div>
                     <p className="mb-2">Comece seu dia com proteção e bênçãos.</p>
-                    <p className="mb-4 font-bold">
-                        <span className="line-through text-muted-foreground">De R$47,00</span> por R$19,90
+                    <p className="mb-4 font-bold text-lg">
+                        <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                     </p>
                   </div>
                   <Button onClick={handleUpsellAccept} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
@@ -55,8 +55,8 @@ export default function UpsellPage() {
                 <CardContent className="flex-grow flex flex-col justify-between">
                   <div>
                     <p className="mb-2">Renove suas forças e sua fé durante o dia.</p>
-                    <p className="mb-4 font-bold">
-                        <span className="line-through text-muted-foreground">De R$47,00</span> por R$19,90
+                    <p className="mb-4 font-bold text-lg">
+                        <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                     </p>
                   </div>
                   <Button onClick={handleUpsellAccept} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
@@ -70,8 +70,8 @@ export default function UpsellPage() {
                 <CardContent className="flex-grow flex flex-col justify-between">
                     <div>
                         <p className="mb-2">Durma em paz e agradeça pelas graças recebidas.</p>
-                        <p className="mb-4 font-bold">
-                            <span className="line-through text-muted-foreground">De R$47,00</span> por R$19,90
+                        <p className="mb-4 font-bold text-lg">
+                            <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                         </p>
                     </div>
                    <Button onClick={handleUpsellAccept} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>

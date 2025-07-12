@@ -27,7 +27,7 @@ export default function UpsellPage() {
         <Card className="max-w-3xl w-full bg-card shadow-2xl border-primary border-2">
           <CardHeader>
             <CardTitle className="text-2xl md:text-4xl font-bold text-primary animate-pulse">
-              ESPERE! SUA COMPRA AINDA NÃO ACABOU...
+              ESPERE! SUAS BENÇÃOS AINDA NÃO ACABARAM...
             </CardTitle>
             <CardDescription className="text-lg md:text-xl text-foreground/80 pt-4">
               Antes de ir, temos uma oferta única e exclusiva para você.

@@ -54,7 +54,7 @@ export default function UpsellPage() {
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
                   <div>
-                    <p className="mb-2">descubra tudo que eles escondem de você</p>
+                    <p className="mb-2">Descubra tudo que eles escondem de você</p>
                     <p className="mb-4 font-bold text-lg">
                         <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                     </p>

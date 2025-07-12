@@ -64,7 +64,7 @@ export default function UpsellPage() {
               </Card>
               <Card className="bg-card shadow-lg border-secondary flex flex-col">
                 <CardHeader>
-                  <Image src="https://placehold.co/600x400.png" alt="Card 3" width={600} height={400} className="rounded-t-lg" data-ai-hint="bible open" />
+                  <Image src="https://i.imgur.com/Ka1k6li.png" alt="Card 3" width={600} height={400} className="rounded-t-lg" data-ai-hint="bible open" />
                   <CardTitle className="pt-4">Guia de versículos bíblicos poderosos</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">

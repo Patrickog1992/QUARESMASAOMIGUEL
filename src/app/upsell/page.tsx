@@ -10,14 +10,13 @@ import { Check } from 'lucide-react';
 export default function UpsellPage() {
   const handleUpsellAccept = () => {
     // TODO: Adicione aqui o link de checkout para o produto do upsell
-    console.log('Upsell aceito!');
-    // Exemplo: window.open('https://pay.kirvano.com/seu-link-de-upsell', '_self');
+    window.open('https://pay.kirvano.com/seu-link-de-upsell', '_self');
   };
 
   const handleUpsellDecline = () => {
     // TODO: Adicione aqui o link para a página de obrigado ou próxima etapa
     console.log('Upsell recusado.');
-    // Exemplo: window.open('/obrigado', '_self');
+    window.open('/obrigado', '_self');
   };
 
   return (
@@ -33,37 +32,40 @@ export default function UpsellPage() {
             </p>
 
             <div className="grid md:grid-cols-3 gap-8 mb-10">
-              <Card className="bg-card shadow-lg border-secondary">
+              <Card className="bg-card shadow-lg border-secondary flex flex-col">
                 <CardHeader>
                   <Image src="https://placehold.co/600x400.png" alt="Card 1" width={600} height={400} className="rounded-t-lg" data-ai-hint="glowing book" />
                   <CardTitle className="pt-4">Oração da Manhã</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p>Comece seu dia com proteção e bênçãos.</p>
+                <CardContent className="flex-grow flex flex-col justify-between">
+                  <p className="mb-4">Comece seu dia com proteção e bênçãos.</p>
+                  <Button onClick={handleUpsellAccept} className="w-full">Comprar Agora</Button>
                 </CardContent>
               </Card>
-              <Card className="bg-card shadow-lg border-primary border-2">
+              <Card className="bg-card shadow-lg border-primary border-2 flex flex-col">
                 <CardHeader>
                   <Image src="https://placehold.co/600x400.png" alt="Card 2" width={600} height={400} className="rounded-t-lg" data-ai-hint="shining cross" />
                   <CardTitle className="pt-4">Oração da Tarde</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p>Renove suas forças e sua fé durante o dia.</p>
+                <CardContent className="flex-grow flex flex-col justify-between">
+                  <p className="mb-4">Renove suas forças e sua fé durante o dia.</p>
+                  <Button onClick={handleUpsellAccept} className="w-full">Comprar Agora</Button>
                 </CardContent>
               </Card>
-              <Card className="bg-card shadow-lg border-secondary">
+              <Card className="bg-card shadow-lg border-secondary flex flex-col">
                 <CardHeader>
                   <Image src="https://placehold.co/600x400.png" alt="Card 3" width={600} height={400} className="rounded-t-lg" data-ai-hint="praying hands night" />
                   <CardTitle className="pt-4">Oração da Noite</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p>Durma em paz e agradeça pelas graças recebidas.</p>
+                <CardContent className="flex-grow flex flex-col justify-between">
+                  <p className="mb-4">Durma em paz e agradeça pelas graças recebidas.</p>
+                   <Button onClick={handleUpsellAccept} className="w-full">Comprar Agora</Button>
                 </CardContent>
               </Card>
             </div>
             
             <h2 className="text-xl md:text-2xl font-bold text-accent-foreground">
-              Adicione ao seu pedido o "Salmo Secreto dos Milionários" por apenas <span className="text-primary line-through">R$67</span> <span className="text-green-600">R$10</span>!
+              Adicione ao seu pedido o "Salmo Secreto dos Milionários" por apenas <span className="text-primary line-through">R$47</span> <span className="text-green-600">R$19,90</span>!
             </h2>
             
             <p className="text-md md:text-lg text-foreground/90 mt-4 max-w-3xl mx-auto">
@@ -76,7 +78,7 @@ export default function UpsellPage() {
                     className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 uppercase animate-pulse shadow-lg h-auto"
                     onClick={handleUpsellAccept}
                 >
-                    Sim, eu quero adicionar por R$10
+                    Sim, eu quero adicionar por R$19,90
                 </Button>
                 
                 <Button

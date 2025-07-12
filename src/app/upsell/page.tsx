@@ -39,7 +39,7 @@ export default function UpsellPage() {
             </p>
 
             <div className="grid md:grid-cols-3 gap-8 mb-10">
-              <Card className="bg-card shadow-lg border-secondary flex flex-col border">
+              <Card className="bg-card shadow-lg flex flex-col border-2 border-primary">
                 <CardHeader>
                   <Image src="https://i.imgur.com/F8d7Dym.png" alt="Card 1" width={600} height={400} className="rounded-t-lg" data-ai-hint="glowing book" />
                   <CardTitle className="pt-4">A biografia de Padre Pio</CardTitle>
@@ -69,7 +69,7 @@ export default function UpsellPage() {
                   <Button onClick={handleVaticanoCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
-              <Card className="bg-card shadow-lg border-secondary flex flex-col border">
+              <Card className="bg-card shadow-lg flex flex-col border-2 border-primary">
                 <CardHeader>
                   <Image src="https://i.imgur.com/Ka1k6li.png" alt="Card 3" width={600} height={400} className="rounded-t-lg" data-ai-hint="bible open" />
                   <CardTitle className="pt-4">Guia de versículos bíblicos poderosos</CardTitle>

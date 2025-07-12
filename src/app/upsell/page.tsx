@@ -49,7 +49,7 @@ export default function UpsellPage() {
               </Card>
               <Card className="bg-card shadow-lg border-primary border-2 flex flex-col">
                 <CardHeader>
-                  <Image src="https://placehold.co/600x400.png" alt="Card 2" width={600} height={400} className="rounded-t-lg" data-ai-hint="shining cross" />
+                  <Image src="https://i.imgur.com/vh5FHgl.png" alt="Card 2" width={600} height={400} className="rounded-t-lg" data-ai-hint="shining cross" />
                   <CardTitle className="pt-4">Os segredos do Vaticano revelados</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">

@@ -50,11 +50,11 @@ export default function UpsellPage() {
               <Card className="bg-card shadow-lg border-primary border-2 flex flex-col">
                 <CardHeader>
                   <Image src="https://placehold.co/600x400.png" alt="Card 2" width={600} height={400} className="rounded-t-lg" data-ai-hint="shining cross" />
-                  <CardTitle className="pt-4">Oração da Tarde</CardTitle>
+                  <CardTitle className="pt-4">Os segredos do Vaticano revelados</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
                   <div>
-                    <p className="mb-2">Renove suas forças e sua fé durante o dia.</p>
+                    <p className="mb-2">descubra tudo que eles escondem de você</p>
                     <p className="mb-4 font-bold text-lg">
                         <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                     </p>

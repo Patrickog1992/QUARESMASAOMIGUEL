@@ -54,7 +54,7 @@ export default function UpsellPage() {
                   <Button onClick={handlePadrePioCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
-              <Card className="bg-card shadow-lg border-primary border-2 flex flex-col">
+              <Card className="bg-card shadow-lg border-secondary flex flex-col border">
                 <CardHeader>
                   <Image src="https://i.imgur.com/vh5FHgl.png" alt="Card 2" width={600} height={400} className="rounded-t-lg" data-ai-hint="shining cross" />
                   <CardTitle className="pt-4">Os segredos do Vaticano revelados</CardTitle>

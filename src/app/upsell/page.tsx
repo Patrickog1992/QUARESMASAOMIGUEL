@@ -8,9 +8,16 @@ import Image from 'next/image';
 import { Check } from 'lucide-react';
 
 export default function UpsellPage() {
-  const handleUpsellAccept = () => {
-    // TODO: Adicione aqui o link de checkout para o produto do upsell
-    window.open('https://pay.kirvano.com/seu-link-de-upsell', '_self');
+  const handlePadrePioCheckout = () => {
+    window.open('https://pay.kirvano.com/859e54be-95a0-4243-96cd-5dd7043097e0', '_self');
+  };
+
+  const handleVaticanoCheckout = () => {
+    window.open('https://pay.kirvano.com/87004489-1ca3-49fc-a8fc-002952f0dcde', '_self');
+  };
+
+  const handleGuiaCheckout = () => {
+    window.open('https://pay.kirvano.com/ee21dbf6-05a6-469e-bde5-7a9efd90c6b6', '_self');
   };
 
   const handleUpsellDecline = () => {
@@ -44,7 +51,7 @@ export default function UpsellPage() {
                         <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                     </p>
                   </div>
-                  <Button onClick={handleUpsellAccept} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
+                  <Button onClick={handlePadrePioCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
               <Card className="bg-card shadow-lg border-primary border-2 flex flex-col">
@@ -59,7 +66,7 @@ export default function UpsellPage() {
                         <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                     </p>
                   </div>
-                  <Button onClick={handleUpsellAccept} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
+                  <Button onClick={handleVaticanoCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
               <Card className="bg-card shadow-lg border-secondary flex flex-col">
@@ -74,7 +81,7 @@ export default function UpsellPage() {
                             <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                         </p>
                     </div>
-                   <Button onClick={handleUpsellAccept} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
+                   <Button onClick={handleGuiaCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
             </div>

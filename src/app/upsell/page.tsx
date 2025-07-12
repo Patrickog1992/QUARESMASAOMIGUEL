@@ -35,11 +35,11 @@ export default function UpsellPage() {
               <Card className="bg-card shadow-lg border-secondary flex flex-col">
                 <CardHeader>
                   <Image src="https://placehold.co/600x400.png" alt="Card 1" width={600} height={400} className="rounded-t-lg" data-ai-hint="glowing book" />
-                  <CardTitle className="pt-4">Oração da Manhã</CardTitle>
+                  <CardTitle className="pt-4">A biografia de Padre Pio</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
                   <div>
-                    <p className="mb-2">Comece seu dia com proteção e bênçãos.</p>
+                    <p className="mb-2">Conheça a história desse abençoado Padre</p>
                     <p className="mb-4 font-bold text-lg">
                         <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                     </p>

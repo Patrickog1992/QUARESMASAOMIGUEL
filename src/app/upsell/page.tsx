@@ -44,7 +44,7 @@ export default function UpsellPage() {
                         <span className="line-through text-muted-foreground">De R$47,00</span> por R$19,90
                     </p>
                   </div>
-                  <Button onClick={handleUpsellAccept} className="w-full mt-auto">Comprar Agora</Button>
+                  <Button onClick={handleUpsellAccept} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
               <Card className="bg-card shadow-lg border-primary border-2 flex flex-col">
@@ -59,7 +59,7 @@ export default function UpsellPage() {
                         <span className="line-through text-muted-foreground">De R$47,00</span> por R$19,90
                     </p>
                   </div>
-                  <Button onClick={handleUpsellAccept} className="w-full mt-auto">Comprar Agora</Button>
+                  <Button onClick={handleUpsellAccept} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
               <Card className="bg-card shadow-lg border-secondary flex flex-col">
@@ -74,7 +74,7 @@ export default function UpsellPage() {
                             <span className="line-through text-muted-foreground">De R$47,00</span> por R$19,90
                         </p>
                     </div>
-                   <Button onClick={handleUpsellAccept} className="w-full mt-auto">Comprar Agora</Button>
+                   <Button onClick={handleUpsellAccept} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
             </div>

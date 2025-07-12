@@ -38,8 +38,13 @@ export default function UpsellPage() {
                   <CardTitle className="pt-4">Oração da Manhã</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
-                  <p className="mb-4">Comece seu dia com proteção e bênçãos.</p>
-                  <Button onClick={handleUpsellAccept} className="w-full">Comprar Agora</Button>
+                  <div>
+                    <p className="mb-2">Comece seu dia com proteção e bênçãos.</p>
+                    <p className="mb-4 font-bold">
+                        <span className="line-through text-muted-foreground">De R$47,00</span> por R$19,90
+                    </p>
+                  </div>
+                  <Button onClick={handleUpsellAccept} className="w-full mt-auto">Comprar Agora</Button>
                 </CardContent>
               </Card>
               <Card className="bg-card shadow-lg border-primary border-2 flex flex-col">
@@ -48,8 +53,13 @@ export default function UpsellPage() {
                   <CardTitle className="pt-4">Oração da Tarde</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
-                  <p className="mb-4">Renove suas forças e sua fé durante o dia.</p>
-                  <Button onClick={handleUpsellAccept} className="w-full">Comprar Agora</Button>
+                  <div>
+                    <p className="mb-2">Renove suas forças e sua fé durante o dia.</p>
+                    <p className="mb-4 font-bold">
+                        <span className="line-through text-muted-foreground">De R$47,00</span> por R$19,90
+                    </p>
+                  </div>
+                  <Button onClick={handleUpsellAccept} className="w-full mt-auto">Comprar Agora</Button>
                 </CardContent>
               </Card>
               <Card className="bg-card shadow-lg border-secondary flex flex-col">
@@ -58,8 +68,13 @@ export default function UpsellPage() {
                   <CardTitle className="pt-4">Oração da Noite</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
-                  <p className="mb-4">Durma em paz e agradeça pelas graças recebidas.</p>
-                   <Button onClick={handleUpsellAccept} className="w-full">Comprar Agora</Button>
+                    <div>
+                        <p className="mb-2">Durma em paz e agradeça pelas graças recebidas.</p>
+                        <p className="mb-4 font-bold">
+                            <span className="line-through text-muted-foreground">De R$47,00</span> por R$19,90
+                        </p>
+                    </div>
+                   <Button onClick={handleUpsellAccept} className="w-full mt-auto">Comprar Agora</Button>
                 </CardContent>
               </Card>
             </div>

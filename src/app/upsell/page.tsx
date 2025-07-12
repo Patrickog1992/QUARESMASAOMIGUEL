@@ -64,12 +64,12 @@ export default function UpsellPage() {
               </Card>
               <Card className="bg-card shadow-lg border-secondary flex flex-col">
                 <CardHeader>
-                  <Image src="https://placehold.co/600x400.png" alt="Card 3" width={600} height={400} className="rounded-t-lg" data-ai-hint="praying hands night" />
-                  <CardTitle className="pt-4">Oração da Noite</CardTitle>
+                  <Image src="https://placehold.co/600x400.png" alt="Card 3" width={600} height={400} className="rounded-t-lg" data-ai-hint="bible open" />
+                  <CardTitle className="pt-4">Guia de versículos bíblicos poderosos</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
                     <div>
-                        <p className="mb-2">Durma em paz e agradeça pelas graças recebidas.</p>
+                        <p className="mb-2">Esse guia tem um versículo para cada situação da sua vida que está passando</p>
                         <p className="mb-4 font-bold text-lg">
                             <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
                         </p>

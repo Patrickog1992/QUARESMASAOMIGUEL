@@ -63,32 +63,6 @@ export default function UpsellPage() {
                 </CardContent>
               </Card>
             </div>
-            
-            <h2 className="text-xl md:text-2xl font-bold text-accent-foreground">
-              Adicione ao seu pedido o "Salmo Secreto dos Milionários" por apenas <span className="text-primary line-through">R$47</span> <span className="text-green-600">R$19,90</span>!
-            </h2>
-            
-            <p className="text-md md:text-lg text-foreground/90 mt-4 max-w-3xl mx-auto">
-              Este é o Salmo que reis e milionários usaram ao longo da história para construir grandes fortunas. É a sua chance de ter acesso a essa sabedoria e transformar sua vida financeira.
-            </p>
-            
-            <div className="w-full max-w-md flex flex-col gap-4 mt-8 mx-auto">
-                <Button
-                    size="lg"
-                    className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 uppercase animate-pulse shadow-lg h-auto"
-                    onClick={handleUpsellAccept}
-                >
-                    Sim, eu quero adicionar por R$19,90
-                </Button>
-                
-                <Button
-                    variant="link"
-                    className="text-muted-foreground hover:text-foreground"
-                    onClick={handleUpsellDecline}
-                >
-                    Não, obrigado. Quero recusar essa oferta.
-                </Button>
-            </div>
         </div>
       </main>
       <Footer />

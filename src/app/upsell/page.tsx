@@ -94,7 +94,7 @@ export default function UpsellPage() {
                 <Button 
                     onClick={handleAllThreeCheckout} 
                     size="lg"
-                    className="w-full max-w-2xl mx-auto bg-green-600 hover:bg-green-700 text-white animate-pulse font-bold h-auto py-4 text-base md:text-lg md:py-6"
+                    className="w-full max-w-2xl mx-auto bg-green-600 hover:bg-green-700 text-white animate-pulse font-bold h-auto py-4 text-base md:text-lg md:py-6 whitespace-normal"
                 >
                     APROVEITE ESSA OFERTA OS 3 POR APENAS R$ 37,00
                 </Button>

@@ -21,7 +21,7 @@ export default function UpsellPage() {
   };
 
   const handleAllThreeCheckout = () => {
-    window.open('https://pay.kirvano.com/c6e3d2c8-8a8b-4b2e-9d2c-9a2d3b4b5e8c', '_self');
+    window.open('https://pay.kirvano.com/64053a4f-201b-4e23-b7a5-0e2a9b60f8e7', '_self');
   };
 
   const handleUpsellDecline = () => {

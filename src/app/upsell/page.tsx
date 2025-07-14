@@ -20,6 +20,10 @@ export default function UpsellPage() {
     window.open('https://pay.kirvano.com/ee21dbf6-05a6-469e-bde5-7a9efd90c6b6', '_self');
   };
 
+  const handleAllThreeCheckout = () => {
+    window.open('https://pay.kirvano.com/c6e3d2c8-8a8b-4b2e-9d2c-9a2d3b4b5e8c', '_self');
+  };
+
   const handleUpsellDecline = () => {
     // TODO: Adicione aqui o link para a página de obrigado ou próxima etapa
     console.log('Upsell recusado.');
@@ -84,6 +88,16 @@ export default function UpsellPage() {
                    <Button onClick={handleGuiaCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
+            </div>
+            
+            <div className="mt-10 mb-10 text-center">
+                <Button 
+                    onClick={handleAllThreeCheckout} 
+                    size="lg"
+                    className="w-full max-w-2xl mx-auto bg-green-600 hover:bg-green-700 text-white animate-pulse font-bold h-auto py-6 text-lg"
+                >
+                    APROVEITE ESSA OFERTA OS 3 POR APENAS R$ 37,00
+                </Button>
             </div>
         </div>
       </main>

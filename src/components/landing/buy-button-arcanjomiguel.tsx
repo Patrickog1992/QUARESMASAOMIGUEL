@@ -9,7 +9,7 @@ export function BuyButtonArcanjoMiguel() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, 10 * 1000); // 10 seconds
+    }, (13 * 60 + 35) * 1000); // 13 minutes and 35 seconds
 
     return () => clearTimeout(timer);
   }, []);

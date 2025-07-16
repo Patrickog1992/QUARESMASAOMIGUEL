@@ -19,10 +19,6 @@ export function HeroSectionArcanjoMiguel() {
           <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
           <span>Essas orações estavam guardadas a 7 chaves dentro de arquivos secretos do Vaticano.</span>
         </li>
-         <li className="flex items-start gap-3">
-          <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
-          <span>Ao pedir as orações hoje, você ganhará um <b>terço perolado bento.</b></span>
-        </li>
         <li className="flex items-start gap-3">
           <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
           <span>Mas hoje você pode acessá-las e sentir a proteção do Arcanjo Miguel agir em sua vida.</span>

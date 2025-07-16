@@ -21,7 +21,7 @@ export function HeroSectionArcanjoMiguel() {
         </li>
          <li className="flex items-start gap-3">
           <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
-          <span>Ao pedir as orações hoje, você ganhará um terço perolado bento.</span>
+          <span>Ao pedir as orações hoje, você ganhará um <b>terço perolado bento.</b></span>
         </li>
         <li className="flex items-start gap-3">
           <Check className="h-6 w-6 text-primary shrink-0 mt-1" />

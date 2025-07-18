@@ -33,7 +33,7 @@ export default function LoadingPage() {
     const timer = setTimeout(() => setProgress(74), 500);
 
     const redirectTimer = setTimeout(() => {
-      router.push(`/vaticano?name=${encodeURIComponent(name)}`);
+      router.push(`/oferta-final?name=${encodeURIComponent(name)}`);
     }, 2500);
 
     return () => {

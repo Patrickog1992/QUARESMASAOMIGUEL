@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
-import { BookOpen, Headphones, Gift, Check } from 'lucide-react';
+import { BookOpen, Headphones, Gift, Check, Lock, ShieldCheck, ScrollText, Mail, CircleHelp } from 'lucide-react';
 import Image from 'next/image';
 
 function RosaryPattern() {
@@ -40,10 +40,11 @@ export default function OfertaFinalPage() {
           <Card className="bg-white/80 backdrop-blur-sm mb-10 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="p-6 md:p-8">
               <h1 className="text-2xl md:text-4xl font-bold text-blue-800 mb-2">
-                A Oração Secreta Feita Especialmente Para Você{name ? `, ${name.split(' ')[0]}` : ''}
+                <Lock className="inline-block w-8 h-8 mr-2 align-middle" />
+                A Oração Revelada Pelo Vaticano — Feita Especialmente Para Você{name ? `, ${name.split(' ')[0]}` : ''}
               </h1>
-              <p className="text-lg md:text-xl text-blue-900/80 mb-8">
-                Receba a oração que tocará sua vida e abrirá os caminhos que você tanto precisa.
+              <p className="text-lg md:text-xl text-blue-900/80 mb-6">
+                Receba uma oração guardada por anos nos arquivos do Vaticano, revelada por Papa Francisco a um frei brasileiro pouco antes de uma audiência privada. Ela foi cuidadosamente traduzida e preparada para tocar a sua alma, abrir seus caminhos e trazer respostas do Céu ao seu coração.
               </p>
               
               <Image
@@ -55,91 +56,87 @@ export default function OfertaFinalPage() {
                 data-ai-hint="praying person"
               />
 
-              <div className="text-left space-y-6 text-blue-950">
+              <div className="text-left space-y-8 text-blue-950">
                 <div>
                   <h2 className="text-xl font-bold text-blue-800 mb-4 flex items-center gap-3">
-                    <BookOpen className="w-6 h-6" /> A Oração Secreta
+                    <ShieldCheck className="w-6 h-6" /> ✝️ Por que esta oração é tão especial?
                   </h2>
-                  <h3 className="font-semibold text-lg mb-2">Por que esta oração é especial?</h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 mt-1 shrink-0" />
-                      <span>Oração personalizada para seu momento de vida</span>
+                      <span className="text-xl shrink-0">📜</span>
+                      <span><span className="font-semibold">Oração secreta traduzida</span> diretamente de manuscritos preservados no Vaticano</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 mt-1 shrink-0" />
-                      <span>Envio imediato por e-mail e acesso online</span>
+                      <span className="text-xl shrink-0">🙏</span>
+                      <span><span className="font-semibold">Escolhida com base em seu momento espiritual</span> (via um pequeno questionário)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 mt-1 shrink-0" />
-                      <span>Baseada nos ensinamentos de fé de Padre Pio</span>
+                      <span className="text-xl shrink-0">📩</span>
+                      <span><span className="font-semibold">Entrega imediata</span> por e-mail e acesso online vitalício</span>
+                    </li>
+                     <li className="flex items-start gap-3">
+                      <span className="text-xl shrink-0">🕊️</span>
+                      <span><span className="font-semibold">Inspirada na orientação espiritual</span> de Papa Francisco e Padre Pio</span>
                     </li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Você vai receber acesso a uma plataforma dedicada ao caminho divino e junto irá receber também:</h3>
-                  <ul className="space-y-2">
+                  <h2 className="text-xl font-bold text-blue-800 mb-4 flex items-center gap-3">
+                    <Gift className="w-6 h-6" /> 🎁 Ao contribuir, você receberá:
+                  </h2>
+                  <ul className="space-y-3">
                       <li className="flex items-start gap-3">
                           <Check className="w-5 h-5 text-green-600 mt-1 shrink-0" />
-                          <span>A Jornada de 30 Dias: um guia espiritual com reflexões diárias</span>
+                          <span><span className="font-semibold">A Oração Revelada pelo Vaticano:</span> Traduzida de um antigo dialeto litúrgico por um especialista, com narração devocional feita por um frei consagrado.</span>
                       </li>
                       <li className="flex items-start gap-3">
                           <Check className="w-5 h-5 text-green-600 mt-1 shrink-0" />
-                          <span>Acesso exclusivo a conteúdos devocionais.</span>
+                          <span><span className="font-semibold">A Jornada de 30 Dias:</span> Um guia de reflexões espirituais diárias para ajudar você a viver com fé e propósito.</span>
                       </li>
                       <li className="flex items-start gap-3">
                           <Check className="w-5 h-5 text-green-600 mt-1 shrink-0" />
-                          <span>Acesso imediato e vitalício</span>
+                          <span><span className="font-semibold">Diário de Milagres (PRESENTE EXCLUSIVO):</span> "Escreva seus pedidos, bênçãos e experiências. Ele será o testemunho do agir divino em sua vida."</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                          <Check className="w-5 h-5 text-green-600 mt-1 shrink-0" />
+                          <span><span className="font-semibold">Orações em Áudio (PRESENTE EXCLUSIVO):</span> "Escute a oração em momentos de paz ou aflição. Deixe a voz sagrada guiar seu coração."</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                          <Check className="w-5 h-5 text-green-600 mt-1 shrink-0" />
+                          <span><span className="font-semibold">Mensagens Devocionais Exclusivas:</span> Conteúdos inspiradores enviados diretamente ao seu e-mail.</span>
                       </li>
                   </ul>
+                  <p className="italic text-blue-900/80 mt-4">“Filho, estes presentes foram preparados com amor, para que você sinta o céu mais perto do seu coração.”</p>
+                </div>
+                 <div>
+                  <h2 className="text-xl font-bold text-blue-800 mb-4 flex items-center gap-3">
+                    <CircleHelp className="w-6 h-6" /> 💬 Por que há uma contribuição?
+                  </h2>
+                    <p>Para tornar possível o acesso a esta oração rara e valiosa, foi necessário traduzir documentos antigos, produzir as versões em áudio e manter a plataforma online para milhares de fiéis. Por isso, pedimos uma contribuição simbólica única de <span className="font-bold">R$ 19,90</span> — que também ajuda a manter este projeto vivo, levando fé a quem mais precisa.</p>
                 </div>
               </div>
             </CardContent>
           </Card>
           
-          <Card className="bg-white/80 backdrop-blur-sm p-6 text-center mb-10 rounded-xl shadow-2xl border border-blue-200">
-            <Gift className="w-12 h-12 mx-auto text-blue-600 mb-4" />
-            <h2 className="text-xl md:text-2xl font-bold text-blue-800">HOJE PADRE PIO VAI TE ABENÇOAR COMPLETAMENTE COM TODA SUA SABEDORIA</h2>
-            <p className="italic text-blue-900/80 mt-2">"Filho, estes presentes foram preparados com amor, para que você sinta o céu mais perto do seu coração."</p>
-          </Card>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-10 text-left">
-            <Card className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl border border-blue-200">
-                <CardContent className="p-6">
-                    <h3 className="font-bold text-lg flex items-center gap-2 text-blue-800"><Gift className="w-5 h-5"/> PRESENTE DE PADRE PIO</h3>
-                    <h4 className="font-bold text-2xl my-2 text-blue-950">Diário de Milagres</h4>
-                    <p className="text-blue-900/90">"Escreva seus pedidos, bênçãos e experiências. Ele será o testemunho do agir divino em sua vida."</p>
-                </CardContent>
-            </Card>
-             <Card className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl border border-blue-200">
-                <CardContent className="p-6">
-                    <h3 className="font-bold text-lg flex items-center gap-2 text-blue-800"><Headphones className="w-5 h-5"/> PRESENTE DE PADRE PIO</h3>
-                    <h4 className="font-bold text-2xl my-2 text-blue-950">Orações em Áudio</h4>
-                    <p className="text-blue-900/90">"Escute a oração em momentos de paz ou aflição. Deixe a voz sagrada guiar seu coração."</p>
-                </CardContent>
-            </Card>
-          </div>
-          <p className="italic text-blue-900/80 mt-2 mb-10">"Estes presentes são sinais divinos de que você não está sozinho(a)."</p>
-
           <Card className="bg-white/90 backdrop-blur-sm shadow-xl w-full border-2 border-green-500 rounded-xl">
             <CardContent className="p-6 md:p-8 space-y-4">
-                <p className="font-semibold text-lg text-blue-950">Contribua para que nosso projeto abençoe milhares de famílias, assim como você</p>
+                <p className="font-bold text-2xl text-blue-800">🙌 Oferta de Fé:</p>
                 <div>
-                    <p className="text-blue-900/80">Valor original:</p>
-                    <p className="text-2xl font-bold line-through text-red-600">R$ 119,90</p>
+                    <p className="text-xl text-blue-900/80">De: <span className="line-through text-red-600">R$ 119,90</span></p>
                 </div>
                  <div>
-                    <p className="font-bold text-blue-800">Oferta de Fé:</p>
+                    <p className="font-semibold text-blue-800">Por:</p>
                     <p className="text-5xl font-bold text-green-600">R$ 19,90</p>
-                    <p className="font-semibold text-blue-900/80">Contribuição única, com propósito</p>
+                    <p className="font-semibold text-blue-900/80">Contribuição única, com propósito espiritual</p>
                 </div>
               <Button onClick={handleCheckout} size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-xl h-auto py-4 animate-pulse">
-                Receber Minha Oração Secreta
+                🎁 Clique abaixo para receber agora sua oração revelada pelo Vaticano.
               </Button>
               <div className="text-center text-blue-900/80 text-sm space-y-2 mt-4">
-                 <p>7 dias de bênção ou sua contribuição será devolvida</p>
-                 <p className="font-bold">Se sua alma não for tocada, devolvemos sua oferta</p>
-                 <p>Contribuição protegida e guiada pela fé</p>
+                 <p className="font-bold">✅ Garantia de Fé:</p>
+                 <p>7 dias de bênção ou sua contribuição será devolvida.</p>
+                 <p>Se sua alma não for tocada, devolvemos sua oferta sem questionamentos.</p>
+                 <p>🔒 Contribuição protegida e guiada pela fé.</p>
               </div>
             </CardContent>
           </Card>

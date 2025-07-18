@@ -22,7 +22,7 @@ function RosaryPattern() {
   );
 }
 
-export default function OsegredoVaticanoQuiz2Page() {
+export default function OsegredoVaticanoNomePage() {
   const [name, setName] = useState('');
   const router = useRouter();
 

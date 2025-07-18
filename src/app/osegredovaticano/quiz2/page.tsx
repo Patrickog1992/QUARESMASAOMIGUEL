@@ -8,6 +8,7 @@ import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import Link from 'next/link';
 
 function RosaryPattern() {
   return (
@@ -28,10 +29,11 @@ export default function OsegredoVaticanoQuiz2Page() {
   const [name, setName] = useState('');
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (name.trim()) {
-      router.push(`/osegredovaticano/quiz3?name=${encodeURIComponent(name)}`);
+  const isButtonDisabled = !name.trim();
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isButtonDisabled) {
+      e.preventDefault();
     }
   };
 
@@ -42,7 +44,7 @@ export default function OsegredoVaticanoQuiz2Page() {
         <div className="max-w-md w-full">
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-6">
                 <div className="text-center">
                   <Label htmlFor="name" className="text-lg md:text-xl font-semibold text-blue-800">
                     Deixe seu nome abaixo para que possamos destinar as orações para seu problema em específico 🙏
@@ -57,15 +59,26 @@ export default function OsegredoVaticanoQuiz2Page() {
                   onChange={(e) => setName(e.target.value)}
                   required
                 />
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 uppercase shadow-lg h-auto"
-                  disabled={!name.trim()}
+                <Link 
+                  href={`/osegredovaticano/quiz3?name=${encodeURIComponent(name)}`}
+                  onClick={handleClick}
+                  className={cn(
+                    "block w-full",
+                    isButtonDisabled && "pointer-events-none opacity-50"
+                  )}
+                  aria-disabled={isButtonDisabled}
+                  tabIndex={isButtonDisabled ? -1 : undefined}
                 >
-                  Receber minhas orações
-                </Button>
-              </form>
+                  <Button
+                    asChild={false} 
+                    size="lg"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 uppercase shadow-lg h-auto"
+                    disabled={isButtonDisabled}
+                  >
+                    Receber minhas orações
+                  </Button>
+                </Link>
+              </div>
             </CardContent>
           </Card>
         </div>

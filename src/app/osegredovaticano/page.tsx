@@ -44,7 +44,7 @@ export default function OsegredoVaticanoQuizPage() {
           </p>
           
           <Image
-            src="https://i.imgur.com/NnpPI3u.jpeg"
+            src="https://i.imgur.com/5wARayj.png"
             alt="Cura Divina"
             width={600}
             height={400}

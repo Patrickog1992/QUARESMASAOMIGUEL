@@ -129,7 +129,7 @@ export default function OfertaFinalPage() {
                     <p className="text-5xl font-bold text-green-600">R$ 19,90</p>
                     <p className="font-semibold text-blue-900/80">Contribuição única, com propósito espiritual</p>
                 </div>
-              <Button onClick={handleCheckout} size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-xl h-auto py-4 animate-pulse">
+              <Button onClick={handleCheckout} size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl h-auto py-4 animate-pulse whitespace-normal text-center">
                 🎁 Clique abaixo para receber agora sua oração revelada pelo Vaticano.
               </Button>
               <div className="text-center text-blue-900/80 text-sm space-y-2 mt-4">
@@ -146,5 +146,3 @@ export default function OfertaFinalPage() {
     </div>
   );
 }
-
-    

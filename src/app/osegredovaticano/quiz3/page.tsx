@@ -4,8 +4,14 @@ import { Button } from '@/components/ui/button';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+
+const quizOptions = [
+  'MINHA VIDA FINANCEIRA',
+  'MEU RELACIONAMENTO FAMILIAR',
+  'MINHA VIDA AMOROSA',
+  'MINHA VIDA ESPIRITUAL',
+  'TODAS AS OPÇÕES ACIMA',
+];
 
 function RosaryPattern() {
   return (
@@ -22,7 +28,7 @@ function RosaryPattern() {
   );
 }
 
-export default function OsegredoVaticanoQuiz2Page() {
+export default function OsegredoVaticanoQuiz3Page() {
   return (
     <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
       <RosaryPattern />
@@ -30,24 +36,25 @@ export default function OsegredoVaticanoQuiz2Page() {
         <div className="max-w-md w-full">
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
-              <div className="text-center">
-                <Label htmlFor="name" className="text-lg md:text-xl font-semibold text-blue-800">
-                  Deixe seu nome abaixo para que possamos destinar as orações para seu problema em específico 🙏
-                </Label>
+              <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
+                QUAL PARTE DA SUA VIDA PRECISA MUDAR AGORA?
+              </h1>
+              <div className="space-y-4">
+                {quizOptions.map((option, index) => (
+                  <Link href="/vaticano" key={index} className="block w-full">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base"
+                    >
+                      {option}
+                    </Button>
+                  </Link>
+                ))}
               </div>
-              <Input
-                id="name"
-                type="text"
-                placeholder="Digite seu nome completo aqui..."
-                className="text-center text-lg bg-white/50 border-blue-300 focus:ring-blue-500"
-              />
-              <Link href="/osegredovaticano/quiz3" className="block w-full">
-                <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 uppercase shadow-lg h-auto">
-                    Receber minhas orações
-                </Button>
-              </Link>
             </CardContent>
           </Card>
+          <p className="mt-8 text-lg italic text-blue-900/80">"Ore como se tudo dependesse de Deus" - Santo Agostinho</p>
         </div>
       </main>
     </div>

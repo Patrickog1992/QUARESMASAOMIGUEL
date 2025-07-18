@@ -1,10 +1,11 @@
+
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
-import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
@@ -25,6 +26,14 @@ function RosaryPattern() {
 
 export default function OsegredoVaticanoQuiz2Page() {
   const [name, setName] = useState('');
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (name.trim()) {
+      router.push(`/osegredovaticano/quiz3?name=${encodeURIComponent(name)}`);
+    }
+  };
 
   return (
     <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
@@ -33,24 +42,30 @@ export default function OsegredoVaticanoQuiz2Page() {
         <div className="max-w-md w-full">
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
-              <div className="text-center">
-                <Label htmlFor="name" className="text-lg md:text-xl font-semibold text-blue-800">
-                  Deixe seu nome abaixo para que possamos destinar as orações para seu problema em específico 🙏
-                </Label>
-              </div>
-              <Input
-                id="name"
-                type="text"
-                placeholder="Digite seu nome completo aqui..."
-                className="text-center text-lg bg-white/50 border-blue-300 focus:ring-blue-500"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <Link href={`/osegredovaticano/quiz3?name=${encodeURIComponent(name)}`} className="block w-full">
-                <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 uppercase shadow-lg h-auto" disabled={!name}>
-                    Receber minhas orações
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="text-center">
+                  <Label htmlFor="name" className="text-lg md:text-xl font-semibold text-blue-800">
+                    Deixe seu nome abaixo para que possamos destinar as orações para seu problema em específico 🙏
+                  </Label>
+                </div>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="Digite seu nome completo aqui..."
+                  className="text-center text-lg bg-white/50 border-blue-300 focus:ring-blue-500"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 uppercase shadow-lg h-auto"
+                  disabled={!name.trim()}
+                >
+                  Receber minhas orações
                 </Button>
-              </Link>
+              </form>
             </CardContent>
           </Card>
         </div>

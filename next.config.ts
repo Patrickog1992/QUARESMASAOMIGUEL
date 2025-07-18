@@ -70,6 +70,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'classic.exame.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'static.nationalgeographicbrasil.com',
+      },
     ],
   },
 };

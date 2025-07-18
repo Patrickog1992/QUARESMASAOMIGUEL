@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function RosaryPattern() {
   return (
@@ -36,6 +37,14 @@ export default function OsegredoVaticanoQuiz1Page() {
                 <p className="italic font-semibold text-blue-800">“Há uma oração... uma oração escondida há séculos, que só pode ser revelada àqueles que estiverem prontos espiritualmente.”</p>
                 <p>Essa oração havia sido guardada a sete chaves, trancada nos arquivos secretos do Vaticano, entre documentos selados com sangue, fé e temor.</p>
                 <p>Segundo o Papa, essa oração foi passada de geração em geração, entre poucos escolhidos. Ela teria sido revelada por um anjo a um monge desconhecido, durante uma visão celestial no século XII — e só deveria ser revelada quando o mundo estivesse em profunda aflição espiritual.</p>
+                <Image
+                    src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/004-2cmyk-blackmar28.webp?w=1450&h=1895&p=top"
+                    alt="Papa em oração"
+                    width={600}
+                    height={777}
+                    className="mx-auto my-6 rounded-lg shadow-lg"
+                    data-ai-hint="praying pope"
+                />
                 <p className="italic font-semibold text-blue-800">“Agora é a hora. O mundo precisa dessa oração.”</p>
                 <p>Dias depois, o Papa faleceu em silêncio... Mas o frei guardou essas palavras, e hoje, você pode ser uma das poucas pessoas a ter acesso a esse conteúdo sagrado.</p>
                 <p>A oração, narrada por esse mesmo frei, está prestes a ser revelada — mas somente àqueles que abrirem as 7 chaves da fé.</p>

@@ -40,7 +40,7 @@ export default function OsegredoVaticanoQuizPage() {
           </h1>
           
           <p className="text-lg md:text-xl text-blue-900/90 mb-8 font-bold">
-            Você foi guiado(a) até aqui por um motivo. Em poucos minutos, descubra o manuscrito destinado para sua cura!
+            Você foi guiado(a) até aqui por um motivo. Em poucos minutos, descubra esse segredo destinado para sua cura!
           </p>
           
           <Image

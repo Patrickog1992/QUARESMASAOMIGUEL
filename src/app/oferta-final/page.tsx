@@ -39,7 +39,7 @@ export default function OfertaFinalPage() {
         <div className="max-w-3xl w-full">
           <Card className="bg-white/80 backdrop-blur-sm mb-10 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="p-6 md:p-8">
-              <h1 className="text-2xl md:text-4xl font-bold text-blue-800 mb-2">
+              <h1 className="text-2xl md:text-4xl font-bold text-blue-800 mb-2 uppercase">
                 <Lock className="inline-block w-8 h-8 mr-2 align-middle" />
                 A Oração Revelada Pelo Vaticano — Feita Especialmente Para Você{name ? `, ${name.split(' ')[0]}` : ''}
               </h1>
@@ -146,3 +146,5 @@ export default function OfertaFinalPage() {
     </div>
   );
 }
+
+    

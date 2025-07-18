@@ -7,11 +7,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 
 const quizOptions = [
-  { emoji: '💰', text: 'MINHA VIDA FINANCEIRA' },
-  { emoji: '👨‍👩‍👧‍👦', text: 'MEU RELACIONAMENTO FAMILIAR' },
-  { emoji: '❤️', text: 'MINHA VIDA AMOROSA' },
-  { emoji: '🙏', text: 'MINHA VIDA ESPIRITUAL' },
-  { emoji: '✨', text: 'TODAS AS OPÇÕES ACIMA' },
+  { text: 'ACREDITO FIELMENTE NISSO!' },
+  { text: 'SIM! SOU DEVOTA DE SÃO PADRE PIO' },
+  { text: 'ACREDITO MAS ME SINTO DISTANTE...' },
+  { text: 'NUNCA PAREI PRA PENSAR NISSO' },
 ];
 
 function RosaryPattern() {
@@ -29,7 +28,7 @@ function RosaryPattern() {
   );
 }
 
-export default function OsegredoVaticanoQuiz3Page() {
+export default function OsegredoVaticanoQuiz4Page() {
   const searchParams = useSearchParams();
   const name = searchParams.get('name');
 
@@ -41,17 +40,17 @@ export default function OsegredoVaticanoQuiz3Page() {
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
               <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                {name ? `${name.split(' ')[0]}, QUAL PARTE`: 'QUAL PARTE'} DA SUA VIDA PRECISA MUDAR AGORA?
+                {name ? `${name.split(' ')[0]}, VOCÊ ACREDITA` : 'VOCÊ ACREDITA'} NO PODER DE SÃO PADRE PIO INTERCEDER POR VOCÊ?
               </h1>
+              <p className="text-center text-blue-900/90">Ele pode te ajudar a alcançar o que tanto precisa.</p>
               <div className="space-y-4">
                 {quizOptions.map((option, index) => (
-                  <Link href={`/osegredovaticano/quiz4?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
+                  <Link href="/vaticano" key={index} className="block w-full">
                     <Button
                       size="lg"
                       variant="outline"
-                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-start whitespace-normal text-left"
+                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-center whitespace-normal text-center"
                     >
-                      <span className="mr-3 text-xl">{option.emoji}</span>
                       <span className="flex-1">{option.text}</span>
                     </Button>
                   </Link>
@@ -59,7 +58,7 @@ export default function OsegredoVaticanoQuiz3Page() {
               </div>
             </CardContent>
           </Card>
-          <p className="mt-8 text-lg italic text-blue-900/80">"Ore como se tudo dependesse de Deus" - Santo Agostinho</p>
+          <p className="mt-8 text-lg italic text-blue-900/80">"A fé é como a luz do sol que, sendo uma só, ilumina a todos"</p>
         </div>
       </main>
     </div>

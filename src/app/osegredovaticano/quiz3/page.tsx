@@ -49,10 +49,10 @@ export default function OsegredoVaticanoQuiz3Page() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-start"
+                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-start whitespace-normal text-left"
                     >
                       <span className="mr-3 text-xl">{option.emoji}</span>
-                      <span>{option.text}</span>
+                      <span className="flex-1">{option.text}</span>
                     </Button>
                   </Link>
                 ))}

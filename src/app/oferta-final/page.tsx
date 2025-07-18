@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { BookOpen, Headphones, Gift, Check } from 'lucide-react';
+import Image from 'next/image';
 
 function RosaryPattern() {
   return (
@@ -44,6 +45,15 @@ export default function OfertaFinalPage() {
               <p className="text-lg md:text-xl text-blue-900/80 mb-8">
                 Receba a oração que tocará sua vida e abrirá os caminhos que você tanto precisa.
               </p>
+              
+              <Image
+                src="https://i.imgur.com/WnIxuok.png"
+                alt="Oração Secreta"
+                width={600}
+                height={400}
+                className="mx-auto my-6 rounded-lg shadow-lg"
+                data-ai-hint="praying person"
+              />
 
               <div className="text-left space-y-6 text-blue-950">
                 <div>

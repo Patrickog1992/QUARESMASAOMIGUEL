@@ -32,7 +32,7 @@ export default function OsegredoVaticanoQuiz2Page() {
             <CardContent className="space-y-6 text-blue-950">
               <div className="text-center">
                 <Label htmlFor="name" className="text-lg md:text-xl font-semibold text-blue-800">
-                  Deixe seu nome abaixo para que possamos adicionar em nosso livro de orações 🙏
+                  Deixe seu nome abaixo para que possamos destinar as orações para seu problema em específico 🙏
                 </Label>
               </div>
               <Input

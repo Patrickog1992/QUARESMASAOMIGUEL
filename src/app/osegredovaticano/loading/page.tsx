@@ -1,17 +1,11 @@
 
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
+import { Progress } from '@/components/ui/progress';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
-import Link from 'next/link';
-
-const quizOptions = [
-  { text: 'Sim, estou pronto' },
-  { text: 'Sim, com o coração aberto' },
-  { text: 'Sim, quero o milagre' },
-];
 
 function RosaryPattern() {
   return (
@@ -28,9 +22,25 @@ function RosaryPattern() {
   );
 }
 
-export default function OsegredoVaticanoQuiz6Page() {
+export default function LoadingPage() {
   const searchParams = useSearchParams();
-  const name = searchParams.get('name');
+  const router = useRouter();
+  const name = searchParams.get('name') || '';
+
+  const [progress, setProgress] = useState(13);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setProgress(74), 500);
+
+    const redirectTimer = setTimeout(() => {
+      router.push(`/vaticano?name=${encodeURIComponent(name)}`);
+    }, 2500);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(redirectTimer);
+    };
+  }, [name, router]);
 
   return (
     <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
@@ -40,21 +50,12 @@ export default function OsegredoVaticanoQuiz6Page() {
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
               <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                Você se compromete a escutar essa oração com fé e respeito, caso ela seja revelada para você agora?
+                BUSCANDO A ORAÇÃO IDEAL PARA VOCÊ{name ? `, ${name.split(' ')[0]}` : ''}...
               </h1>
-              <div className="space-y-4">
-                {quizOptions.map((option, index) => (
-                  <Link href={`/osegredovaticano/loading?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-center whitespace-normal text-center"
-                    >
-                      <span className="flex-1">{option.text}</span>
-                    </Button>
-                  </Link>
-                ))}
-              </div>
+              <Progress value={progress} className="w-full" />
+              <p className="text-center text-blue-900/90 animate-pulse">
+                Aguarde, o melhor está por vir....
+              </p>
             </CardContent>
           </Card>
         </div>

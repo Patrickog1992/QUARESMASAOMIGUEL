@@ -31,15 +31,17 @@ export default function OsegredoVaticanoLayout({
           fbq('track', 'PageView');
         `}
       </Script>
-      <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: 'none' }}
-          src="https://www.facebook.com/tr?id=612623455156577&ev=PageView&noscript=1"
-          alt=""
-        />
-      </noscript>
+      <div>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=612623455156577&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+      </div>
       {/* End Meta Pixel Code */}
       <DisableDevTools />
       {children}

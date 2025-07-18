@@ -7,10 +7,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 
 const quizOptions = [
-  { text: 'ACREDITO FIELMENTE NISSO!' },
-  { text: 'SIM! EU CREIO NO PODER DA ORAÇÃO' },
-  { text: 'ACREDITO MAS ME SINTO DISTANTE...' },
-  { text: 'TENHO DÚVIDAS, MAS QUERO VER' },
+  { text: 'Sim, com certeza' },
+  { text: 'Talvez' },
+  { text: 'Nunca pensei nisso' },
+  { text: 'Não sei' },
 ];
 
 function RosaryPattern() {
@@ -28,7 +28,7 @@ function RosaryPattern() {
   );
 }
 
-export default function OsegredoVaticanoQuiz4Page() {
+export default function OsegredoVaticanoQuiz5Page() {
   const searchParams = useSearchParams();
   const name = searchParams.get('name');
 
@@ -40,12 +40,11 @@ export default function OsegredoVaticanoQuiz4Page() {
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
               <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                {name ? `${name.split(' ')[0]}, você acredita` : 'Você acredita'} no poder das orações ocultas do vaticano revelada pelo Papa Francisco?
+                Você acredita que orações específicas têm mais poder quando são reveladas no momento certo?
               </h1>
-              <p className="text-center text-blue-900/90">Ele pode te ajudar a alcançar o que tanto precisa.</p>
               <div className="space-y-4">
                 {quizOptions.map((option, index) => (
-                  <Link href={`/osegredovaticano/quiz5?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
+                  <Link href={`/vaticano?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
                     <Button
                       size="lg"
                       variant="outline"
@@ -58,7 +57,6 @@ export default function OsegredoVaticanoQuiz4Page() {
               </div>
             </CardContent>
           </Card>
-          <p className="mt-8 text-lg italic text-blue-900/80">"A fé é como a luz do sol que, sendo uma só, ilumina a todos"</p>
         </div>
       </main>
     </div>

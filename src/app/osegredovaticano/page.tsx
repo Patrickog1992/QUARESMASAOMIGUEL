@@ -36,7 +36,7 @@ export default function OsegredoVaticanoQuizPage() {
           />
 
           <h1 className="text-2xl md:text-4xl font-bold text-blue-800 mb-4 uppercase">
-            Descubra o segredo do vaticano que pode transformar sua vida em 7 dias...
+            Descubra a Oração Secreta que Pode Mudar Sua Vida – Revelada Após 7 Chaves do Vaticano
           </h1>
           
           <p className="text-lg md:text-xl text-blue-900/90 mb-8 font-bold">

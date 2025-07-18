@@ -41,7 +41,7 @@ export default function OfertaFinalPage() {
             <CardContent className="p-6 md:p-8">
               <h1 className="text-2xl md:text-4xl font-bold text-blue-800 mb-2 uppercase">
                 <Lock className="inline-block w-8 h-8 mr-2 align-middle" />
-                A Oração Revelada Pelo Vaticano — Feita Especialmente Para Você{name ? `, ${name.split(' ')[0]}` : ''}
+                A Oração Revelada Pelo Vaticano Feita Especialmente Para Você{name ? `, ${name.split(' ')[0]}` : ''}
               </h1>
               <p className="text-lg md:text-xl text-blue-900/80 mb-6">
                 Receba uma oração guardada por anos nos arquivos do Vaticano, revelada por Papa Francisco a um frei brasileiro pouco antes de uma audiência privada. Ela foi cuidadosamente traduzida e preparada para tocar a sua alma, abrir seus caminhos e trazer respostas do Céu ao seu coração.
@@ -129,7 +129,7 @@ export default function OfertaFinalPage() {
                     <p className="text-5xl font-bold text-green-600">R$ 19,90</p>
                     <p className="font-semibold text-blue-900/80">Contribuição única, com propósito espiritual</p>
                 </div>
-              <Button onClick={handleCheckout} size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl h-auto py-4 animate-pulse whitespace-normal text-center">
+              <Button onClick={handleCheckout} size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 animate-pulse whitespace-normal text-center text-lg md:text-xl">
                 🎁 Clique abaixo para receber agora sua oração revelada pelo Vaticano.
               </Button>
               <div className="text-center text-blue-900/80 text-sm space-y-2 mt-4">

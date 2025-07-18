@@ -7,10 +7,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 
 const quizOptions = [
-  { text: 'Sim, com certeza' },
-  { text: 'Talvez' },
-  { text: 'Nunca pensei nisso' },
-  { text: 'Não sei' },
+  { text: 'Sim, estou pronto' },
+  { text: 'Sim, com o coração aberto' },
+  { text: 'Sim, quero o milagre' },
 ];
 
 function RosaryPattern() {
@@ -28,7 +27,7 @@ function RosaryPattern() {
   );
 }
 
-export default function OsegredoVaticanoQuiz5Page() {
+export default function OsegredoVaticanoQuiz6Page() {
   const searchParams = useSearchParams();
   const name = searchParams.get('name');
 
@@ -40,11 +39,11 @@ export default function OsegredoVaticanoQuiz5Page() {
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
               <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                Você acredita que orações específicas têm mais poder quando são reveladas no momento certo?
+                Você se compromete a escutar essa oração com fé e respeito, caso ela seja revelada para você agora?
               </h1>
               <div className="space-y-4">
                 {quizOptions.map((option, index) => (
-                  <Link href={`/osegredovaticano/quiz6?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
+                  <Link href={`/vaticano?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
                     <Button
                       size="lg"
                       variant="outline"

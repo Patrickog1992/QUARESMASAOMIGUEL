@@ -43,7 +43,7 @@ export default function OfertaFinalPage() {
                 <Lock className="inline-block w-8 h-8 mr-2 align-middle" />
                 A Oração Revelada Pelo Vaticano Feita Especialmente Para Você{name ? `, ${name.split(' ')[0]}` : ''}
               </h1>
-              <p className="text-lg md:text-xl text-blue-900/80 mb-6">
+              <p className="text-lg md:text-xl text-blue-900/80 mb-6 font-bold">
                 Receba uma oração guardada por anos nos arquivos do Vaticano, revelada por Papa Francisco a um frei brasileiro pouco antes de uma audiência privada. Ela foi cuidadosamente traduzida e preparada para tocar a sua alma, abrir seus caminhos e trazer respostas do Céu ao seu coração.
               </p>
               

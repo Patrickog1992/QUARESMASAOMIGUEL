@@ -7,11 +7,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 
 const quizOptions = [
-  'MINHA VIDA FINANCEIRA',
-  'MEU RELACIONAMENTO FAMILIAR',
-  'MINHA VIDA AMOROSA',
-  'MINHA VIDA ESPIRITUAL',
-  'TODAS AS OPÇÕES ACIMA',
+  { emoji: '💰', text: 'MINHA VIDA FINANCEIRA' },
+  { emoji: '👨‍👩‍👧‍👦', text: 'MEU RELACIONAMENTO FAMILIAR' },
+  { emoji: '❤️', text: 'MINHA VIDA AMOROSA' },
+  { emoji: '🙏', text: 'MINHA VIDA ESPIRITUAL' },
+  { emoji: '✨', text: 'TODAS AS OPÇÕES ACIMA' },
 ];
 
 function RosaryPattern() {
@@ -49,9 +49,10 @@ export default function OsegredoVaticanoQuiz3Page() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base"
+                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-start"
                     >
-                      {option}
+                      <span className="mr-3 text-xl">{option.emoji}</span>
+                      <span>{option.text}</span>
                     </Button>
                   </Link>
                 ))}

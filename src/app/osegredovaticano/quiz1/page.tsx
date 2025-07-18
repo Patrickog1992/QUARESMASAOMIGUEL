@@ -55,7 +55,7 @@ export default function OsegredoVaticanoQuiz1Page() {
             <h2 className="text-xl md:text-2xl font-bold text-blue-800 mb-6">
               ✝️ Você está pronto para acessar o que foi escondido por séculos?
             </h2>
-            <Link href="/osegredovaticano/quiz2">
+            <Link href="/osegredovaticano/quiz3">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 px-8 uppercase shadow-lg h-auto whitespace-normal text-center">
                     Sim, estou pronto para a revelação
                 </Button>

@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
@@ -23,6 +24,8 @@ function RosaryPattern() {
 }
 
 export default function OsegredoVaticanoQuiz2Page() {
+  const [name, setName] = useState('');
+
   return (
     <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
       <RosaryPattern />
@@ -40,9 +43,11 @@ export default function OsegredoVaticanoQuiz2Page() {
                 type="text"
                 placeholder="Digite seu nome completo aqui..."
                 className="text-center text-lg bg-white/50 border-blue-300 focus:ring-blue-500"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
-              <Link href="/osegredovaticano/quiz3" className="block w-full">
-                <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 uppercase shadow-lg h-auto">
+              <Link href={`/osegredovaticano/quiz3?name=${encodeURIComponent(name)}`} className="block w-full">
+                <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 uppercase shadow-lg h-auto" disabled={!name}>
                     Receber minhas orações
                 </Button>
               </Link>

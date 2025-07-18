@@ -1,5 +1,6 @@
 'use client';
 
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
@@ -29,6 +30,9 @@ function RosaryPattern() {
 }
 
 export default function OsegredoVaticanoQuiz3Page() {
+  const searchParams = useSearchParams();
+  const name = searchParams.get('name');
+
   return (
     <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
       <RosaryPattern />
@@ -37,7 +41,7 @@ export default function OsegredoVaticanoQuiz3Page() {
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
               <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                QUAL PARTE DA SUA VIDA PRECISA MUDAR AGORA?
+                {name ? `${name.split(' ')[0]}, QUAL PARTE`: 'QUAL PARTE'} DA SUA VIDA PRECISA MUDAR AGORA?
               </h1>
               <div className="space-y-4">
                 {quizOptions.map((option, index) => (

@@ -8,11 +8,10 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 
 const quizOptions = [
-  { emoji: '💰', text: 'MINHA VIDA FINANCEIRA' },
-  { emoji: '👨‍👩‍👧‍👦', text: 'MEU RELACIONAMENTO FAMILIAR' },
-  { emoji: '❤️', text: 'MINHA VIDA AMOROSA' },
-  { emoji: '🙏', text: 'MINHA VIDA ESPIRITUAL' },
-  { emoji: '✨', text: 'TODAS AS OPÇÕES ACIMA' },
+  { text: 'ACREDITO FIELMENTE NISSO!' },
+  { text: 'SIM! EU CREIO NO PODER DA ORAÇÃO' },
+  { text: 'ACREDITO MAS ME SINTO DISTANTE...' },
+  { text: 'TENHO DÚVIDAS, MAS QUERO VER' },
 ];
 
 function RosaryPattern() {
@@ -42,17 +41,17 @@ function QuizContent() {
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
               <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                QUAL PARTE DA SUA VIDA PRECISA MUDAR AGORA?
+                Você acredita no poder das orações ocultas do vaticano revelada pelo Papa Francisco?
               </h1>
+              <p className="text-center text-blue-900/90">Ele pode te ajudar a alcançar o que tanto precisa.</p>
               <div className="space-y-4">
                 {quizOptions.map((option, index) => (
-                  <Link href={`/oracaovaticano/quiz4?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
+                  <Link href={`/oracaovaticano/quiz5?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
                     <Button
                       size="lg"
                       variant="outline"
-                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-start whitespace-normal text-left"
+                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-center whitespace-normal text-center"
                     >
-                      <span className="mr-3 text-xl">{option.emoji}</span>
                       <span className="flex-1">{option.text}</span>
                     </Button>
                   </Link>
@@ -60,14 +59,15 @@ function QuizContent() {
               </div>
             </CardContent>
           </Card>
-          <p className="mt-8 text-lg italic text-blue-900/80">"Ore como se tudo dependesse de Deus" - Santo Agostinho</p>
+          <p className="mt-8 text-lg italic text-blue-900/80">"A fé é como a luz do sol que, sendo uma só, ilumina a todos"</p>
         </div>
       </main>
     </div>
   );
 }
 
-export default function OracaoVaticanoQuiz3Page() {
+
+export default function OracaoVaticanoQuiz4Page() {
     return (
         <Suspense fallback={<div>Carregando...</div>}>
             <QuizContent />

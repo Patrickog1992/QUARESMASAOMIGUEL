@@ -1,6 +1,6 @@
-
 'use client';
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
@@ -28,37 +28,45 @@ function RosaryPattern() {
   );
 }
 
-export default function OsegredoVaticanoQuiz6Page() {
-  const searchParams = useSearchParams();
-  const name = searchParams.get('name');
+function Quiz6Content() {
+    const searchParams = useSearchParams();
+    const name = searchParams.get('name');
 
-  return (
-    <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
-      <RosaryPattern />
-      <main className="flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center z-10">
-        <div className="max-w-md w-full">
-          <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
-            <CardContent className="space-y-6 text-blue-950">
-              <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                Você se compromete a escutar essa oração com fé e respeito, caso ela seja revelada para você agora?
-              </h1>
-              <div className="space-y-4">
-                {quizOptions.map((option, index) => (
-                  <Link href={`/osegredovaticano/loading?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-center whitespace-normal text-center"
-                    >
-                      <span className="flex-1">{option.text}</span>
-                    </Button>
-                  </Link>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+    return (
+        <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
+        <RosaryPattern />
+        <main className="flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center z-10">
+            <div className="max-w-md w-full">
+            <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
+                <CardContent className="space-y-6 text-blue-950">
+                <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
+                    Você se compromete a escutar essa oração com fé e respeito, caso ela seja revelada para você agora?
+                </h1>
+                <div className="space-y-4">
+                    {quizOptions.map((option, index) => (
+                    <Link href={`/osegredovaticano/loading?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
+                        <Button
+                        size="lg"
+                        variant="outline"
+                        className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-center whitespace-normal text-center"
+                        >
+                        <span className="flex-1">{option.text}</span>
+                        </Button>
+                    </Link>
+                    ))}
+                </div>
+                </CardContent>
+            </Card>
+            </div>
+        </main>
         </div>
-      </main>
-    </div>
-  );
+    );
+}
+
+export default function OsegredoVaticanoQuiz6Page() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <Quiz6Content />
+    </Suspense>
+  )
 }

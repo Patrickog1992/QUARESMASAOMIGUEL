@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -23,7 +24,7 @@ function RosaryPattern() {
   );
 }
 
-export default function OfertaFinalPage() {
+function OfertaFinalContent() {
   const searchParams = useSearchParams();
   const name = searchParams.get('name') || '';
 
@@ -143,5 +144,13 @@ export default function OfertaFinalPage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function OfertaFinalPage() {
+  return (
+    <Suspense fallback={<div>Carregando oferta...</div>}>
+      <OfertaFinalContent />
+    </Suspense>
   );
 }

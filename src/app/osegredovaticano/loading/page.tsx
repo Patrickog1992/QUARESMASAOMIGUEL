@@ -48,7 +48,7 @@ function LoadingComponent() {
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
               <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                ANALISANDO SUAS RESPOSTAS...
+                {name ? `${name.split(' ')[0]}, estamos` : 'Estamos'} procurando as orações mais milagrosas para a sua situação atualmente...
               </h1>
               <Progress value={progress} className="w-full" />
               <p className="text-center text-blue-900/90 animate-pulse">

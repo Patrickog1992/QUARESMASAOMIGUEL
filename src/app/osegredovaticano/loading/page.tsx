@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Progress } from '@/components/ui/progress';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
@@ -27,14 +27,14 @@ export default function LoadingPage() {
   const router = useRouter();
   const name = searchParams.get('name') || '';
 
-  const [progress, setProgress] = useState(13);
+  const [progress, setProgress] = React.useState(13);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setProgress(74), 500);
+  React.useEffect(() => {
+    const timer = setTimeout(() => setProgress(84), 500);
 
     const redirectTimer = setTimeout(() => {
       router.push(`/oferta-final?name=${encodeURIComponent(name)}`);
-    }, 2500);
+    }, 1500);
 
     return () => {
       clearTimeout(timer);
@@ -50,11 +50,11 @@ export default function LoadingPage() {
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="space-y-6 text-blue-950">
               <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                BUSCANDO A ORAÇÃO IDEAL PARA VOCÊ{name ? `, ${name.split(' ')[0]}` : ''}...
+                ANALISANDO SUAS RESPOSTAS...
               </h1>
               <Progress value={progress} className="w-full" />
               <p className="text-center text-blue-900/90 animate-pulse">
-                Aguarde, o melhor está por vir....
+                Sua fé te trouxe até aqui, aguarde um momento...
               </p>
             </CardContent>
           </Card>

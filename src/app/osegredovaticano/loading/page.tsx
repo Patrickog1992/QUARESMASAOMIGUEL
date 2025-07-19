@@ -1,7 +1,6 @@
-
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Progress } from '@/components/ui/progress';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
@@ -22,19 +21,18 @@ function RosaryPattern() {
   );
 }
 
-export default function LoadingPage() {
+function LoadingComponent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const name = searchParams.get('name') || '';
 
-  const [progress, setProgress] = React.useState(13);
+  const [progress, setProgress] = useState(13);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => setProgress(84), 500);
-
     const redirectTimer = setTimeout(() => {
       router.push(`/oferta-final?name=${encodeURIComponent(name)}`);
-    }, 1500);
+    }, 2000);
 
     return () => {
       clearTimeout(timer);
@@ -62,4 +60,13 @@ export default function LoadingPage() {
       </main>
     </div>
   );
+}
+
+
+export default function LoadingPage() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <LoadingComponent />
+    </Suspense>
+  )
 }

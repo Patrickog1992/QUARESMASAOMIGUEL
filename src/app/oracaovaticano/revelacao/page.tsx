@@ -1,11 +1,12 @@
 'use client';
 
 import { Suspense } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function RosaryPattern() {
   return (
@@ -33,6 +34,14 @@ function RevelacaoContent() {
             <div className="max-w-2xl w-full">
             <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
                 <CardContent className="text-left text-lg md:text-xl space-y-4 text-blue-950">
+                    <Image
+                        src="https://i.imgur.com/AA2Fcnr.jpeg"
+                        alt="Mãos em oração segurando um terço"
+                        width={600}
+                        height={400}
+                        className="mx-auto mb-6 rounded-lg shadow-lg"
+                        data-ai-hint="praying hands rosary"
+                    />
                     <p>Você acaba de receber acesso às orações que o Vaticano nunca havia revelado — agora, o caminho para o seu milagre está aberto.</p>
                     <p>Essas orações, mantidas em segredo por séculos, foram preservadas por mãos silenciosas e corações devotos que sabiam do seu poder.</p>
                     <p>Não se trata apenas de palavras, mas de chaves espirituais capazes de abrir portas que a lógica não consegue explicar.</p>

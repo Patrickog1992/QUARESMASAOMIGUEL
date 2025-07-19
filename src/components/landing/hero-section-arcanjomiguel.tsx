@@ -6,7 +6,7 @@ export function HeroSectionArcanjoMiguel() {
     <section className="flex flex-col items-center text-center mb-12 md:mb-20">
       <Card className="bg-accent text-accent-foreground p-4 md:p-6 rounded-xl shadow-lg mb-8 max-w-4xl w-full">
         <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold uppercase leading-tight">
-          Descubra as 40 Orações Secretas que estão emocionando milhares só alguns segundos são suficientes para sentir o toque do <span className="text-primary">Arcanjo Miguel</span>.
+          As 40 Orações Secretas que desbloqueiam o milagre: bastam alguns segundos para sentir o toque poderoso do <span className="text-primary">Arcanjo Miguel</span>.
         </h1>
       </Card>
 

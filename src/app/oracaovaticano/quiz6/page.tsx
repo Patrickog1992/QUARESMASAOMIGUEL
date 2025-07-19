@@ -48,7 +48,7 @@ function QuizContent() {
                         <Button
                         size="lg"
                         variant="outline"
-                        className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-center whitespace-normal text-center"
+                        className="w-full bg-white/50 hover:bg-blue-600 hover:text-white border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-center whitespace-normal text-center"
                         >
                         <span className="flex-1">{option.text}</span>
                         </Button>

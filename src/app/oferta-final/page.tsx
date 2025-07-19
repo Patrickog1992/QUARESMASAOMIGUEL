@@ -8,6 +8,7 @@ import { Footer } from '@/components/landing/footer';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Lock, ShieldCheck, Gift, Check, CircleHelp } from 'lucide-react';
 import Image from 'next/image';
+import { SalesPopup } from '@/components/landing/sales-popup';
 
 function RosaryPattern() {
   return (
@@ -143,6 +144,7 @@ function OfertaFinalContent() {
         </div>
       </main>
       <Footer />
+      <SalesPopup />
     </div>
   );
 }

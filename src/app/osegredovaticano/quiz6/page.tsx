@@ -44,7 +44,7 @@ export default function OsegredoVaticanoQuiz6Page() {
               </h1>
               <div className="space-y-4">
                 {quizOptions.map((option, index) => (
-                  <Link href={`/oferta-final?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
+                  <Link href={`/osegredovaticano/loading?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
                     <Button
                       size="lg"
                       variant="outline"

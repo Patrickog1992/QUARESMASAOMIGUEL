@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useSearchParams } from 'next/navigation';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
-import { Lock, ShieldCheck, ScrollText, Gift, Check, CircleHelp } from 'lucide-react';
+import { Lock, ShieldCheck, Gift, Check, CircleHelp } from 'lucide-react';
 import Image from 'next/image';
 
 function RosaryPattern() {
@@ -146,4 +145,3 @@ export default function OfertaFinalPage() {
     </div>
   );
 }
-

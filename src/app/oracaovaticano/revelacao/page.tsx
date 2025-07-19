@@ -1,17 +1,11 @@
 'use client';
 
 import { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
-
-const quizOptions = [
-  { text: 'Sim, estou pronto' },
-  { text: 'Sim, com o coração aberto' },
-  { text: 'Sim, quero o milagre' },
-];
 
 function RosaryPattern() {
   return (
@@ -28,7 +22,7 @@ function RosaryPattern() {
   );
 }
 
-function QuizContent() {
+function RevelacaoContent() {
     const searchParams = useSearchParams();
     const name = searchParams.get('name');
 
@@ -36,38 +30,34 @@ function QuizContent() {
         <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
         <RosaryPattern />
         <main className="flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center z-10">
-            <div className="max-w-md w-full">
+            <div className="max-w-2xl w-full">
             <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
-                <CardContent className="space-y-6 text-blue-950">
-                <h1 className="text-xl md:text-2xl font-bold text-center text-blue-800">
-                    Você se compromete a escutar essa oração com fé e respeito, caso ela seja revelada para você agora?
-                </h1>
-                <div className="space-y-4">
-                    {quizOptions.map((option, index) => (
-                    <Link href={`/oracaovaticano/revelacao?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
-                        <Button
-                        size="lg"
-                        variant="outline"
-                        className="w-full bg-white/50 hover:bg-white/90 border-blue-300 text-blue-800 font-semibold h-auto py-3 text-base justify-center whitespace-normal text-center"
-                        >
-                        <span className="flex-1">{option.text}</span>
-                        </Button>
-                    </Link>
-                    ))}
-                </div>
+                <CardContent className="text-left text-lg md:text-xl space-y-4 text-blue-950">
+                    <p>Você acaba de receber acesso às orações que o Vaticano nunca havia revelado — agora, o caminho para o seu milagre está aberto.</p>
+                    <p>Essas orações, mantidas em segredo por séculos, foram preservadas por mãos silenciosas e corações devotos que sabiam do seu poder.</p>
+                    <p>Não se trata apenas de palavras, mas de chaves espirituais capazes de abrir portas que a lógica não consegue explicar.</p>
+                    <p>Ao entrar em contato com elas, você se conecta a uma força que transcende o visível, acessando uma dimensão onde a fé move o impossível.</p>
+                    <p className="font-bold">Este é um momento sagrado: você não está aqui por acaso. Seu milagre começa agora, e tudo o que precisa fazer é permitir que essa energia divina atue em sua vida.</p>
                 </CardContent>
             </Card>
+            
+            <div className="mt-8 text-center">
+                <Link href={`/oracaovaticano/loading?name=${encodeURIComponent(name || '')}`}>
+                    <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-4 px-8 uppercase shadow-lg h-auto whitespace-normal text-center">
+                        Continuar
+                    </Button>
+                </Link>
+            </div>
             </div>
         </main>
         </div>
     );
 }
 
-
-export default function OracaoVaticanoQuiz6Page() {
+export default function RevelacaoPage() {
     return (
         <Suspense fallback={<div>Carregando...</div>}>
-            <QuizContent />
+            <RevelacaoContent />
         </Suspense>
     )
 }

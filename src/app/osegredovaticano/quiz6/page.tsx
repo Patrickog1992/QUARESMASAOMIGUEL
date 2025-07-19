@@ -44,7 +44,7 @@ function Quiz6Content() {
                 </h1>
                 <div className="space-y-4">
                     {quizOptions.map((option, index) => (
-                    <Link href={`/osegredovaticano/loading?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
+                    <Link href={`/osegredovaticano/oracao?name=${encodeURIComponent(name || '')}`} key={index} className="block w-full">
                         <Button
                         size="lg"
                         variant="outline"

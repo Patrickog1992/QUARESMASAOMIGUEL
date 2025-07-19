@@ -21,7 +21,7 @@ function RosaryPattern() {
   );
 }
 
-function LoadingComponent() {
+function OracaoLoadingComponent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const name = searchParams.get('name') || '';
@@ -62,11 +62,10 @@ function LoadingComponent() {
   );
 }
 
-
-export default function LoadingPage() {
+export default function OracaoPage() {
   return (
     <Suspense fallback={<div>Carregando...</div>}>
-      <LoadingComponent />
+      <OracaoLoadingComponent />
     </Suspense>
   )
 }

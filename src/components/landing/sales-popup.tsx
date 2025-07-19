@@ -63,7 +63,7 @@ export function SalesPopup() {
         isVisible ? 'translate-x-0' : 'translate-x-[calc(100%+2rem)]'
       )}
     >
-      <Card className="bg-blue-600 text-white shadow-lg">
+      <Card className="bg-accent text-accent-foreground shadow-lg">
         <CardContent className="p-3 flex items-center gap-3">
           <CheckCircle className="h-5 w-5 shrink-0" />
           <p className="text-xs font-semibold">

@@ -6,6 +6,7 @@ import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import { FooterVaticano } from '@/components/landing/FooterVaticano';
 
 const quizOptions = [
   { text: 'Sim, com certeza' },
@@ -60,6 +61,7 @@ function QuizContent() {
           </Card>
         </div>
       </main>
+      <FooterVaticano />
     </div>
   );
 }

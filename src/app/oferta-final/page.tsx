@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Footer } from '@/components/landing/footer';
+import { FooterVaticano } from '@/components/landing/FooterVaticano';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Lock, ShieldCheck, Gift, Check, CircleHelp } from 'lucide-react';
 import Image from 'next/image';
@@ -143,7 +143,7 @@ function OfertaFinalContent() {
           </Card>
         </div>
       </main>
-      <Footer />
+      <FooterVaticano />
       <SalesPopupBlue />
     </div>
   );

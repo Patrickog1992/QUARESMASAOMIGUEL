@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
+import { FooterVaticano } from '@/components/landing/FooterVaticano';
 
 function RosaryPattern() {
   return (
@@ -60,6 +61,7 @@ export default function OracaoVaticanoQuizPage() {
           </Link>
         </div>
       </main>
+      <FooterVaticano />
     </div>
   );
 }

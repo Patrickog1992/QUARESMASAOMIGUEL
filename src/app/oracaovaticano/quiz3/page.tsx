@@ -6,6 +6,7 @@ import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import { FooterVaticano } from '@/components/landing/FooterVaticano';
 
 const quizOptions = [
   { emoji: '💰', text: 'MINHA VIDA FINANCEIRA' },
@@ -63,6 +64,7 @@ function QuizContent() {
           <p className="mt-8 text-lg italic text-blue-900/80">"Ore como se tudo dependesse de Deus" - Santo Agostinho</p>
         </div>
       </main>
+      <FooterVaticano />
     </div>
   );
 }

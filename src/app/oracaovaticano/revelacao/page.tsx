@@ -7,6 +7,7 @@ import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FooterVaticano } from '@/components/landing/FooterVaticano';
 
 function RosaryPattern() {
   return (
@@ -59,6 +60,7 @@ function RevelacaoContent() {
             </div>
             </div>
         </main>
+        <FooterVaticano />
         </div>
     );
 }

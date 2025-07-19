@@ -6,6 +6,7 @@ import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import { FooterVaticano } from '@/components/landing/FooterVaticano';
 
 const quizOptions = [
   { text: 'ACREDITO FIELMENTE NISSO!' },
@@ -62,6 +63,7 @@ function QuizContent() {
           <p className="mt-8 text-lg italic text-blue-900/80">"A fé é como a luz do sol que, sendo uma só, ilumina a todos"</p>
         </div>
       </main>
+      <FooterVaticano />
     </div>
   );
 }

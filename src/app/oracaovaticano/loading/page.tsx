@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { Progress } from '@/components/ui/progress';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
+import { FooterVaticano } from '@/components/landing/FooterVaticano';
 
 function RosaryPattern() {
   return (
@@ -59,6 +60,7 @@ function LoadingContent() {
           </Card>
         </div>
       </main>
+      <FooterVaticano />
     </div>
   );
 }

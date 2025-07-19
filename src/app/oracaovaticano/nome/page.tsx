@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Card, CardContent } from '@/components/ui/card';
+import { FooterVaticano } from '@/components/landing/FooterVaticano';
 
 function RosaryPattern() {
   return (
@@ -65,6 +66,7 @@ export default function OracaoVaticanoNomePage() {
           </Card>
         </div>
       </main>
+      <FooterVaticano />
     </div>
   );
 }

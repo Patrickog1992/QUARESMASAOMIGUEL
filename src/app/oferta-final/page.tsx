@@ -30,7 +30,7 @@ function OfertaFinalContent() {
   const name = searchParams.get('name') || '';
 
   const handleCheckout = () => {
-    window.open('https://pay.kirvano.com/d9a4b3d2-c1e0-4b2a-8f5c-9d6e4a8b1a3e', '_self');
+    window.open('https://pay.kirvano.com/fe8eb1f1-8e8b-4607-9267-de35d30113c4', '_self');
   };
 
   return (

@@ -35,7 +35,7 @@ function RevelacaoContent() {
             <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
                 <CardContent className="text-left text-lg md:text-xl space-y-4 text-blue-950">
                     <Image
-                        src="https://i.imgur.com/AA2Fcnr.jpeg"
+                        src="https://i.imgur.com/SwRqG7D.png"
                         alt="Mãos em oração segurando um terço"
                         width={600}
                         height={400}

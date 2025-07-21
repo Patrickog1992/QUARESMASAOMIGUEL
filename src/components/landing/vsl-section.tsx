@@ -66,6 +66,8 @@ export function VSLSection() {
   return (
     <section className="mb-12 md:mb-20">
       <VideoPlayer />
+      
+      <TimedBuyButton />
 
       <div className="mt-8 flex justify-center">
         <Image
@@ -78,8 +80,6 @@ export function VSLSection() {
         />
       </div>
       
-      <TimedBuyButton />
-
     </section>
   );
 }

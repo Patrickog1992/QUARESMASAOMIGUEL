@@ -63,7 +63,7 @@ export function SalesPopupPadrePio() {
         isVisible ? 'translate-x-0' : 'translate-x-[calc(100%+2rem)]'
       )}
     >
-      <Card className="bg-accent text-accent-foreground shadow-lg">
+      <Card className="bg-blue-800 text-white shadow-lg">
         <CardContent className="p-3 flex items-center gap-3">
           <CheckCircle className="h-5 w-5 shrink-0" />
           <p className="text-xs font-semibold">

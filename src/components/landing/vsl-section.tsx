@@ -5,17 +5,10 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-export function VSLSection() {
-  const [showBuyButton, setShowBuyButton] = useState(false);
-
+// Componente para o Player de Vídeo, sem estado interno.
+const VideoPlayer = () => {
   useEffect(() => {
-    // Show the buy button after 5 seconds
-    const timer = setTimeout(() => {
-      setShowBuyButton(true);
-    }, 5 * 1000);
-
     const scriptId = 'vid-687dab447d725bff283daa43-script';
-    // Avoid appending the script if it already exists
     if (!document.getElementById(scriptId)) {
       const script = document.createElement('script');
       script.id = scriptId;
@@ -23,24 +16,56 @@ export function VSLSection() {
       script.async = true;
       document.head.appendChild(script);
     }
-    
-    return () => {
-      clearTimeout(timer);
-    };
   }, []);
-  
+
   const videoHtml = `<vturb-smartplayer id="vid-687dab447d725bff283daa43" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
+  return (
+    <div
+      className="relative overflow-hidden rounded-lg shadow-2xl mx-auto"
+      dangerouslySetInnerHTML={{ __html: videoHtml }}
+    />
+  );
+};
+
+// Componente para o Botão de Compra com sua própria lógica de tempo.
+const TimedBuyButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 5 * 1000); // 5 segundos
+
+    return () => clearTimeout(timer);
+  }, []);
+  
   const handleBuyClick = () => {
     window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
   };
 
   return (
+    <div className="mt-8 text-center h-[92px]">
+      <Button
+        size="lg"
+        className={cn(
+          "bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal transition-opacity duration-500",
+          isVisible ? "opacity-100" : "opacity-0"
+        )}
+        onClick={handleBuyClick}
+        disabled={!isVisible}
+      >
+        QUERO RECEBER AS ORAÇÕES SECRETAS
+      </Button>
+    </div>
+  );
+};
+
+
+export function VSLSection() {
+  return (
     <section className="mb-12 md:mb-20">
-      <div 
-        className="relative overflow-hidden rounded-lg shadow-2xl mx-auto"
-        dangerouslySetInnerHTML={{ __html: videoHtml }}
-      />
+      <VideoPlayer />
 
       <div className="mt-8 flex justify-center">
         <Image
@@ -52,20 +77,9 @@ export function VSLSection() {
           data-ai-hint="guarantee badge"
         />
       </div>
+      
+      <TimedBuyButton />
 
-      <div className="mt-8 text-center h-[92px]">
-        <Button
-          size="lg"
-          className={cn(
-            "bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal transition-opacity duration-500",
-            showBuyButton ? "opacity-100" : "opacity-0"
-          )}
-          onClick={handleBuyClick}
-          disabled={!showBuyButton}
-        >
-          QUERO RECEBER AS ORAÇÕES SECRETAS
-        </Button>
-      </div>
     </section>
   );
 }

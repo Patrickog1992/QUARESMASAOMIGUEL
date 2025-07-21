@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export function VSLSection() {
   const [showBuyButton, setShowBuyButton] = useState(false);
@@ -52,17 +53,19 @@ export function VSLSection() {
         />
       </div>
 
-      {showBuyButton && (
-        <div className="mt-8 text-center">
-          <Button
-            size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
-            onClick={handleBuyClick}
-          >
-            QUERO RECEBER AS ORAÇÕES SECRETAS
-          </Button>
-        </div>
-      )}
+      <div className="mt-8 text-center h-[92px]">
+        <Button
+          size="lg"
+          className={cn(
+            "bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal transition-opacity duration-500",
+            showBuyButton ? "opacity-100" : "opacity-0"
+          )}
+          onClick={handleBuyClick}
+          disabled={!showBuyButton}
+        >
+          QUERO RECEBER AS ORAÇÕES SECRETAS
+        </Button>
+      </div>
     </section>
   );
 }

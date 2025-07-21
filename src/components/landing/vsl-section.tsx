@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 
 // Componente para o Player de Vídeo, sem estado interno.
 const VideoPlayer = () => {
@@ -35,7 +34,7 @@ const TimedBuyButton = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 10 * 1000); // 10 segundos
+    }, (24 * 60 + 20) * 1000); // 24 minutes and 20 seconds
 
     return () => clearTimeout(timer);
   }, []);

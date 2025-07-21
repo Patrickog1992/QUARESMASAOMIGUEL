@@ -8,10 +8,10 @@ export function VSLSection() {
   const [showBuyButton, setShowBuyButton] = useState(false);
 
   useEffect(() => {
-    // Show the buy button after 24 minutes and 20 seconds
+    // Show the buy button after 5 seconds
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (24 * 60 + 20) * 1000);
+    }, 5 * 1000);
 
     const scriptId = 'vid-687dab447d725bff283daa43-script';
     // Avoid appending the script if it already exists

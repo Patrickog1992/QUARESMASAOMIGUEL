@@ -13,22 +13,22 @@ export function VSLSection() {
       setShowBuyButton(true);
     }, (24 * 60 + 20) * 1000);
 
-    const scriptId = 'scr_685797132aa650383f53bc95';
+    const scriptId = 'vid-687dab447d725bff283daa43-script';
     // Avoid appending the script if it already exists
     if (!document.getElementById(scriptId)) {
       const script = document.createElement('script');
       script.id = scriptId;
-      script.src = 'https://scripts.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685797132aa650383f53bc95/player.js';
+      script.src = 'https://scripts.converteai.net/e2641383-5551-41c5-a77a-d490d4e47799/players/687dab447d725bff283daa43/v4/player.js';
       script.async = true;
       document.head.appendChild(script);
     }
     
     return () => {
       clearTimeout(timer);
-      // We don't remove the script on unmount because the player might be needed
-      // again and re-initializing could cause issues.
     };
   }, []);
+  
+  const videoHtml = `<vturb-smartplayer id="vid-687dab447d725bff283daa43" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
   const handleBuyClick = () => {
     window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
@@ -36,21 +36,10 @@ export function VSLSection() {
 
   return (
     <section className="mb-12 md:mb-20">
-       {/* Container for the Converte.ai player */}
-      <div className="relative overflow-hidden rounded-lg shadow-2xl">
-        <div id="vid_685797132aa650383f53bc95" style={{ position: 'relative', width: '100%', padding: '125% 0 0' }}>
-          <img
-            id="thumb_685797132aa650383f53bc95"
-            src="https://images.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685797132aa650383f53bc95/thumbnail.jpg"
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            alt="thumbnail"
-          />
-          <div
-            id="backdrop_685797132aa650383f53bc95"
-            style={{ WebkitBackdropFilter: 'blur(5px)', backdropFilter: 'blur(5px)', position: 'absolute', top: 0, height: '100%', width: '100%' }}
-          ></div>
-        </div>
-      </div>
+      <div 
+        className="relative overflow-hidden rounded-lg shadow-2xl mx-auto"
+        dangerouslySetInnerHTML={{ __html: videoHtml }}
+      />
 
       <div className="mt-8 flex justify-center">
         <Image
@@ -67,7 +56,7 @@ export function VSLSection() {
         <div className="mt-8 text-center">
           <Button
             size="lg"
-            className="font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
+            className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
             onClick={handleBuyClick}
           >
             QUERO RECEBER AS ORAÇÕES SECRETAS

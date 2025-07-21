@@ -11,7 +11,7 @@ export function HeroSection() {
         </h1>
       </Card>
       <h2 className="font-headline text-xl md:text-3xl font-bold max-w-3xl">
-        Hoje pode ser o dia da sua vitória: descubra as orações secretas para restaurar sua saúde e sua vida
+        As Orações Milagrosas de Padre Pio: O Caminho Para o Seu Milagre
       </h2>
       <p className="mt-4 text-primary font-bold uppercase tracking-wider animate-pulse md:text-lg">
         VEJA O VÍDEO

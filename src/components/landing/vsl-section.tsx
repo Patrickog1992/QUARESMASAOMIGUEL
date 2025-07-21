@@ -43,18 +43,21 @@ const TimedBuyButton = () => {
   const handleBuyClick = () => {
     window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
   };
+  
+  // Reserve space to prevent layout shift
+  if (!isVisible) {
+    return <div className="h-[92px]" />;
+  }
 
   return (
-    <div className="mt-8 text-center h-[92px]">
-      {isVisible && (
-        <Button
-          size="lg"
-          className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
-          onClick={handleBuyClick}
-        >
-          QUERO RECEBER AS ORAÇÕES SECRETAS
-        </Button>
-      )}
+    <div className="mt-8 text-center">
+      <Button
+        size="lg"
+        className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
+        onClick={handleBuyClick}
+      >
+        QUERO RECEBER AS ORAÇÕES SECRETAS
+      </Button>
     </div>
   );
 };

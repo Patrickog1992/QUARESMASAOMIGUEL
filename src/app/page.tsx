@@ -9,7 +9,7 @@ import { TopBanner } from '@/components/landing/top-banner';
 export default function Home() {
   return (
     <div className="relative flex flex-col min-h-screen bg-blue-50 text-foreground overflow-x-hidden">
-      <TopBanner />
+      <TopBanner className="bg-blue-800 text-white" />
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
         <HeroSection />

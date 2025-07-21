@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
-export function TopBanner() {
+type TopBannerProps = {
+  className?: string;
+};
+
+export function TopBanner({ className }: TopBannerProps) {
   const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
@@ -19,10 +24,13 @@ export function TopBanner() {
   }
 
   return (
-    <div className="bg-primary text-primary-foreground text-center py-2 px-4 font-semibold text-sm md:text-base sticky top-0 z-20 shadow-lg">
-      <p>
-        Hoje, {currentDate}, é o último dia para receber essa bênção.
-      </p>
+    <div
+      className={cn(
+        'bg-primary text-primary-foreground text-center py-2 px-4 font-semibold text-sm md:text-base sticky top-0 z-20 shadow-lg',
+        className
+      )}
+    >
+      <p>Hoje, {currentDate}, é o último dia para receber essa bênção.</p>
     </div>
   );
 }

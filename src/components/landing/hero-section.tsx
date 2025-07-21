@@ -10,8 +10,8 @@ export function HeroSection() {
           <span className="whitespace-nowrap">Quaresma do Padre Pio</span>
         </h1>
       </Card>
-      <h2 className="font-headline text-xl md:text-3xl font-bold max-w-3xl">
-        As Orações Milagrosas de Padre Pio: O Caminho Para o Seu Milagre
+      <h2 className="font-headline text-xl md:text-3xl font-bold max-w-3xl uppercase">
+        <span className="text-primary">As Orações Milagrosas</span> de Padre Pio: O Caminho Para o Seu Milagre
       </h2>
       <p className="mt-4 text-primary font-bold uppercase tracking-wider animate-pulse md:text-lg">
         VEJA O VÍDEO

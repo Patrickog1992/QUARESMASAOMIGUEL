@@ -6,6 +6,7 @@ import { FooterVaticano } from '@/components/landing/FooterVaticano';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Check, ShieldCheck, Gift, AlertTriangle, ScrollText, Star, FileText, Mic, BookOpen, Mail, Bird } from 'lucide-react';
 import Image from 'next/image';
+import { TestimonialsSection } from '@/components/landing/testimonials-section';
 
 function RosaryPattern() {
   return (
@@ -99,6 +100,14 @@ export default function VaticanoPapaPage() {
                     <p className="text-blue-950"><span className="font-bold">Inspirada</span> pela orientação espiritual de Papa Francisco e Padre Pio</p>
                 </div>
             </div>
+          </section>
+          
+          <section className="text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6">Veja o depoimento de Paloma e de outros fieis</h2>
+            <div className="bg-neutral-800 aspect-video rounded-lg w-full max-w-2xl mx-auto flex items-center justify-center text-white mb-8">
+              <span>[Placeholder para o vídeo]</span>
+            </div>
+            <TestimonialsSection />
           </section>
 
           <section className="text-center">

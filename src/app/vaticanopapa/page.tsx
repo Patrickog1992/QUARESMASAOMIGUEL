@@ -53,10 +53,18 @@ export default function VaticanoPapaPage() {
           />
 
           <section className="text-left bg-white/50 p-6 md:p-8 rounded-xl shadow-lg border border-blue-100">
-              <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center flex items-center justify-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center flex items-center justify-center gap-3">
                 <Bird className="w-8 h-8"/>
                 Você não está aqui por acaso
               </h2>
+               <Image
+                src="https://i.imgur.com/5wARayj.png"
+                alt="Cura Divina"
+                width={700}
+                height={467}
+                className="mx-auto rounded-lg shadow-2xl mb-6"
+                data-ai-hint="divine guidance"
+              />
               <div className="space-y-4 text-lg text-blue-950">
                   <p>Poucos dias antes de sua morte, um dos últimos Papas revelou, em sigilo, uma oração escondida nos arquivos secretos do Vaticano — passada de geração em geração por monges e padres escolhidos.</p>
                   <p>Segundo ele, “essa oração só poderia ser revelada quando o mundo estivesse em profunda aflição espiritual”.</p>
@@ -96,7 +104,7 @@ export default function VaticanoPapaPage() {
           <section className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 flex items-center justify-center gap-3">
               <Gift className="w-8 h-8" /> 
-              Você vai receber:
+              Você vai receber
             </h2>
             <Card className="bg-white/50 p-6 md:p-8 rounded-xl shadow-lg border border-blue-100 text-left">
               <CardContent className="p-0">

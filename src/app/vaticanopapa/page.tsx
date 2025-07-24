@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { FooterVaticano } from '@/components/landing/FooterVaticano';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
-import { Check, ShieldCheck, Gift, AlertTriangle, ScrollText, Star, FileText, Mic, BookOpen, Mail, Bird } from 'lucide-react';
+import { Check, ShieldCheck, Gift, AlertTriangle, ScrollText, Bird, Star, FileText, Mic, BookOpen, Mail } from 'lucide-react';
 import Image from 'next/image';
 import { TestimonialCard, type Testimonial } from '@/components/landing/testimonial-card';
 
@@ -43,9 +43,15 @@ const vaticanoTestimonials: Testimonial[] = [
 function TestimonialsVaticanoSection() {
   return (
     <section>
-      <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Veja o depoimento de Paloma e de outros fieis</h2>
-      <div className="bg-neutral-800 aspect-video rounded-lg w-full max-w-2xl mx-auto flex items-center justify-center text-white mb-8">
-        <span>[Placeholder para o vídeo]</span>
+      <div className="aspect-video rounded-lg w-full max-w-2xl mx-auto overflow-hidden mb-8 shadow-lg">
+        <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/3VHjxAfj2ZY"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+        ></iframe>
       </div>
       <div className="space-y-6 max-w-2xl mx-auto">
         {vaticanoTestimonials.map((testimonial) => (

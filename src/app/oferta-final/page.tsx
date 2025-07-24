@@ -113,7 +113,7 @@ function OfertaFinalContent() {
                   <h2 className="text-xl font-bold text-blue-800 mb-4 flex items-center gap-3">
                     <CircleHelp className="w-6 h-6" /> 💬 Por que há uma contribuição?
                   </h2>
-                    <p>Para tornar possível o acesso a esta oração rara e valiosa, foi necessário traduzir documentos antigos, produzir as versões em áudio e manter a plataforma online para milhares de fiéis. Por isso, pedimos uma contribuição simbólica única de <span className="font-bold">R$ 19,90</span> — que também ajuda a manter este projeto vivo, levando fé a quem mais precisa.</p>
+                    <p>Para tornar possível o acesso a esta oração rara e valiosa, foi necessário traduzir documentos antigos, produzir as versões em áudio e manter a plataforma online para milhares de fiéis. Por isso, pedimos uma contribuição simbólica única de <span className="font-bold">R$ 27,00</span> — que também ajuda a manter este projeto vivo, levando fé a quem mais precisa.</p>
                 </div>
               </div>
             </CardContent>
@@ -127,7 +127,7 @@ function OfertaFinalContent() {
                 </div>
                  <div>
                     <p className="font-semibold text-blue-800">Por:</p>
-                    <p className="text-5xl font-bold text-green-600">R$ 19,90</p>
+                    <p className="text-5xl font-bold text-green-600">R$ 27,00</p>
                     <p className="font-semibold text-blue-900/80">Contribuição única, com propósito espiritual</p>
                 </div>
               <Button onClick={handleCheckout} size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 animate-pulse whitespace-normal text-center text-lg md:text-xl">

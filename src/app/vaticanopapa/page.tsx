@@ -214,11 +214,11 @@ export default function VaticanoPapaPage() {
           <Card className="bg-white/90 backdrop-blur-sm shadow-2xl w-full border-2 border-green-500 rounded-xl">
             <CardContent className="p-6 md:p-8 space-y-4 text-center">
                 <h3 className="font-bold text-2xl text-blue-800">Contribuição Simbólica</h3>
-                <p className="text-lg">Sua contribuição não é apenas para você — ela é um gesto de fé que ajuda a levar essa oração sagrada a milhares de outras pessoas que também estão sofrendo em silêncio. Com apenas R$ 19,90, você não só recebe um conteúdo transformador, como também se torna parte de uma corrente de luz e esperança que está tocando corações em todo o Brasil. Cada contribuição nos permite manter este projeto vivo, traduzir novas orações, produzir áudios devocionais e alcançar mais almas que precisam urgentemente de uma resposta divina. Junte-se a essa missão</p>
+                <p className="text-lg">Sua contribuição não é apenas para você — ela é um gesto de fé que ajuda a levar essa oração sagrada a milhares de outras pessoas que também estão sofrendo em silêncio. Com apenas R$ 27,00, você não só recebe um conteúdo transformador, como também se torna parte de uma corrente de luz e esperança que está tocando corações em todo o Brasil. Cada contribuição nos permite manter este projeto vivo, traduzir novas orações, produzir áudios devocionais e alcançar mais almas que precisam urgentemente de uma resposta divina. Junte-se a essa missão</p>
                 <div className="my-4">
                     <p className="text-xl text-blue-900/80">De: <span className="line-through text-red-600">R$ 119,90</span></p>
                     <p className="font-semibold text-blue-800 text-2xl mt-2">Por Apenas:</p>
-                    <p className="text-6xl font-bold text-green-600 my-2">R$ 19,90</p>
+                    <p className="text-6xl font-bold text-green-600 my-2">R$ 27,00</p>
                     <p className="font-semibold text-blue-900/80">Contribuição única. Sem mensalidades.</p>
                 </div>
                 <Button onClick={handleCheckout} size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-5 animate-pulse whitespace-normal text-center text-xl md:text-2xl shadow-lg">

@@ -153,8 +153,8 @@ export default function VaticanoPapaPage() {
             <div className="aspect-video rounded-lg w-full max-w-2xl mx-auto overflow-hidden mb-8 shadow-lg">
               <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/3VHjxAfj2ZY?rel=0&showinfo=0&modestbranding=1"
-                  title="YouTube video player"
+                  src="https://www.youtube.com/embed/3VHjxAfj2ZY?rel=0&controls=0&showinfo=0&modestbranding=1"
+                  title="Depoimento Paloma Oliveira"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

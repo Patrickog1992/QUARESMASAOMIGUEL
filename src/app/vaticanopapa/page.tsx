@@ -43,16 +43,6 @@ const vaticanoTestimonials: Testimonial[] = [
 function TestimonialsVaticanoSection() {
   return (
     <section>
-      <div className="aspect-video rounded-lg w-full max-w-2xl mx-auto overflow-hidden mb-8 shadow-lg">
-        <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/3VHjxAfj2ZY?rel=0&showinfo=0&modestbranding=1"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-        ></iframe>
-      </div>
       <div className="space-y-6 max-w-2xl mx-auto">
         {vaticanoTestimonials.map((testimonial) => (
           <TestimonialCard key={testimonial.id} testimonial={testimonial} />
@@ -154,6 +144,22 @@ export default function VaticanoPapaPage() {
                   <p>Segundo ele, “essa oração só poderia ser revelada quando o mundo estivesse em profunda aflição espiritual”.</p>
                   <p className="font-bold">Esse momento chegou. E agora você foi guiado(a) até aqui para ouvir essa oração.</p>
               </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">
+              Veja o depoimento de Paloma e outros fiéis
+            </h2>
+            <div className="aspect-video rounded-lg w-full max-w-2xl mx-auto overflow-hidden mb-8 shadow-lg">
+              <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/3VHjxAfj2ZY?rel=0&showinfo=0&modestbranding=1"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+              ></iframe>
+            </div>
           </section>
 
           <TestimonialsVaticanoSection />

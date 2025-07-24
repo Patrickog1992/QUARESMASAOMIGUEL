@@ -42,7 +42,6 @@ const vaticanoTestimonials: Testimonial[] = [
 function TestimonialsVaticanoSection() {
   return (
     <section>
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Veja o que os fiéis estão dizendo</h2>
       <div className="space-y-6 max-w-2xl mx-auto">
         {vaticanoTestimonials.map((testimonial) => (
           <TestimonialCard key={testimonial.id} testimonial={testimonial} />

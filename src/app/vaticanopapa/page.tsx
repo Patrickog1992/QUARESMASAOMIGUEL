@@ -60,8 +60,8 @@ export default function VaticanoPapaPage() {
                <Image
                 src="https://i.imgur.com/5wARayj.png"
                 alt="Cura Divina"
-                width={700}
-                height={467}
+                width={400}
+                height={400}
                 className="mx-auto rounded-lg shadow-2xl mb-6"
                 data-ai-hint="divine guidance"
               />

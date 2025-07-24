@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { FooterVaticano } from '@/components/landing/FooterVaticano';
@@ -42,6 +43,10 @@ const vaticanoTestimonials: Testimonial[] = [
 function TestimonialsVaticanoSection() {
   return (
     <section>
+      <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Veja o depoimento de Paloma e de outros fieis</h2>
+      <div className="bg-neutral-800 aspect-video rounded-lg w-full max-w-2xl mx-auto flex items-center justify-center text-white mb-8">
+        <span>[Placeholder para o vídeo]</span>
+      </div>
       <div className="space-y-6 max-w-2xl mx-auto">
         {vaticanoTestimonials.map((testimonial) => (
           <TestimonialCard key={testimonial.id} testimonial={testimonial} />
@@ -67,6 +72,33 @@ function RosaryPattern() {
   );
 }
 
+function TopBanner() {
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('pt-BR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+    setCurrentDate(formattedDate);
+  }, []);
+
+  if (!currentDate) {
+    return null;
+  }
+
+  return (
+    <div className="bg-amber-400 text-amber-900 text-center py-2 px-4 font-semibold text-sm md:text-base sticky top-0 z-30 shadow-md">
+      <p>
+        Só conseguiremos mandar as orações até hoje ({currentDate}). Últimos exemplares!
+      </p>
+    </div>
+  );
+}
+
+
 export default function VaticanoPapaPage() {
   const handleCheckout = () => {
     window.open('https://pay.kirvano.com/fe8eb1f1-8e8b-4607-9267-de35d30113c4', '_self');
@@ -74,6 +106,7 @@ export default function VaticanoPapaPage() {
 
   return (
     <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
+       <TopBanner />
       <RosaryPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center z-10">
         <div className="max-w-3xl w-full text-center space-y-12">
@@ -117,6 +150,8 @@ export default function VaticanoPapaPage() {
               </div>
           </section>
 
+          <TestimonialsVaticanoSection />
+         
           <section className="text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center flex items-center justify-center gap-3">
                 <Star className="w-8 h-8"/>
@@ -144,14 +179,6 @@ export default function VaticanoPapaPage() {
                     <p className="text-blue-950"><span className="font-bold">Inspirada</span> pela orientação espiritual de Papa Francisco e Padre Pio</p>
                 </div>
             </div>
-          </section>
-          
-          <section className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6">Veja o depoimento de Paloma e de outros fieis</h2>
-            <div className="bg-neutral-800 aspect-video rounded-lg w-full max-w-2xl mx-auto flex items-center justify-center text-white mb-8">
-              <span>[Placeholder para o vídeo]</span>
-            </div>
-            <TestimonialsVaticanoSection />
           </section>
 
           <section className="text-center">

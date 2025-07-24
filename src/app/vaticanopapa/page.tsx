@@ -43,6 +43,9 @@ const vaticanoTestimonials: Testimonial[] = [
 function TestimonialsVaticanoSection() {
   return (
     <section>
+       <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">
+        Veja o que os fiéis estão dizendo
+      </h2>
       <div className="space-y-6 max-w-2xl mx-auto">
         {vaticanoTestimonials.map((testimonial) => (
           <TestimonialCard key={testimonial.id} testimonial={testimonial} />
@@ -97,7 +100,7 @@ function TopBanner() {
 
 export default function VaticanoPapaPage() {
   const handleCheckout = () => {
-    window.open('https://pay.kirvano.com/fe8eb1f1-8e8b-4607-9267-de35d30113c4', '_self');
+    window.open('https://pay.kirvano.com/8c5a7cf7-4766-4ff0-ad15-1263afb5afd5', '_self');
   };
 
   return (

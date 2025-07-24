@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { FooterVaticano } from '@/components/landing/FooterVaticano';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
-import { Check, ShieldCheck, Gift, AlertTriangle } from 'lucide-react';
+import { Check, ShieldCheck, Gift, AlertTriangle, ScrollText, Dove, Star, FileText, Mic, BookOpen, Mail } from 'lucide-react';
 import Image from 'next/image';
 
 function RosaryPattern() {
@@ -34,8 +34,9 @@ export default function VaticanoPapaPage() {
         <div className="max-w-3xl w-full text-center space-y-12">
           
           <section>
-            <h1 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
-              🙏 A Oração Revelada Pelo Vaticano Que Pode Mudar a Sua Vida
+            <h1 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4 flex items-center justify-center gap-3">
+              <ScrollText className="w-8 h-8"/>
+              A oração revelada pelo Vaticano que pode mudar a sua vida
             </h1>
             <p className="text-lg md:text-xl text-blue-900/90 max-w-2xl mx-auto">
               Um segredo escondido por séculos... finalmente revelado ao mundo por um frei brasileiro, a pedido do próprio Papa. Você está prestes a acessar um conteúdo espiritual que o Vaticano guardou a 7 chaves — e que agora pode ser o canal para o milagre que você tanto espera.
@@ -52,7 +53,10 @@ export default function VaticanoPapaPage() {
           />
 
           <section className="text-left bg-white/50 p-6 md:p-8 rounded-xl shadow-lg border border-blue-100">
-              <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center">🕊️ Você Não Está Aqui Por Acaso</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center flex items-center justify-center gap-3">
+                <Dove className="w-8 h-8"/>
+                Você não está aqui por acaso
+              </h2>
               <div className="space-y-4 text-lg text-blue-950">
                   <p>Poucos dias antes de sua morte, um dos últimos Papas revelou, em sigilo, uma oração escondida nos arquivos secretos do Vaticano — passada de geração em geração por monges e padres escolhidos.</p>
                   <p>Segundo ele, “essa oração só poderia ser revelada quando o mundo estivesse em profunda aflição espiritual”.</p>
@@ -61,26 +65,29 @@ export default function VaticanoPapaPage() {
           </section>
 
           <section className="text-left">
-            <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">✝️ Por Que Esta Oração É Tão Especial?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center flex items-center justify-center gap-3">
+                <Star className="w-8 h-8"/>
+                Por que esta oração é tão especial?
+            </h2>
             <div className="grid md:grid-cols-2 gap-6 text-lg">
                 <div className="bg-white/50 p-4 rounded-lg shadow-md border border-blue-100 flex items-center gap-4">
-                    <span className="text-3xl">📜</span>
+                    <FileText className="w-8 h-8 text-blue-700 shrink-0"/>
                     <p className="text-blue-950"><span className="font-bold">Traduzida diretamente</span> de manuscritos preservados no Vaticano</p>
                 </div>
                 <div className="bg-white/50 p-4 rounded-lg shadow-md border border-blue-100 flex items-center gap-4">
-                    <span className="text-3xl">🙏</span>
+                    <Check className="w-8 h-8 text-blue-700 shrink-0"/>
                     <p className="text-blue-950"><span className="font-bold">Escolhida com base</span> no seu momento espiritual</p>
                 </div>
                 <div className="bg-white/50 p-4 rounded-lg shadow-md border border-blue-100 flex items-center gap-4">
-                    <span className="text-3xl">🎙️</span>
+                    <Mic className="w-8 h-8 text-blue-700 shrink-0"/>
                     <p className="text-blue-950"><span className="font-bold">Narrada por um frei</span> consagrado, em versão áudio devocional</p>
                 </div>
                 <div className="bg-white/50 p-4 rounded-lg shadow-md border border-blue-100 flex items-center gap-4">
-                    <span className="text-3xl">📩</span>
+                    <Mail className="w-8 h-8 text-blue-700 shrink-0"/>
                     <p className="text-blue-950"><span className="font-bold">Entrega imediata</span> no seu e-mail + acesso vitalício</p>
                 </div>
                 <div className="bg-white/50 p-4 rounded-lg shadow-md border border-blue-100 flex items-center gap-4 md:col-span-2 md:max-w-md md:mx-auto">
-                    <span className="text-3xl">🕊️</span>
+                    <Dove className="w-8 h-8 text-blue-700 shrink-0"/>
                     <p className="text-blue-950"><span className="font-bold">Inspirada</span> pela orientação espiritual de Papa Francisco e Padre Pio</p>
                 </div>
             </div>
@@ -88,7 +95,8 @@ export default function VaticanoPapaPage() {
 
           <section className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 flex items-center justify-center gap-3">
-              <Gift className="w-8 h-8" /> 🎁 Você Vai Receber:
+              <Gift className="w-8 h-8" /> 
+              Você vai receber:
             </h2>
             <Card className="bg-white/50 p-6 md:p-8 rounded-xl shadow-lg border border-blue-100 text-left">
               <CardContent className="p-0">
@@ -105,7 +113,7 @@ export default function VaticanoPapaPage() {
           
           <Card className="bg-white/90 backdrop-blur-sm shadow-2xl w-full border-2 border-green-500 rounded-xl">
             <CardContent className="p-6 md:p-8 space-y-4 text-center">
-                <h3 className="font-bold text-2xl text-blue-800">💖 Contribuição Simbólica</h3>
+                <h3 className="font-bold text-2xl text-blue-800">Contribuição Simbólica</h3>
                 <p className="text-lg">Para tornar esse conteúdo acessível e manter a estrutura que o sustenta (traduções, produção de áudio, hospedagem), pedimos uma contribuição única.</p>
                 <div className="my-4">
                     <p className="text-xl text-blue-900/80">De: <span className="line-through text-red-600">R$ 119,90</span></p>
@@ -114,7 +122,7 @@ export default function VaticanoPapaPage() {
                     <p className="font-semibold text-blue-900/80">Contribuição única. Sem mensalidades.</p>
                 </div>
                 <Button onClick={handleCheckout} size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-5 animate-pulse whitespace-normal text-center text-xl md:text-2xl shadow-lg">
-                  👉 QUERO RECEBER A ORAÇÃO AGORA
+                  QUERO RECEBER A ORAÇÃO AGORA
                 </Button>
                 <div className="text-center text-blue-900/80 text-sm space-y-3 mt-6">
                     <div>

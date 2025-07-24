@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { FooterVaticano } from '@/components/landing/FooterVaticano';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
-import { Check, ShieldCheck, Gift, AlertTriangle, ScrollText, Dove, Star, FileText, Mic, BookOpen, Mail } from 'lucide-react';
+import { Check, ShieldCheck, Gift, AlertTriangle, ScrollText, Star, FileText, Mic, BookOpen, Mail, Bird } from 'lucide-react';
 import Image from 'next/image';
 
 function RosaryPattern() {
@@ -54,7 +54,7 @@ export default function VaticanoPapaPage() {
 
           <section className="text-left bg-white/50 p-6 md:p-8 rounded-xl shadow-lg border border-blue-100">
               <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 text-center flex items-center justify-center gap-3">
-                <Dove className="w-8 h-8"/>
+                <Bird className="w-8 h-8"/>
                 Você não está aqui por acaso
               </h2>
               <div className="space-y-4 text-lg text-blue-950">
@@ -87,7 +87,7 @@ export default function VaticanoPapaPage() {
                     <p className="text-blue-950"><span className="font-bold">Entrega imediata</span> no seu e-mail + acesso vitalício</p>
                 </div>
                 <div className="bg-white/50 p-4 rounded-lg shadow-md border border-blue-100 flex items-center gap-4 md:col-span-2 md:max-w-md md:mx-auto">
-                    <Dove className="w-8 h-8 text-blue-700 shrink-0"/>
+                    <Bird className="w-8 h-8 text-blue-700 shrink-0"/>
                     <p className="text-blue-950"><span className="font-bold">Inspirada</span> pela orientação espiritual de Papa Francisco e Padre Pio</p>
                 </div>
             </div>

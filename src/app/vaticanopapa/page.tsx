@@ -6,7 +6,52 @@ import { FooterVaticano } from '@/components/landing/FooterVaticano';
 import { RosaryIcon } from '@/components/landing/rosary-icon';
 import { Check, ShieldCheck, Gift, AlertTriangle, ScrollText, Star, FileText, Mic, BookOpen, Mail, Bird } from 'lucide-react';
 import Image from 'next/image';
-import { TestimonialsSection } from '@/components/landing/testimonials-section';
+import { TestimonialCard, type Testimonial } from '@/components/landing/testimonial-card';
+
+
+const vaticanoTestimonials: Testimonial[] = [
+    {
+        id: 1,
+        name: 'Lúcia de Fátima',
+        avatarUrl: 'https://thumbs2.imgbox.com/fc/13/RXzAe2rE_t.png',
+        avatarHint: 'woman portrait',
+        text: 'Eu estava sem esperança, com dívidas e sentindo um vazio. No terceiro dia de oração, uma porta se abriu e consegui um novo emprego. É um milagre, não tenho outra palavra. Essa oração é uma bênção!',
+        likes: 1872,
+        time: '2 h',
+    },
+    {
+        id: 2,
+        name: 'Carlos Alberto',
+        avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg',
+        avatarHint: 'man portrait',
+        text: 'Meu casamento estava por um fio. Começamos a orar juntos e a paz voltou para nossa casa. É como se a oração limpasse toda a energia negativa. Recomendo com todo o meu coração.',
+        likes: 1534,
+        time: '5 h',
+    },
+    {
+        id: 3,
+        name: 'Antônia Maria',
+        avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg',
+        avatarHint: 'woman portrait',
+        text: 'Sentia dores fortes no corpo que os médicos não explicavam. Depois que comecei a ouvir a oração narrada pelo frei, as dores diminuíram até desaparecer. Sinto a proteção divina comigo. Obrigada!',
+        likes: 2041,
+        time: '1 d',
+    }
+];
+
+function TestimonialsVaticanoSection() {
+  return (
+    <section>
+        <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Veja o que os fiéis estão dizendo</h2>
+      <div className="space-y-6 max-w-2xl mx-auto">
+        {vaticanoTestimonials.map((testimonial) => (
+          <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 
 function RosaryPattern() {
   return (
@@ -107,7 +152,7 @@ export default function VaticanoPapaPage() {
             <div className="bg-neutral-800 aspect-video rounded-lg w-full max-w-2xl mx-auto flex items-center justify-center text-white mb-8">
               <span>[Placeholder para o vídeo]</span>
             </div>
-            <TestimonialsSection />
+            <TestimonialsVaticanoSection />
           </section>
 
           <section className="text-center">

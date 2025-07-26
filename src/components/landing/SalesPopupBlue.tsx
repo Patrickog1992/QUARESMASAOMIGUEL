@@ -59,7 +59,7 @@ export function SalesPopupBlue() {
   return (
     <div
       className={cn(
-        'fixed bottom-4 right-4 z-50 w-full max-w-[280px] transition-transform duration-500 ease-in-out',
+        'fixed bottom-4 right-4 z-50 w-full max-w-[240px] transition-transform duration-500 ease-in-out',
         isVisible ? 'translate-x-0' : 'translate-x-[calc(100%+2rem)]'
       )}
     >

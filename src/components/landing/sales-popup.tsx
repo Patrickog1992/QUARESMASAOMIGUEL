@@ -59,13 +59,13 @@ export function SalesPopup() {
   return (
     <div
       className={cn(
-        'fixed bottom-4 right-4 z-50 w-full max-w-xs transition-transform duration-500 ease-in-out',
+        'fixed bottom-4 right-4 z-50 w-full max-w-[280px] transition-transform duration-500 ease-in-out',
         isVisible ? 'translate-x-0' : 'translate-x-[calc(100%+2rem)]'
       )}
     >
       <Card className="bg-accent text-accent-foreground shadow-lg">
-        <CardContent className="p-3 flex items-center gap-3">
-          <CheckCircle className="h-5 w-5 shrink-0" />
+        <CardContent className="p-2 flex items-center gap-2">
+          <CheckCircle className="h-4 w-4 shrink-0" />
           <p className="text-xs font-semibold">
             {notification.name} {notification.location} acabou de receber as orações.
           </p>

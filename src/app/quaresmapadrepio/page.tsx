@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -8,6 +7,12 @@ import { BackgroundPattern } from '@/components/landing/background-pattern';
 import { Check, AlertTriangle, ScrollText, Lock, Star, Gift, Heart, ArrowDown, Sparkles, BookOpen, FileText, ThumbsUp } from 'lucide-react';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 
 const testimonials = [
@@ -36,6 +41,25 @@ const testimonials = [
         time: '1 d',
     }
 ];
+
+const faqItems = [
+    {
+        question: "Como vou receber o material?",
+        answer: "O acesso é 100% digital. Assim que sua contribuição for confirmada, você receberá um e-mail com todas as instruções e links para acessar a Quaresma do Padre Pio, os áudios e todos os bônus. O acesso é imediato e vitalício."
+    },
+    {
+        question: "A compra é segura?",
+        answer: "Sim, totalmente segura. O pagamento é processado pela Kirvano, uma das maiores e mais seguras plataformas de produtos digitais do Brasil. Seus dados estão protegidos."
+    },
+    {
+        question: "E se eu não gostar ou não sentir nenhuma mudança?",
+        answer: "Sua fé e satisfação são nossa prioridade. Por isso, oferecemos uma garantia incondicional de 30 dias. Se por qualquer motivo você não se sentir tocado pelo material, basta nos enviar um e-mail e devolveremos 100% do valor da sua contribuição, sem perguntas."
+    },
+    {
+        question: "Preciso orar exatamente entre 3h e 5h da manhã?",
+        answer: "Este é o horário recomendado por Padre Pio para uma conexão espiritual mais forte. No entanto, entendemos que nem todos têm essa disponibilidade. O mais importante é que você encontre um momento de paz e silêncio, onde possa se concentrar totalmente na oração, com o coração aberto."
+    }
+]
 
 const CrossIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -183,8 +207,8 @@ export default function QuaresmaPadrePioPage() {
                         <CardContent className="p-0 space-y-4">
                             <p>A versão original dessas orações foi vendida por <span className="line-through">R$ 497</span> em outras páginas — com promessas vazias e exploração da fé. Mas aqui, o propósito é diferente: Queremos colocar essa revelação nas mãos do maior número de pessoas possível, sem peso financeiro.</p>
                             <p className="font-bold text-lg">Hoje, por tempo limitado, você pode ter acesso completo à Quaresma do Padre Pio por apenas:</p>
-                            <p className="text-4xl md:text-5xl font-bold text-primary">R$ 29,90 à vista</p>
-                             <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
+                            <p className="text-4xl md:text-5xl font-bold text-green-600">R$ 29,90 à vista</p>
+                             <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
                                 QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
                                 <ArrowDown className="w-6 h-6 ml-2 animate-bounce"/>
                             </Button>
@@ -204,11 +228,25 @@ export default function QuaresmaPadrePioPage() {
                             <p>Por conta da tradução, revisão e alta demanda, este conteúdo está disponível por tempo limitado. Quando acabar, não sabemos quando será reaberto.</p>
                         </div>
                     </section>
+                    
+                    <section>
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">Perguntas Frequentes</h2>
+                        <Accordion type="single" collapsible className="w-full text-left">
+                            {faqItems.map((item, index) => (
+                                <AccordionItem value={`item-${index}`} key={index}>
+                                    <AccordionTrigger className="font-semibold">{item.question}</AccordionTrigger>
+                                    <AccordionContent className="text-foreground/80">
+                                        {item.answer}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            ))}
+                        </Accordion>
+                    </section>
 
                     <section className="space-y-4">
                         <h2 className="text-xl md:text-2xl font-bold">Clique agora no botão abaixo e dê esse passo de fé.</h2>
                         <p>Você pode continuar vivendo os mesmos problemas… Ou pode dar esse passo e permitir que seu anjo da guarda aja com todo o poder do céu.</p>
-                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal">
+                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal">
                              QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
                         </Button>
                         <p className="text-lg font-semibold mt-4 flex items-center justify-center gap-2">

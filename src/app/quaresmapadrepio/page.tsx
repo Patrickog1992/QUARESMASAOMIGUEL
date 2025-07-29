@@ -110,6 +110,7 @@ export default function QuaresmaPadrePioPage() {
 
                     <section className="space-y-4">
                         <h1 className="text-2xl md:text-4xl font-bold text-primary uppercase">A ORAÇÃO PERDIDA DE PADRE PIO QUE RESTAURA SUA CONEXÃO COM O ANJO DA GUARDA E ABRE AS PORTAS DA CURA, PROSPERIDADE E MILAGRES EM SUA VIDA</h1>
+                         <Image src="https://i.imgur.com/H1qvjJ8.png" alt="Padre Pio em oração" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="Padre Pio praying" />
                         <p className="text-lg md:text-xl font-semibold text-foreground/80 flex items-center justify-center gap-2">
                           <Heart className="w-5 h-5 text-primary"/>
                           <span>Você não está aqui por acaso. Seu anjo da guarda quer falar com você.</span>
@@ -132,7 +133,6 @@ export default function QuaresmaPadrePioPage() {
                         <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
                            <CrossIcon className="w-6 h-6"/> Padre Pio: O Santo que Falava com os Anjos
                         </h2>
-                        <Image src="https://i.imgur.com/H1qvjJ8.png" alt="Padre Pio" width={600} height={400} className="rounded-lg mx-auto shadow-md mb-6" data-ai-hint="Padre Pio portrait" />
                         <p className="text-md md:text-lg mt-6">Padre Pio, um dos santos mais milagrosos da história da Igreja, vivia na pequena cidade de San Giovanni Rotondo, na Itália. Era conhecido por realizar curas instantâneas, prever o futuro e estar em dois lugares ao mesmo tempo. Mas o que poucos sabem é que:</p>
                         <p className="text-lg md:text-xl font-bold text-primary mt-4 flex items-center justify-center gap-2"><Lock className="w-5 h-5"/>Padre Pio mantinha uma comunicação direta com seu anjo da guarda.</p>
                         <p className="italic text-md md:text-lg mt-2">Ele dizia: “Se você não consegue falar comigo, envie seu anjo.”</p>
@@ -200,7 +200,7 @@ export default function QuaresmaPadrePioPage() {
                         </div>
                     </section>
 
-                     <Card className="bg-card/90 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-primary">
+                     <Card className="bg-card/90 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-green-500">
                         <CardHeader className="p-0 mb-4">
                            <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Quanto Custa Viver uma Vida Abençoada?</CardTitle>
                         </CardHeader>

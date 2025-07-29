@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -36,7 +35,7 @@ export default function QuaresmaPadrePioPage() {
                 <div className="max-w-3xl mx-auto space-y-12 text-center">
 
                     <section className="space-y-4">
-                        <h1 className="text-2xl md:text-4xl font-bold text-primary">A Oração Perdida de Padre Pio Que Restaura Sua Conexão com o Anjo da Guarda e Abre as Portas da Cura, Prosperidade e Milagres em Sua Vida</h1>
+                        <h1 className="text-2xl md:text-4xl font-bold text-primary uppercase">A ORAÇÃO PERDIDA DE PADRE PIO QUE RESTAURA SUA CONEXÃO COM O ANJO DA GUARDA E ABRE AS PORTAS DA CURA, PROSPERIDADE E MILAGRES EM SUA VIDA</h1>
                         <p className="text-lg md:text-xl font-semibold text-foreground/80">🙏 Você não está aqui por acaso. Seu anjo da guarda quer falar com você.</p>
                     </section>
 
@@ -160,6 +159,3 @@ export default function QuaresmaPadrePioPage() {
         </div>
     );
 }
-
-
-    

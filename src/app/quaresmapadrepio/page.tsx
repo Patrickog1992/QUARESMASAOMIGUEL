@@ -4,23 +4,37 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
-import { Check, AlertTriangle, ScrollText, Lock, Star, Gift, Heart, ArrowDown, Sparkles, BookOpen, FileText } from 'lucide-react';
+import { Check, AlertTriangle, ScrollText, Lock, Star, Gift, Heart, ArrowDown, Sparkles, BookOpen, FileText, ThumbsUp } from 'lucide-react';
 import Image from 'next/image';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
 
 const testimonials = [
     {
         quote: "Na terceira madrugada de oração, sonhei com um homem de luz. Acordei chorando. No dia seguinte, meu pai foi chamado para o emprego que estava esperando há 1 ano.",
         author: "Amanda R., Vitória - ES",
+        avatarUrl: 'https://thumbs2.imgbox.com/fc/13/RXzAe2rE_t.png',
+        avatarHint: 'woman portrait',
+        likes: 1872,
+        time: '2 h',
     },
     {
         quote: "Estava sem dinheiro e com dívidas atrasadas. Fiz as orações da Quaresma por 7 dias. No oitavo, recebi uma herança inesperada.",
         author: "José M., Belo Horizonte - MG",
+        avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg',
+        avatarHint: 'man portrait',
+        likes: 1534,
+        time: '5 h',
     },
     {
         quote: "Minha mãe, com osteoporose severa, chorava de dor. Após 5 dias orando com ela às 3h da manhã, ela simplesmente parou de sentir dor. Os exames mostraram melhora inexplicável.",
         author: "Eliane F., Guarulhos - SP",
+        avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg',
+        avatarHint: 'woman portrait',
+        likes: 2041,
+        time: '1 d',
     }
-]
+];
 
 const CrossIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -29,11 +43,38 @@ const CrossIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const TestimonialCardComponent = ({ quote, author, avatarUrl, avatarHint, likes, time }: (typeof testimonials)[0]) => (
+    <Card className="bg-card/80 p-4 shadow-lg text-left">
+        <div className="flex items-start gap-3">
+            <Avatar className="h-10 w-10 shrink-0">
+                <AvatarImage src={avatarUrl} alt={author} data-ai-hint={avatarHint}/>
+                <AvatarFallback>{author.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <div className="flex-1">
+                <p className="font-bold">{author}</p>
+                <p className="italic mt-1">“{quote}”</p>
+                <div className="flex items-center gap-3 text-xs text-muted-foreground mt-2">
+                    <button className="hover:underline font-bold">Curtir</button>
+                    <span aria-hidden="true">·</span>
+                    <button className="hover:underline font-bold">Responder</button>
+                    <span aria-hidden="true">·</span>
+                    <span className="flex items-center gap-1">
+                        <ThumbsUp className="h-3 w-3 text-blue-500" />
+                        <Heart className="h-3 w-3 text-red-500" fill="currentColor" />
+                        <span className="ml-1">{likes.toLocaleString('pt-BR')}</span>
+                    </span>
+                    <span aria-hidden="true">·</span>
+                    <span>{time}</span>
+                </div>
+            </div>
+        </div>
+    </Card>
+);
 
 export default function QuaresmaPadrePioPage() {
     
     const handleCheckout = () => {
-        window.open('https://pay.kirvano.com/some-checkout-url', '_self');
+        window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
     };
 
     return (
@@ -66,7 +107,7 @@ export default function QuaresmaPadrePioPage() {
                         <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
                            <CrossIcon className="w-6 h-6"/> Padre Pio: O Santo que Falava com os Anjos
                         </h2>
-                        <Image src="https://i.imgur.com/83pTo2S.jpeg" alt="Padre Pio" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="Padre Pio portrait" />
+                        <Image src="https://i.imgur.com/H1qvjJ8.png" alt="Padre Pio" width={600} height={400} className="rounded-lg mx-auto shadow-md mb-6" data-ai-hint="Padre Pio portrait" />
                         <p className="text-md md:text-lg mt-6">Padre Pio, um dos santos mais milagrosos da história da Igreja, vivia na pequena cidade de San Giovanni Rotondo, na Itália. Era conhecido por realizar curas instantâneas, prever o futuro e estar em dois lugares ao mesmo tempo. Mas o que poucos sabem é que:</p>
                         <p className="text-lg md:text-xl font-bold text-primary mt-4 flex items-center justify-center gap-2"><Lock className="w-5 h-5"/>Padre Pio mantinha uma comunicação direta com seu anjo da guarda.</p>
                         <p className="italic text-md md:text-lg mt-2">Ele dizia: “Se você não consegue falar comigo, envie seu anjo.”</p>
@@ -83,12 +124,12 @@ export default function QuaresmaPadrePioPage() {
                                 <CardTitle className="text-xl md:text-2xl font-bold text-primary">Nela, você terá:</CardTitle>
                             </CardHeader>
                             <CardContent className="p-0 text-left space-y-3">
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/>Oração Sagrada para abrir os caminhos do dinheiro</p>
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/>Oração do amanhecer para reconectar com seu anjo da guarda</p>
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/>Oração da madrugada para cura de enfermidades</p>
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/>Oração de proteção para sua casa</p>
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/>Oração para restauração de relacionamentos</p>
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/>Oração secreta para que seu anjo fale com você em sonhos</p>
+                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Oração Sagrada para abrir os caminhos do dinheiro</span></p>
+                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Oração do amanhecer para reconectar com seu anjo da guarda</span></p>
+                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Oração da madrugada para cura de enfermidades</span></p>
+                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Oração de proteção para sua casa</span></p>
+                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Oração para restauração de relacionamentos</span></p>
+                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Oração secreta para que seu anjo fale com você em sonhos</span></p>
                             </CardContent>
                         </Card>
                          <p className="text-md md:text-lg mt-6 font-semibold">São mais de 30 orações poderosas reveladas por Padre Pio — traduzidas do italiano antigo e agora acessíveis em português para fiéis brasileiros.</p>
@@ -100,10 +141,7 @@ export default function QuaresmaPadrePioPage() {
                         </h2>
                         <div className="space-y-6">
                             {testimonials.map((testimonial, index) => (
-                                <Card key={index} className="bg-card/80 p-4 shadow-lg text-left">
-                                    <p className="italic">“{testimonial.quote}”</p>
-                                    <p className="text-right font-bold mt-2">- {testimonial.author}</p>
-                                </Card>
+                                <TestimonialCardComponent key={index} {...testimonial} />
                             ))}
                         </div>
                     </section>
@@ -137,14 +175,14 @@ export default function QuaresmaPadrePioPage() {
                         </div>
                     </section>
 
-                     <Card className="bg-green-100 dark:bg-green-900/30 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-green-500">
+                     <Card className="bg-background/90 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-primary">
                         <CardHeader className="p-0 mb-4">
-                           <CardTitle className="text-2xl md:text-3xl font-bold text-green-700 dark:text-green-400">Quanto Custa Viver uma Vida Abençoada?</CardTitle>
+                           <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Quanto Custa Viver uma Vida Abençoada?</CardTitle>
                         </CardHeader>
                         <CardContent className="p-0 space-y-4">
                             <p>A versão original dessas orações foi vendida por <span className="line-through">R$ 497</span> em outras páginas — com promessas vazias e exploração da fé. Mas aqui, o propósito é diferente: Queremos colocar essa revelação nas mãos do maior número de pessoas possível, sem peso financeiro.</p>
                             <p className="font-bold text-lg">Hoje, por tempo limitado, você pode ter acesso completo à Quaresma do Padre Pio por apenas:</p>
-                            <p className="text-4xl md:text-5xl font-bold text-green-600">R$ 49,90 à vista</p>
+                            <p className="text-4xl md:text-5xl font-bold text-primary">R$ 49,90 à vista</p>
                             <p>ou 12x de R$ 5,31 no cartão.</p>
                              <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
                                 QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
@@ -170,7 +208,7 @@ export default function QuaresmaPadrePioPage() {
                     <section className="space-y-4">
                         <h2 className="text-xl md:text-2xl font-bold">Clique agora no botão abaixo e dê esse passo de fé.</h2>
                         <p>Você pode continuar vivendo os mesmos problemas… Ou pode dar esse passo e permitir que seu anjo da guarda aja com todo o poder do céu.</p>
-                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal">
+                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal">
                              QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
                         </Button>
                         <p className="text-lg font-semibold mt-4 flex items-center justify-center gap-2">

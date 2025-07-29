@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
-import { Check, AlertTriangle, ScrollText, Lock, Star, Mic, BookOpen, FileText, Gift, Heart, ArrowDown } from 'lucide-react';
+import { Check, AlertTriangle, ScrollText, Lock, Star, Gift, Heart, ArrowDown, Sparkles, BookOpen, FileText } from 'lucide-react';
 import Image from 'next/image';
 
 const testimonials = [
@@ -22,6 +22,14 @@ const testimonials = [
     }
 ]
 
+const CrossIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 5v14"/>
+    <path d="M5 12h14"/>
+  </svg>
+);
+
+
 export default function QuaresmaPadrePioPage() {
     
     const handleCheckout = () => {
@@ -36,7 +44,10 @@ export default function QuaresmaPadrePioPage() {
 
                     <section className="space-y-4">
                         <h1 className="text-2xl md:text-4xl font-bold text-primary uppercase">A ORAÇÃO PERDIDA DE PADRE PIO QUE RESTAURA SUA CONEXÃO COM O ANJO DA GUARDA E ABRE AS PORTAS DA CURA, PROSPERIDADE E MILAGRES EM SUA VIDA</h1>
-                        <p className="text-lg md:text-xl font-semibold text-foreground/80">🙏 Você não está aqui por acaso. Seu anjo da guarda quer falar com você.</p>
+                        <p className="text-lg md:text-xl font-semibold text-foreground/80 flex items-center justify-center gap-2">
+                          <Heart className="w-5 h-5 text-primary"/>
+                          <span>Você não está aqui por acaso. Seu anjo da guarda quer falar com você.</span>
+                        </p>
                     </section>
 
                     <section>
@@ -52,7 +63,9 @@ export default function QuaresmaPadrePioPage() {
                     </section>
                     
                     <section className="bg-card/80 p-6 md:p-8 rounded-xl shadow-xl">
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">✝️ Padre Pio: O Santo que Falava com os Anjos</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
+                           <CrossIcon className="w-6 h-6"/> Padre Pio: O Santo que Falava com os Anjos
+                        </h2>
                         <Image src="https://i.imgur.com/83pTo2S.jpeg" alt="Padre Pio" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="Padre Pio portrait" />
                         <p className="text-md md:text-lg mt-6">Padre Pio, um dos santos mais milagrosos da história da Igreja, vivia na pequena cidade de San Giovanni Rotondo, na Itália. Era conhecido por realizar curas instantâneas, prever o futuro e estar em dois lugares ao mesmo tempo. Mas o que poucos sabem é que:</p>
                         <p className="text-lg md:text-xl font-bold text-primary mt-4 flex items-center justify-center gap-2"><Lock className="w-5 h-5"/>Padre Pio mantinha uma comunicação direta com seu anjo da guarda.</p>
@@ -61,9 +74,14 @@ export default function QuaresmaPadrePioPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">🌠 O Que é a Quaresma Secreta do Padre Pio?</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
+                            <Star className="w-6 h-6"/> O Que é a Quaresma Secreta do Padre Pio?
+                        </h2>
                         <p className="text-md md:text-lg mb-6">É um conjunto sagrado com as orações que Padre Pio usava para manifestar curas, riquezas, livramentos e respostas impossíveis, organizadas para você usar por 7 dias consecutivos, no exato horário em que os anjos estão ativos: entre 3h e 5h da madrugada.</p>
                         <Card className="bg-card/80 p-6 shadow-lg border-primary/20">
+                             <CardHeader className="p-0 mb-4">
+                                <CardTitle className="text-xl md:text-2xl font-bold text-primary">Nela, você terá:</CardTitle>
+                            </CardHeader>
                             <CardContent className="p-0 text-left space-y-3">
                                 <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/>Oração Sagrada para abrir os caminhos do dinheiro</p>
                                 <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/>Oração do amanhecer para reconectar com seu anjo da guarda</p>
@@ -77,7 +95,9 @@ export default function QuaresmaPadrePioPage() {
                     </section>
 
                      <section>
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">✨ Relatos de Quem Já Usou e Sentiu o Poder</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 flex items-center justify-center gap-2">
+                           <Sparkles className="w-6 h-6" /> Relatos de Quem Já Usou e Sentiu o Poder
+                        </h2>
                         <div className="space-y-6">
                             {testimonials.map((testimonial, index) => (
                                 <Card key={index} className="bg-card/80 p-4 shadow-lg text-left">
@@ -89,7 +109,9 @@ export default function QuaresmaPadrePioPage() {
                     </section>
 
                      <section>
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">🎁 Bônus Exclusivos (por tempo limitado)</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 flex items-center justify-center gap-2">
+                            <Gift className="w-6 h-6"/> Bônus Exclusivos (por tempo limitado)
+                        </h2>
                          <div className="space-y-4 text-left">
                             <Card className="bg-card/80 p-4 shadow-md flex items-center gap-4">
                                 <Star className="w-8 h-8 text-yellow-500 shrink-0"/>
@@ -121,14 +143,14 @@ export default function QuaresmaPadrePioPage() {
                         </CardHeader>
                         <CardContent className="p-0 space-y-4">
                             <p>A versão original dessas orações foi vendida por <span className="line-through">R$ 497</span> em outras páginas — com promessas vazias e exploração da fé. Mas aqui, o propósito é diferente: Queremos colocar essa revelação nas mãos do maior número de pessoas possível, sem peso financeiro.</p>
-                            <p className="font-bold text-lg">✨ Hoje, por tempo limitado, você pode ter acesso completo à Quaresma do Padre Pio por apenas:</p>
-                            <p className="text-4xl md:text-5xl font-bold text-green-600">👉 R$ 49,90 à vista</p>
+                            <p className="font-bold text-lg">Hoje, por tempo limitado, você pode ter acesso completo à Quaresma do Padre Pio por apenas:</p>
+                            <p className="text-4xl md:text-5xl font-bold text-green-600">R$ 49,90 à vista</p>
                             <p>ou 12x de R$ 5,31 no cartão.</p>
                              <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
                                 QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
                                 <ArrowDown className="w-6 h-6 ml-2 animate-bounce"/>
                             </Button>
-                            <p className="text-sm">📥 Entrega imediata em formato digital, direto no seu e-mail após confirmação.</p>
+                            <p className="text-sm">Entrega imediata em formato digital, direto no seu e-mail após confirmação.</p>
                         </CardContent>
                     </Card>
 
@@ -146,12 +168,15 @@ export default function QuaresmaPadrePioPage() {
                     </section>
 
                     <section className="space-y-4">
-                        <h2 className="text-xl md:text-2xl font-bold">🙌 Clique agora no botão abaixo e dê esse passo de fé.</h2>
+                        <h2 className="text-xl md:text-2xl font-bold">Clique agora no botão abaixo e dê esse passo de fé.</h2>
                         <p>Você pode continuar vivendo os mesmos problemas… Ou pode dar esse passo e permitir que seu anjo da guarda aja com todo o poder do céu.</p>
                          <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal">
-                             🔻 QUERO RECEBER A QUARESMA DE PADRE PIO AGORA 🔻
+                             QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
                         </Button>
-                        <p className="text-lg font-semibold mt-4">Você está a uma oração de distância da vida que sempre pediu a Deus. 🙏 Que seu anjo fale com você esta madrugada.</p>
+                        <p className="text-lg font-semibold mt-4 flex items-center justify-center gap-2">
+                            <Heart className="w-5 h-5 text-primary"/>
+                            <span>Você está a uma oração de distância da vida que sempre pediu a Deus. Que seu anjo fale com você esta madrugada.</span>
+                        </p>
                     </section>
                 </div>
             </main>

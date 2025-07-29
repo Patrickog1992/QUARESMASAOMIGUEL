@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -74,7 +75,7 @@ const TestimonialCardComponent = ({ quote, author, avatarUrl, avatarHint, likes,
 export default function QuaresmaPadrePioPage() {
     
     const handleCheckout = () => {
-        window.open('https://pay.kirvano.com/af55abff-865d-4c58-8cb5-31a9d9647fa2', '_self');
+        window.open('https://pay.kirvano.com/e4a1b0c9-9b98-4c8d-8a5f-7e0f8c5b6e7f', '_self');
     };
 
     return (
@@ -175,16 +176,15 @@ export default function QuaresmaPadrePioPage() {
                         </div>
                     </section>
 
-                     <Card className="bg-background/90 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-primary">
+                     <Card className="bg-card/90 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-primary">
                         <CardHeader className="p-0 mb-4">
                            <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Quanto Custa Viver uma Vida Abençoada?</CardTitle>
                         </CardHeader>
                         <CardContent className="p-0 space-y-4">
                             <p>A versão original dessas orações foi vendida por <span className="line-through">R$ 497</span> em outras páginas — com promessas vazias e exploração da fé. Mas aqui, o propósito é diferente: Queremos colocar essa revelação nas mãos do maior número de pessoas possível, sem peso financeiro.</p>
                             <p className="font-bold text-lg">Hoje, por tempo limitado, você pode ter acesso completo à Quaresma do Padre Pio por apenas:</p>
-                            <p className="text-4xl md:text-5xl font-bold text-primary">R$ 49,90 à vista</p>
-                            <p>ou 12x de R$ 5,31 no cartão.</p>
-                             <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
+                            <p className="text-4xl md:text-5xl font-bold text-primary">R$ 29,90 à vista</p>
+                             <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
                                 QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
                                 <ArrowDown className="w-6 h-6 ml-2 animate-bounce"/>
                             </Button>

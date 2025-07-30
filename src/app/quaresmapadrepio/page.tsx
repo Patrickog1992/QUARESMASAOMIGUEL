@@ -101,7 +101,7 @@ const TestimonialCardComponent = ({ quote, author, avatarUrl, avatarHint, likes,
 export default function QuaresmaPadrePioPage() {
     
     const handleCheckout = () => {
-        window.open('https://pay.kirvano.com/e4a1b0c9-9b98-4c8d-8a5f-7e0f8c5b6e7f', '_self');
+        window.open('https://pay.kirvano.com/52b25369-75d5-48bf-a5fe-546ab6ebe7a1', '_self');
     };
 
     return (
@@ -112,7 +112,7 @@ export default function QuaresmaPadrePioPage() {
                 <div className="max-w-3xl mx-auto space-y-12 text-center">
 
                     <section className="space-y-4">
-                        <h1 className="text-2xl md:text-4xl font-bold text-primary uppercase">A Oração Perdida de Padre Pio Que Restaura Sua Conexão com o Anjo da Guarda e Abre as Portas da Cura, Prosperidade e Milagres em Sua Vida</h1>
+                        <h1 className="text-2xl md:text-4xl font-bold text-primary uppercase">A ORAÇÃO PERDIDA DE PADRE PIO QUE RESTAURA SUA CONEXÃO COM O ANJO DA GUARDA E ABRE AS PORTAS DA CURA, PROSPERIDADE E MILAGRES EM SUA VIDA</h1>
                          <Image src="https://i.imgur.com/H1qvjJ8.png" alt="Padre Pio" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="Padre Pio praying" />
                         <p className="text-lg md:text-xl font-semibold text-foreground/80 flex items-center justify-center gap-2">
                           <Heart className="w-5 h-5 text-primary"/>

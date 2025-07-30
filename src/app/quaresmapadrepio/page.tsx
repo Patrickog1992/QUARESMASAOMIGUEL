@@ -112,8 +112,8 @@ export default function QuaresmaPadrePioPage() {
                 <div className="max-w-3xl mx-auto space-y-12 text-center">
 
                     <section className="space-y-4">
-                        <h1 className="text-2xl md:text-4xl font-bold text-primary uppercase">A ORAÇÃO PERDIDA DE PADRE PIO QUE RESTAURA SUA CONEXÃO COM O ANJO DA GUARDA E ABRE AS PORTAS DA CURA, PROSPERIDADE E MILAGRES EM SUA VIDA</h1>
-                         <Image src="https://i.imgur.com/H1qvjJ8.png" alt="Padre Pio em oração" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="Padre Pio praying" />
+                        <h1 className="text-2xl md:text-4xl font-bold text-primary uppercase">A Oração Perdida de Padre Pio Que Restaura Sua Conexão com o Anjo da Guarda e Abre as Portas da Cura, Prosperidade e Milagres em Sua Vida</h1>
+                         <Image src="https://i.imgur.com/H1qvjJ8.png" alt="Padre Pio" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="Padre Pio praying" />
                         <p className="text-lg md:text-xl font-semibold text-foreground/80 flex items-center justify-center gap-2">
                           <Heart className="w-5 h-5 text-primary"/>
                           <span>Você não está aqui por acaso. Seu anjo da guarda quer falar com você.</span>
@@ -233,6 +233,18 @@ export default function QuaresmaPadrePioPage() {
                         </div>
                     </section>
                     
+                    <section className="space-y-4">
+                        <h2 className="text-xl md:text-2xl font-bold">Clique agora no botão abaixo e dê esse passo de fé.</h2>
+                        <p>Você pode continuar vivendo os mesmos problemas… Ou pode dar esse passo e permitir que seu anjo da guarda aja com todo o poder do céu.</p>
+                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal">
+                             QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
+                        </Button>
+                        <p className="text-lg font-semibold mt-4 flex items-center justify-center gap-2">
+                            <Heart className="w-5 h-5 text-primary"/>
+                            <span>Você está a uma oração de distância da vida que sempre pediu a Deus. Que seu anjo fale com você esta madrugada.</span>
+                        </p>
+                    </section>
+
                     <section>
                         <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">Perguntas Frequentes</h2>
                         <Accordion type="single" collapsible className="w-full text-left">
@@ -245,18 +257,6 @@ export default function QuaresmaPadrePioPage() {
                                 </AccordionItem>
                             ))}
                         </Accordion>
-                    </section>
-
-                    <section className="space-y-4">
-                        <h2 className="text-xl md:text-2xl font-bold">Clique agora no botão abaixo e dê esse passo de fé.</h2>
-                        <p>Você pode continuar vivendo os mesmos problemas… Ou pode dar esse passo e permitir que seu anjo da guarda aja com todo o poder do céu.</p>
-                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal">
-                             QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
-                        </Button>
-                        <p className="text-lg font-semibold mt-4 flex items-center justify-center gap-2">
-                            <Heart className="w-5 h-5 text-primary"/>
-                            <span>Você está a uma oração de distância da vida que sempre pediu a Deus. Que seu anjo fale com você esta madrugada.</span>
-                        </p>
                     </section>
                 </div>
             </main>

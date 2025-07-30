@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
@@ -105,13 +106,13 @@ export default function QuaresmaPadrePioPage() {
 
     return (
         <div className="dark relative flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
-            <TopBanner />
+            <TopBanner text="As últimas quaresmas acabam hoje (coloque o dia) aproveite!" />
             <BackgroundPattern />
             <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
                 <div className="max-w-3xl mx-auto space-y-12 text-center">
 
                     <section className="space-y-4">
-                        <h1 className="text-2xl md:text-4xl font-bold text-primary uppercase">A Oração Perdida de Padre Pio Que Restaura Sua Conexão com o Anjo da Guarda e Abre as Portas da Cura, Prosperidade e Milagres em Sua Vida</h1>
+                        <h1 className="text-2xl md:text-4xl font-bold text-primary uppercase">A ORAÇÃO PERDIDA DE PADRE PIO QUE RESTAURA SUA CONEXÃO COM O ANJO DA GUARDA E ABRE AS PORTAS DA CURA, PROSPERIDADE E MILAGRES EM SUA VIDA</h1>
                          <Image src="https://i.imgur.com/H1qvjJ8.png" alt="Padre Pio em oração" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="Padre Pio praying" />
                         <p className="text-lg md:text-xl font-semibold text-foreground/80 flex items-center justify-center gap-2">
                           <Heart className="w-5 h-5 text-primary"/>
@@ -135,7 +136,7 @@ export default function QuaresmaPadrePioPage() {
                         <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
                            <CrossIcon className="w-6 h-6"/> Padre Pio: O Santo que Falava com os Anjos
                         </h2>
-                         <Image src="https://i.imgur.com/H1qvjJ8.png" alt="Padre Pio em oração" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="Padre Pio praying" />
+                         <Image src="https://i.imgur.com/aaGx5zz.png" alt="Padre Pio" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="Padre Pio portrait" />
                         <p className="text-md md:text-lg mt-6">Padre Pio, um dos santos mais milagrosos da história da Igreja, vivia na pequena cidade de San Giovanni Rotondo, na Itália. Era conhecido por realizar curas instantâneas, prever o futuro e estar em dois lugares ao mesmo tempo. Mas o que poucos sabem é que:</p>
                         <p className="text-lg md:text-xl font-bold text-primary mt-4 flex items-center justify-center gap-2"><Lock className="w-5 h-5"/>Padre Pio mantinha uma comunicação direta com seu anjo da guarda.</p>
                         <p className="italic text-md md:text-lg mt-2">Ele dizia: “Se você não consegue falar comigo, envie seu anjo.”</p>
@@ -203,15 +204,15 @@ export default function QuaresmaPadrePioPage() {
                         </div>
                     </section>
 
-                     <Card className="bg-card/90 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-green-500">
+                     <Card className="bg-card/90 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-primary">
                         <CardHeader className="p-0 mb-4">
                            <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Quanto Custa Viver uma Vida Abençoada?</CardTitle>
                         </CardHeader>
                         <CardContent className="p-0 space-y-4">
                             <p>A versão original dessas orações foi vendida por <span className="line-through">R$ 497</span> em outras páginas — com promessas vazias e exploração da fé. Mas aqui, o propósito é diferente: Queremos colocar essa revelação nas mãos do maior número de pessoas possível, sem peso financeiro.</p>
                             <p className="font-bold text-lg">Hoje, por tempo limitado, você pode ter acesso completo à Quaresma do Padre Pio por apenas:</p>
-                            <p className="text-4xl md:text-5xl font-bold text-green-600">R$ 29,90</p>
-                             <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
+                            <p className="text-4xl md:text-5xl font-bold text-primary">R$ 29,90</p>
+                             <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
                                 QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
                                 <ArrowDown className="w-6 h-6 ml-2 animate-bounce"/>
                             </Button>
@@ -249,7 +250,7 @@ export default function QuaresmaPadrePioPage() {
                     <section className="space-y-4">
                         <h2 className="text-xl md:text-2xl font-bold">Clique agora no botão abaixo e dê esse passo de fé.</h2>
                         <p>Você pode continuar vivendo os mesmos problemas… Ou pode dar esse passo e permitir que seu anjo da guarda aja com todo o poder do céu.</p>
-                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal">
+                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal">
                              QUERO RECEBER A QUARESMA DE PADRE PIO AGORA
                         </Button>
                         <p className="text-lg font-semibold mt-4 flex items-center justify-center gap-2">

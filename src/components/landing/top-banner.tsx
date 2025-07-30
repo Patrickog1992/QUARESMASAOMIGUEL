@@ -5,9 +5,10 @@ import { cn } from '@/lib/utils';
 
 type TopBannerProps = {
   className?: string;
+  text?: string;
 };
 
-export function TopBanner({ className }: TopBannerProps) {
+export function TopBanner({ className, text }: TopBannerProps) {
   const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
@@ -23,6 +24,10 @@ export function TopBanner({ className }: TopBannerProps) {
     return null;
   }
 
+  const bannerText = text 
+    ? text.replace('(coloque o dia)', currentDate)
+    : `Hoje, ${currentDate}, é o último dia para receber essa bênção.`;
+
   return (
     <div
       className={cn(
@@ -30,7 +35,7 @@ export function TopBanner({ className }: TopBannerProps) {
         className
       )}
     >
-      <p>Hoje, {currentDate}, é o último dia para receber essa bênção.</p>
+      <p>{bannerText}</p>
     </div>
   );
 }

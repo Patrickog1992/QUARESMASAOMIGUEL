@@ -15,6 +15,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { TopBanner } from '@/components/landing/top-banner';
+import { Cloacker } from '@/components/cloacker';
 
 
 const testimonials = [
@@ -105,6 +106,7 @@ export default function QuaresmaPadrePioPage() {
     };
 
     return (
+      <Cloacker redirectTo="https://www.google.com">
         <div className="dark relative flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
             <TopBanner text="As últimas quaresmas acabam hoje (coloque o dia) aproveite!" />
             <BackgroundPattern />
@@ -204,7 +206,7 @@ export default function QuaresmaPadrePioPage() {
                         </div>
                     </section>
 
-                     <Card className="bg-card/90 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-primary">
+                     <Card className="bg-primary/10 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-primary">
                         <CardHeader className="p-0 mb-4">
                            <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Quanto Custa Viver uma Vida Abençoada?</CardTitle>
                         </CardHeader>
@@ -262,5 +264,6 @@ export default function QuaresmaPadrePioPage() {
             </main>
             <Footer />
         </div>
+      </Cloacker>
     );
 }

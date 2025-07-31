@@ -24,7 +24,7 @@ export default function UpsellPage() {
     window.open('https://pay.kirvano.com/another-checkout-link', '_self');
   };
 
-  const handleAllThreeCheckout = () => {
+  const handleAllFourCheckout = () => {
     window.open('https://pay.kirvano.com/64053a4f-201b-4e23-b7a5-0e2a9b60f8e7', '_self');
   };
 
@@ -94,14 +94,14 @@ export default function UpsellPage() {
               </Card>
               <Card className="bg-card shadow-lg flex flex-col border-2 border-primary">
                 <CardHeader>
-                  <Image src="https://placehold.co/600x400.png" alt="A Quaresma de Padre Pio" width={600} height={400} className="rounded-t-lg" data-ai-hint="praying man" />
+                  <Image src="https://i.imgur.com/4PGkM5T.png" alt="A Quaresma de Padre Pio" width={600} height={400} className="rounded-t-lg" data-ai-hint="praying man" />
                   <CardTitle className="pt-4">A Quaresma de Padre Pio</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
                     <div>
                         <p className="mb-2">Orações poderosas para 40 dias de transformação.</p>
                         <p className="mb-4 font-bold text-lg">
-                            <span className="line-through text-destructive">De R$197,00</span> por <span className="text-green-600">R$47,00</span>
+                            <span className="line-through text-destructive">De R$197,00</span> por <span className="text-green-600">R$29,90</span>
                         </p>
                     </div>
                    <Button onClick={handleQuaresmaCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
@@ -111,11 +111,11 @@ export default function UpsellPage() {
             
             <div className="mt-10 mb-10 text-center">
                 <Button 
-                    onClick={handleAllThreeCheckout} 
+                    onClick={handleAllFourCheckout} 
                     size="lg"
                     className="w-full max-w-2xl mx-auto bg-green-600 hover:bg-green-700 text-white animate-pulse font-bold h-auto py-4 text-base md:text-lg md:py-6 whitespace-normal"
                 >
-                    APROVEITE ESSA OFERTA OS 3 POR APENAS R$ 37,00
+                    APROVEITE ESSA OFERTA OS 4 POR APENAS R$ 37,00
                 </Button>
             </div>
         </div>

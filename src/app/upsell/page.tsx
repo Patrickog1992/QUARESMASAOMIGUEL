@@ -101,7 +101,7 @@ export default function UpsellPage() {
                     <div>
                         <p className="mb-2">Orações poderosas para 40 dias de transformação.</p>
                         <p className="mb-4 font-bold text-lg">
-                            <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
+                            <span className="line-through text-destructive">De R$197,00</span> por <span className="text-green-600">R$47,00</span>
                         </p>
                     </div>
                    <Button onClick={handleQuaresmaCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>

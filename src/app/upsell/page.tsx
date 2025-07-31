@@ -43,7 +43,7 @@ export default function UpsellPage() {
               ESPERE! SUAS BENÇÃOS AINDA NÃO ACABARAM...
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 mb-10">
-              Antes de ir, temos uma oferta única e exclusiva para você.
+              Antes de ir, temos várias ofertas únicas e exclusivas para você.
             </p>
 
             <div className="grid md:grid-cols-4 gap-8 mb-10">

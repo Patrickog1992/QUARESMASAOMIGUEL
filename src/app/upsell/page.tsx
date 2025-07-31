@@ -20,6 +20,10 @@ export default function UpsellPage() {
     window.open('https://pay.kirvano.com/ee21dbf6-05a6-469e-bde5-7a9efd90c6b6', '_self');
   };
 
+  const handleQuaresmaCheckout = () => {
+    window.open('https://pay.kirvano.com/another-checkout-link', '_self');
+  };
+
   const handleAllThreeCheckout = () => {
     window.open('https://pay.kirvano.com/64053a4f-201b-4e23-b7a5-0e2a9b60f8e7', '_self');
   };
@@ -34,7 +38,7 @@ export default function UpsellPage() {
     <div className="dark relative flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center">
-        <div className="max-w-5xl w-full">
+        <div className="max-w-7xl w-full">
             <h1 className="text-2xl md:text-4xl font-bold text-primary animate-pulse mb-4">
               ESPERE! SUAS BENÇÃOS AINDA NÃO ACABARAM...
             </h1>
@@ -42,7 +46,7 @@ export default function UpsellPage() {
               Antes de ir, temos uma oferta única e exclusiva para você.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-10">
+            <div className="grid md:grid-cols-4 gap-8 mb-10">
               <Card className="bg-card shadow-lg flex flex-col border-2 border-primary">
                 <CardHeader>
                   <Image src="https://i.imgur.com/F8d7Dym.png" alt="Card 1" width={600} height={400} className="rounded-t-lg" data-ai-hint="glowing book" />
@@ -86,6 +90,21 @@ export default function UpsellPage() {
                         </p>
                     </div>
                    <Button onClick={handleGuiaCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
+                </CardContent>
+              </Card>
+              <Card className="bg-card shadow-lg flex flex-col border-2 border-primary">
+                <CardHeader>
+                  <Image src="https://placehold.co/600x400.png" alt="A Quaresma de Padre Pio" width={600} height={400} className="rounded-t-lg" data-ai-hint="praying man" />
+                  <CardTitle className="pt-4">A Quaresma de Padre Pio</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col justify-between">
+                    <div>
+                        <p className="mb-2">Orações poderosas para 40 dias de transformação.</p>
+                        <p className="mb-4 font-bold text-lg">
+                            <span className="line-through text-destructive">De R$47,00</span> por <span className="text-green-600">R$19,90</span>
+                        </p>
+                    </div>
+                   <Button onClick={handleQuaresmaCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
                 </CardContent>
               </Card>
             </div>

@@ -21,7 +21,7 @@ export default function UpsellPage() {
   };
 
   const handleQuaresmaCheckout = () => {
-    window.open('https://pay.kirvano.com/another-checkout-link', '_self');
+    window.open('https://pay.kirvano.com/52b25369-75d5-48bf-a5fe-546ab6ebe7a1', '_self');
   };
 
   const handleAllFourCheckout = () => {

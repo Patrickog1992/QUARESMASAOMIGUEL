@@ -99,7 +99,7 @@ export default function UpsellPage() {
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-between">
                     <div>
-                        <p className="mb-2">Orações poderosas para 40 dias de transformação.</p>
+                        <p className="mb-2">Junte-se a quaresma</p>
                         <p className="mb-4 font-bold text-lg">
                             <span className="line-through text-destructive">De R$197,00</span> por <span className="text-green-600">R$29,90</span>
                         </p>

@@ -7,8 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
 import { TestimonialCard, type Testimonial } from '@/components/landing/testimonial-card';
-import { TopBanner } from '@/components/landing/top-banner';
-import { ThumbsUp, Heart } from 'lucide-react';
+import { ThumbsUp, Heart, Menu, Search } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
@@ -93,6 +92,36 @@ const BuyButton = () => {
     );
 };
 
+const StaticTopBanner = () => {
+    const [currentDate, setCurrentDate] = useState('');
+
+    useEffect(() => {
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('pt-BR', {
+        day: 'numeric',
+        month: 'long',
+        });
+        setCurrentDate(formattedDate);
+    }, []);
+
+    if (!currentDate) return null;
+
+    const bannerText = `ÚLTIMAS UNIDADES HOJE (${currentDate})`;
+
+    return (
+        <div className="bg-red-700 text-white py-2 px-4 font-bold font-sans w-full">
+            <div className="container mx-auto flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                    <Menu className="h-6 w-6" />
+                    <span className="text-lg hidden sm:inline tracking-wider">NOTÍCIA</span>
+                </div>
+                <p className="text-sm md:text-base font-semibold text-center flex-grow px-2 uppercase tracking-wide">{bannerText}</p>
+                <Search className="h-6 w-6" />
+            </div>
+        </div>
+    );
+};
+
 
 export default function ChaveDeCristoPage() {
     const [publishDate, setPublishDate] = useState('');
@@ -106,7 +135,7 @@ export default function ChaveDeCristoPage() {
 
     return (
         <div className="bg-white text-black font-['Open_Sans',_sans-serif]">
-            <TopBanner variant="news" text="ÚLTIMAS UNIDADES HOJE (coloque o dia)" />
+            <StaticTopBanner />
 
             <main className="container mx-auto px-4 py-8 max-w-4xl">
                 <article>

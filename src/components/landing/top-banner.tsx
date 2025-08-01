@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -34,16 +35,16 @@ export function TopBanner({ className, text, variant = 'default' }: TopBannerPro
     return (
       <div
         className={cn(
-          'bg-red-700 text-white text-center py-2 px-4 font-sans sticky top-0 z-20 shadow-lg w-full',
+          'bg-red-700 text-white text-center py-2 px-4 font-bold font-sans sticky top-0 z-20 shadow-lg w-full',
           className
         )}
       >
         <div className="container mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
                 <Menu className="h-6 w-6" />
-                <span className="font-bold text-lg hidden sm:inline">NOTÍCIA</span>
+                <span className="text-lg hidden sm:inline tracking-wider">NOTÍCIA</span>
             </div>
-            <p className="text-sm md:text-base font-semibold text-center flex-grow px-4">{bannerText}</p>
+            <p className="text-sm md:text-base font-semibold text-center flex-grow px-2 uppercase tracking-wide">{bannerText}</p>
             <Search className="h-6 w-6" />
         </div>
       </div>

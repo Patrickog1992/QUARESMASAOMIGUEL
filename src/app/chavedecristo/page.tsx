@@ -92,7 +92,7 @@ const VSLPlayer = () => {
     const videoHtml = `<vturb-smartplayer id="vid-688ccd7bf5739e8702880e89" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>`;
     return (
         <div 
-            className="relative overflow-hidden rounded-lg shadow-2xl bg-black w-full"
+            className="relative overflow-hidden w-full"
             dangerouslySetInnerHTML={{ __html: videoHtml }}
         />
     );
@@ -104,7 +104,7 @@ const TimedCheckoutButton = () => {
     useEffect(() => {
       const timer = setTimeout(() => {
         setShowButton(true);
-      }, (18 * 60 + 50) * 1000); // 18 minutos e 50 segundos
+      }, 5 * 1000); // 5 segundos
   
       return () => clearTimeout(timer);
     }, []);
@@ -237,3 +237,4 @@ export default function ChaveDeCristoPage() {
         </div>
     );
 }
+

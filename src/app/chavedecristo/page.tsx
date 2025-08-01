@@ -134,7 +134,7 @@ export default function ChaveDeCristoPage() {
     }, []);
 
     return (
-        <div className="bg-white text-black font-['Open_Sans',_sans-serif]">
+        <div className="bg-white text-black">
             <StaticTopBanner />
 
             <main className="container mx-auto px-4 py-8 max-w-4xl">

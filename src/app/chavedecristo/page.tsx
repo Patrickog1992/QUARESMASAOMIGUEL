@@ -57,6 +57,24 @@ const testimonialsData: Testimonial[] = [
     likes: 1123,
     time: '2 d',
   },
+  {
+    id: 6,
+    name: 'Sandra B.',
+    avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg',
+    avatarHint: 'woman portrait',
+    text: 'Estava desempregada há meses, já sem esperança. Recebi a oração e no mesmo dia me ligaram para uma entrevista. Hoje estou trabalhando e muito feliz! Deus é fiel.',
+    likes: 1345,
+    time: '2 d'
+    },
+    {
+    id: 7,
+    name: 'Marcos T.',
+    avatarUrl: 'https://thumbs2.imgbox.com/48/18/9JtnHEjz_t.png',
+    avatarHint: 'man portrait',
+    text: 'A paz que essa oração trouxe para a minha casa não tem explicação. Minha família estava sempre em conflito, agora vivemos em harmonia. É a Chave de Cristo agindo.',
+    likes: 876,
+    time: '3 d'
+    },
 ];
 
 const VSLPlayer = () => {
@@ -80,35 +98,38 @@ const VSLPlayer = () => {
     );
 };
 
-const BuyButton = () => {
-    const [show, setShow] = useState(false);
+const TimedCheckoutButton = () => {
+    const [showButton, setShowButton] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setShow(true);
-        }, (15 * 60) * 1000); // 15 minutos
-
-        return () => clearTimeout(timer);
+      const timer = setTimeout(() => {
+        setShowButton(true);
+      }, (18 * 60 + 50) * 1000); // 18 minutos e 50 segundos
+  
+      return () => clearTimeout(timer);
     }, []);
 
-    const handleBuyClick = () => {
+    const handleCheckoutClick = () => {
         window.open('https://pay.kirvano.com/d9a4b3d2-c1e0-4b2a-8f5c-9d6e4a8b1a3e', '_self');
     };
-
-    if (!show) {
-        return <div className="h-[60px]" />;
-    }
-
+    
     return (
-        <Button
-            size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 px-6 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full"
-            onClick={handleBuyClick}
-        >
-            SIM, QUERO ACESSAR A ORAÇÃO SECRETA
-        </Button>
+        <div className="mt-6 text-center">
+            {showButton ? (
+            <Button
+                size="lg"
+                className="bg-red-600 hover:bg-red-700 text-white font-bold text-lg md:text-xl py-6 px-6 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full"
+                onClick={handleCheckoutClick}
+                >
+                EU QUERO A CHAVE DE CRISTO
+            </Button>
+            ) : (
+            <div className="h-[60px]" />
+            )}
+        </div>
     );
 };
+
 
 const StaticTopBanner = () => {
     const [currentDate, setCurrentDate] = useState('');
@@ -175,9 +196,7 @@ export default function ChaveDeCristoPage() {
                         <div className="my-8 p-4 bg-gray-100 rounded-lg">
                              <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Assista à reportagem completa e entenda o poder da oração:</h2>
                             <VSLPlayer />
-                            <div className="mt-6 text-center">
-                                <BuyButton />
-                            </div>
+                            <TimedCheckoutButton />
                         </div>
 
                     </div>

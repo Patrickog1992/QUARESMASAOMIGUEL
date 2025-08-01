@@ -9,6 +9,7 @@ import { Footer } from '@/components/landing/footer';
 import { TestimonialCard, type Testimonial } from '@/components/landing/testimonial-card';
 import { ThumbsUp, Heart, Menu, Search, Check } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { SalesPopupChaveDeCristo } from '@/components/landing/SalesPopupChaveDeCristo';
 
 
 const testimonialsData: Testimonial[] = [
@@ -74,6 +75,24 @@ const testimonialsData: Testimonial[] = [
     text: 'A paz que essa oração trouxe para a minha casa não tem explicação. Minha família estava sempre em conflito, agora vivemos em harmonia. É a Chave de Cristo agindo.',
     likes: 876,
     time: '3 d'
+    },
+    {
+    id: 8,
+    name: 'Camila G.',
+    avatarUrl: 'https://i.imgur.com/example_avatar_1.png',
+    avatarHint: 'woman portrait',
+    text: 'Eu sentia uma angústia muito grande no peito. Depois que comecei a fazer a oração, essa sensação foi sumindo e dando lugar a uma calma que eu nunca tinha sentido. Recomendo para todos!',
+    likes: 753,
+    time: '4 d'
+    },
+    {
+    id: 9,
+    name: 'Juliana H.',
+    avatarUrl: 'https://i.imgur.com/example_avatar_2.png',
+    avatarHint: 'woman portrait',
+    text: 'Meu negócio estava quase falindo. A oração da Chave de Cristo me deu força e clareza para tomar as decisões certas. Hoje, a empresa está se recuperando. Gratidão!',
+    likes: 921,
+    time: '4 d'
     },
 ];
 
@@ -234,6 +253,7 @@ export default function ChaveDeCristoPage() {
                 </article>
             </main>
             <Footer />
+            <SalesPopupChaveDeCristo />
         </div>
     );
 }

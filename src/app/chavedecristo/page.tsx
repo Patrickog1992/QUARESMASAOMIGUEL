@@ -193,7 +193,7 @@ export default function ChaveDeCristoPage() {
                     </header>
 
                     <div className="prose prose-lg max-w-none text-gray-800">
-                        <div className="my-8 p-4 bg-gray-100 rounded-lg">
+                        <div className="my-8">
                              <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Assista à reportagem completa e entenda o poder da oração:</h2>
                             <VSLPlayer />
                             <TimedCheckoutButton />

@@ -39,24 +39,42 @@ const testimonialsData: Testimonial[] = [
     likes: 1654,
     time: '1 d',
   },
+    {
+    id: 4,
+    name: 'Roberto Menezes',
+    avatarUrl: 'https://thumbs2.imgbox.com/14/e9/DUPvPss9_t.jpg',
+    avatarHint: 'man portrait',
+    text: 'Sempre fui muito cético, mas estava numa situação difícil e resolvi tentar. A serenidade que eu senti depois da oração é algo que não tem preço. As coisas começaram a se ajeitar.',
+    likes: 987,
+    time: '1 d',
+  },
+  {
+    id: 5,
+    name: 'Fernanda Lima',
+    avatarUrl: 'https://thumbs2.imgbox.com/dd/55/H0rZXQVM_t.jpg',
+    avatarHint: 'woman portrait',
+    text: 'Meu filho não conseguia passar numa prova importante. Oramos com a Chave de Cristo e ele não só passou, como ficou em primeiro lugar. Agradeço todos os dias por essa bênção.',
+    likes: 1123,
+    time: '2 d',
+  },
 ];
 
 const VSLPlayer = () => {
     useEffect(() => {
-        const scriptId = 'vid-688c931242446e639faf7b4d-script';
+        const scriptId = 'vid-688ccd7bf5739e8702880e89-script';
         if (!document.getElementById(scriptId)) {
             const script = document.createElement('script');
             script.id = scriptId;
-            script.src = 'https://scripts.converteai.net/e67d6b57-0257-406a-8870-de6c6124203c/players/688c931242446e639faf7b4d/v4/player.js';
+            script.src = 'https://scripts.converteai.net/e67d6b57-0257-406a-8870-de6c6124203c/players/688ccd7bf5739e8702880e89/v4/player.js';
             script.async = true;
             document.head.appendChild(script);
         }
     }, []);
 
-    const videoHtml = `<vturb-smartplayer id="vid-688c931242446e639faf7b4d" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-688ccd7bf5739e8702880e89" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>`;
     return (
         <div 
-            className="relative overflow-hidden rounded-lg shadow-2xl bg-black aspect-video w-full"
+            className="relative overflow-hidden rounded-lg shadow-2xl bg-black w-full"
             dangerouslySetInnerHTML={{ __html: videoHtml }}
         />
     );
@@ -134,19 +152,19 @@ export default function ChaveDeCristoPage() {
     }, []);
 
     return (
-        <div className="bg-white text-black">
+        <div className="bg-white text-black font-sans">
             <StaticTopBanner />
 
             <main className="container mx-auto px-4 py-8 max-w-4xl">
                 <article>
                     <header className="border-b pb-4 mb-6">
                         <p className="text-primary font-bold text-lg">FÉ E RELIGIÃO</p>
-                        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 my-2 leading-tight">
+                        <h1 className="text-3xl md:text-5xl font-bold text-red-600 my-2 leading-tight">
                             DESCOBERTO O MANUSCRITO SAGRADO DO GROTTO DE LOURDES QUE ESTÁ DESTRAVANDO MILAGRES EM 7 DIAS
                         </h1>
                         <p className="text-lg md:text-xl text-gray-600 flex items-start gap-2">
                           <Check className="w-6 h-6 text-green-600 shrink-0 mt-1" />
-                          <span>Milhares de Brasileiros estão ativando suas bençãos , curas e prosperidade com apenas 22 orações sagradas, chamadas de CHAVE DE CRISTO</span>
+                          <span>Milhares de Brasileiros estão ativando suas bençãos , curas e prosperidade com apenas 22 orações sagradas, chamadas de <span className="text-red-600 font-bold">CHAVE DE CRISTO</span></span>
                         </p>
                         <p className="text-sm text-gray-500 mt-4">
                             Por Redação de Notícias da Fé | {publishDate}
@@ -154,31 +172,6 @@ export default function ChaveDeCristoPage() {
                     </header>
 
                     <div className="prose prose-lg max-w-none text-gray-800">
-                        <Image
-                            src="https://i.imgur.com/v2wJ9pM.jpeg"
-                            alt="Corredor do Vaticano"
-                            width={800}
-                            height={450}
-                            className="rounded-lg mb-6 shadow-md"
-                            data-ai-hint="vatican hallway"
-                        />
-
-                        <p>
-                            Uma descoberta nos arquivos secretos do Vaticano está causando comoção entre os fiéis brasileiros. Trata-se de um manuscrito antigo, contendo uma oração poderosa conhecida como a “Chave de Cristo”. Segundo relatos, o documento foi revelado a um frei brasileiro durante uma visita a Roma, com a missão de divulgá-lo em um momento de grande necessidade espiritual.
-                        </p>
-                        
-                        <p>
-                            A oração, até então desconhecida do grande público, teria o poder de “destrancar” as portas do céu, permitindo que graças e milagres se manifestem rapidamente na vida de quem a reza com fé. O documento descreve a oração como uma ferramenta espiritual para problemas financeiros, de saúde, familiares e para obter paz de espírito.
-                        </p>
-
-                        <blockquote className="border-l-4 border-primary pl-4 italic my-6">
-                            "É uma conexão direta com o sagrado. Não são apenas palavras, é uma frequência espiritual que alinha a alma com o poder divino," afirma o frei responsável pela tradução, que prefere manter o anonimato.
-                        </blockquote>
-                        
-                        <p>
-                           A notícia se espalhou rapidamente em grupos de oração, e os testemunhos começaram a surgir. Pessoas de todo o país relatam mudanças extraordinárias após iniciarem a prática da oração.
-                        </p>
-                        
                         <div className="my-8 p-4 bg-gray-100 rounded-lg">
                              <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Assista à reportagem completa e entenda o poder da oração:</h2>
                             <VSLPlayer />
@@ -187,9 +180,6 @@ export default function ChaveDeCristoPage() {
                             </div>
                         </div>
 
-                        <p>
-                           Especialistas em história da Igreja e teólogos estão divididos. Alguns veem com ceticismo, enquanto outros apontam para a longa tradição de orações e devoções que surgem em momentos de crise e renovam a fé popular. O fato é que, para milhares de brasileiros, a “Chave de Cristo” já se tornou um símbolo de esperança e um caminho para o milagre.
-                        </p>
                     </div>
 
                     <div className="mt-12">

@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
 import { TestimonialCard, type Testimonial } from '@/components/landing/testimonial-card';
-import { ThumbsUp, Heart, Menu, Search } from 'lucide-react';
+import { ThumbsUp, Heart, Menu, Search, Check } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
@@ -142,10 +142,11 @@ export default function ChaveDeCristoPage() {
                     <header className="border-b pb-4 mb-6">
                         <p className="text-primary font-bold text-lg">FÉ E RELIGIÃO</p>
                         <h1 className="text-3xl md:text-5xl font-bold text-gray-900 my-2 leading-tight">
-                            A ‘Chave de Cristo’: Oração secreta guardada por séculos no Vaticano é revelada e relatos de milagres se espalham pelo Brasil.
+                            DESCOBERTO O MANUSCRITO SAGRADO DO GROTTO DE LOURDES QUE ESTÁ DESTRAVANDO MILAGRES EM 7 DIAS
                         </h1>
-                        <p className="text-lg md:text-xl text-gray-600">
-                            Documento antigo, traduzido por um frei brasileiro, contém oração que estaria ligada a curas, prosperidade e resolução de problemas impossíveis.
+                        <p className="text-lg md:text-xl text-gray-600 flex items-start gap-2">
+                          <Check className="w-6 h-6 text-green-600 shrink-0 mt-1" />
+                          <span>Milhares de Brasileiros estão ativando suas bençãos , curas e prosperidade com apenas 22 orações sagradas, chamadas de CHAVE DE CRISTO</span>
                         </p>
                         <p className="text-sm text-gray-500 mt-4">
                             Por Redação de Notícias da Fé | {publishDate}

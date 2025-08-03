@@ -98,20 +98,20 @@ const testimonialsData: Testimonial[] = [
 
 const VSLPlayer = () => {
     useEffect(() => {
-        const scriptId = 'vid-688ccd7bf5739e8702880e89-script';
+        const scriptId = 'vid-688fe16c51ec00e4ce20dac3-script';
         if (!document.getElementById(scriptId)) {
             const script = document.createElement('script');
             script.id = scriptId;
-            script.src = 'https://scripts.converteai.net/e67d6b57-0257-406a-8870-de6c6124203c/players/688ccd7bf5739e8702880e89/v4/player.js';
+            script.src = 'https://scripts.converteai.net/20cc6a98-96ef-4135-bef8-e3435f4fd521/players/688fe16c51ec00e4ce20dac3/v4/player.js';
             script.async = true;
             document.head.appendChild(script);
         }
     }, []);
 
-    const videoHtml = `<vturb-smartplayer id="vid-688ccd7bf5739e8702880e89" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-688fe16c51ec00e4ce20dac3" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
     return (
         <div 
-            className="relative overflow-hidden w-full"
+            className="relative overflow-hidden w-full max-w-lg mx-auto"
             dangerouslySetInnerHTML={{ __html: videoHtml }}
         />
     );

@@ -8,10 +8,10 @@ const BuyButtonChaveDeCristo = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // Aparece depois de 18 minutos e 50 segundos
+    // Aparece depois de 10 segundos
     const timer = setTimeout(() => {
       setShow(true);
-    }, (18 * 60 + 50) * 1000); 
+    }, 10 * 1000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -49,7 +49,7 @@ export function VSLSectionChaveDeCristo() {
     }
   }, []);
   
-  const videoHtml = `<vturb-smartplayer id="vid-688fe16c51ec00e4ce20dac3" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+  const videoHtml = `<vturb-smartplayer id="vid-688fe16c51ec00e4ce20dac3" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>`;
 
   return (
     <section className="mb-12 md:mb-20">

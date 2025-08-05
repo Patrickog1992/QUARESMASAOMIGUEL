@@ -64,7 +64,7 @@ export function SalesPopupChaveDeCristo() {
         isVisible ? 'translate-x-0' : 'translate-x-[calc(100%+2rem)]'
       )}
     >
-      <Card className="bg-accent text-accent-foreground shadow-lg">
+      <Card className="bg-destructive text-destructive-foreground shadow-lg">
         <CardContent className="p-2 flex items-center gap-2">
           <CheckCircle className="h-4 w-4 shrink-0" />
           <p className="text-xs font-semibold">

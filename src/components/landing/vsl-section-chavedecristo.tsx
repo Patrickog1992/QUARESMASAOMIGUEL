@@ -28,7 +28,7 @@ const BuyButtonChaveDeCristo = () => {
   return (
     <Button
       size="lg"
-      className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
+      className="bg-destructive hover:bg-destructive/90 text-destructive-foreground font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
       onClick={handleBuyClick}
     >
       SIM, QUERO A CHAVE DE CRISTO

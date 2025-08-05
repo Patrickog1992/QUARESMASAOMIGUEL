@@ -8,17 +8,16 @@ const BuyButtonChaveDeCristo = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // Aparece depois de 15 minutos
+    // Aparece depois de 18 minutos e 50 segundos
     const timer = setTimeout(() => {
       setShow(true);
-    }, (15 * 60) * 1000); 
+    }, (18 * 60 + 50) * 1000); 
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleBuyClick = () => {
-    // Substituir pelo link de checkout correto
-    window.open('https://pay.kirvano.com/placeholder-link', '_self');
+    window.open('https://pay.kirvano.com/99015503-c0de-4020-b89f-203a02684d7e', '_self');
   };
   
   if (!show) {
@@ -40,25 +39,22 @@ const BuyButtonChaveDeCristo = () => {
 
 export function VSLSectionChaveDeCristo() {
   useEffect(() => {
-    // ID do script do player de vídeo - Usando um placeholder
-    const scriptId = 'vid-placeholder-chavedecristo-script';
+    const scriptId = 'vid-688fe16c51ec00e4ce20dac3-script';
     if (!document.getElementById(scriptId)) {
         const script = document.createElement('script');
         script.id = scriptId;
-        // Substituir pelo SRC do script correto
-        script.src = 'https://scripts.converteai.net/e67d6b57-0257-406a-8870-de6c6124203c/players/688c931242446e639faf7b4d/v4/player.js';
+        script.src = 'https://scripts.converteai.net/20cc6a98-96ef-4135-bef8-e3435f4fd521/players/688fe16c51ec00e4ce20dac3/v4/player.js';
         script.async = true;
         document.head.appendChild(script);
     }
   }, []);
   
-  // HTML do player de vídeo - Usando um placeholder
-  const videoHtml = `<vturb-smartplayer id="vid-688c931242446e639faf7b4d" style="display: block; margin: 0 auto; width: 100%; max-width: 800px;"></vturb-smartplayer>`;
+  const videoHtml = `<vturb-smartplayer id="vid-688fe16c51ec00e4ce20dac3" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
   return (
     <section className="mb-12 md:mb-20">
       <div 
-        className="relative overflow-hidden rounded-lg shadow-2xl bg-black aspect-video max-w-4xl mx-auto"
+        className="relative overflow-hidden rounded-lg shadow-2xl bg-black mx-auto max-w-lg"
         dangerouslySetInnerHTML={{ __html: videoHtml }}
       />
       

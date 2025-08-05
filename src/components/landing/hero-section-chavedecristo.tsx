@@ -15,7 +15,7 @@ export function HeroSectionChaveDeCristo() {
       <ul className="space-y-3 text-md md:text-lg text-foreground/90 max-w-3xl font-medium mt-6 text-left">
         <li className="flex items-start gap-3">
           <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
-          <span>Milhares de brasileiros estão ativando bençãos, curas e prosperidade com apenas 22 palavras sagradas, chamadas de a chave de Cristo</span>
+          <span>Milhares de brasileiros estão ativando bençãos, curas e prosperidade com apenas 22 palavras sagradas, chamadas de <span className="text-primary font-bold">a chave de Cristo</span></span>
         </li>
       </ul>
       

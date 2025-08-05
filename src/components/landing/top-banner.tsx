@@ -29,7 +29,7 @@ export function TopBanner({ className, text, variant = 'default' }: TopBannerPro
 
   const bannerText = text 
     ? text.replace('(coloque o dia)', currentDate)
-    : `Hoje, ${currentDate}, é o último dia para receber essa bênção.`;
+    : `Está benção está disponível somente até ${currentDate}. Assista antes que saia do ar!`;
 
   if (variant === 'news') {
     return (

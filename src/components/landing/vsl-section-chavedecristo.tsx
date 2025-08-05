@@ -54,7 +54,7 @@ export function VSLSectionChaveDeCristo() {
   return (
     <section className="mb-12 md:mb-20">
       <div 
-        className="relative overflow-hidden rounded-lg shadow-2xl bg-black mx-auto max-w-lg"
+        className="relative overflow-hidden rounded-lg shadow-2xl mx-auto max-w-lg"
         dangerouslySetInnerHTML={{ __html: videoHtml }}
       />
       

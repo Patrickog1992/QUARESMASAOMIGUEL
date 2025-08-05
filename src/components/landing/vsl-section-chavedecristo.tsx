@@ -28,7 +28,7 @@ const BuyButtonChaveDeCristo = () => {
   return (
     <Button
       size="lg"
-      className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
+      className="font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
       onClick={handleBuyClick}
     >
       SIM, QUERO A CHAVE DE CRISTO
@@ -54,7 +54,7 @@ export function VSLSectionChaveDeCristo() {
   return (
     <section className="mb-12 md:mb-20">
       <div 
-        className="relative overflow-hidden rounded-lg shadow-2xl mx-auto max-w-lg"
+        className="relative overflow-hidden rounded-lg shadow-2xl mx-auto max-w-4xl"
         dangerouslySetInnerHTML={{ __html: videoHtml }}
       />
       

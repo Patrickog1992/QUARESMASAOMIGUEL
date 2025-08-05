@@ -11,7 +11,7 @@ import { TopBanner } from '@/components/landing/top-banner';
 export default function ChaveDeCristoPage() {
   return (
     <div className="dark relative flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
-      <TopBanner />
+      <TopBanner className="bg-red-600 text-white" text="Esta bênção está disponível somente até 5 de agosto. Assista antes que saia do ar!" />
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
         <HeroSectionChaveDeCristo />

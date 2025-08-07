@@ -322,7 +322,7 @@ export default function ArcanjoMiguelPage() {
 
                     <section className="space-y-4">
                         <h1 className="text-3xl md:text-5xl font-bold uppercase text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">As 40 Orações Secretas do Arcanjo Miguel</h1>
-                        <p className="text-lg md:text-xl font-medium text-blue-200">
+                        <p className="text-lg md:text-xl font-medium text-amber-300">
                            Invoque o poder do Arcanjo para sua proteção, quebre as correntes que te prendem e abra as portas para os seus milagres.
                         </p>
                         <div className="p-4 bg-black/20 rounded-xl border border-blue-400/30 text-left max-w-lg mx-auto space-y-3">

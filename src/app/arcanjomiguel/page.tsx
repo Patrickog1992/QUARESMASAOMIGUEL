@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/accordion";
 import { SalesPopup } from '@/components/landing/sales-popup';
 import { TopBanner } from '@/components/landing/top-banner';
-import { BuyButtonArcanjoMiguel } from '@/components/landing/buy-button-arcanjomiguel';
 
 const testimonials = [
     {
@@ -24,7 +23,7 @@ const testimonials = [
         name: 'Frei Gilson',
         avatarUrl: 'https://thumbs2.imgbox.com/16/a6/bzjtDdJQ_t.png',
         avatarHint: 'priest portrait',
-        text: 'A Quaresma do Padre Pio é uma das experiências espirituais mais fortes que já vivi. Quando comecei a praticar essas orações, percebi mudanças reais na minha vida e na vida das pessoas que oravam comigo. Se você está aqui, é porque seu anjo quer te mostrar esse caminho 🙏',
+        text: 'As 40 orações do Arcanjo Miguel são um escudo para a alma. Quando as traduzi, senti uma força protetora imensa. Rezem com fé, e Miguel Arcanjo lutará por vocês. Se você está aqui, não é por acaso, é um chamado. 🙏',
         likes: 2134,
         time: '3 h',
         replies: [
@@ -34,7 +33,7 @@ const testimonials = [
             username: '@FreiGilson',
             avatarUrl: 'https://thumbs2.imgbox.com/fc/13/RXzAe2rE_t.png',
             avatarHint: 'woman portrait',
-            text: 'eu comecei ontem e hoje acordei com uma paz que nunca tinha sentido. 🙌🌟',
+            text: 'Padre, comecei a orar e sinto uma paz e uma coragem que não sentia há anos. Obrigada por compartilhar essa bênção! 🙌',
             likes: 254,
             time: '3 h',
           },
@@ -45,7 +44,7 @@ const testimonials = [
         name: 'Marcelo Rossi',
         avatarUrl: 'https://thumbs2.imgbox.com/4b/7d/zDjIQAwV_t.png',
         avatarHint: 'priest portrait',
-        text: 'Eu vivi o que está nesse vídeo. A Quaresma do Padre Pio não é só um livro, é um encontro real com Deus. Quem fizer com fé, vai sentir a mudança. Assista até o final e se permita viver essa experiência!',
+        text: 'Vi de perto o poder dessas orações. Não são apenas palavras, são uma conexão direta com o Príncipe dos Anjos. Assista ao vídeo e sinta a presença de São Miguel Arcanjo em sua vida.',
         likes: 2001,
         time: '1 h',
         replies: [
@@ -55,7 +54,7 @@ const testimonials = [
             username: '@MarceloRossi',
             avatarUrl: 'https://thumbs2.imgbox.com/87/54/0dMM6ESV_t.png',
             avatarHint: 'woman portrait',
-            text: 'no final eu só conseguia chorar. É muito forte 😭 Obrigada por confirmar o que senti, padre!',
+            text: 'No final do vídeo eu já sentia a energia diferente. É muito poderoso! 😭',
             likes: 189,
             time: '1 h',
           },
@@ -66,7 +65,7 @@ const testimonials = [
         name: 'Reginaldo Manzotti',
         avatarUrl: 'https://thumbs2.imgbox.com/b9/08/pB4d3kjj_t.png',
         avatarHint: 'priest portrait',
-        text: 'Essa oração reacendeu minha fé. A Quaresma do Padre Pio é mais do que uma devoção, é um presente direto do Céu. Se você está aqui, é porque essa bênção também é para você. Receba com fé!',
+        text: 'Essas 40 orações são um presente do céu para os momentos de batalha espiritual. Elas renovam a fé e trazem a certeza da proteção divina. Receba essa graça em sua vida!',
         likes: 1654,
         time: '1 h',
         replies: [
@@ -76,7 +75,7 @@ const testimonials = [
             username: '@ReginaldoManzotti',
             avatarUrl: 'https://thumbs2.imgbox.com/eb/cb/zfODzSUu_t.png',
             avatarHint: 'woman portrait',
-            text: 'comecei hj e já sinto meu coracao diferente 🙌',
+            text: 'Comecei hoje e já me sinto mais forte para enfrentar meus problemas. 🙌',
             likes: 135,
             time: '1 h',
           },
@@ -87,7 +86,7 @@ const testimonials = [
         name: 'Fábio de Melo',
         avatarUrl: 'https://thumbs2.imgbox.com/5a/9a/LSUTrLtZ_t.png',
         avatarHint: 'priest portrait',
-        text: 'Essa oração tocou meu coração de um jeito que não consigo explicar. Que mais pessoas tenham essa chance. É forte demais.',
+        text: 'Há orações que nos tocam de forma única. As de São Miguel Arcanjo têm uma força especial. Que mais pessoas possam ter acesso a essa fonte de proteção.',
         likes: 1361,
         time: '1 h',
         replies: [
@@ -97,7 +96,7 @@ const testimonials = [
             username: '@FabioDeMelo',
             avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg',
             avatarHint: 'man portrait',
-            text: 'meu pai chorou ouvindo. Tava afastado de Deus há anos. Hoje ele rezou comigo 🙏',
+            text: 'Meu pai chorou ouvindo. Ele estava afastado de Deus há anos. Hoje ele rezou comigo, pedindo a proteção do Arcanjo. 🙏',
             likes: 318,
             time: '2 d',
         },
@@ -108,7 +107,7 @@ const testimonials = [
         name: 'Patrícia Lima',
         avatarUrl: 'https://thumbs2.imgbox.com/da/67/ajSKP3eY_t.jpg',
         avatarHint: 'woman portrait',
-        text: 'Meu marido voltou a trabalhar depois de fazer a oração 7 dias seguidos! Deus é fiel! 🙌',
+        text: 'Meu marido voltou a trabalhar depois de fazer a oração do Arcanjo por 7 dias seguidos! Deus é fiel e São Miguel é poderoso! 🙌',
         likes: 412,
         time: '1 h',
     },
@@ -117,7 +116,7 @@ const testimonials = [
         name: 'João Pedro',
         avatarUrl: 'https://thumbs2.imgbox.com/72/dc/GT3YxWwY_t.jpg',
         avatarHint: 'man portrait',
-        text: 'Comecei a oração e uma luz invadiu meu quarto, foi lindo! 🙏',
+        text: 'Senti um arrepio e uma paz quando comecei a orar. A presença do Arcanjo é real! 🙏',
         likes: 341,
         time: '1 h',
     },
@@ -126,7 +125,7 @@ const testimonials = [
         name: 'Luciana Silva',
         avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg',
         avatarHint: 'woman portrait',
-        text: 'Tô arrepiada! Essa oração das 3h é surreal. 😭🌟',
+        text: 'Tô arrepiada! Essas orações de proteção do Arcanjo Miguel são surreais. 😭🌟',
         likes: 267,
         time: '1 h',
     },
@@ -135,7 +134,7 @@ const testimonials = [
         name: 'Mateus Andrade',
         avatarUrl: 'https://thumbs2.imgbox.com/7b/b0/gsYWvBdF_t.jpg',
         avatarHint: 'man portrait',
-        text: '3º dia de oração e recebi uma notícia maravilhosa hoje 🙌',
+        text: '3º dia de oração e recebi uma notícia maravilhosa hoje. Tenho certeza que foi intercessão de São Miguel. 🙌',
         likes: 198,
         time: '1 h',
     },
@@ -144,7 +143,7 @@ const testimonials = [
         name: 'Tânia Souza',
         avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg',
         avatarHint: 'woman portrait',
-        text: 'Tem alguém mais acordando às 3h pra orar? Eu tô!',
+        text: 'Estou fazendo as orações todos os dias. Sinto minha casa e minha família mais protegidas.',
         likes: 541,
         time: '1 h',
     },
@@ -162,7 +161,7 @@ const testimonials = [
         name: 'Rafaela Martins',
         avatarUrl: 'https://thumbs2.imgbox.com/dd/55/H0rZXQVM_t.jpg',
         avatarHint: 'woman portrait',
-        text: 'Confiei e hoje estou vivendo meu milagre! 🙏😭 Glória a Deus!',
+        text: 'Confiei no poder de São Miguel e hoje estou vivendo meu milagre! 🙏😭 Glória a Deus!',
         likes: 354,
         time: '1 h',
     },
@@ -171,7 +170,7 @@ const testimonials = [
         name: 'Ricardo Pereira',
         avatarUrl: 'https://thumbs2.imgbox.com/48/18/9JtnHEjz_t.png',
         avatarHint: 'man portrait',
-        text: 'Senti meu anjo tocando minha cabeça na oração de ontem às 3h! Que loucura! 🙌',
+        text: 'Senti a proteção do Arcanjo no meu trabalho. As coisas começaram a dar certo. Que loucura! 🙌',
         likes: 322,
         time: '1 h',
     },
@@ -280,6 +279,37 @@ const VideoPlayer = () => {
     );
 };
 
+const BuyButtonArcanjoMiguel = () => {
+  const [showBuyButton, setShowBuyButton] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBuyButton(true);
+    }, (13 * 60 + 35) * 1000); // 13 minutes and 35 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleBuyClick = () => {
+    window.open('https://pay.kirvano.com/6d4a8c2c-5933-4ec4-a873-585f75d81a8b', '_self');
+  };
+
+  if (!showBuyButton) {
+    // Reserve space to prevent layout shift
+    return <div className="h-[52px]" />;
+  }
+  
+  return (
+      <Button
+        size="lg"
+        className="w-full max-w-md mx-auto bg-amber-400 hover:bg-amber-500 text-blue-900 font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal shadow-lg shadow-amber-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/40 transform hover:scale-105"
+        onClick={handleBuyClick}
+      >
+        QUERO RECEBER AS ORAÇÕES AGORA
+      </Button>
+  );
+}
+
 
 export default function ArcanjoMiguelPage() {
     
@@ -356,3 +386,4 @@ export default function ArcanjoMiguelPage() {
     );
 }
 
+    

@@ -14,6 +14,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SalesPopup } from '@/components/landing/sales-popup';
+import { TopBanner } from '@/components/landing/top-banner';
 
 const testimonials = [
     {
@@ -110,6 +111,7 @@ export default function ArcanjoMiguelPage() {
 
     return (
         <div className="dark relative flex flex-col min-h-screen bg-gradient-to-b from-blue-900 to-gray-900 text-white overflow-x-hidden">
+             <TopBanner />
              <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
             <main className="flex-grow container mx-auto px-4 py-8 md:py-12 z-10">
                 <div className="max-w-3xl mx-auto space-y-16 text-center">

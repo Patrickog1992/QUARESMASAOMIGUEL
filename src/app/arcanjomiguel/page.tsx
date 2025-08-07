@@ -1,10 +1,11 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
-import { Check, AlertTriangle, Shield, ArrowDown, Sparkles, ThumbsUp, Heart } from 'lucide-react';
+import { Check, AlertTriangle, Shield, ArrowDown, Sparkles, ThumbsUp, Heart, Lock } from 'lucide-react';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -15,6 +16,7 @@ import {
 } from "@/components/ui/accordion";
 import { SalesPopup } from '@/components/landing/sales-popup';
 import { TopBanner } from '@/components/landing/top-banner';
+import { BuyButtonArcanjoMiguel } from '@/components/landing/buy-button-arcanjomiguel';
 
 const testimonials = [
     {
@@ -90,8 +92,7 @@ const TestimonialCard = ({ quote, author, avatarUrl, avatarHint, likes, time }: 
     </Card>
 );
 
-export default function ArcanjoMiguelPage() {
-    
+const VideoPlayer = () => {
     useEffect(() => {
         const scriptId = 'vid-68925811e69e8e799c274811-script';
         if (!document.getElementById(scriptId)) {
@@ -104,24 +105,31 @@ export default function ArcanjoMiguelPage() {
     }, []);
 
     const videoHtml = `<vturb-smartplayer id="vid-68925811e69e8e799c274811" style="display: block; margin: 0 auto; width: 100%; max-width: 400px; border-radius: 8px;"></vturb-smartplayer>`;
+    
+    return (
+        <div 
+            className="relative overflow-hidden rounded-lg shadow-2xl shadow-amber-500/20"
+            dangerouslySetInnerHTML={{ __html: videoHtml }}
+        />
+    );
+};
 
-    const handleCheckout = () => {
-        window.open('https://pay.kirvano.com/6d4a8c2c-5933-4ec4-a873-585f75d81a8b', '_self');
-    };
 
+export default function ArcanjoMiguelPage() {
+    
     return (
         <div className="dark relative flex flex-col min-h-screen bg-gradient-to-b from-blue-900 to-gray-900 text-white overflow-x-hidden">
              <TopBanner />
              <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
             <main className="flex-grow container mx-auto px-4 py-8 md:py-12 z-10">
-                <div className="max-w-3xl mx-auto space-y-16 text-center">
+                <div className="max-w-3xl mx-auto space-y-12 text-center">
 
                     <section className="space-y-6">
                         <h1 className="text-3xl md:text-5xl font-bold uppercase text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">As 40 Orações Secretas do Arcanjo Miguel</h1>
                         <p className="text-lg md:text-xl font-medium text-blue-200">
                            Invoque o poder do Arcanjo para sua proteção, quebre as correntes que te prendem e abra as portas para os seus milagres.
                         </p>
-                        <div className="p-6 bg-black/20 rounded-xl border border-blue-400/30 text-left max-w-lg mx-auto space-y-3">
+                        <div className="p-4 bg-black/20 rounded-xl border border-blue-400/30 text-left max-w-lg mx-auto space-y-3">
                            <p className="flex items-start gap-3"><Check className="w-5 h-5 text-amber-300 mt-1 shrink-0"/><span>Orações traduzidas de manuscritos antigos do Vaticano.</span></p>
                            <p className="flex items-start gap-3"><Check className="w-5 h-5 text-amber-300 mt-1 shrink-0"/><span>Um escudo espiritual para proteger sua família, finanças e saúde.</span></p>
                            <p className="flex items-start gap-3"><Check className="w-5 h-5 text-amber-300 mt-1 shrink-0"/><span>Sinta a presença do Arcanjo Miguel agindo em sua vida em poucos dias.</span></p>
@@ -133,10 +141,10 @@ export default function ArcanjoMiguelPage() {
                     </p>
 
                     <section>
-                        <div 
-                            className="relative overflow-hidden rounded-lg shadow-2xl shadow-amber-500/20"
-                            dangerouslySetInnerHTML={{ __html: videoHtml }}
-                        />
+                        <VideoPlayer />
+                        <div className="mt-8 text-center">
+                            <BuyButtonArcanjoMiguel />
+                        </div>
                     </section>
 
                     <section>
@@ -148,27 +156,9 @@ export default function ArcanjoMiguelPage() {
                         </div>
                     </section>
 
-                     <Card className="bg-gradient-to-br from-blue-800 to-blue-900 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-amber-300">
-                        <CardHeader className="p-0 mb-6">
-                           <CardTitle className="text-3xl md:text-4xl font-bold text-amber-300 flex items-center justify-center gap-3"><Shield className="w-8 h-8"/>Tenha Acesso a um Tesouro Espiritual</CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-0 space-y-6">
-                            <p className="text-blue-100 text-lg">Estas 40 orações são uma ferramenta poderosa de fé. Um verdadeiro escudo espiritual para o seu dia a dia.</p>
-                            <div>
-                                <p className="text-lg line-through text-blue-300">De R$97,00</p>
-                                <p className="text-5xl md:text-6xl font-bold text-amber-300 drop-shadow-lg my-2">Por apenas R$ 27,00</p>
-                            </div>
-                             <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-amber-400 hover:bg-amber-500 text-blue-900 font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal shadow-lg shadow-amber-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/40 transform hover:scale-105">
-                                QUERO MINHA PROTEÇÃO AGORA
-                                <ArrowDown className="w-6 h-6 ml-2 animate-bounce"/>
-                            </Button>
-                            <p className="text-sm text-blue-200">Acesso vitalício e imediato por e-mail.</p>
-                        </CardContent>
-                    </Card>
-
-                    <section className="text-blue-200">
+                    <section>
                          <h3 className="text-xl font-bold flex items-center justify-center gap-2"><Check className="w-6 h-6 text-green-400"/> Garantia de 7 Dias</h3>
-                         <p className="mt-2 max-w-md mx-auto">Sua fé é nossa prioridade. Se em 7 dias você não sentir a paz e a proteção que busca, devolvemos sua contribuição. Sem perguntas.</p>
+                         <p className="mt-2 max-w-md mx-auto text-blue-200">Sua fé é nossa prioridade. Se em 7 dias você não sentir a paz e a proteção que busca, devolvemos sua contribuição. Sem perguntas.</p>
                     </section>
                     
                     <section>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -285,7 +284,7 @@ const BuyButtonArcanjoMiguel = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (13 * 60 + 35) * 1000); // 13 minutes and 35 seconds
+    }, 5 * 1000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -341,8 +340,18 @@ export default function ArcanjoMiguelPage() {
                         <div className="mt-8 text-center">
                             <BuyButtonArcanjoMiguel />
                         </div>
+                         <div className="mt-8 flex justify-center">
+                            <Image
+                            src="https://i.imgur.com/o8id6M2.png"
+                            alt="Selo de Garantia"
+                            width={600}
+                            height={155}
+                            className="rounded-lg shadow-md"
+                            data-ai-hint="guarantee badge"
+                            />
+                        </div>
                     </section>
-
+                    
                     <section>
                         <h2 className="text-3xl md:text-4xl font-bold text-amber-300 mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">O que os fiéis dizem após 7 dias de oração:</h2>
                         <div className="space-y-6">
@@ -385,5 +394,3 @@ export default function ArcanjoMiguelPage() {
         </div>
     );
 }
-
-    

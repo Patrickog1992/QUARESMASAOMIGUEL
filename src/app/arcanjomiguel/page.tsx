@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
-import { BackgroundPattern } from '@/components/landing/background-pattern';
-import { Check, AlertTriangle, ScrollText, Lock, Star, Gift, Shield, ArrowDown, Sparkles } from 'lucide-react';
+import { Check, AlertTriangle, Shield, ArrowDown, Sparkles, ThumbsUp, Heart } from 'lucide-react';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -14,7 +13,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { TopBanner } from '@/components/landing/top-banner';
 import { SalesPopup } from '@/components/landing/sales-popup';
 
 const testimonials = [
@@ -23,18 +21,24 @@ const testimonials = [
         author: "Carlos F., São Paulo - SP",
         avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg',
         avatarHint: 'man portrait',
+        likes: 2134,
+        time: '3 h',
     },
     {
         quote: "Minha família estava desestruturada. Orei com a força do Arcanjo Miguel e hoje vivemos em paz e harmonia. Sinto minha casa protegida.",
         author: "Mariana L., Salvador - BA",
         avatarUrl: 'https://thumbs2.imgbox.com/fc/13/RXzAe2rE_t.png',
         avatarHint: 'woman portrait',
+        likes: 1534,
+        time: '5 h',
     },
     {
         quote: "Tinha uma dor crônica que nenhum médico resolvia. As orações me trouxeram um alívio que eu não sentia há anos. O Arcanjo Miguel intercedeu por mim. Tenham fé!",
         author: "Joana P., Recife - PE",
         avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg',
         avatarHint: 'woman portrait',
+        likes: 2041,
+        time: '1 d',
     }
 ];
 
@@ -55,18 +59,31 @@ const faqItems = [
         question: "Preciso fazer as orações em um horário específico?",
         answer: "Não há um horário obrigatório, mas muitos fiéis relatam uma conexão mais forte durante a madrugada ou no início da manhã, momentos de maior silêncio e introspecção. O importante é orar com o coração aberto."
     }
-]
+];
 
-const TestimonialCard = ({ quote, author, avatarUrl, avatarHint }: (typeof testimonials)[0]) => (
-    <Card className="bg-card/80 p-4 shadow-lg text-left">
+const TestimonialCard = ({ quote, author, avatarUrl, avatarHint, likes, time }: (typeof testimonials)[0]) => (
+    <Card className="bg-white/10 p-4 shadow-lg text-left text-white border border-blue-400/30">
         <div className="flex items-start gap-3">
             <Avatar className="h-10 w-10 shrink-0">
                 <AvatarImage src={avatarUrl} alt={author} data-ai-hint={avatarHint}/>
-                <AvatarFallback>{author.charAt(0)}</AvatarFallback>
+                <AvatarFallback className="bg-blue-300 text-blue-900">{author.charAt(0)}</AvatarFallback>
             </Avatar>
             <div className="flex-1">
-                <p className="font-bold">{author}</p>
-                <p className="italic mt-1">“{quote}”</p>
+                <p className="font-bold text-amber-300">{author}</p>
+                <p className="italic mt-1 text-blue-100">“{quote}”</p>
+                <div className="flex items-center gap-3 text-xs text-blue-300 mt-2">
+                    <button className="hover:underline font-bold">Curtir</button>
+                    <span aria-hidden="true">·</span>
+                    <button className="hover:underline font-bold">Responder</button>
+                    <span aria-hidden="true">·</span>
+                    <span className="flex items-center gap-1">
+                        <ThumbsUp className="h-3 w-3 text-blue-400" />
+                        <Heart className="h-3 w-3 text-red-500" fill="currentColor" />
+                        <span className="ml-1">{likes.toLocaleString('pt-BR')}</span>
+                    </span>
+                    <span aria-hidden="true">·</span>
+                    <span>{time}</span>
+                </div>
             </div>
         </div>
     </Card>
@@ -85,39 +102,43 @@ export default function ArcanjoMiguelPage() {
         }
     }, []);
 
-    const videoHtml = `<vturb-smartplayer id="vid-68925811e69e8e799c274811" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-68925811e69e8e799c274811" style="display: block; margin: 0 auto; width: 100%; max-width: 400px; border-radius: 8px;"></vturb-smartplayer>`;
 
     const handleCheckout = () => {
         window.open('https://pay.kirvano.com/6d4a8c2c-5933-4ec4-a873-585f75d81a8b', '_self');
     };
 
     return (
-        <div className="dark relative flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
-            <TopBanner />
-            <BackgroundPattern />
-            <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
-                <div className="max-w-3xl mx-auto space-y-12 text-center">
+        <div className="dark relative flex flex-col min-h-screen bg-gradient-to-b from-blue-900 to-gray-900 text-white overflow-x-hidden">
+             <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
+            <main className="flex-grow container mx-auto px-4 py-8 md:py-12 z-10">
+                <div className="max-w-3xl mx-auto space-y-16 text-center">
 
-                    <section className="space-y-4">
-                        <Card className="bg-accent text-accent-foreground p-4 md:p-6 rounded-xl shadow-lg">
-                           <h1 className="text-2xl md:text-4xl font-bold uppercase">As 40 Orações Secretas que invocam o Arcanjo Miguel para sua proteção e abrem as portas para seus milagres</h1>
-                        </Card>
-                         <Image src="https://i.imgur.com/xYf9q2s.png" alt="Arcanjo Miguel" width={600} height={400} className="rounded-lg mx-auto shadow-md" data-ai-hint="archangel michael" />
-                        <p className="text-lg md:text-xl font-semibold text-foreground/80 flex items-center justify-center gap-2">
-                          <Shield className="w-5 h-5 text-primary"/>
-                          <span>Você não chegou aqui por acaso. Sinta o chamado para a sua proteção.</span>
+                    <section className="space-y-6">
+                        <h1 className="text-3xl md:text-5xl font-bold uppercase text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">As 40 Orações Secretas do Arcanjo Miguel</h1>
+                        <p className="text-lg md:text-xl font-medium text-blue-200">
+                           Invoque o poder do Arcanjo para sua proteção, quebre as correntes que te prendem e abra as portas para os seus milagres.
                         </p>
+                        <div className="p-6 bg-black/20 rounded-xl border border-blue-400/30 text-left max-w-lg mx-auto space-y-3">
+                           <p className="flex items-start gap-3"><Check className="w-5 h-5 text-amber-300 mt-1 shrink-0"/><span>Orações traduzidas de manuscritos antigos do Vaticano.</span></p>
+                           <p className="flex items-start gap-3"><Check className="w-5 h-5 text-amber-300 mt-1 shrink-0"/><span>Um escudo espiritual para proteger sua família, finanças e saúde.</span></p>
+                           <p className="flex items-start gap-3"><Check className="w-5 h-5 text-amber-300 mt-1 shrink-0"/><span>Sinta a presença do Arcanjo Miguel agindo em sua vida em poucos dias.</span></p>
+                        </div>
                     </section>
+                    
+                    <p className="font-bold text-amber-300 uppercase tracking-wider animate-pulse md:text-lg">
+                        Assista ao vídeo abaixo e receba a sua bênção
+                    </p>
 
                     <section>
                         <div 
-                            className="relative overflow-hidden rounded-lg shadow-2xl"
+                            className="relative overflow-hidden rounded-lg shadow-2xl shadow-amber-500/20"
                             dangerouslySetInnerHTML={{ __html: videoHtml }}
                         />
                     </section>
 
                     <section>
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">O que Fiel dizem após 7 dias de Oração:</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-amber-300 mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">O que os Fíeis Dizem após 7 Dias de Oração:</h2>
                         <div className="space-y-6">
                             {testimonials.map((testimonial, index) => (
                                 <TestimonialCard key={index} {...testimonial} />
@@ -125,43 +146,36 @@ export default function ArcanjoMiguelPage() {
                         </div>
                     </section>
 
-                     <Card className="bg-primary/10 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-primary">
-                        <CardHeader className="p-0 mb-4">
-                           <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Tenha acesso a um tesouro espiritual</CardTitle>
+                     <Card className="bg-gradient-to-br from-blue-800 to-blue-900 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-amber-300">
+                        <CardHeader className="p-0 mb-6">
+                           <CardTitle className="text-3xl md:text-4xl font-bold text-amber-300 flex items-center justify-center gap-3"><Shield className="w-8 h-8"/>Tenha Acesso a um Tesouro Espiritual</CardTitle>
                         </CardHeader>
-                        <CardContent className="p-0 space-y-4">
-                            <p>Estas 40 orações, traduzidas de manuscritos antigos, são uma ferramenta poderosa de fé. Um verdadeiro escudo espiritual para o seu dia a dia.</p>
-                            <div className="text-left space-y-3 my-4">
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Orações para proteção da família e do lar.</span></p>
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Orações para abrir caminhos financeiros e de trabalho.</span></p>
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Orações para cura de feridas emocionais e físicas.</span></p>
-                                <p className="flex items-start gap-3"><Check className="w-5 h-5 text-green-600 mt-1"/><span>Orações para livramento de inveja e energias negativas.</span></p>
-                            </div>
-                            <p className="font-bold text-lg">Por uma contribuição simbólica, você recebe este tesouro de fé:</p>
+                        <CardContent className="p-0 space-y-6">
+                            <p className="text-blue-100 text-lg">Estas 40 orações são uma ferramenta poderosa de fé. Um verdadeiro escudo espiritual para o seu dia a dia.</p>
                             <div>
-                                <span className="text-lg line-through text-destructive">De R$97,00</span>
-                                <p className="text-4xl md:text-5xl font-bold text-primary">Por apenas R$ 27,00</p>
+                                <p className="text-lg line-through text-blue-300">De R$97,00</p>
+                                <p className="text-5xl md:text-6xl font-bold text-amber-300 drop-shadow-lg my-2">Por apenas R$ 27,00</p>
                             </div>
-                             <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
+                             <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-amber-400 hover:bg-amber-500 text-blue-900 font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal shadow-lg shadow-amber-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/40 transform hover:scale-105">
                                 QUERO MINHA PROTEÇÃO AGORA
                                 <ArrowDown className="w-6 h-6 ml-2 animate-bounce"/>
                             </Button>
-                            <p className="text-sm">Acesso vitalício e imediato por e-mail.</p>
+                            <p className="text-sm text-blue-200">Acesso vitalício e imediato por e-mail.</p>
                         </CardContent>
                     </Card>
 
-                    <section>
-                         <h3 className="text-xl font-bold flex items-center justify-center gap-2"><Check className="w-6 h-6 text-green-600"/> Garantia de 7 Dias</h3>
-                         <p className="mt-2">Sua fé é nossa prioridade. Se em 7 dias você não sentir a paz e a proteção que busca, devolvemos sua contribuição. Sem perguntas.</p>
+                    <section className="text-blue-200">
+                         <h3 className="text-xl font-bold flex items-center justify-center gap-2"><Check className="w-6 h-6 text-green-400"/> Garantia de 7 Dias</h3>
+                         <p className="mt-2 max-w-md mx-auto">Sua fé é nossa prioridade. Se em 7 dias você não sentir a paz e a proteção que busca, devolvemos sua contribuição. Sem perguntas.</p>
                     </section>
                     
                     <section>
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">Perguntas Frequentes</h2>
-                        <Accordion type="single" collapsible className="w-full text-left">
+                        <h2 className="text-3xl md:text-4xl font-bold text-amber-300 mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">Perguntas Frequentes</h2>
+                        <Accordion type="single" collapsible className="w-full text-left max-w-xl mx-auto">
                             {faqItems.map((item, index) => (
-                                <AccordionItem value={`item-${index}`} key={index}>
-                                    <AccordionTrigger className="font-semibold">{item.question}</AccordionTrigger>
-                                    <AccordionContent className="text-foreground/80">
+                                <AccordionItem value={`item-${index}`} key={index} className="border-blue-400/30">
+                                    <AccordionTrigger className="font-semibold text-lg hover:text-amber-300">{item.question}</AccordionTrigger>
+                                    <AccordionContent className="text-blue-200 text-base">
                                         {item.answer}
                                     </AccordionContent>
                                 </AccordionItem>
@@ -169,11 +183,11 @@ export default function ArcanjoMiguelPage() {
                         </Accordion>
                     </section>
 
-                    <section className="bg-destructive/10 text-destructive p-4 rounded-lg flex items-center gap-4 justify-center">
-                        <AlertTriangle className="w-8 h-8"/>
+                    <section className="bg-red-900/50 text-red-100 p-4 rounded-lg flex items-center gap-4 justify-center border border-red-500/50">
+                        <AlertTriangle className="w-8 h-8 text-red-300 shrink-0"/>
                         <div>
                             <h3 className="font-bold">Atenção: Acesso limitado!</h3>
-                            <p>Para garantir a qualidade e a energia deste material, as vagas são limitadas. Esta página pode sair do ar a qualquer momento.</p>
+                            <p className="text-sm">Para garantir a qualidade e a energia deste material, as vagas são limitadas. Esta página pode sair do ar a qualquer momento.</p>
                         </div>
                     </section>
                 </div>

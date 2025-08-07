@@ -32,8 +32,7 @@ export function BuyButtonArcanjoMiguel() {
         className="w-full max-w-md mx-auto bg-amber-400 hover:bg-amber-500 text-blue-900 font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal shadow-lg shadow-amber-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/40 transform hover:scale-105"
         onClick={handleBuyClick}
         >
-            QUERO MINHA PROTEÇÃO AGORA
-            <ArrowDown className="w-6 h-6 ml-2 animate-bounce"/>
+            QUERO RECEBER AS ORAÇÕES AGORA
         </Button>
     </div>
   );

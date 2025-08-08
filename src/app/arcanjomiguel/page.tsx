@@ -258,17 +258,17 @@ const TestimonialCard = ({ id, name, username, avatarUrl, avatarHint, text, like
 
 const VideoPlayer = () => {
     useEffect(() => {
-        const scriptId = 'vid-68925811e69e8e799c274811-script';
+        const scriptId = 'vid-689257c0b33839463e12f4e4-script';
         if (!document.getElementById(scriptId)) {
             const script = document.createElement('script');
             script.id = scriptId;
-            script.src = 'https://scripts.converteai.net/1b791434-3e0f-4e75-a646-c8074375e059/players/68925811e69e8e799c274811/v4/player.js';
+            script.src = 'https://scripts.converteai.net/20cc6a98-96ef-4135-bef8-e3435f4fd521/players/689257c0b33839463e12f4e4/v4/player.js';
             script.async = true;
             document.head.appendChild(script);
         }
     }, []);
 
-    const videoHtml = `<vturb-smartplayer id="vid-68925811e69e8e799c274811" style="display: block; margin: 0 auto; width: 100%; max-width: 400px; border-radius: 8px;"></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-689257c0b33839463e12f4e4" style="display: block; margin: 0 auto; width: 100%; max-width: 400px; border-radius: 8px;"></vturb-smartplayer>`;
     
     return (
         <div 

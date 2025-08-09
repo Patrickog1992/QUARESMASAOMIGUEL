@@ -258,17 +258,17 @@ const TestimonialCard = ({ id, name, username, avatarUrl, avatarHint, text, like
 
 const VideoPlayer = () => {
     useEffect(() => {
-        const scriptId = 'vid-689257c0b33839463e12f4e4-script';
+        const scriptId = 'vid-6896cc57fad1ad0202e74a59-script';
         if (!document.getElementById(scriptId)) {
             const script = document.createElement('script');
             script.id = scriptId;
-            script.src = 'https://scripts.converteai.net/20cc6a98-96ef-4135-bef8-e3435f4fd521/players/689257c0b33839463e12f4e4/v4/player.js';
+            script.src = 'https://scripts.converteai.net/6921d001-5b77-4dad-a78b-bffe8a81120d/players/6896cc57fad1ad0202e74a59/v4/player.js';
             script.async = true;
             document.head.appendChild(script);
         }
     }, []);
 
-    const videoHtml = `<vturb-smartplayer id="vid-689257c0b33839463e12f4e4" style="display: block; margin: 0 auto; width: 100%; max-width: 400px; border-radius: 8px;"></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-6896cc57fad1ad0202e74a59" style="display: block; margin: 0 auto; width: 100%; max-width: 400px; border-radius: 8px;"></vturb-smartplayer>`;
     
     return (
         <div 
@@ -321,7 +321,7 @@ export default function ArcanjoMiguelPage() {
 
                     <section className="space-y-4">
                         <h1 className="text-3xl md:text-5xl font-bold uppercase text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">As 40 Orações Secretas do Arcanjo Miguel</h1>
-                        <p className="text-lg md:text-xl font-medium text-amber-300">
+                        <p className="text-lg md:text-xl font-medium text-amber-400">
                            Invoque o poder do Arcanjo para sua proteção, quebre as correntes que te prendem e abra as portas para os seus milagres.
                         </p>
                         <div className="p-4 bg-black/20 rounded-xl border border-blue-400/30 text-left max-w-lg mx-auto space-y-3">

@@ -20,7 +20,7 @@ export function VSLSectionSegredoVaticano() {
 
   return (
     <section className="mb-12 md:mb-20">
-      <div className="relative overflow-hidden rounded-lg shadow-2xl bg-black mx-auto max-w-lg">
+      <div className="relative overflow-hidden rounded-lg shadow-2xl mx-auto max-w-lg">
         <div dangerouslySetInnerHTML={{ __html: videoHtml }} />
       </div>
       

@@ -4,11 +4,18 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 export function BuyButtonSegredoVaticano() {
-  const [showBuyButton, setShowBuyButton] = useState(true);
+  const [showBuyButton, setShowBuyButton] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBuyButton(true);
+    }, (46 * 60 + 43) * 1000); // 46 minutes and 43 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleBuyClick = () => {
-    // Link de checkout placeholder
-    window.open('https://pay.kirvano.com/d9a4b3d2-c1e0-4b2a-8f5c-9d6e4a8b1a3e', '_self');
+    window.open('https://pay.kirvano.com/7dd669b1-45d8-440a-b107-3b3881c36d22', '_self');
   };
 
   if (!showBuyButton) {

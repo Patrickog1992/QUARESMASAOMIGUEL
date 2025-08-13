@@ -9,7 +9,7 @@ export function BuyButtonSegredoVaticano() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, 5000); // 5 seconds
+    }, (46 * 60 + 43) * 1000); // 46 minutes and 43 seconds
 
     return () => clearTimeout(timer);
   }, []);

@@ -10,8 +10,8 @@ import { TopBanner } from '@/components/landing/top-banner';
 
 export default function SegredoDivinoPage() {
   return (
-    <div className="dark relative flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
-      <TopBanner />
+    <div className="relative flex flex-col min-h-screen bg-blue-50 text-foreground overflow-x-hidden">
+      <TopBanner className="bg-blue-800 text-white" />
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
         <HeroSectionSegredoVaticano />

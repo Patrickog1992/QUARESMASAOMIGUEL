@@ -9,21 +9,6 @@ export function HeroSectionSegredoVaticano() {
           Suas orações serão sempre ignoradas por Deus se você não recitar as suas <span className="text-amber-300">ORAÇÕES ORIGINAIS</span>! <span className="text-amber-300">Somente essas 12 orações são capazes de trazer dinheiro, amor e abundância</span> para sua vida sem esforço
         </h1>
       </Card>
-
-      <ul className="space-y-3 text-md md:text-lg text-foreground/90 max-w-3xl font-medium mt-6 text-left">
-        <li className="flex items-start gap-3">
-          <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
-          <span>Uma oração poderosa guardada nos arquivos secretos do Vaticano.</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
-          <span>Revelada por um frei para abençoar sua vida.</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
-          <span>Descubra o segredo que pode trazer paz e prosperidade para você e sua família.</span>
-        </li>
-      </ul>
       
       <p className="mt-8 text-primary font-bold uppercase tracking-wider animate-pulse md:text-lg">
         ASSISTA AO VÍDEO ABAIXO

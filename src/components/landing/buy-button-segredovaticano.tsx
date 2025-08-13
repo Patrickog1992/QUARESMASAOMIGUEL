@@ -4,16 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 export function BuyButtonSegredoVaticano() {
-  const [showBuyButton, setShowBuyButton] = useState(false);
-
-  useEffect(() => {
-    // Timer para mostrar o botão após 15 minutos
-    const timer = setTimeout(() => {
-      setShowBuyButton(true);
-    }, (15 * 60) * 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const [showBuyButton, setShowBuyButton] = useState(true);
 
   const handleBuyClick = () => {
     // Link de checkout placeholder

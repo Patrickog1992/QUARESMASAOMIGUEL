@@ -31,7 +31,7 @@ export function BuyButtonSegredoVaticano() {
       className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
       onClick={handleBuyClick}
     >
-      SIM, QUERO ACESSAR A ORAÇÃO SECRETA
+      QUERO OS SEGREDOS DIVINOS
     </Button>
   );
 }

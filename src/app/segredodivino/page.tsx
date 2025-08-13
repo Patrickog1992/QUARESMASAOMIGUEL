@@ -1,6 +1,6 @@
 'use client';
 
-import { HeroSectionSegredoDivino } from '@/components/landing/hero-section-segredovaticano';
+import { HeroSectionSegredoVaticano } from '@/components/landing/hero-section-segredovaticano';
 import { VSLSectionSegredoVaticano } from '@/components/landing/vsl-section-segredovaticano';
 import { TestimonialsSection } from '@/components/landing/testimonials-section';
 import { Footer } from '@/components/landing/footer';

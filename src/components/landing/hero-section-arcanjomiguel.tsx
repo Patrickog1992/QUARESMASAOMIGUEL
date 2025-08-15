@@ -1,33 +1,37 @@
-import { Card } from "@/components/ui/card";
 import { Check } from 'lucide-react';
 
 export function HeroSectionArcanjoMiguel() {
   return (
-    <section className="flex flex-col items-center text-center mb-12 md:mb-20">
-      <Card className="bg-accent text-accent-foreground p-4 md:p-6 rounded-xl shadow-lg mb-8 max-w-4xl w-full">
-        <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold uppercase leading-tight">
-          As 40 Orações Secretas que desbloqueiam o milagre: bastam alguns segundos para sentir o toque poderoso do <span className="text-primary">Arcanjo Miguel</span>.
-        </h1>
-      </Card>
-
-      <ul className="space-y-3 text-md md:text-lg text-foreground/90 max-w-3xl font-medium mt-6 text-left">
-        <li className="flex items-start gap-3">
-          <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
-          <span>Frei Gilson ouviu e traduziu as orações.</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
-          <span>Essas orações estavam guardadas a 7 chaves dentro de arquivos secretos do Vaticano.</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
-          <span>Mas hoje você pode acessá-las e sentir a proteção do Arcanjo Miguel agir em sua vida.</span>
-        </li>
-      </ul>
-      
-      <p className="mt-8 text-primary font-bold uppercase tracking-wider animate-pulse md:text-lg">
-        VEJA O VÍDEO
+    <section className="space-y-4">
+      <h1 className="text-3xl md:text-5xl font-bold uppercase text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
+        As 40 Orações Secretas do Arcanjo Miguel
+      </h1>
+      <p className="text-lg md:text-xl font-medium text-amber-400">
+        Invoque o poder do Arcanjo para sua proteção, quebre as correntes que te
+        prendem e abra as portas para os seus milagres.
       </p>
+      <div className="p-4 bg-black/20 rounded-xl border border-blue-400/30 text-left max-w-lg mx-auto space-y-3">
+        <p className="flex items-start gap-3">
+          <Check className="w-5 h-5 text-amber-300 mt-1 shrink-0" />
+          <span>Orações traduzidas de manuscritos antigos do Vaticano.</span>
+        </p>
+        <p className="flex items-start gap-3">
+          <Check className="w-5 h-5 text-amber-300 mt-1 shrink-0" />
+          <span>
+            Um escudo espiritual para proteger sua família, finanças e saúde.
+          </span>
+        </p>
+        <p className="flex items-start gap-3">
+          <Check className="w-5 h-5 text-amber-300 mt-1 shrink-0" />
+          <span>
+            Sinta a presença do Arcanjo Miguel agindo em sua vida em poucos
+            dias.
+          </span>
+        </p>
+      </div>
+       <p className="font-bold text-amber-300 uppercase tracking-wider animate-pulse md:text-lg">
+            Assista ao vídeo abaixo e receba a sua bênção
+        </p>
     </section>
   );
 }

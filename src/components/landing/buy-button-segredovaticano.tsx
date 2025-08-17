@@ -29,7 +29,7 @@ export function BuyButtonSegredoVaticano() {
       className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal"
       onClick={handleBuyClick}
     >
-      SIM ! EU QUERO ACESSO AS ORAÇÕES SAGRADAS POR R$ 147,00
+      SIM ! EU QUERO ACESSO AS ORAÇÕES SAGRADAS POR R$ 97,00
     </Button>
   );
 }

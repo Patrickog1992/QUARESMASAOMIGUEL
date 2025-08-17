@@ -6,7 +6,7 @@ export function HeroSectionSegredoVaticano() {
     <section className="flex flex-col items-center text-center mb-12 md:mb-20">
       <Card className="bg-blue-800 text-white p-4 md:p-6 rounded-xl shadow-lg mb-8 max-w-4xl w-full">
         <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold uppercase leading-tight">
-          Suas orações serão sempre ignoradas por Deus se você não recitar as suas <span className="text-amber-300">ORAÇÕES ORIGINAIS</span>! <span className="text-amber-300">Somente essas 12 orações são capazes de trazer dinheiro, amor e abundância</span> para sua vida sem esforço
+          Suas orações continuarão sendo ignoradas por Deus se você não usar as <span className="text-amber-300">ORAÇÕES ORIGINAIS</span> apenas essas 12 são capazes de abrir os caminhos para dinheiro, amor e abundância sem esforço.
         </h1>
       </Card>
       

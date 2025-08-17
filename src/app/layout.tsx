@@ -3,6 +3,7 @@ import Script from 'next/script';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { DisableDevTools } from '@/components/disable-devtools';
+import { app } from '@/lib/firebase'; // Import to initialize Firebase
 
 export const metadata: Metadata = {
   title: 'Orações Secretas',

@@ -15,7 +15,7 @@ export function BuyButtonSegredoVaticano() {
   }, []);
 
   const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/7dd669b1-45d8-440a-b107-3b3881c36d22', '_self');
+    window.open('https://pay.kirvano.com/5ea2230f-4f73-4d33-86cc-d3dbecdc9f46', '_self');
   };
 
   if (!showBuyButton) {

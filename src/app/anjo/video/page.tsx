@@ -2,6 +2,7 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Heart, ThumbsUp } from 'lucide-react';
+import { useEffect } from 'react';
 
 const comments = [
     {
@@ -78,6 +79,29 @@ const comments = [
     },
 ]
 
+const VideoPlayer = () => {
+    useEffect(() => {
+        const scriptId = 'vturb-player-script-68a352b43bd6420abc99e73a';
+        if (document.getElementById(scriptId)) return;
+
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = "https://scripts.converteai.net/90084bd8-d48f-4960-9f81-a9443a15af3d/players/68a352b43bd6420abc99e73a/v4/player.js";
+        script.async = true;
+        document.head.appendChild(script);
+    }, []);
+
+    const videoHtml = `<vturb-smartplayer id="vid-68a352b43bd6420abc99e73a" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+
+    return (
+        <div 
+            className="aspect-w-16 aspect-h-9 mb-8 bg-black rounded-lg shadow-lg"
+            dangerouslySetInnerHTML={{ __html: videoHtml }}
+        />
+    );
+};
+
+
 export default function AnjoVideoPage() {
   return (
     <div className="bg-white text-gray-800 min-h-screen">
@@ -86,12 +110,7 @@ export default function AnjoVideoPage() {
           <h1 className="text-2xl md:text-3xl font-bold text-center mb-2 text-amber-700 uppercase">O CANTO SAGRADO DE SÃO MIGUEL ARCANJO PARA MANIFESTAR EM 24HORAS</h1>
           <p className="text-center text-lg text-gray-600 mb-6 uppercase">OUÇA E MANIFESTE DINHEIRO AINDA HOJE!</p>
 
-          <div className="aspect-w-16 aspect-h-9 mb-8 bg-black rounded-lg shadow-lg">
-             {/* Espaço para VSL */}
-             <div className="flex items-center justify-center h-96">
-                <p className="text-white">Seu vídeo VSL aqui</p>
-             </div>
-          </div>
+          <VideoPlayer />
           
           <div className="space-y-6">
             <h2 className="font-bold text-lg">{comments.length} de 149 Comentários</h2>

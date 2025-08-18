@@ -34,7 +34,7 @@ function RevelacaoContent() {
                 data-ai-hint="archangel michael"
             />
             <h2 className="text-lg font-bold text-gray-800">São Miguel Arcanjo</h2>
-            <p className="text-gray-600 mt-2 mb-6">
+            <p className="text-gray-600 mt-2 mb-6 font-bold">
                 Líder do exército celestial, seu canto, o mais intenso, pode realizar milagres financeiros em menos de 24 horas.
             </p>
              <p className="text-gray-600 mt-2 mb-6 font-bold">

@@ -64,8 +64,8 @@ export default function AnjoVideoPage() {
     <div className="bg-white text-gray-800 min-h-screen">
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-2xl md:text-3xl font-bold text-center mb-2 text-amber-700">O Canto Sagrado De São Miguel Arcanjo Para Manifestar Em 24horas</h1>
-          <p className="text-center text-lg text-gray-600 mb-6">Ouça E Manifeste Dinheiro Ainda Hoje!</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-center mb-2 text-amber-700 uppercase">O Canto Sagrado De São Miguel Arcanjo Para Manifestar Em 24horas</h1>
+          <p className="text-center text-lg text-gray-600 mb-6 uppercase">Ouça E Manifeste Dinheiro Ainda Hoje!</p>
 
           <div className="aspect-w-16 aspect-h-9 mb-8 bg-black rounded-lg shadow-lg">
              {/* Espaço para VSL */}

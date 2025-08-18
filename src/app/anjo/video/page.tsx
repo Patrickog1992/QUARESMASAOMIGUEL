@@ -3,7 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Heart, ThumbsUp } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const comments = [
     {
@@ -103,9 +103,24 @@ const VideoPlayer = () => {
 };
 
 const CheckoutButton = () => {
+    const [showButton, setShowButton] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowButton(true);
+        }, (53 * 60 + 19) * 1000); // 53 minutes and 19 seconds
+        
+        return () => clearTimeout(timer);
+    }, []);
+
     const handleCheckoutClick = () => {
         window.open('https://pay.kirvano.com/6575631b-4d40-42b7-a36c-2798e1f0e471', '_self');
     };
+
+    if (!showButton) {
+        // Reserve space to prevent layout shift
+        return <div className="h-[92px] md:h-[108px]" />;
+    }
 
     return (
         <div className="my-8 text-center">

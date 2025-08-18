@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { AngelIcon } from '@/components/landing/AngelIcon';
+import Image from 'next/image';
 
 export default function AnjoQuizPage() {
   const [age, setAge] = useState('');
@@ -34,7 +35,14 @@ export default function AnjoQuizPage() {
           <CardDescription className="font-bold text-gray-700">Para descobrir qual é seu <span className="text-amber-600">Anjo da Guarda</span>, você precisa responder 2 breves perguntas...</CardDescription>
         </CardHeader>
         <CardContent>
-            <h3 className="text-center font-bold text-lg mb-4 text-gray-700">Anjos da Guarda</h3>
+            <Image
+                src="https://i.ibb.co/DPn9HrxP/1632485586-anjos-1.webp"
+                alt="Anjos da Guarda"
+                width={400}
+                height={150}
+                className="mx-auto mb-4 rounded-lg"
+                data-ai-hint="guardian angels"
+            />
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <label htmlFor="age" className="font-medium text-gray-700">Qual a sua idade?</label>

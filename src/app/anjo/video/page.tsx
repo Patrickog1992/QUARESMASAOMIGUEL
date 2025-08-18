@@ -1,6 +1,7 @@
 'use client';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 import { Heart, ThumbsUp } from 'lucide-react';
 import { useEffect } from 'react';
 
@@ -101,6 +102,24 @@ const VideoPlayer = () => {
     );
 };
 
+const CheckoutButton = () => {
+    const handleCheckoutClick = () => {
+        window.open('https://pay.kirvano.com/6575631b-4d40-42b7-a36c-2798e1f0e471', '_self');
+    };
+
+    return (
+        <div className="my-8 text-center">
+            <Button
+                size="lg"
+                className="bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center w-full max-w-lg"
+                onClick={handleCheckoutClick}
+            >
+                SIM ! QUERO A JORNADA DO MEU ANJO POR R$97,00
+            </Button>
+        </div>
+    );
+};
+
 
 export default function AnjoVideoPage() {
   return (
@@ -111,6 +130,8 @@ export default function AnjoVideoPage() {
           <p className="text-center text-lg text-gray-600 mb-6 uppercase">OUÇA E MANIFESTE DINHEIRO AINDA HOJE!</p>
 
           <VideoPlayer />
+          
+          <CheckoutButton />
           
           <div className="space-y-6">
             <h2 className="font-bold text-lg">{comments.length} de 149 Comentários</h2>

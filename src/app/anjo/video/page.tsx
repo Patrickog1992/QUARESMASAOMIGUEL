@@ -114,7 +114,7 @@ const CheckoutButton = () => {
     }, []);
 
     const handleCheckoutClick = () => {
-        window.open('https://pay.kirvano.com/6575631b-4d40-42b7-a36c-2798e1f0e471', '_self');
+        window.open('https://pay.kirvano.com/bdd2de1d-a765-4976-a730-73bab251260d', '_self');
     };
 
     if (!showButton) {

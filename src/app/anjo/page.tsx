@@ -38,8 +38,8 @@ export default function AnjoQuizPage() {
             <Image
                 src="https://i.ibb.co/DPn9HrxP/1632485586-anjos-1.webp"
                 alt="Anjos da Guarda"
-                width={400}
-                height={150}
+                width={500}
+                height={200}
                 className="mx-auto mb-4 rounded-lg"
                 data-ai-hint="guardian angels"
             />

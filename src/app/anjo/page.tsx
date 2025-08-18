@@ -1,0 +1,59 @@
+'use client';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { AngelIcon } from '@/components/landing/AngelIcon';
+
+export default function AnjoQuizPage() {
+  const [age, setAge] = useState('');
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (age) {
+      router.push('/anjo/nome');
+    }
+  };
+
+  return (
+    <div className="dark relative flex flex-col min-h-screen items-center justify-center bg-gray-50 text-gray-800 p-4 overflow-x-hidden">
+        <div className="absolute inset-0 z-0 opacity-[0.03] text-black pointer-events-none">
+            <AngelIcon className="absolute top-[5%] left-[10%] w-24 h-24 transform -rotate-12" />
+            <AngelIcon className="absolute top-[15%] right-[5%] w-32 h-32 transform rotate-6" />
+            <AngelIcon className="absolute top-[40%] left-[20%] w-20 h-20 transform rotate-12" />
+            <AngelIcon className="absolute top-[55%] right-[15%] w-28 h-28 transform -rotate-6" />
+            <AngelIcon className="absolute bottom-[10%] left-[5%] w-40 h-40 transform rotate-15" />
+            <AngelIcon className="absolute bottom-[2%] right-[25%] w-24 h-24 transform -rotate-15" />
+        </div>
+      <Card className="w-full max-w-md bg-white/80 backdrop-blur-sm shadow-2xl z-10">
+        <CardHeader className="text-center">
+          <CardTitle className="text-2xl font-bold text-amber-600">Qual é Seu Anjo?</CardTitle>
+          <CardDescription>Para descobrir qual é seu Anjo da Guarda, você precisa responder 2 breves perguntas...</CardDescription>
+        </CardHeader>
+        <CardContent>
+            <h3 className="text-center font-bold text-lg mb-4 text-gray-700">Anjos da Guarda</h3>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <label htmlFor="age" className="font-medium text-gray-700">Qual a sua idade?</label>
+              <Input
+                id="age"
+                type="number"
+                placeholder="Digite sua idade"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                className="bg-white/50 border-gray-300 text-center"
+                required
+              />
+            </div>
+            <Button type="submit" size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold">
+              Enviar minha resposta
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

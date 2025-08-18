@@ -26,7 +26,7 @@ function RevelacaoContent() {
                 INCRÍVEL! {name ? `${name.toUpperCase()}, ` : ''}SEU ANJO DA GUARDA É SÃO MIGUEL ARCANJO!
             </h1>
             <Image 
-                src="https://i.imgur.com/uG26GHe.png"
+                src="https://i.ibb.co/PG7yPDqm/823040e0f3d49d35a2cde0484f634f3d.webp"
                 alt="São Miguel Arcanjo"
                 width={200}
                 height={200}
@@ -41,7 +41,7 @@ function RevelacaoContent() {
                 Clique no Botão Abaixo para ouvir o canto do seu Anjo!
             </p>
           <Link href="/anjo/video" passHref>
-            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg h-auto py-4 animate-pulse">
+            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg h-auto py-4 animate-pulse whitespace-normal text-center">
                 <span className="text-2xl mr-2">▶</span>
                 Clique Aqui para Manifestar com São Miguel
             </Button>

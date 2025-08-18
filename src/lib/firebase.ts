@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp, getApps } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp, getApps, getApp } from "firebase/app";
+import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
   projectId: "pios-path",
@@ -12,17 +12,17 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-let app;
-if (!getApps().length) {
-  app = initializeApp(firebaseConfig);
-} else {
-  app = getApps()[0];
-}
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
-let analytics;
+const analytics = (async () => {
+    if (typeof window !== 'undefined') {
+        const isSupportedResult = await isSupported();
+        if (isSupportedResult) {
+            return getAnalytics(app);
+        }
+    }
+    return null;
+})();
 
-if (typeof window !== 'undefined') {
-    analytics = getAnalytics(app);
-}
 
 export { app, analytics };

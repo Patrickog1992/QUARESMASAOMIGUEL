@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { AngelIcon } from '@/components/landing/AngelIcon';
 import { Suspense } from 'react';
+import Image from 'next/image';
 
 function AnjoNomeContent() {
     const [name, setName] = useState('');
@@ -29,13 +30,20 @@ function AnjoNomeContent() {
                 <AngelIcon className="absolute bottom-[10%] left-[5%] w-40 h-40 transform rotate-15" />
                 <AngelIcon className="absolute bottom-[2%] right-[25%] w-24 h-24 transform -rotate-15" />
             </div>
-          <Card className="w-full max-w-md bg-white/80 backdrop-blur-sm shadow-2xl z-10">
+          <Card className="w-full max-w-2xl bg-white/80 backdrop-blur-sm shadow-2xl z-10 p-4">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold text-amber-600">Qual é Seu Anjo?</CardTitle>
-              <CardDescription>Para descobrir qual é seu Anjo da Guarda, você precisa responder 2 breves perguntas...</CardDescription>
+              <CardTitle className="text-3xl font-bold text-amber-600 uppercase">Qual é Seu Anjo?</CardTitle>
+              <CardDescription className="font-bold text-gray-700">Para descobrir qual é seu <span className="text-amber-600">Anjo da Guarda</span>, você precisa responder 2 breves perguntas...</CardDescription>
             </CardHeader>
             <CardContent>
-                <h3 className="text-center font-bold text-lg mb-4 text-gray-700">Anjos da Guarda</h3>
+                <Image
+                    src="https://i.ibb.co/DPn9HrxP/1632485586-anjos-1.webp"
+                    alt="Anjos da Guarda"
+                    width={500}
+                    height={200}
+                    className="mx-auto mb-4 rounded-lg"
+                    data-ai-hint="guardian angels"
+                />
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="font-medium text-gray-700">Qual o seu nome?</label>
@@ -45,7 +53,7 @@ function AnjoNomeContent() {
                     placeholder="Digite seu nome"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="bg-white/50 border-gray-300 text-center"
+                    className="bg-white/50 border-gray-300 text-center text-gray-800"
                     required
                   />
                 </div>

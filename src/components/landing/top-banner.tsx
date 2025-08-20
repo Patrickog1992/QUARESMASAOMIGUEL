@@ -26,10 +26,10 @@ export function TopBanner({ className, text, variant = 'default' }: TopBannerPro
   if (!currentDate) {
     return null;
   }
-
-  const bannerText = text 
-    ? text.replace('(coloque o dia)', currentDate)
-    : `Está benção está disponível somente até ${currentDate}. Assista antes que saia do ar!`;
+  
+  const defaultText = `Esta bênção está disponível somente até ${currentDate}. Assista antes que saia do ar!`;
+  const bannerText = text || defaultText;
+  const textParts = bannerText.split('(coloque o dia)');
 
   if (variant === 'news') {
     return (
@@ -44,7 +44,17 @@ export function TopBanner({ className, text, variant = 'default' }: TopBannerPro
                 <Menu className="h-6 w-6" />
                 <span className="text-lg hidden sm:inline tracking-wider">NOTÍCIA</span>
             </div>
-            <p className="text-sm md:text-base font-semibold text-center flex-grow px-2 uppercase tracking-wide">{bannerText}</p>
+            <p className="text-sm md:text-base font-semibold text-center flex-grow px-2 uppercase tracking-wide">
+                {textParts.length > 1 ? (
+                    <>
+                        {textParts[0]}
+                        <span className="text-amber-300">{currentDate}</span>
+                        {textParts[1]}
+                    </>
+                ) : (
+                    textParts[0]
+                )}
+            </p>
             <Search className="h-6 w-6" />
         </div>
       </div>
@@ -58,7 +68,17 @@ export function TopBanner({ className, text, variant = 'default' }: TopBannerPro
         className
       )}
     >
-      <p>{bannerText}</p>
+      <p>
+        {textParts.length > 1 ? (
+          <>
+            {textParts[0]}
+            <span className="text-amber-300">{currentDate}</span>
+            {textParts[1]}
+          </>
+        ) : (
+          textParts[0]
+        )}
+      </p>
     </div>
   );
 }

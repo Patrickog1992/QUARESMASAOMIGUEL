@@ -3,7 +3,6 @@
 import { HeroSectionSabedoriaSalomao } from '@/components/landing/hero-section-sabedoriasalomao';
 import { VSLSectionSabedoriaSalomao } from '@/components/landing/vsl-section-sabedoriasalomao';
 import { TestimonialsSectionSabedoriaSalomao } from '@/components/landing/testimonials-section-sabedoriasalomao';
-import { FAQSectionArcanjoMiguel } from '@/components/landing/faq-section-arcanjomiguel';
 import { WarningSection } from '@/components/landing/warning-section';
 import { Footer } from '@/components/landing/footer';
 import { TopBanner } from '@/components/landing/top-banner';
@@ -20,7 +19,6 @@ export default function SabedoriaSalomaoPage() {
           <HeroSectionSabedoriaSalomao />
           <VSLSectionSabedoriaSalomao />
           <TestimonialsSectionSabedoriaSalomao />
-          <FAQSectionArcanjoMiguel />
           <WarningSection />
         </div>
       </main>

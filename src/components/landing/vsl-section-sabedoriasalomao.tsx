@@ -40,18 +40,17 @@ const BuyButtonSabedoriaSalomao = () => {
 
 const VideoPlayer = () => {
     useEffect(() => {
-        const scriptId = 'vid-sabedoria-salomao-script';
+        const scriptId = 'vid-68a623b4e299480c79eafe7b-script';
         if (!document.getElementById(scriptId)) {
             const script = document.createElement('script');
             script.id = scriptId;
-            // NOTE: Using the same video from arcanjomiguel for now
-            script.src = 'https://scripts.converteai.net/cb8547f7-fe30-4d92-bd51-1de989e119de/players/68a3cd3e77683aabe5863cf0/v4/player.js';
+            script.src = 'https://scripts.converteai.net/eaf579c8-6aa1-4f6f-b5bd-8ba46f9e23f8/players/68a623b4e299480c79eafe7b/v4/player.js';
             script.async = true;
             document.head.appendChild(script);
         }
     }, []);
 
-    const videoHtml = `<vturb-smartplayer id="vid-68a3cd3e77683aabe5863cf0" style="display: block; margin: 0 auto; width: 100%; max-width: 400px; border-radius: 8px;"></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-68a623b4e299480c79eafe7b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
     
     return (
         <div 

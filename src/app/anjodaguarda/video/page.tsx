@@ -82,17 +82,17 @@ const comments = [
 
 const VideoPlayer = () => {
     useEffect(() => {
-        const scriptId = 'vturb-player-script-68a352b43bd6420abc99e73a';
+        const scriptId = 'vturb-player-script-68a5cd62caaf2808dd7c6d05';
         if (document.getElementById(scriptId)) return;
 
         const script = document.createElement('script');
         script.id = scriptId;
-        script.src = "https://scripts.converteai.net/90084bd8-d48f-4960-9f81-a9443a15af3d/players/68a352b43bd6420abc99e73a/v4/player.js";
+        script.src = "https://scripts.converteai.net/cb8547f7-fe30-4d92-bd51-1de989e119de/players/68a5cd62caaf2808dd7c6d05/v4/player.js";
         script.async = true;
         document.head.appendChild(script);
     }, []);
 
-    const videoHtml = `<vturb-smartplayer id="vid-68a352b43bd6420abc99e73a" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-68a5cd62caaf2808dd7c6d05" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
     return (
         <div 

@@ -108,7 +108,7 @@ const CheckoutButton = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowButton(true);
-        }, (53 * 60 + 19) * 1000); // 53 minutes and 19 seconds
+        }, (51 * 60 + 57) * 1000); // 51 minutes and 57 seconds
         
         return () => clearTimeout(timer);
     }, []);
@@ -126,7 +126,7 @@ const CheckoutButton = () => {
         <div className="my-8 text-center">
             <Button
                 size="lg"
-                className="bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center w-full max-w-lg"
+                className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center w-full max-w-lg"
                 onClick={handleCheckoutClick}
             >
                 SIM ! QUERO A JORNADA DO MEU ANJO POR R$97,00

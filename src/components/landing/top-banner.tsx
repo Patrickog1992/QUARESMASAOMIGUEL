@@ -23,13 +23,13 @@ export function TopBanner({ className, text, variant = 'default' }: TopBannerPro
     setCurrentDate(formattedDate);
   }, []);
 
-  if (!currentDate) {
+  if (!currentDate && (text?.includes('(coloque o dia)') || !text)) {
     return null;
   }
   
   const defaultText = `Esta bênção está disponível somente até ${currentDate}. Assista antes que saia do ar!`;
   const bannerText = text || defaultText;
-  const textParts = bannerText.split('(coloque o dia)');
+  const textParts = bannerText.split('(coloque o dia que a pessoa está acessando )');
 
   if (variant === 'news') {
     return (

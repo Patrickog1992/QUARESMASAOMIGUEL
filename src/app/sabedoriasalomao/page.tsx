@@ -13,7 +13,7 @@ import { BackgroundPattern } from '@/components/landing/background-pattern';
 export default function SabedoriaSalomaoPage() {
   return (
     <div className="dark relative flex flex-col min-h-screen bg-gradient-to-b from-blue-900 to-gray-900 text-white overflow-x-hidden">
-      <TopBanner />
+      <TopBanner className="bg-red-600 text-white" text="ATENÇÃO: Para evitar a queda do site devido ao alto número de acessos, esse vídeo só estará disponível para você até o dia: (coloque o dia)" />
       <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 z-10">

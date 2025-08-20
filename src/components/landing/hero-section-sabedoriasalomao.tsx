@@ -6,7 +6,7 @@ export function HeroSectionSabedoriaSalomao() {
       <h1 className="text-2xl md:text-4xl font-bold uppercase text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
         A ORAÇÃO PERDIDA DE SALOMÃO é capaz de prover milagres financeiros e a restauração da sáude em até 7 dias
       </h1>
-       <p className="font-bold text-white uppercase tracking-wider animate-pulse text-base">
+       <p className="font-bold text-white uppercase tracking-wider animate-pulse text-sm">
             Assista ao vídeo abaixo e receba a sua bênção
         </p>
     </section>

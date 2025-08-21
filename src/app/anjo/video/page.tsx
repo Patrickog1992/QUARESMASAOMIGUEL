@@ -4,7 +4,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Heart, ThumbsUp } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { TopBanner } from '@/components/landing/top-banner';
 
 const comments = [
     {
@@ -140,7 +139,9 @@ const CheckoutButton = () => {
 export default function AnjoVideoPage() {
   return (
     <div className="bg-white text-gray-800 min-h-screen">
-      <TopBanner className="bg-red-600 text-white" text="ATENÇÃO : Para evitar a queda do site devido ao alto número de acessos, esse vídeo só estará disponível para você até o dia : 21 de agosto" />
+       <div className="bg-red-600 text-white text-center py-2 px-4 font-semibold text-sm md:text-base shadow-lg">
+           <p>ATENÇÃO : Para evitar a queda do site devido ao alto número de acessos, esse vídeo só estará disponível para você até o dia : 21 de agosto</p>
+       </div>
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-2xl md:text-3xl font-bold text-center mb-2 text-amber-700 uppercase">O CANTO SAGRADO DE SÃO MIGUEL ARCANJO PARA MANIFESTAR EM 24HORAS</h1>

@@ -10,13 +10,13 @@ const BuyButtonSabedoriaSalomao = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (13 * 60 + 35) * 1000); // 13 minutes and 35 seconds
+    }, (27 * 60 + 7) * 1000); // 27 minutes and 7 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/SOME_LINK_HERE', '_self');
+    window.open('https://pay.kirvano.com/ea08579c-fe12-454c-8483-cc05a3929e92', '_self');
   };
 
   if (!showBuyButton) {

@@ -140,7 +140,7 @@ export default function AnjoVideoPage() {
   return (
     <div className="bg-white text-gray-800 min-h-screen">
        <div className="bg-red-600 text-white text-center py-2 px-4 font-semibold text-sm md:text-base shadow-lg">
-           <p>ATENÇÃO : Para evitar a queda do site devido ao alto número de acessos, esse vídeo só estará disponível para você até o dia : 21 de agosto</p>
+           <p>ATENÇÃO : Para evitar a queda do site devido ao alto número de acessos, esse vídeo só estará disponível para você até o dia : <span className="text-yellow-300">21 de agosto</span></p>
        </div>
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">

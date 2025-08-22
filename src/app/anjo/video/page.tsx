@@ -137,10 +137,21 @@ const CheckoutButton = () => {
 
 
 export default function AnjoVideoPage() {
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('pt-BR', {
+      day: 'numeric',
+      month: 'long',
+    });
+    setCurrentDate(formattedDate);
+  }, []);
+
   return (
     <div className="bg-white text-gray-800 min-h-screen">
        <div className="bg-red-600 text-white text-center py-2 px-4 font-semibold text-sm md:text-base shadow-lg">
-           <p>ATENÇÃO : Para evitar a queda do site devido ao alto número de acessos, esse vídeo só estará disponível para você até o dia : <span className="text-yellow-300">21 de agosto</span></p>
+           <p>ATENÇÃO : Para evitar a queda do site devido ao alto número de acessos, esse vídeo só estará disponível para você até o dia : <span className="text-yellow-300">{currentDate}</span></p>
        </div>
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">

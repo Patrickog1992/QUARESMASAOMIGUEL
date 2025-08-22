@@ -20,7 +20,7 @@ function RevelacaoContent() {
             <AngelIcon className="absolute bottom-[5%] right-[10%] w-20 h-20 transform rotate-12" />
             <AngelIcon className="absolute bottom-[15%] left-[5%] w-28 h-28 transform -rotate-6" />
         </div>
-      <Card className="w-full max-w-lg bg-white/80 backdrop-blur-sm shadow-2xl z-10 text-center mb-8">
+      <Card className="w-full max-w-lg bg-white/80 backdrop-blur-sm shadow-2xl z-10 text-center mb-20">
         <CardContent className="p-6 md:p-8">
             <h1 className="text-xl md:text-2xl font-bold text-amber-600 mb-4">
                 INCRÍVEL! {name ? `${name.toUpperCase()}, ` : ''}SEU ANJO DA GUARDA É SÃO MIGUEL ARCANJO!

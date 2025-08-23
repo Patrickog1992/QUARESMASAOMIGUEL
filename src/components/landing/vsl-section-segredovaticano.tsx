@@ -6,17 +6,17 @@ import { BuyButtonSegredoVaticano } from './buy-button-segredovaticano';
 
 export function VSLSectionSegredoVaticano() {
   useEffect(() => {
-    const scriptId = 'vid-68a21533fc2c5cfaf681843f-script';
+    const scriptId = 'vid-68a9a399eb8f01ad47b3cef3-script';
     if (!document.getElementById(scriptId)) {
         const script = document.createElement('script');
         script.id = scriptId;
-        script.src = 'https://scripts.converteai.net/90084bd8-d48f-4960-9f81-a9443a15af3d/players/68a21533fc2c5cfaf681843f/v4/player.js';
+        script.src = 'https://scripts.converteai.net/eaf579c8-6aa1-4f6f-b5bd-8ba46f9e23f8/players/68a9a399eb8f01ad47b3cef3/v4/player.js';
         script.async = true;
         document.head.appendChild(script);
     }
   }, []);
   
-  const videoHtml = `<vturb-smartplayer id="vid-68a21533fc2c5cfaf681843f" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+  const videoHtml = `<vturb-smartplayer id="vid-68a9a399eb8f01ad47b3cef3" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
   return (
     <section className="mb-12 md:mb-20">

@@ -9,13 +9,13 @@ export function BuyButtonSegredoVaticano() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (48 * 60 + 17) * 1000); // 48 minutes and 17 seconds
+    }, (46 * 60 + 43) * 1000); // 46 minutes and 43 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/5ea2230f-4f73-4d33-86cc-d3dbecdc9f46', '_self');
+    window.open('https://pay.kirvano.com/7dd669b1-45d8-440a-b107-3b3881c36d22', '_self');
   };
 
   if (!showBuyButton) {

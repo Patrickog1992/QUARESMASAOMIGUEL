@@ -5,7 +5,6 @@ import { VSLSectionSegredoVaticano } from '@/components/landing/vsl-section-segr
 import { TestimonialsSection } from '@/components/landing/testimonials-section';
 import { Footer } from '@/components/landing/footer';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
-import { SalesPopup } from '@/components/landing/sales-popup';
 import { TopBanner } from '@/components/landing/top-banner';
 
 export default function SegredoDivinoPage() {
@@ -19,7 +18,6 @@ export default function SegredoDivinoPage() {
         <TestimonialsSection />
       </main>
       <Footer />
-      <SalesPopup />
     </div>
   );
 }

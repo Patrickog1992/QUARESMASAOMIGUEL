@@ -10,13 +10,12 @@ export default function Quiz1Page() {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <Card className="w-full max-w-lg mx-auto shadow-lg">
         <CardHeader className="text-center">
-          <CardTitle>Quiz Rápido</CardTitle>
           <CardDescription>Para sabermos se você está apto a ter acesso as 12 frases bíblicas para atrair riqueza, responda essas 3 simples perguntas !</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex justify-center mb-4">
             <Image 
-              src="https://placehold.co/400x200.png" 
+              src="https://i.imgur.com/0BXlpvG.jpeg" 
               alt="Quiz Image" 
               width={400} 
               height={200}

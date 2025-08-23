@@ -87,7 +87,7 @@ const VideoPlayer = () => {
 
         const script = document.createElement('script');
         script.id = scriptId;
-        script.src = "https://scripts.converteai.net/eaf579c8-6aa1-4f6f-b5bd-8ba46f9e23f8/players/68a624a3bd124806b33557a8/v4/player.js";
+        script.src = "https://scripts.converteai.net/eaf579c8-6aa1-4f6f-b5bd-8ba46f9e23f8/players/68a624a3bd124806b33557a8/v4/player.js",
         script.async = true;
         document.head.appendChild(script);
     }, []);
@@ -108,7 +108,7 @@ const CheckoutButton = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowButton(true);
-        }, 5 * 1000); // 5 seconds
+        }, (51 * 60 + 57) * 1000); // 51 minutes and 57 seconds
         
         return () => clearTimeout(timer);
     }, []);

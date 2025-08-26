@@ -1,15 +1,36 @@
 'use client';
 
+import { useEffect } from 'react';
+
+const VideoPlayer = () => {
+    useEffect(() => {
+        const scriptId = 'vturb-player-script-68adb7b4bad9a934cfd7b884';
+        if (document.getElementById(scriptId)) return;
+
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = "https://scripts.converteai.net/eaf579c8-6aa1-4f6f-b5bd-8ba46f9e23f8/players/68adb7b4bad9a934cfd7b884/v4/player.js";
+        script.async = true;
+        document.head.appendChild(script);
+    }, []);
+
+    const videoHtml = `<vturb-smartplayer id="vid-68adb7b4bad9a934cfd7b884" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+
+    return (
+        <div 
+            className="w-full max-w-2xl rounded-lg shadow-lg"
+            dangerouslySetInnerHTML={{ __html: videoHtml }}
+        />
+    );
+};
+
 export default function VideoPage() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 text-center">
             <h1 className="text-2xl font-bold text-red-700 uppercase mb-6 max-w-xl">
                 Tem uma MALDIÇÃO escondida travando tua vida, e HOJE ela vai cair por terra!
             </h1>
-            {/* Placeholder for video */}
-            <div className="w-full max-w-2xl aspect-video bg-black rounded-lg shadow-lg flex items-center justify-center text-white">
-                Espaço para o vídeo
-            </div>
+            <VideoPlayer />
         </div>
     );
 }

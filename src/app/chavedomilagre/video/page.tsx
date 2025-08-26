@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Heart, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SalesPopupChaveDoMilagre } from '@/components/landing/SalesPopupChaveDoMilagre';
 
 const testimonials = [
     {
@@ -229,6 +230,7 @@ export default function VideoPage() {
                     ))}
                 </div>
             </div>
+            <SalesPopupChaveDoMilagre />
         </div>
     );
 }

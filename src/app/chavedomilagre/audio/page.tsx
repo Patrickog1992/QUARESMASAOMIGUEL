@@ -10,7 +10,7 @@ import { useSearchParams } from 'next/navigation';
 function AudioContent() {
     const searchParams = useSearchParams();
     const name = searchParams.get('name') || '';
-    const soundcloudEmbed = `<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2159627031&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>`;
+    const vocarooEmbed = `<div><iframe width="300" height="60" src="https://vocaroo.com/embed/1oJtwq5ZygK8?autoplay=0" frameborder="0" allow="autoplay"></iframe></div>`;
 
 
     return (
@@ -32,7 +32,7 @@ function AudioContent() {
                 A família é um presente de Deus. Padre Elisio intercede pela harmonia, compreensão e amor em seu lar.
             </p>
             <p className="font-semibold my-2">Ouça o que o Padre Elisio tem para te falar:</p>
-            <div dangerouslySetInnerHTML={{ __html: soundcloudEmbed }} />
+            <div dangerouslySetInnerHTML={{ __html: vocarooEmbed }} />
             <Link href={`/chavedomilagre/desejo?name=${encodeURIComponent(name)}`} passHref>
                 <Button size="lg" className="w-full mt-6">
                 Saiba Mais

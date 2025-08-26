@@ -155,7 +155,7 @@ const CheckoutButton = () => {
     }, []);
 
     const handleCheckout = () => {
-        // Lógica de checkout
+        window.open('https://pay.kirvano.com/b41415c6-cf8f-420d-98b8-ebe199c68121', '_self');
     };
     
     // Reserve space to prevent layout shift

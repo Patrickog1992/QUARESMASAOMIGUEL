@@ -143,6 +143,37 @@ const VideoPlayer = () => {
     );
 };
 
+const CheckoutButton = () => {
+    const [showButton, setShowButton] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowButton(true);
+        }, (9 * 60 + 22) * 1000); // 9 minutes and 22 seconds
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleCheckout = () => {
+        // Lógica de checkout
+    };
+    
+    // Reserve space to prevent layout shift
+    if (!showButton) {
+        return <div className="h-[76px] md:h-[92px]" />;
+    }
+
+    return (
+        <Button 
+            size="lg" 
+            className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-auto py-4 animate-pulse"
+            onClick={handleCheckout}
+        >
+            QUERO A CHAVE DO MILAGRE
+        </Button>
+    );
+}
+
 export default function VideoPage() {
     const [currentDate, setCurrentDate] = useState('');
 
@@ -154,10 +185,6 @@ export default function VideoPage() {
         });
         setCurrentDate(formattedDate);
     }, []);
-
-    const handleCheckout = () => {
-        // Lógica de checkout
-    };
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 text-center">
@@ -179,13 +206,7 @@ export default function VideoPage() {
                 <VideoPlayer />
 
                 <div className="my-8">
-                    <Button 
-                        size="lg" 
-                        className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-auto py-4 animate-pulse"
-                        onClick={handleCheckout}
-                    >
-                        QUERO A CHAVE DO MILAGRE
-                    </Button>
+                    <CheckoutButton />
                 </div>
 
                 <div className="my-8">

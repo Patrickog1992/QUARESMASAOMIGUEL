@@ -43,7 +43,7 @@ function Quiz1Content() {
                         <Button
                         variant="outline"
                         size="lg"
-                        className="w-full h-auto py-3 justify-start text-left"
+                        className="w-full h-auto py-3 justify-start text-left border-gray-300 bg-white"
                         >
                         <span className="text-2xl mr-3">{option.emoji}</span>
                         <span>{option.text}</span>

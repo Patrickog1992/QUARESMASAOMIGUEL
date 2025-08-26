@@ -42,7 +42,7 @@ function Quiz2Content() {
                         <Button
                         variant="outline"
                         size="lg"
-                        className="w-full h-auto py-3 justify-start text-left whitespace-normal border-gray-300"
+                        className="w-full h-auto py-3 justify-start text-left whitespace-normal border-gray-300 bg-white"
                         >
                         <span className="text-2xl mr-3">{option.emoji}</span>
                         <span className="flex-1">{option.text}</span>

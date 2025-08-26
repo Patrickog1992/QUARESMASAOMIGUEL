@@ -43,7 +43,7 @@ function DesejoContent() {
                     value={desire}
                     onChange={(e) => setDesire(e.target.value)}
                     maxLength={200}
-                    className="resize-none"
+                    className="resize-none bg-white"
                     />
                     <p className="text-xs text-gray-500 text-right">{desire.length}/200</p>
                     <Button type="submit" size="lg" className="w-full">

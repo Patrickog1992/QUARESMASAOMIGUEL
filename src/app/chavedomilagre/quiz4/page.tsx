@@ -42,7 +42,7 @@ function Quiz4Content() {
                         <Button
                         variant="outline"
                         size="lg"
-                        className="w-full h-auto py-3 justify-center"
+                        className="w-full h-auto py-3 justify-center border-gray-300 bg-white"
                         >
                         {option.text}
                         </Button>

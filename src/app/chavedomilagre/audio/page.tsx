@@ -59,10 +59,10 @@ const WhatsAppAudioPlayer = () => {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="flex items-center gap-3 w-full max-w-xs mx-auto bg-gray-200 rounded-full p-2">
+    <div className="flex items-center gap-3 w-full bg-gray-200 rounded-lg p-2">
       <audio ref={audioRef} src={audioUrl} preload="metadata" />
-      <Button onClick={togglePlayPause} variant="ghost" size="icon" className="h-10 w-10 rounded-full bg-green-500 hover:bg-green-600 text-white">
-        {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+      <Button onClick={togglePlayPause} variant="ghost" size="icon" className="h-10 w-10 rounded-full bg-green-500 hover:bg-green-600 text-white shrink-0">
+        {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-1" />}
       </Button>
       <div className="flex-grow bg-gray-300 h-1 rounded-full relative">
         <div style={{ width: `${progress}%` }} className="bg-green-500 h-1 rounded-full absolute top-0 left-0" />
@@ -96,8 +96,23 @@ function AudioContent() {
             <p className="text-gray-600 my-4">
                 A família é um presente de Deus. Padre Elisio intercede pela harmonia, compreensão e amor em seu lar.
             </p>
-            <p className="font-semibold my-2">Ouça o que o Padre Elisio tem para te falar:</p>
-            <WhatsAppAudioPlayer />
+            <p className="font-semibold my-4">Ouça o que o Padre Elisio tem para te falar:</p>
+            
+            <div className="flex items-center gap-4 my-4">
+              <Image
+                  src="https://i.imgur.com/bS30BjY.jpeg"
+                  alt="Avatar Padre Elisio"
+                  width={48}
+                  height={48}
+                  className="rounded-full w-12 h-12 object-cover"
+                  data-ai-hint="priest portrait"
+              />
+              <div className="flex-1 text-left">
+                  <p className="font-bold text-gray-800 mb-1">Padre Elisio</p>
+                  <WhatsAppAudioPlayer />
+              </div>
+            </div>
+
             <Link href={`/chavedomilagre/desejo?name=${encodeURIComponent(name)}`} passHref>
                 <Button size="lg" className="w-full mt-6">
                 Saiba Mais

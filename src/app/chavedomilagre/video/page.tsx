@@ -29,6 +29,38 @@ const testimonials = [
         avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg',
         avatarHint: 'woman portrait',
         likes: 2041
+    },
+    {
+        name: "João Pedro",
+        text: "Meu pequeno negócio não saía do lugar. Depois de começar as orações, as vendas aumentaram de uma forma que não consigo explicar. A Chave do Milagre abriu as portas da prosperidade para mim.",
+        time: "1 d",
+        avatarUrl: 'https://thumbs2.imgbox.com/72/dc/GT3YxWwY_t.jpg',
+        avatarHint: 'man portrait',
+        likes: 1129
+    },
+    {
+        name: "Sofia Costa",
+        text: "Eu me sentia perdida, sem direção. A oração me trouxe uma clareza e um propósito que eu não encontrava em lugar nenhum. Sinto que finalmente estou no caminho certo, graças a Deus.",
+        time: "2 d",
+        avatarUrl: 'https://thumbs2.imgbox.com/dd/55/H0rZXQVM_t.jpg',
+        avatarHint: 'woman portrait',
+        likes: 983
+    },
+    {
+        name: "Ricardo Almeida",
+        text: "Sofria com uma dor crônica nas costas há anos. Nenhum tratamento funcionava. Comecei a fazer as orações com a Chave do Milagre e a dor simplesmente sumiu. É uma cura divina.",
+        time: "2 d",
+        avatarUrl: 'https://thumbs2.imgbox.com/14/e9/DUPvPss9_t.jpg',
+        avatarHint: 'man portrait',
+        likes: 1344
+    },
+    {
+        name: "Camila Gomes",
+        text: "Não falava com meu filho há quase um ano. Depois de uma semana de oração, ele me ligou e nos reconciliamos. Foi o milagre que eu mais pedia. Gratidão eterna!",
+        time: "3 d",
+        avatarUrl: 'https://thumbs2.imgbox.com/87/54/0dMM6ESV_t.png',
+        avatarHint: 'woman portrait',
+        likes: 1765
     }
 ];
 

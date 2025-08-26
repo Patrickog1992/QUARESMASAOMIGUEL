@@ -59,14 +59,14 @@ export function SalesPopupChaveDoMilagre() {
   return (
     <div
       className={cn(
-        'fixed bottom-4 right-4 z-50 w-full max-w-[240px] transition-transform duration-500 ease-in-out',
+        'fixed bottom-4 right-4 z-50 w-full max-w-[200px] transition-transform duration-500 ease-in-out',
         isVisible ? 'translate-x-0' : 'translate-x-[calc(100%+2rem)]'
       )}
     >
       <Card className="bg-green-600 text-white shadow-lg">
-        <CardContent className="p-2 flex items-center gap-2">
-          <CheckCircle className="h-4 w-4 shrink-0" />
-          <p className="text-xs font-semibold">
+        <CardContent className="p-1.5 flex items-center gap-1.5">
+          <CheckCircle className="h-3.5 w-3.5 shrink-0" />
+          <p className="text-[11px] font-semibold leading-tight">
             {notification.name} {notification.location} acabou de receber a Chave do Milagre.
           </p>
         </CardContent>

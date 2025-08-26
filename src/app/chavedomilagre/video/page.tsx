@@ -155,6 +155,10 @@ export default function VideoPage() {
         setCurrentDate(formattedDate);
     }, []);
 
+    const handleCheckout = () => {
+        // Lógica de checkout
+    };
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 text-center">
             <div className="w-full max-w-2xl mx-auto">
@@ -173,6 +177,17 @@ export default function VideoPage() {
                     Tem uma MALDIÇÃO escondida travando tua vida, e HOJE ela vai cair por terra!
                 </h1>
                 <VideoPlayer />
+
+                <div className="my-8">
+                    <Button 
+                        size="lg" 
+                        className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-auto py-4 animate-pulse"
+                        onClick={handleCheckout}
+                    >
+                        QUERO A CHAVE DO MILAGRE
+                    </Button>
+                </div>
+
                 <div className="my-8">
                     <Image
                         src="https://i.imgur.com/XH2eHXm.png"
@@ -184,8 +199,6 @@ export default function VideoPage() {
                     />
                 </div>
                 
-                <div className="my-8 h-16" />
-
                 <div className="space-y-4">
                     <h2 className="text-xl font-bold text-gray-800">
                         O que dizem sobre a Chave do Milagre:

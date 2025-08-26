@@ -10,8 +10,7 @@ import { useSearchParams } from 'next/navigation';
 function AudioContent() {
     const searchParams = useSearchParams();
     const name = searchParams.get('name') || '';
-    const vocarooEmbed = `<div><iframe width="300" height="60" src="https://vocaroo.com/embed/1oJtwq5ZygK8?autoplay=0" frameborder="0" allow="autoplay"></iframe></div>`;
-
+    const audioEmbed = `<iframe src="https://archive.org/embed/a-chave-do-milagre" width="100%" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>`;
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
@@ -32,7 +31,7 @@ function AudioContent() {
                 A família é um presente de Deus. Padre Elisio intercede pela harmonia, compreensão e amor em seu lar.
             </p>
             <p className="font-semibold my-2">Ouça o que o Padre Elisio tem para te falar:</p>
-            <div dangerouslySetInnerHTML={{ __html: vocarooEmbed }} />
+            <div className="w-full max-w-xs mx-auto" dangerouslySetInnerHTML={{ __html: audioEmbed }} />
             <Link href={`/chavedomilagre/desejo?name=${encodeURIComponent(name)}`} passHref>
                 <Button size="lg" className="w-full mt-6">
                 Saiba Mais

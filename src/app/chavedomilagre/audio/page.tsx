@@ -30,10 +30,9 @@ function AudioContent() {
                 A família é um presente de Deus. Padre Elisio intercede pela harmonia, compreensão e amor em seu lar.
             </p>
             <p className="font-semibold my-2">Ouça o que o Padre Elisio tem para te falar:</p>
-            <audio controls className="w-full">
-                <source src="https://voca.ro/1oJtwq5ZygK8" type="audio/mpeg" />
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
+            <div className='flex justify-center'>
+                <iframe width="300" height="60" src="https://vocaroo.com/embed/1oJtwq5ZygK8?autoplay=0" frameBorder="0" allow="autoplay"></iframe>
+            </div>
             <Link href={`/chavedomilagre/desejo?name=${encodeURIComponent(name)}`} passHref>
                 <Button size="lg" className="w-full mt-6">
                 Saiba Mais

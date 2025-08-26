@@ -4,14 +4,80 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
+import { Suspense, useState, useRef, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Play, Pause } from 'lucide-react';
+
+const WhatsAppAudioPlayer = () => {
+  const audioUrl = "https://archive.org/download/a-chave-do-milagre/A%20Chave%20Do%20Milagre.mp3";
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      audioRef.current?.pause();
+    } else {
+      audioRef.current?.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const setAudioData = () => {
+      setDuration(audio.duration);
+      setCurrentTime(audio.currentTime);
+    }
+
+    const setAudioTime = () => setCurrentTime(audio.currentTime);
+
+    audio.addEventListener('loadeddata', setAudioData);
+    audio.addEventListener('timeupdate', setAudioTime);
+
+    // Event listener for when audio finishes
+    const handleEnded = () => setIsPlaying(false);
+    audio.addEventListener('ended', handleEnded);
+
+    return () => {
+      audio.removeEventListener('loadeddata', setAudioData);
+      audio.removeEventListener('timeupdate', setAudioTime);
+      audio.removeEventListener('ended', handleEnded);
+    }
+  }, []);
+
+  const formatTime = (time: number) => {
+    if (isNaN(time)) return '0:00';
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+  return (
+    <div className="flex items-center gap-3 w-full max-w-xs mx-auto bg-gray-200 rounded-full p-2">
+      <audio ref={audioRef} src={audioUrl} preload="metadata" />
+      <Button onClick={togglePlayPause} variant="ghost" size="icon" className="h-10 w-10 rounded-full bg-green-500 hover:bg-green-600 text-white">
+        {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+      </Button>
+      <div className="flex-grow bg-gray-300 h-1 rounded-full relative">
+        <div style={{ width: `${progress}%` }} className="bg-green-500 h-1 rounded-full absolute top-0 left-0" />
+        <div style={{ left: `${progress}%` }} className="w-3 h-3 bg-green-600 rounded-full absolute top-1/2 -translate-x-1/2 -translate-y-1/2" />
+      </div>
+      <span className="text-xs text-gray-500 w-10 text-right">{formatTime(currentTime)}</span>
+    </div>
+  )
+}
+
 
 function AudioContent() {
     const searchParams = useSearchParams();
     const name = searchParams.get('name') || '';
-    const audioEmbed = `<iframe src="https://archive.org/embed/a-chave-do-milagre" width="100%" height="30" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>`;
-
+    
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
         <Card className="w-full max-w-md mx-auto shadow-lg text-center">
@@ -31,7 +97,7 @@ function AudioContent() {
                 A família é um presente de Deus. Padre Elisio intercede pela harmonia, compreensão e amor em seu lar.
             </p>
             <p className="font-semibold my-2">Ouça o que o Padre Elisio tem para te falar:</p>
-            <div className="w-full max-w-xs mx-auto" dangerouslySetInnerHTML={{ __html: audioEmbed }} />
+            <WhatsAppAudioPlayer />
             <Link href={`/chavedomilagre/desejo?name=${encodeURIComponent(name)}`} passHref>
                 <Button size="lg" className="w-full mt-6">
                 Saiba Mais

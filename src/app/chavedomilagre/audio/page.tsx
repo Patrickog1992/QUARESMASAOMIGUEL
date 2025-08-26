@@ -79,47 +79,55 @@ function AudioContent() {
     const name = searchParams.get('name') || '';
     
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
-        <Card className="w-full max-w-md mx-auto shadow-lg text-center">
-            <CardContent className="p-6">
-            <h1 className="text-lg font-bold text-gray-800">
-                Caminhe com o Padre Elisio em seu dia a dia, ele tem as Orações Poderosas especialmente para seu problema.
-            </h1>
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
             <Image
-                src="https://i.imgur.com/bS30BjY.jpeg"
-                alt="Padre Elisio"
-                width={400}
-                height={300}
-                className="rounded-lg mx-auto my-4"
-                data-ai-hint="priest"
+                src="https://i.imgur.com/oU1Etag.png"
+                alt="Manuscrito Sagrado"
+                width={500}
+                height={150}
+                className="mb-8 rounded-lg"
+                data-ai-hint="sacred manuscript"
             />
-            <p className="text-gray-600 my-4">
-                A família é um presente de Deus. Padre Elisio intercede pela harmonia, compreensão e amor em seu lar.
-            </p>
-            <p className="font-semibold my-4">Ouça o que o Padre Elisio tem para te falar:</p>
-            
-            <div className="flex items-center gap-4 my-4">
-              <Image
-                  src="https://i.imgur.com/bS30BjY.jpeg"
-                  alt="Avatar Padre Elisio"
-                  width={48}
-                  height={48}
-                  className="rounded-full w-12 h-12 object-cover"
-                  data-ai-hint="priest portrait"
-              />
-              <div className="flex-1 text-left">
-                  <p className="font-bold text-gray-800 mb-1">Padre Elisio</p>
-                  <WhatsAppAudioPlayer />
-              </div>
-            </div>
+            <Card className="w-full max-w-md mx-auto shadow-lg text-center">
+                <CardContent className="p-6">
+                <h1 className="text-lg font-bold text-gray-800">
+                    Caminhe com o Padre Elisio em seu dia a dia, ele tem as Orações Poderosas especialmente para seu problema.
+                </h1>
+                <Image
+                    src="https://i.imgur.com/bS30BjY.jpeg"
+                    alt="Padre Elisio"
+                    width={400}
+                    height={300}
+                    className="rounded-lg mx-auto my-4"
+                    data-ai-hint="priest"
+                />
+                <p className="text-gray-600 my-4">
+                    A família é um presente de Deus. Padre Elisio intercede pela harmonia, compreensão e amor em seu lar.
+                </p>
+                <p className="font-semibold my-4">Ouça o que o Padre Elisio tem para te falar:</p>
+                
+                <div className="flex items-center gap-4 my-4">
+                <Image
+                    src="https://i.imgur.com/bS30BjY.jpeg"
+                    alt="Avatar Padre Elisio"
+                    width={48}
+                    height={48}
+                    className="rounded-full w-12 h-12 object-cover"
+                    data-ai-hint="priest portrait"
+                />
+                <div className="flex-1 text-left">
+                    <p className="font-bold text-gray-800 mb-1">Padre Elisio</p>
+                    <WhatsAppAudioPlayer />
+                </div>
+                </div>
 
-            <Link href={`/chavedomilagre/desejo?name=${encodeURIComponent(name)}`} passHref>
-                <Button size="lg" className="w-full mt-6">
-                Saiba Mais
-                </Button>
-            </Link>
-            </CardContent>
-        </Card>
+                <Link href={`/chavedomilagre/desejo?name=${encodeURIComponent(name)}`} passHref>
+                    <Button size="lg" className="w-full mt-6">
+                    Saiba Mais
+                    </Button>
+                </Link>
+                </CardContent>
+            </Card>
         </div>
     );
 }

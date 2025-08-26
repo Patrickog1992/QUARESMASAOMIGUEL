@@ -17,7 +17,15 @@ export default function NomePage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      <Image
+        src="https://i.imgur.com/oU1Etag.png"
+        alt="Manuscrito Sagrado"
+        width={500}
+        height={150}
+        className="mb-8 rounded-lg"
+        data-ai-hint="sacred manuscript"
+      />
       <Card className="w-full max-w-md mx-auto shadow-lg text-center">
         <CardContent className="p-6">
           <Image

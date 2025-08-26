@@ -149,7 +149,7 @@ const CheckoutButton = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowButton(true);
-        }, (9 * 60 + 22) * 1000); // 9 minutes and 22 seconds
+        }, 5 * 1000); // 5 seconds
 
         return () => clearTimeout(timer);
     }, []);

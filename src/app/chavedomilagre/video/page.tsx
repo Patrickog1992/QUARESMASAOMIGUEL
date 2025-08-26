@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Heart, ThumbsUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const testimonials = [
     {
@@ -61,6 +62,38 @@ const testimonials = [
         avatarUrl: 'https://thumbs2.imgbox.com/87/54/0dMM6ESV_t.png',
         avatarHint: 'woman portrait',
         likes: 1765
+    },
+    {
+        name: "Roberto Nunes",
+        text: "As portas financeiras se abriram de uma forma que eu não esperava. Consegui pagar uma dívida que me assombrava há anos. A Chave do Milagre é real!",
+        time: "4 d",
+        avatarUrl: 'https://thumbs2.imgbox.com/7b/b0/gsYWvBdF_t.jpg',
+        avatarHint: 'man portrait',
+        likes: 1201
+    },
+    {
+        name: "Beatriz Lima",
+        text: "Eu estava desempregada e desesperançosa. No quinto dia de oração, recebi uma ligação para uma entrevista e fui contratada no mesmo dia. Foi Deus agindo através desta oração.",
+        time: "4 d",
+        avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg',
+        avatarHint: 'woman portrait',
+        likes: 1422
+    },
+    {
+        name: "Eduardo Santos",
+        text: "Meu negócio familiar estava passando por uma crise terrível. A Chave do Milagre nos uniu em oração e, em poucos dias, encontramos uma solução que salvou nossa empresa. A fé move montanhas!",
+        time: "5 d",
+        avatarUrl: 'https://thumbs2.imgbox.com/48/18/9JtnHEjz_t.png',
+        avatarHint: 'man portrait',
+        likes: 1056
+    },
+    {
+        name: "Vanessa Pereira",
+        text: "A paz que eu senti ao fazer essas orações é indescritível. Ansiedade e medo foram embora, dando lugar à confiança e à fé. Minha vida está mais leve e abençoada.",
+        time: "6 d",
+        avatarUrl: 'https://thumbs2.imgbox.com/eb/cb/zfODzSUu_t.png',
+        avatarHint: 'woman portrait',
+        likes: 1689
     }
 ];
 
@@ -111,9 +144,23 @@ const VideoPlayer = () => {
 };
 
 export default function VideoPage() {
+    const [currentDate, setCurrentDate] = useState('');
+
+    useEffect(() => {
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('pt-BR', {
+        day: 'numeric',
+        month: 'long',
+        });
+        setCurrentDate(formattedDate);
+    }, []);
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 text-center">
             <div className="w-full max-w-2xl mx-auto">
+                <div className="bg-red-600 text-white p-2 rounded-md mb-4 text-center font-bold">
+                    ATENÇÃO: Devido ao grande número de acesso essa página vai estar dísponivel somente até: <span className="text-yellow-300">{currentDate}</span>
+                </div>
                 <Image
                     src="https://i.imgur.com/oU1Etag.png"
                     alt="Manuscrito Sagrado"

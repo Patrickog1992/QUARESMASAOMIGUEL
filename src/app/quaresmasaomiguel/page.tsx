@@ -207,7 +207,7 @@ export default function QuaresmaSaoMiguelPage() {
                         <p className="text-lg">Livros sobre espiritualidade chegam a ser caros e fragmentados.</p>
                         <p className="font-semibold my-4 text-lg">Este guia reúne tudo isso em um caminho acessível por apenas:</p>
                         <p className="text-2xl text-red-600 font-bold line-through">DE R$ 197,00</p>
-                        <p className="text-5xl md:text-6xl font-bold text-blue-800 my-2">por R$ 27,00</p>
+                        <p className="text-5xl md:text-6xl font-bold text-green-600 my-2">por R$ 27,00</p>
                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">
                             QUERO O MEU GUIA COMPLETO AGORA
                         </Button>
@@ -253,3 +253,5 @@ export default function QuaresmaSaoMiguelPage() {
         </div>
     );
 }
+
+    

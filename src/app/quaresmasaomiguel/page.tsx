@@ -3,7 +3,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, BookOpen, Heart, TrendingUp, Users, Check, AlertTriangle, ChevronsRight, Calendar, Star, Sun, Moon } from 'lucide-react';
+import { Shield, BookOpen, Heart, TrendingUp, Users, Check, AlertTriangle, ChevronsRight, Calendar, Star, Sun, Moon, Library, Pilcrow, Compass } from 'lucide-react';
 import Image from 'next/image';
 import {
   Accordion,
@@ -172,7 +172,35 @@ export default function QuaresmaSaoMiguelPage() {
                         </div>
                     </section>
 
-                    <Card className="bg-amber-100 text-blue-900 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-amber-400">
+                    <section>
+                        <h2 className="text-3xl font-bold text-amber-300 mb-2">Por Que Este Guia é Confiável?</h2>
+                        <p className="text-blue-200 mb-8">Enraizado na tradição católica, fiel ao ensinamento da Igreja.</p>
+                        <div className="grid md:grid-cols-3 gap-6 text-left">
+                            <Card className="bg-blue-800/50 border-blue-400/30 p-4">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <Library className="w-6 h-6 text-amber-300"/>
+                                    <h3 className="font-bold text-lg">Tradição Católica</h3>
+                                </div>
+                                <p className="text-blue-200 text-sm">Este guia foi cuidadosamente elaborado com base em fontes tradicionais e na rica herança da Igreja, garantindo uma experiência autêntica e fiel à devoção de séculos.</p>
+                            </Card>
+                             <Card className="bg-blue-800/50 border-blue-400/30 p-4">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <Pilcrow className="w-6 h-6 text-amber-300"/>
+                                    <h3 className="font-bold text-lg">Fundamentação Bíblica</h3>
+                                </div>
+                                <p className="text-blue-200 text-sm">Cada oração e reflexão está enraizada nas Sagradas Escrituras, proporcionando uma base sólida para o seu crescimento espiritual e uma conexão mais profunda com a Palavra de Deus.</p>
+                            </Card>
+                             <Card className="bg-blue-800/50 border-blue-400/30 p-4">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <Compass className="w-6 h-6 text-amber-300"/>
+                                    <h3 className="font-bold text-lg">Orientação Segura</h3>
+                                </div>
+                                <p className="text-blue-200 text-sm">O conteúdo foi revisado para assegurar que esteja em plena conformidade com o Catecismo e o Magistério da Igreja, oferecendo um caminho seguro e confiável para sua jornada de fé.</p>
+                            </Card>
+                        </div>
+                    </section>
+
+                    <Card className="bg-blue-100 text-blue-900 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-blue-400">
                         <h2 className="text-3xl font-bold text-blue-800 mb-4">O Caminho Espiritual que Pode Mudar a Sua Vida, por um Valor Simbólico</h2>
                         <p className="text-lg">Um retiro espiritual pode custar centenas de reais.</p>
                         <p className="text-lg">Cursos de formação passam facilmente de mil reais.</p>
@@ -189,7 +217,7 @@ export default function QuaresmaSaoMiguelPage() {
                             <span className="flex items-center gap-2"><Check className="w-4 h-4 text-green-600"/> Todas as Orações</span>
                             <span className="flex items-center gap-2"><Check className="w-4 h-4 text-green-600"/> 4 Presentes Exclusivos</span>
                         </div>
-                        <p className="text-xs font-semibold mt-4">COMPRA 100% SEGURA - HOTMART PROTEGE SUA COMPRA</p>
+                        <p className="text-xs font-semibold mt-4">COMPRA 100% SEGURA</p>
                     </Card>
 
                     <section className="border-2 border-dashed border-blue-400/50 rounded-lg p-6">

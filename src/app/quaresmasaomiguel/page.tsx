@@ -74,6 +74,7 @@ export default function QuaresmaSaoMiguelPage() {
                 <div className="max-w-3xl mx-auto space-y-16 text-center">
 
                     <section className="space-y-6">
+                        <p className="text-xl md:text-2xl font-semibold text-amber-300 uppercase tracking-widest">A Quaresma de São Miguel Arcanjo</p>
                         <h1 className="text-3xl md:text-5xl font-bold text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">Viva 40 dias de oração com São Miguel Arcanjo</h1>
                         <p className="text-lg md:text-xl text-blue-200">Um caminho de fé e devoção para encontrar mais paz, confiança em Deus e renovação espiritual.</p>
                         <Button onClick={handleCheckout} size="lg" className="bg-amber-400 hover:bg-amber-500 text-blue-900 font-bold h-auto py-4 px-8 text-xl animate-pulse shadow-lg">QUERO O MEU GUIA AGORA</Button>
@@ -152,8 +153,10 @@ export default function QuaresmaSaoMiguelPage() {
 
                     <Card className="bg-amber-100 text-blue-900 p-6 md:p-8 rounded-xl shadow-2xl border-2 border-amber-400">
                         <h2 className="text-3xl font-bold text-blue-800 mb-4">O Caminho Espiritual que Pode Mudar a Sua Vida, por um Valor Simbólico</h2>
-                        <p className="text-lg">Um retiro espiritual pode custar centenas de reais. Cursos de formação passam facilmente de mil reais. Livros sobre espiritualidade chegam a ser caros e fragmentados.</p>
-                        <p className="font-semibold my-4">Este guia reúne tudo isso em um caminho acessível por apenas:</p>
+                        <p className="text-lg">Um retiro espiritual pode custar centenas de reais.</p>
+                        <p className="text-lg">Cursos de formação passam facilmente de mil reais.</p>
+                        <p className="text-lg">Livros sobre espiritualidade chegam a ser caros e fragmentados.</p>
+                        <p className="font-semibold my-4 text-lg">Este guia reúne tudo isso em um caminho acessível por apenas:</p>
                         <p className="text-2xl text-red-600 font-bold line-through">DE R$ 197,00</p>
                         <p className="text-5xl md:text-6xl font-bold text-blue-800 my-2">por R$ 27,00</p>
                         <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal mt-4">

@@ -27,7 +27,7 @@ export default function OracaoVaticanoQuiz1Page() {
     <div className="dark relative flex flex-col min-h-screen bg-[hsl(var(--quiz-background))] text-blue-900 overflow-x-hidden">
       <RosaryPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center z-10">
-        <div className="max-w-3xl w-full">
+        <div className="max-w-3xl w-full mb-20">
           <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl border border-blue-200">
             <CardContent className="text-left text-lg md:text-xl space-y-4 text-blue-950">
                 <h1 className="text-2xl md:text-3xl font-bold text-center text-blue-800 mb-6">

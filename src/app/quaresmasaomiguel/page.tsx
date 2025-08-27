@@ -14,7 +14,7 @@ import {
 import { Footer } from '@/components/landing/footer';
 
 const SwordIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.5 17.5 20 22"/>
         <path d="m2 22 5-5"/>
         <path d="m15 2-3.4 3.4"/>
@@ -111,14 +111,34 @@ export default function QuaresmaSaoMiguelPage() {
                         </div>
                     </section>
                     
-                    <section>
+                     <section>
                         <h2 className="text-3xl font-bold text-amber-300 mb-6">Frutos da Quaresma de São Miguel</h2>
                         <p className="text-blue-200 mb-8 text-lg">Transformações espirituais que esta devoção pode proporcionar</p>
-                         <div className="grid md:grid-cols-2 gap-6 text-left">
-                            <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <span className="font-semibold">Paz Interior e Redução da Ansiedade</span></Card>
-                            <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <span className="font-semibold">Fortalecimento da Fé e Confiança em Deus</span></Card>
-                            <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <span className="font-semibold">Proteção Espiritual para Você e Sua Família</span></Card>
-                            <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <span className="font-semibold">Clareza e Direção para a Sua Vida</span></Card>
+                        <div className="grid md:grid-cols-2 gap-6 text-left">
+                            <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex flex-col items-start gap-2">
+                                <div className="flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <h3 className="font-semibold text-lg">Proteção espiritual</h3></div>
+                                <p className="text-blue-200 pl-9">Ao se consagrar a São Miguel, você invoca a proteção do líder dos exércitos celestiais contra as ciladas e tentações do dia a dia. Sinta-se guardado por uma força divina que afasta o mal e fortalece sua alma. Essa conexão cria um escudo espiritual ao seu redor.</p>
+                            </Card>
+                            <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex flex-col items-start gap-2">
+                                <div className="flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <h3 className="font-semibold text-lg">Vida de oração renovada</h3></div>
+                                <p className="text-blue-200 pl-9">A Quaresma de São Miguel oferece uma estrutura diária de oração que combate a preguiça espiritual e o desânimo. Você redescobrirá o prazer da oração disciplinada, transformando-a em um hábito que nutre e fortalece sua alma. É um convite para reacender a chama da sua comunicação com Deus.</p>
+                            </Card>
+                            <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex flex-col items-start gap-2">
+                                <div className="flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <h3 className="font-semibold text-lg">Fé fortalecida</h3></div>
+                                <p className="text-blue-200 pl-9">Ao testemunhar pequenas e grandes graças durante os 40 dias, sua confiança no poder de Deus se tornará inabalável. A Quaresma é uma jornada para experimentar a fidelidade divina de forma concreta. Cada oração respondida será um tijolo a mais na construção de uma fé sólida.</p>
+                            </Card>
+                            <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex flex-col items-start gap-2">
+                                <div className="flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <h3 className="font-semibold text-lg">Paz interior</h3></div>
+                                <p className="text-blue-200 pl-9">Entregando suas ansiedades e medos a São Miguel Arcanjo, você encontrará uma serenidade que o mundo não pode oferecer. A devoção traz um profundo senso de paz, mesmo em meio às tempestades da vida. É a certeza de que você não está lutando sozinho.</p>
+                            </Card>
+                             <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex flex-col items-start gap-2">
+                                <div className="flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <h3 className="font-semibold text-lg">Família abençoada</h3></div>
+                                <p className="text-blue-200 pl-9">As orações da Quaresma se estendem como um manto de proteção sobre sua casa e seus entes queridos. Você se tornará um canal de bênçãos, intercedendo por sua família e consagrando seu lar a Deus. A harmonia e a proteção divina reinarão em seu lar.</p>
+                            </Card>
+                            <Card className="bg-blue-800/50 border-blue-400/30 p-4 flex flex-col items-start gap-2">
+                                <div className="flex items-center gap-3"><Check className="w-6 h-6 text-green-400 shrink-0"/> <h3 className="font-semibold text-lg">Crescimento espiritual</h3></div>
+                                <p className="text-blue-200 pl-9">Esta jornada de 40 dias é um convite para um profundo amadurecimento na fé. Ao final, você se sentirá mais próximo de Deus, com maior discernimento espiritual e clareza sobre seu propósito. É uma experiência transformadora que deixará marcas eternas em sua alma.</p>
+                            </Card>
                         </div>
                         <Button onClick={handleCheckout} size="lg" className="bg-amber-400 hover:bg-amber-500 text-blue-900 font-bold h-auto py-4 px-8 text-xl mt-8 animate-pulse shadow-lg">QUERO O MEU GUIA AGORA</Button>
                     </section>

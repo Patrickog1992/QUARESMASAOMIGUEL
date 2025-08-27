@@ -79,7 +79,7 @@ export default function QuaresmaSaoMiguelPage() {
                         <p className="text-lg md:text-xl text-blue-200">Um caminho de fé e devoção para encontrar mais paz, confiança em Deus e renovação espiritual.</p>
                         <Button onClick={handleCheckout} size="lg" className="bg-amber-400 hover:bg-amber-500 text-blue-900 font-bold h-auto py-4 px-8 text-xl animate-pulse shadow-lg">QUERO O MEU GUIA AGORA</Button>
                         <p className="text-sm text-blue-300">Garantia incondicional de 7 dias</p>
-                        <Image src="https://i.ibb.co/PG7yPDqm/823040e0f3d49d35a2cde0484f634f3d.webp" alt="São Miguel Arcanjo" width={600} height={400} className="rounded-lg mx-auto shadow-2xl mt-8" data-ai-hint="archangel michael" />
+                        <Image src="https://i.imgur.com/RvNLWDz.png" alt="São Miguel Arcanjo" width={600} height={400} className="rounded-lg mx-auto shadow-2xl mt-8" data-ai-hint="archangel michael" />
                         <p className="italic text-blue-200 mt-4 text-lg">"São Miguel Arcanjo, Príncipe dos Anjos, defendei-nos no combate contra as maldades e ciladas do demônio."</p>
                     </section>
 

@@ -75,7 +75,7 @@ export default function QuaresmaSaoMiguelPage() {
                 <div className="max-w-3xl mx-auto space-y-16 text-center">
 
                     <section className="space-y-6">
-                        <p className="text-xl md:text-2xl font-semibold text-amber-300 uppercase tracking-widest">A Quaresma de São Miguel Arcanjo</p>
+                        <p className="text-xl md:text-2xl font-semibold text-amber-300 uppercase tracking-widest">A quaresma de são miguel arcanjo</p>
                         <h1 className="text-3xl md:text-5xl font-bold text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">Viva 40 dias de oração com São Miguel Arcanjo</h1>
                         <p className="text-lg md:text-xl text-blue-200">Um caminho de fé e devoção para encontrar mais paz, confiança em Deus e renovação espiritual.</p>
                         <Button onClick={handleCheckout} size="lg" className="bg-amber-400 hover:bg-amber-500 text-blue-900 font-bold h-auto py-4 px-8 text-xl animate-pulse shadow-lg">QUERO O MEU GUIA AGORA</Button>
@@ -102,7 +102,7 @@ export default function QuaresmaSaoMiguelPage() {
 
                     <section className="bg-blue-800/50 p-6 md:p-8 rounded-xl shadow-xl border border-blue-400/30">
                         <h2 className="text-3xl font-bold text-amber-300 mb-4">O Caminho de Renovação Espiritual Está Aqui</h2>
-                        <Image src="https://i.imgur.com/fK3pfsp.png" alt="Guia Quaresma de São Miguel" width={400} height={500} className="rounded-lg mx-auto shadow-md my-6" data-ai-hint="guide book" />
+                        <Image src="https://i.imgur.com/EXZYQCX.png" alt="Guia Quaresma de São Miguel" width={400} height={500} className="rounded-lg mx-auto shadow-md my-6" data-ai-hint="guide book cover" />
                         <CardTitle className="text-2xl font-bold text-amber-400">QUARESMA DE SÃO MIGUEL</CardTitle>
                         <div className="text-left text-blue-200 space-y-4 mt-6 text-lg">
                            <p>Um guia completo em português que ensina você a viver, de forma autêntica, a Quaresma de São Miguel Arcanjo.</p>
@@ -172,7 +172,7 @@ export default function QuaresmaSaoMiguelPage() {
                         </div>
                     </section>
 
-                    <section>
+                     <section>
                         <h2 className="text-3xl font-bold text-amber-300 mb-2">Por Que Este Guia é Confiável?</h2>
                         <p className="text-blue-200 mb-8">Enraizado na tradição católica, fiel ao ensinamento da Igreja.</p>
                         <div className="grid md:grid-cols-3 gap-6 text-left">
@@ -253,5 +253,3 @@ export default function QuaresmaSaoMiguelPage() {
         </div>
     );
 }
-
-    

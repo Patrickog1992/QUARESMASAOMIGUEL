@@ -65,7 +65,7 @@ const faqItems = [
 
 export default function QuaresmaSaoMiguelPage() {
     const handleCheckout = () => {
-        window.open('https://pay.kirvano.com/YOUR_CHECKOUT_LINK', '_self'); // Substitua com seu link de checkout
+        window.open('https://pay.kirvano.com/d3630b4a-cb66-48df-b19a-e2a7481e4bac', '_self');
     };
 
     return (

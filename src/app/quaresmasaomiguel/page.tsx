@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -101,7 +102,7 @@ export default function QuaresmaSaoMiguelPage() {
 
                     <section className="bg-blue-800/50 p-6 md:p-8 rounded-xl shadow-xl border border-blue-400/30">
                         <h2 className="text-3xl font-bold text-amber-300 mb-4">O Caminho de Renovação Espiritual Está Aqui</h2>
-                        <Image src="https://i.imgur.com/H1qvjJ8.png" alt="Guia Quaresma de São Miguel" width={400} height={500} className="rounded-lg mx-auto shadow-md my-6" data-ai-hint="guide book" />
+                        <Image src="https://i.imgur.com/fK3pfsp.png" alt="Guia Quaresma de São Miguel" width={400} height={500} className="rounded-lg mx-auto shadow-md my-6" data-ai-hint="guide book" />
                         <CardTitle className="text-2xl font-bold text-amber-400">QUARESMA DE SÃO MIGUEL</CardTitle>
                         <div className="text-left text-blue-200 space-y-4 mt-6 text-lg">
                            <p>Um guia completo em português que ensina você a viver, de forma autêntica, a Quaresma de São Miguel Arcanjo.</p>

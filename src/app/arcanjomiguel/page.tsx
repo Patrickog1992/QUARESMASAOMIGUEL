@@ -10,7 +10,7 @@ import { BackgroundPattern } from '@/components/landing/background-pattern';
 
 export default function ArcanjoMiguelPage() {
   return (
-    <div className="dark relative flex flex-col min-h-screen bg-[#F5F5DC] text-foreground overflow-x-hidden">
+    <div className="dark relative flex flex-col min-h-screen bg-blue-50 text-foreground overflow-x-hidden">
       <TopBanner />
       <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
       <BackgroundPattern />

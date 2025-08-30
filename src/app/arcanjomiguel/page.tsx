@@ -18,6 +18,7 @@ export default function ArcanjoMiguelPage() {
         <div className="max-w-3xl mx-auto space-y-12 text-center">
           <HeroSectionArcanjoMiguel />
           <VSLSectionArcanjoMiguel />
+          <TestimonialsSectionArcanjoMiguel />
         </div>
       </main>
       <Footer />

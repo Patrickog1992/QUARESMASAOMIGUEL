@@ -1,17 +1,14 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, Search } from 'lucide-react';
 
 type TopBannerProps = {
   className?: string;
   text?: string;
-  variant?: 'default' | 'news';
 };
 
-export function TopBanner({ className, text, variant = 'default' }: TopBannerProps) {
+export function TopBanner({ className, text }: TopBannerProps) {
   const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
@@ -23,61 +20,24 @@ export function TopBanner({ className, text, variant = 'default' }: TopBannerPro
     setCurrentDate(formattedDate);
   }, []);
 
-  if (!currentDate && (text?.includes('(coloque o dia)') || !text)) {
+  if (!currentDate) {
     return null;
   }
-  
-  const defaultText = `Esta bênção está disponível somente até ${currentDate}. Assista antes que saia do ar!`;
-  const bannerText = text || defaultText;
-  const textParts = bannerText.split('(coloque o dia que a pessoa está acessando )');
 
-  if (variant === 'news') {
-    return (
-      <div
-        className={cn(
-          'bg-red-700 text-white text-center py-2 px-4 font-bold font-sans sticky top-0 z-20 shadow-lg w-full',
-          className
-        )}
-      >
-        <div className="container mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-2">
-                <Menu className="h-6 w-6" />
-                <span className="text-lg hidden sm:inline tracking-wider">NOTÍCIA</span>
-            </div>
-            <p className="text-sm md:text-base font-semibold text-center flex-grow px-2 uppercase tracking-wide">
-                {textParts.length > 1 ? (
-                    <>
-                        {textParts[0]}
-                        <span className="text-amber-300">{currentDate}</span>
-                        {textParts[1]}
-                    </>
-                ) : (
-                    textParts[0]
-                )}
-            </p>
-            <Search className="h-6 w-6" />
-        </div>
-      </div>
-    );
-  }
+  const defaultText = `ATENÇÃO: Devido a grande quantidade de pessoas e poucas quaresmas esse vídeo irá sair do ar hoje: ${currentDate}`;
+  const bannerText = text ? text.replace('(Coloque a data que a pessoa está acessando)', currentDate) : defaultText;
+  
+  const defaultClassName = 'bg-red-600 text-white';
 
   return (
     <div
       className={cn(
-        'bg-primary text-primary-foreground text-center py-2 px-4 font-semibold text-sm md:text-base sticky top-0 z-20 shadow-lg',
-        className
+        'text-center py-2 px-4 font-semibold text-sm md:text-base sticky top-0 z-20 shadow-lg',
+        className || defaultClassName
       )}
     >
       <p>
-        {textParts.length > 1 ? (
-          <>
-            {textParts[0]}
-            <span className="text-amber-300">{currentDate}</span>
-            {textParts[1]}
-          </>
-        ) : (
-          textParts[0]
-        )}
+        {bannerText}
       </p>
     </div>
   );

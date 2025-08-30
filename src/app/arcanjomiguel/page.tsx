@@ -3,8 +3,6 @@
 import { HeroSectionArcanjoMiguel } from '@/components/landing/hero-section-arcanjomiguel';
 import { VSLSectionArcanjoMiguel } from '@/components/landing/vsl-section-arcanjomiguel';
 import { TestimonialsSectionArcanjoMiguel } from '@/components/landing/testimonials-section-arcanjomiguel';
-import { FAQSectionArcanjoMiguel } from '@/components/landing/faq-section-arcanjomiguel';
-import { WarningSection } from '@/components/landing/warning-section';
 import { Footer } from '@/components/landing/footer';
 import { SalesPopup } from '@/components/landing/sales-popup';
 import { TopBanner } from '@/components/landing/top-banner';
@@ -21,8 +19,6 @@ export default function ArcanjoMiguelPage() {
           <HeroSectionArcanjoMiguel />
           <VSLSectionArcanjoMiguel />
           <TestimonialsSectionArcanjoMiguel />
-          <FAQSectionArcanjoMiguel />
-          <WarningSection />
         </div>
       </main>
       <Footer />

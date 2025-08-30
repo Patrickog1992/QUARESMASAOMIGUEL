@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -26,6 +27,8 @@ export function TopBanner({ className, text }: TopBannerProps) {
 
   const defaultText = `ATENÇÃO: Devido a grande quantidade de pessoas e poucas quaresmas esse vídeo irá sair do ar hoje: ${currentDate}`;
   const bannerText = text ? text.replace('(Coloque a data que a pessoa está acessando)', currentDate) : defaultText;
+
+  const textParts = bannerText.split(currentDate);
   
   const defaultClassName = 'bg-red-600 text-white';
 
@@ -37,7 +40,9 @@ export function TopBanner({ className, text }: TopBannerProps) {
       )}
     >
       <p>
-        {bannerText}
+        {textParts[0]}
+        <span className="text-yellow-300 font-bold">{currentDate}</span>
+        {textParts[1]}
       </p>
     </div>
   );

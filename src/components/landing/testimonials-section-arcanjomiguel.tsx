@@ -228,7 +228,7 @@ export function TestimonialsSectionArcanjoMiguel() {
     return (
         <section>
             <h2 className="text-3xl md:text-4xl font-bold text-amber-300 mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
-                O que os fiéis dizem após 7 dias de oração:
+                O que os fiéis dizem após as orações:
             </h2>
             <div className="space-y-6">
                 {testimonials.map((testimonial) => (

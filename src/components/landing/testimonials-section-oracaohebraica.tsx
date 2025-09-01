@@ -64,6 +64,60 @@ const testimonials = [
         likes: 341,
         time: '1 h',
     },
+    {
+        id: 11,
+        name: 'Luciana Silva',
+        avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg',
+        avatarHint: 'woman portrait',
+        text: 'Tô arrepiada! Essas orações para prosperidade são surreais. 😭🌟',
+        likes: 267,
+        time: '1 h',
+    },
+    {
+        id: 12,
+        name: 'Mateus Andrade',
+        avatarUrl: 'https://thumbs2.imgbox.com/7b/b0/gsYWvBdF_t.jpg',
+        avatarHint: 'man portrait',
+        text: '3º dia de oração e recebi uma notícia maravilhosa sobre um investimento antigo. 🙌',
+        likes: 198,
+        time: '1 h',
+    },
+    {
+        id: 13,
+        name: 'Tânia Souza',
+        avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg',
+        avatarHint: 'woman portrait',
+        text: 'Estou fazendo as orações todos os dias. Sinto minhas finanças e minha casa mais prósperas.',
+        likes: 541,
+        time: '1 h',
+    },
+    {
+        id: 14,
+        name: 'Roberto Menezes',
+        avatarUrl: 'https://thumbs2.imgbox.com/14/e9/DUPvPss9_t.jpg',
+        avatarHint: 'man portrait',
+        text: 'Ouvi dizer que o vídeo vai sair do ar logo! Assistam antes que tirem!!',
+        likes: 114,
+        time: '1 h',
+    },
+    {
+        id: 15,
+        name: 'Rafaela Martins',
+        avatarUrl: 'https://thumbs2.imgbox.com/dd/55/H0rZXQVM_t.jpg',
+        avatarHint: 'woman portrait',
+        text: 'Confiei na sabedoria antiga e hoje estou vivendo meu milagre financeiro! 🙏😭 Glória a Deus!',
+        likes: 354,
+        time: '1 h',
+    },
+    {
+        id: 16,
+        name: 'Ricardo Pereira',
+        avatarUrl: 'https://thumbs2.imgbox.com/48/18/9JtnHEjz_t.png',
+        avatarHint: 'man portrait',
+        text: 'Senti a sabedoria em minhas decisões no trabalho. As coisas começaram a dar certo. Que loucura! 🙌',
+        likes: 322,
+        time: '1 h',
+    },
 ];
 
 const TestimonialCard = ({ id, name, username, avatarUrl, avatarHint, text, likes, time, replies }: (typeof testimonials)[0]) => (
@@ -132,7 +186,7 @@ export function TestimonialsSectionOracaoHebraica() {
     return (
         <section>
             <h2 className="text-3xl md:text-4xl font-bold text-amber-300 mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
-                O que dizem após 7 dias de oração:
+                O que dizem após as orações:
             </h2>
             <div className="space-y-6">
                 {testimonials.map((testimonial) => (

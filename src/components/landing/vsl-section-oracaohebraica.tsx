@@ -39,19 +39,17 @@ const BuyButtonOracaoHebraica = () => {
 
 const VideoPlayer = () => {
     useEffect(() => {
-        const scriptId = 'vid-hebraica-placeholder-script'; // ID único para este player
+        const scriptId = 'vid-68b5d8f59762276e295435f3-script';
         if (!document.getElementById(scriptId)) {
             const script = document.createElement('script');
             script.id = scriptId;
-            // ATENÇÃO: Substitua pelo SRC do script do seu vídeo da Vturb
-            script.src = 'https://scripts.converteai.net/eaf579c8-6aa1-4f6f-b5bd-8ba46f9e23f8/players/68a623b4e299480c79eafe7b/v4/player.js';
+            script.src = 'https://scripts.converteai.net/eaf579c8-6aa1-4f6f-b5bd-8ba46f9e23f8/players/68b5d8f59762276e295435f3/v4/player.js';
             script.async = true;
             document.head.appendChild(script);
         }
     }, []);
 
-    // ATENÇÃO: Substitua pelo ID do seu vídeo da Vturb
-    const videoHtml = `<vturb-smartplayer id="vid-68a623b4e299480c79eafe7b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-68b5d8f59762276e295435f3" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
     
     return (
         <div 

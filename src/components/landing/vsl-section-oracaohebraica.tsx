@@ -5,25 +5,9 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 const BuyButtonOracaoHebraica = () => {
-  const [showBuyButton, setShowBuyButton] = useState(false);
-
-  useEffect(() => {
-    // Aparece em 20 minutos
-    const timer = setTimeout(() => {
-      setShowBuyButton(true);
-    }, (20 * 60) * 1000); 
-
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleBuyClick = () => {
     window.open('https://pay.kirvano.com/placeholder-link', '_self'); // ADICIONE SEU LINK DE CHECKOUT AQUI
   };
-
-  if (!showBuyButton) {
-    // Reserva espaço para o botão
-    return <div className="h-[76px] md:h-[92px]" />;
-  }
   
   return (
     <Button
@@ -66,7 +50,7 @@ export function VSLSectionOracaoHebraica() {
     <section className="space-y-8">
         <VideoPlayer />
         
-        <div className="text-center">
+        <div className="mt-8 text-center">
             <BuyButtonOracaoHebraica />
         </div>
 

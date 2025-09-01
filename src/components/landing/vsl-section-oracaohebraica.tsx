@@ -31,7 +31,7 @@ const BuyButtonOracaoHebraica = () => {
       className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal shadow-lg"
       onClick={handleBuyClick}
     >
-      QUERO MINHA BÊNÇÃO AGORA
+      QUERO AS ORAÇÕES HEBRAICAS
     </Button>
   );
 }

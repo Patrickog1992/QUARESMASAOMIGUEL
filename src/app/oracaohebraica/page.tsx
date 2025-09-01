@@ -19,8 +19,8 @@ export default function OracaoHebraicaPage() {
             <h1 className="text-2xl md:text-4xl font-bold uppercase text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
               VOCÊ NÃO CHEGOU AQUI POR ACASO !
             </h1>
-            <p className="text-lg md:text-xl font-medium text-amber-400">
-              Hoje vai ser o dia da sua vitória : Um milagre irá acontece hoje na sua vida para restaurar sua SAÚDE e sua VIDA FINANCEIRA !
+            <p className="text-lg md:text-xl font-bold text-white">
+              Hoje vai ser o dia da sua vitória : Um milagre irá acontece hoje na sua vida para restaurar sua <span className="text-amber-400">SAÚDE</span> e sua <span className="text-amber-400">VIDA FINANCEIRA</span> !
             </p>
           </section>
 

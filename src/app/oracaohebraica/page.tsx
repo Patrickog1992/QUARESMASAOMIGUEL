@@ -9,7 +9,7 @@ import { BackgroundPattern } from '@/components/landing/background-pattern';
 export default function OracaoHebraicaPage() {
   return (
     <div className="dark relative flex flex-col min-h-screen bg-gradient-to-b from-gray-900 to-black text-white overflow-x-hidden">
-      <TopBanner className="bg-red-600 text-white" text="ATENÇÃO : Devido ao grande número de acessos essa página irá ficar fora do ar no dia : (coloque o dia que a pessoa está acessando )" />
+      <TopBanner className="bg-red-600 text-white" text="ATENÇÃO : Devido ao grande número de acessos essa página irá ficar fora do ar no dia :" />
       <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
       <BackgroundPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 z-10">

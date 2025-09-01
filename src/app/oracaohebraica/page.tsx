@@ -2,7 +2,6 @@
 
 import { VSLSectionOracaoHebraica } from '@/components/landing/vsl-section-oracaohebraica';
 import { TestimonialsSectionOracaoHebraica } from '@/components/landing/testimonials-section-oracaohebraica';
-import { Footer } from '@/components/landing/footer';
 import { TopBanner } from '@/components/landing/top-banner';
 import { BackgroundPattern } from '@/components/landing/background-pattern';
 
@@ -29,7 +28,6 @@ export default function OracaoHebraicaPage() {
 
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

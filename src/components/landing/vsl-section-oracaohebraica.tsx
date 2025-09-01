@@ -10,7 +10,7 @@ const BuyButtonOracaoHebraica = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (29 * 60 + 30) * 1000); // 29 minutes and 30 seconds
+    }, 5 * 1000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);

@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
@@ -7,6 +8,15 @@ import Link from 'next/link';
 import { ThumbsUp, MessageCircle } from 'lucide-react';
 
 export default function ReportagemPage() {
+  const [headerDate, setHeaderDate] = useState('');
+  const [articleDate, setArticleDate] = useState('');
+
+  useEffect(() => {
+    const now = new Date();
+    setHeaderDate(now.toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
+    setArticleDate(`${now.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' })} às ${now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}`);
+  }, []);
+
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -20,7 +30,7 @@ export default function ReportagemPage() {
             data-ai-hint="news logo"
            />
            <div className="text-sm text-gray-500">
-            {new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+            {headerDate}
            </div>
         </div>
       </header>
@@ -32,7 +42,7 @@ export default function ReportagemPage() {
             <p className="text-gray-600 mb-4">Apresentadora compartilhou em seu programa matinal a história do Padre Elisio, que tem emocionado o Brasil com suas orações poderosas.</p>
             <div className="border-t border-b border-gray-200 py-2 my-4 flex items-center justify-between text-sm">
                 <p className="text-gray-500">Por <span className="font-bold text-red-700">Redação G1</span></p>
-                <p className="text-gray-500">{new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' })} às {new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</p>
+                <p className="text-gray-500">{articleDate}</p>
             </div>
             
             <Image

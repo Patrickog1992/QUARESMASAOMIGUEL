@@ -8,8 +8,8 @@ import Link from 'next/link';
 import { ThumbsUp, MessageCircle } from 'lucide-react';
 
 export default function ReportagemPage() {
-  const [headerDate, setHeaderDate] = useState('');
   const [articleDate, setArticleDate] = useState('');
+  const [headerDate, setHeaderDate] = useState('');
 
   useEffect(() => {
     const now = new Date();
@@ -46,12 +46,12 @@ export default function ReportagemPage() {
             </div>
             
             <Image
-              src="https://i.ibb.co/3cYsR2N/image.png"
+              src="https://i.imgur.com/nnqWVLT.jpeg"
               alt="Ana Maria Braga no programa Mais Você"
               width={800}
               height={450}
               className="rounded-lg mb-6 shadow-md"
-              data-ai-hint="TV host smiling"
+              data-ai-hint="TV host"
             />
 
             <article className="prose max-w-none text-gray-800 text-lg space-y-4">
@@ -65,15 +65,6 @@ export default function ReportagemPage() {
 
               <p>O Padre Elisio utiliza um método antigo, baseado em orações e na bênção da água, mesmo à distância, para quebrar o que ele chama de "maldições que travam a vida". Os testemunhos se espalham rapidamente pela internet, com pessoas relatando desde o pagamento de dívidas inesperadas até a cura de enfermidades.</p>
               
-              <Image
-                src="https://i.imgur.com/bS30BjY.jpeg"
-                alt="Padre Elisio em oração"
-                width={700}
-                height={400}
-                className="rounded-lg my-6 shadow-md"
-                data-ai-hint="priest praying"
-              />
-
               <p>A equipe do G1 entrou em contato com fiéis que afirmam ter recebido milagres. "Eu estava desempregada há 2 anos, com o nome sujo. Ouvi a oração do Padre Elisio com um copo d'água na mão. No dia seguinte, uma empresa que eu nem lembrava que tinha mandado currículo me ligou. Hoje estou empregada", relatou Maria das Graças, de 54 anos, de Belo Horizonte.</p>
               <p>Ao final da reportagem, Ana Maria Braga deixou uma mensagem de esperança: "Se você está precisando de um milagre, talvez essa seja a resposta que você tanto pediu. A fé não tem limites."</p>
             </article>

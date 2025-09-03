@@ -27,6 +27,7 @@ export default function ReportagemPage() {
       <main className="container mx-auto px-4 py-8">
         <Card className="max-w-3xl mx-auto">
           <CardContent className="p-6">
+            <p className="text-red-700 font-semibold mb-2">MAIS VOCÊ</p>
             <h1 className="text-3xl font-bold text-gray-800 mb-2">"É de arrepiar!" diz Ana Maria Braga sobre Padre que benze água à distância e realiza milagres</h1>
             <p className="text-gray-600 mb-4">Apresentadora compartilhou em seu programa matinal a história do Padre Elisio, que tem emocionado o Brasil com suas orações poderosas.</p>
             <div className="border-t border-b border-gray-200 py-2 my-4 flex items-center justify-between text-sm">
@@ -70,7 +71,7 @@ export default function ReportagemPage() {
             <div className="mt-8 text-center border-t pt-6">
                 <h2 className="text-xl font-bold text-gray-800 mb-4">Você também quer receber a oração poderosa do Padre Elisio?</h2>
                 <p className="text-gray-600 mb-6">Milhares de brasileiros estão transformando suas vidas. Clique no botão abaixo para descobrir como.</p>
-                <Link href="/chavedomilagre/nome" passHref>
+                <Link href="/chavedomilagre/quiz-intro" passHref>
                     <Button size="lg" className="bg-green-600 hover:bg-green-700 text-lg animate-pulse w-full max-w-md mx-auto">
                         QUERO DESCOBRIR A ORAÇÃO
                     </Button>

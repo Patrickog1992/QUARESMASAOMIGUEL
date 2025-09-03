@@ -23,7 +23,7 @@ export default function ReportagemPage() {
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-2 flex items-center justify-between">
            <Image 
-            src="https://s2.glbimg.com/L-k9aCBLbV9vTTT-n2-i_T-y-yI=/0x0:1024x223/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b58693ed41d04a39826739159bf4042a/internal_photos/bs/2023/5/3/xTf12xSNuy3e36j611AQ/g1-logo-2023.svg"
+            src="https://i.imgur.com/KoCXCf6.png"
             alt="G1 Logo"
             width={80}
             height={30}

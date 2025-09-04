@@ -9,7 +9,7 @@ export function HeroSectionArcanjoMiguel() {
         As 40 Orações Secretas do Arcanjo Miguel
       </h1>
       <p className="text-lg md:text-xl font-medium text-amber-400">
-        O brasileiro que descobriu as orações revela que mais de 50 mil pessoas receberam milagres ao ouvirem 3 minutos ao dia.
+        40 Dias de Devoção: Alcance Milagres na Saúde, nas Finanças e na Vida Espiritual com a Quaresma de São Miguel
       </p>
       <div className="p-4 bg-black/20 rounded-xl border border-blue-400/30 text-left max-w-lg mx-auto space-y-3">
         <p className="flex items-start gap-3">

@@ -6,7 +6,7 @@ export function HeroSectionArcanjoMiguel() {
   return (
     <section className="space-y-4">
       <h1 className="text-3xl md:text-5xl font-bold uppercase text-amber-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
-        As 40 Orações Secretas do Arcanjo Miguel
+        Viva a Transformação Espiritual da Quaresma de São Miguel
       </h1>
       <p className="text-lg md:text-xl font-medium text-amber-400">
         40 Dias de Devoção: Alcance Milagres na Saúde, nas Finanças e na Vida Espiritual com a Quaresma de São Miguel

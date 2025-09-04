@@ -10,13 +10,13 @@ export function BuyButtonArcanjoMiguel() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (15 * 60 + 47) * 1000); // 15 minutes and 47 seconds
+    }, (13 * 60 + 34) * 1000); // 13 minutes and 34 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/94502f7b-07b0-487d-b1fb-2ac97551cac5', '_self');
+    window.open('https://pay.kirvano.com/3a6ebdce-f5ce-4a44-896a-315d6c749bda', '_self');
   };
 
   if (!showBuyButton) {

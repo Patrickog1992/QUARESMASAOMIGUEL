@@ -24,7 +24,11 @@ export default function UpsellPage() {
     window.open('https://pay.kirvano.com/52b25369-75d5-48bf-a5fe-546ab6ebe7a1', '_self');
   };
 
-  const handleAllFourCheckout = () => {
+  const handleColarCheckout = () => {
+    window.open('https://pay.kirvano.com/45954853-86ab-484f-856c-41ebb62c19de', '_self');
+  };
+
+  const handleAllFiveCheckout = () => {
     window.open('https://pay.kirvano.com/64053a4f-201b-4e23-b7a5-0e2a9b60f8e7', '_self');
   };
 
@@ -46,7 +50,22 @@ export default function UpsellPage() {
               Antes de ir, temos várias ofertas únicas e exclusivas para você.
             </p>
 
-            <div className="grid md:grid-cols-4 gap-8 mb-10">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-10">
+              <Card className="bg-card shadow-lg flex flex-col border-2 border-primary">
+                <CardHeader>
+                  <Image src="https://i.imgur.com/hQT3oY4.jpeg" alt="O colar de São Miguel" width={600} height={400} className="rounded-t-lg" data-ai-hint="archangel michael necklace" />
+                  <CardTitle className="pt-4">O colar de São Miguel</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col justify-between">
+                  <div>
+                    <p className="mb-2">Tenha o colar de São Miguel Arcanjo digital</p>
+                    <p className="mb-4 font-bold text-lg">
+                        <span className="line-through text-destructive">De R$ 197,00</span> por <span className="text-green-600">R$ 97,00</span>
+                    </p>
+                  </div>
+                  <Button onClick={handleColarCheckout} className="w-full mt-auto bg-green-600 hover:bg-green-700 text-white animate-pulse">Comprar Agora</Button>
+                </CardContent>
+              </Card>
               <Card className="bg-card shadow-lg flex flex-col border-2 border-primary">
                 <CardHeader>
                   <Image src="https://i.imgur.com/F8d7Dym.png" alt="Card 1" width={600} height={400} className="rounded-t-lg" data-ai-hint="glowing book" />
@@ -111,11 +130,11 @@ export default function UpsellPage() {
             
             <div className="mt-10 mb-10 text-center">
                 <Button 
-                    onClick={handleAllFourCheckout} 
+                    onClick={handleAllFiveCheckout} 
                     size="lg"
                     className="w-full max-w-2xl mx-auto bg-green-600 hover:bg-green-700 text-white animate-pulse font-bold h-auto py-4 text-base md:text-lg md:py-6 whitespace-normal"
                 >
-                    APROVEITE ESSA OFERTA OS 4 POR APENAS R$ 37,00
+                    APROVEITE ESSA OFERTA OS 5 POR APENAS R$ 147,00
                 </Button>
             </div>
         </div>

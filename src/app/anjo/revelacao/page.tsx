@@ -28,8 +28,8 @@ function RevelacaoContent() {
             <Image 
                 src="https://i.imgur.com/StKw26A.jpeg"
                 alt="São Miguel Arcanjo"
-                width={200}
-                height={200}
+                width={250}
+                height={250}
                 className="mx-auto my-4 rounded-full border-4 border-amber-400 shadow-lg"
                 data-ai-hint="archangel michael"
             />

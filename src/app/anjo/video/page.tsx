@@ -141,7 +141,7 @@ export default function AnjoVideoPage() {
     <div className="bg-white text-gray-800 min-h-screen">
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-2xl md:text-3xl font-bold text-center mb-2 text-amber-700 uppercase">O CANTO SAGRADO DE SÃO MIGUEL ARCANJO PARA MANIFESTAR EM 24HORAS</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-center mb-2 text-amber-700 uppercase">OUÇA O CANTO DE SÃO MIGUEL ARCANJO PARA REALIZAR MILAGRES EM 12 HORAS</h1>
           <p className="text-center text-lg text-gray-600 mb-6 uppercase">OUÇA E MANIFESTE DINHEIRO AINDA HOJE!</p>
 
           <VideoPlayer />

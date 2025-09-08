@@ -26,7 +26,7 @@ function RevelacaoContent() {
                 INCRÍVEL! {name ? `${name.toUpperCase()}, ` : ''}SEU ANJO DA GUARDA É SÃO MIGUEL ARCANJO!
             </h1>
             <Image 
-                src="https://i.ibb.co/PG7yPDqm/823040e0f3d49d35a2cde0484f634f3d.webp"
+                src="https://i.imgur.com/StKw26A.jpeg"
                 alt="São Miguel Arcanjo"
                 width={200}
                 height={200}

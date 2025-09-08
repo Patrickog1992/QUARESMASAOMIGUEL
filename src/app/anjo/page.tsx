@@ -36,7 +36,7 @@ export default function AnjoQuizPage() {
         </CardHeader>
         <CardContent>
             <Image
-                src="https://i.ibb.co/DPn9HrxP/1632485586-anjos-1.webp"
+                src="https://i.imgur.com/a2ohtJc.jpeg"
                 alt="Anjos da Guarda"
                 width={500}
                 height={200}

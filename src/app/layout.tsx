@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
         {/* Meta Pixel Code */}
-        <Script id="fb-pixel-osegredovaticano" strategy="afterInteractive">
+        <Script id="fb-pixel-new" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -32,7 +32,7 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '612623455156577');
+            fbq('init', '1473962133808293');
             fbq('track', 'PageView');
           `}
         </Script>
@@ -43,7 +43,7 @@ export default function RootLayout({
             height="1"
             width="1"
             style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=612623455156577&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=1473962133808293&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>

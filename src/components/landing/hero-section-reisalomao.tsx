@@ -14,7 +14,7 @@ export function HeroSectionReiSalomao() {
       <div className="p-4 bg-black/20 rounded-xl border border-amber-400/30 text-left max-w-lg mx-auto space-y-3">
         <p className="flex items-start gap-3">
           <KeyRound className="w-5 h-5 text-amber-300 mt-1 shrink-0" />
-          <span>Orações secretas traduzidas de manuscritos hebraicos.</span>
+          <span>Palavras traduzidas de manuscritos hebraicos.</span>
         </p>
         <p className="flex items-start gap-3">
           <KeyRound className="w-5 h-5 text-amber-300 mt-1 shrink-0" />

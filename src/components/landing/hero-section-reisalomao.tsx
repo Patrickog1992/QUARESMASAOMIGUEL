@@ -9,7 +9,7 @@ export function HeroSectionReiSalomao() {
         O TRUQUE SECRETO DO REI SALOMÃO FOI DESCOBERTO
       </h1>
       <p className="text-lg md:text-xl font-medium text-amber-100">
-        Desvende o segredo milenar para atrair riqueza, saúde e sabedoria em sua vida.
+        A população Brasileiro está recebendo suas riquezas, prosperidade e bençãos com essas 22 PALAVRAS SAGRADAS que estão chamando de O TRUQUE SAGRADO DO REI SALOMÃO
       </p>
       <div className="p-4 bg-black/20 rounded-xl border border-amber-400/30 text-left max-w-lg mx-auto space-y-3">
         <p className="flex items-start gap-3">

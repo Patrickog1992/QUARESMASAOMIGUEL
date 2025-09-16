@@ -9,7 +9,7 @@ import { HebrewPattern } from '@/components/landing/hebrew-pattern';
 
 export default function ReiSalomaoPage() {
   return (
-    <div className="dark relative flex flex-col min-h-screen bg-gradient-to-b from-amber-950 via-gray-900 to-black text-white overflow-x-hidden">
+    <div className="dark relative flex flex-col min-h-screen bg-amber-900 text-white overflow-x-hidden">
       <TopBanner className="bg-amber-600 text-amber-950" text="ATENÇÃO: Este conhecimento ficará disponível somente até (Coloque a data que a pessoa está acessando)!" />
       <HebrewPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 z-10">

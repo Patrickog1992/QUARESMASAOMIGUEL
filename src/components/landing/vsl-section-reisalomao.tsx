@@ -8,10 +8,10 @@ const BuyButtonReiSalomao = () => {
   const [showBuyButton, setShowBuyButton] = useState(false);
 
   useEffect(() => {
-    // Timer para 20 minutos
+    // Timer para 18 minutos e 11 segundos
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (20 * 60) * 1000);
+    }, (18 * 60 + 11) * 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -31,7 +31,7 @@ const BuyButtonReiSalomao = () => {
         className="w-full max-w-md mx-auto bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal shadow-lg shadow-amber-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/40 transform hover:scale-105"
         onClick={handleBuyClick}
         >
-            QUERO AS 22 PALAVRAS DE SALOMÃO
+            QUERO O TRUQUE DE SALOMÃO
         </Button>
     </div>
   );
@@ -39,18 +39,17 @@ const BuyButtonReiSalomao = () => {
 
 const VideoPlayer = () => {
     useEffect(() => {
-        // Placeholder VTurb ID - substitua pelo ID real
-        const scriptId = 'vid-reisalomao-script';
+        const scriptId = 'vid-68c96bc89c55ddf1509d5054-script';
         if (!document.getElementById(scriptId)) {
             const script = document.createElement('script');
             script.id = scriptId;
-            script.src = 'https://scripts.converteai.net/33cb564e-4020-408a-aa81-ef0e9550d70c/players/68c0e635bec2bc3ddb427caf/v4/player.js'; // Usando o vídeo do arcanjomiguel como placeholder
+            script.src = 'https://scripts.converteai.net/b45e4a12-72fd-43f2-a7e4-73d6b242d5d9/players/68c96bc89c55ddf1509d5054/v4/player.js';
             script.async = true;
             document.head.appendChild(script);
         }
     }, []);
 
-    const videoHtml = `<vturb-smartplayer id="vid-68c0e635bec2bc3ddb427caf" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-68c96bc89c55ddf1509d5054" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
     
     return (
         <div 

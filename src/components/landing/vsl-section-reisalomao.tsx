@@ -8,10 +8,10 @@ const BuyButtonReiSalomao = () => {
   const [showBuyButton, setShowBuyButton] = useState(false);
 
   useEffect(() => {
-    // Timer para 5 segundos
+    // Timer para 18 minutos e 11 segundos
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, 5 * 1000);
+    }, (18 * 60 + 11) * 1000);
 
     return () => clearTimeout(timer);
   }, []);

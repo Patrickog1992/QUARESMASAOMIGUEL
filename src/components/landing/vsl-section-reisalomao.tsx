@@ -17,7 +17,7 @@ const BuyButtonReiSalomao = () => {
   }, []);
 
   const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/CHECKOUT_LINK_HERE', '_self');
+    window.open('https://pay.kirvano.com/744371e3-f71d-4496-89ed-fbd85f690eca', '_self');
   };
 
   if (!showBuyButton) {

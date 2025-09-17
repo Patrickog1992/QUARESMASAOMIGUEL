@@ -67,7 +67,7 @@ export default function Resultado2Page() {
           <p className="text-lg font-semibold text-amber-100">Em menos de 7 dias você conseguirá reduzir o seu nível de ansiedade, angústia e agitação.</p>
           
           <Link href="/metodomente/oferta" passHref>
-            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg">
+            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg whitespace-normal h-auto py-3">
               Quero conhecer o Método Mente em Paz
             </Button>
           </Link>

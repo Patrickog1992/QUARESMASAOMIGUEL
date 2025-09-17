@@ -39,7 +39,7 @@ export default function Explicacao2Page() {
             className="rounded-lg mx-auto shadow-lg"
             data-ai-hint="smiling people collage"
           />
-          <Link href="/metodomente/virada-de-chave" passHref>
+          <Link href="/metodomente/depoimento" passHref>
             <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg">
               Continuar
             </Button>

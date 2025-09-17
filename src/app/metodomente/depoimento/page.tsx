@@ -29,7 +29,7 @@ export default function DepoimentoPage() {
                 data-ai-hint="woman testimonial"
             />
              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <div className="bg-white/80 rounded-full p-4">
+                <div className="bg-white/80 rounded-full p-4 cursor-pointer">
                     <svg className="w-12 h-12 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M4 4l12 6-12 6V4z"></path>
                     </svg>

@@ -49,7 +49,7 @@ export default function Explicacao1Page() {
           </p>
 
           <Link href="/metodomente/oracao" passHref>
-            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg">
+            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg whitespace-normal h-auto py-3">
               Quero começar esse caminho agora
             </Button>
           </Link>

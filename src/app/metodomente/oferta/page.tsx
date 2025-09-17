@@ -83,7 +83,7 @@ const faqItems = [
 export default function OfertaPage() {
 
     const handleCheckout = () => {
-        window.open('https://pay.kirvano.com/CHECKOUT_LINK_HERE', '_self');
+        window.open('https://pay.kirvano.com/d9441a1a-3505-4c60-a03d-bf60ce6c3210', '_self');
     };
 
     return (
@@ -134,7 +134,7 @@ export default function OfertaPage() {
                      <p className="text-amber-100 my-4">Você destravou um desconto especial e temporário para começar sua jornada com o Método Mente em Paz.</p>
                      <p className="text-xl">De <span className="line-through">R$ 197,00</span> por apenas</p>
                      <p className="text-5xl font-bold text-amber-300 my-2">R$ 37,00</p>
-                     <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-pulse">
+                     <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold text-lg animate-pulse">
                         OBTER MEU PROTOCOLO AGORA
                      </Button>
                 </Card>
@@ -224,7 +224,7 @@ export default function OfertaPage() {
                     </div>
                  </section>
 
-                <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-pulse">
+                <Button onClick={handleCheckout} size="lg" className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold text-lg animate-pulse">
                     SIM, QUERO O MÉTODO E OS BÔNUS
                 </Button>
 

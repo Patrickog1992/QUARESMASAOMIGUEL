@@ -119,23 +119,23 @@ export default function OfertaPage() {
                     <h2 className="text-2xl font-bold text-amber-300 mb-6">Veja o que você vai receber ao fazer sua inscrição</h2>
                     <div className="space-y-4 text-left">
                         <Card className="bg-gray-800/50 p-4 flex flex-col md:flex-row items-center gap-4">
-                            <Image src="https://i.imgur.com/k7Kl5zm.png" alt="E-book Corações ao Alto" width={150} height={100} className="rounded-md" />
+                            <BookOpen className="w-12 h-12 text-amber-300 shrink-0 md:w-8 md:h-8"/>
                             <div>
-                                <h3 className="font-bold text-amber-200 text-lg flex items-center gap-2"><BookOpen/>E-book Corações ao Alto</h3>
+                                <h3 className="font-bold text-amber-200 text-lg">E-book Corações ao Alto</h3>
                                 <p className="text-amber-100 mt-2">Um eBook simples, direto e profundo — que te ensina passo a passo como restaurar seu senso de segurança e acalmar a mente em momentos de tensão. Baseado em fé e neurociência, já ajudou milhares de pessoas a superarem momentos difíceis com serenidade. Entregue em PDF para você e baixar.</p>
                             </div>
                         </Card>
                          <Card className="bg-gray-800/50 p-4 flex flex-col md:flex-row items-center gap-4">
-                            <Image src="https://i.imgur.com/3FJd5Hj.png" alt="Protocolo em Áudio Guiado" width={150} height={100} className="rounded-md" />
+                            <Mic className="w-12 h-12 text-amber-300 shrink-0 md:w-8 md:h-8"/>
                             <div>
-                                <h3 className="font-bold text-amber-200 text-lg flex items-center gap-2"><Mic/>Protocolo em Áudio Guiado</h3>
+                                <h3 className="font-bold text-amber-200 text-lg">Protocolo em Áudio Guiado</h3>
                                 <p className="text-amber-100 mt-2">Ideal para os momentos em que você precisa de alívio imediato, mas não consegue ler. Um áudio calmo, guiado, que te conduz por todo o protocolo com voz acolhedora e ritmo sereno. Perfeito para ouvir em qualquer lugar, com fones de ouvido e coração aberto. Duração: 3 minutos.</p>
                             </div>
                         </Card>
                          <Card className="bg-gray-800/50 p-4 flex flex-col md:flex-row items-center gap-4">
-                            <Image src="https://i.imgur.com/l6Ej21n.png" alt="Guia de Bolso" width={150} height={100} className="rounded-md" />
+                            <FileText className="w-12 h-12 text-amber-300 shrink-0 md:w-8 md:h-8"/>
                             <div>
-                                <h3 className="font-bold text-amber-200 text-lg flex items-center gap-2"><FileText/>Guia de Bolso Corações ao Alto</h3>
+                                <h3 className="font-bold text-amber-200 text-lg">Guia de Bolso Corações ao Alto</h3>
                                 <p className="text-amber-100 mt-2">Um guia pronto para você imprimir, compacto e direto ao ponto para usar nos momentos de tensão ou quando a mente estiver acelerada. Imprima e guarde na bolsa, carteira ou caderno — e recorra a ele sempre que precisar recuperar a calma e a presença com fé. Imprima e tenha o passo a passo do Protocolo Corações ao Alto sempre com você.</p>
                             </div>
                         </Card>

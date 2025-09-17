@@ -5,30 +5,38 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const AgitationChart = () => (
-    <div className="relative w-full h-40 bg-gray-700/50 rounded-lg p-4">
-        <div className="flex flex-col justify-between h-full absolute left-4 top-0 text-xs text-amber-100">
+    <div className="relative w-full h-48 bg-gray-700/50 rounded-lg p-4 flex flex-col">
+        <div className="flex justify-between text-xs text-amber-100">
             <span>Alto</span>
             <span>Médio</span>
             <span>Normal</span>
             <span>Aceitável</span>
             <span>Baixo</span>
         </div>
-        <div className="absolute top-0 bottom-0 left-16 right-4">
-            <div className="relative h-full w-full">
-                <div className="absolute inset-0 bg-gradient-to-b from-red-500 via-yellow-500 to-green-500 opacity-70 rounded-md"></div>
-                
-                {/* Você Hoje marker */}
-                <div className="absolute top-[10%] left-1/4 -translate-x-1/2 text-center">
-                    <div className="bg-white text-black text-xs font-bold px-2 py-1 rounded">Você Hoje</div>
-                    <div className="w-px h-2 bg-white mx-auto"></div>
-                    <div className="w-3 h-3 bg-white rounded-full border-2 border-black mx-auto"></div>
+        <div className="relative flex-grow mt-2">
+             {/* Toboggan/Slide path */}
+             <div 
+                className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500 via-yellow-500 to-green-500 opacity-80"
+                style={{
+                    clipPath: 'polygon(0 0, 15% 0, 100% 100%, 85% 100%)'
+                }}
+            ></div>
+            
+            {/* Você Hoje marker */}
+            <div className="absolute top-[-8px] left-[5%]">
+                <div className="relative">
+                    <div className="bg-white text-black text-xs font-bold px-2 py-1 rounded shadow-lg">Você Hoje</div>
+                     <div className="absolute left-1/2 -translate-x-1/2 mt-1 w-px h-2 bg-white"></div>
+                    <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-3 h-3 bg-white rounded-full border-2 border-black"></div>
                 </div>
+            </div>
 
-                 {/* Você Depois marker */}
-                <div className="absolute top-[75%] left-3/4 -translate-x-1/2 text-center">
-                    <div className="bg-green-300 text-black text-xs font-bold px-2 py-1 rounded">Você depois do Método</div>
-                    <div className="w-px h-2 bg-green-300 mx-auto"></div>
-                    <div className="w-3 h-3 bg-green-300 rounded-full border-2 border-black mx-auto"></div>
+            {/* Você Depois marker */}
+            <div className="absolute bottom-[-8px] right-[5%]">
+                <div className="relative flex flex-col items-center">
+                    <div className="w-3 h-3 bg-green-300 rounded-full border-2 border-black"></div>
+                    <div className="w-px h-2 bg-green-300"></div>
+                    <div className="bg-green-300 text-black text-xs font-bold px-2 py-1 rounded shadow-lg">Você depois do Método</div>
                 </div>
             </div>
         </div>

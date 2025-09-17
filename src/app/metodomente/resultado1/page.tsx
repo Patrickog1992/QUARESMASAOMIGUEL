@@ -39,7 +39,7 @@ export default function Resultado1Page() {
   return (
     <div className="flex flex-col items-center justify-between min-h-[calc(100vh-10rem)] w-full">
       <Card className="w-full max-w-3xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
-        <CardContent className="p-6 md:p-8 space-y-6">
+        <CardContent className="p-6 md:p-8 space-y-6 text-center">
           <Image
             src="https://i.imgur.com/EfI6zuh.png"
             alt="Logo"
@@ -77,12 +77,12 @@ export default function Resultado1Page() {
             </div>
           </div>
           
-          <div className="bg-amber-900/50 p-4 rounded-lg border border-amber-400/30">
+          <div className="bg-amber-900/50 p-4 rounded-lg border border-amber-400/30 text-left">
             <h3 className="font-bold text-amber-200 text-lg">Como o Método Mente em Paz pode te ajudar:</h3>
             <p className="text-amber-100 mt-2">📌 A prática diária de 3 minutos treina o seu cérebro a sair do estado de alerta, regulando os sinais de estresse no corpo e restaurando a segurança interior com fé e ciência.</p>
             <p className="text-amber-100 mt-2">Você vai se sentir mais seguro(a), presente e disponível para viver com paz mesmo em meio às tensões do dia.</p>
             <p className="text-amber-100 mt-4">🎧 É uma prática simples, acessível, baseada em neurociência e fé católica, que ajuda a:</p>
-            <ul className="list-disc list-inside text-left text-amber-100 mt-2 ml-4">
+            <ul className="list-disc list-inside text-amber-100 mt-2 ml-4">
                 <li>Silenciar a mente agitada</li>
                 <li>Dormir com mais paz</li>
                 <li>Rezar com presença</li>
@@ -93,7 +93,7 @@ export default function Resultado1Page() {
           </div>
 
           <Link href="/metodomente/resultado2" passHref>
-            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg">
+            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg whitespace-normal h-auto py-3">
               Sim, quero aprender o método para acalmar minha mente
             </Button>
           </Link>

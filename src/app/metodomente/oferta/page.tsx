@@ -175,7 +175,7 @@ export default function OfertaPage() {
                         <Card className="bg-gray-800/50 p-4 flex flex-col md:flex-row items-center gap-4">
                             <BookOpen className="w-12 h-12 text-amber-300 shrink-0 md:w-8 md:h-8"/>
                             <div>
-                                <h3 className="font-bold text-amber-200 text-lg">E-book Corações ao Alto</h3>
+                                <h3 className="font-bold text-amber-200 text-lg">E-book Método Mente em Paz</h3>
                                 <p className="text-amber-100 mt-2">Um eBook simples, direto e profundo — que te ensina passo a passo como restaurar seu senso de segurança e acalmar a mente em momentos de tensão. Baseado em fé e neurociência, já ajudou milhares de pessoas a superarem momentos difíceis com serenidade. Entregue em PDF para você e baixar.</p>
                             </div>
                         </Card>
@@ -189,8 +189,8 @@ export default function OfertaPage() {
                          <Card className="bg-gray-800/50 p-4 flex flex-col md:flex-row items-center gap-4">
                             <FileText className="w-12 h-12 text-amber-300 shrink-0 md:w-8 md:h-8"/>
                             <div>
-                                <h3 className="font-bold text-amber-200 text-lg">Guia de Bolso Corações ao Alto</h3>
-                                <p className="text-amber-100 mt-2">Um guia pronto para você imprimir, compacto e direto ao ponto para usar nos momentos de tensão ou quando a mente estiver acelerada. Imprima e guarde na bolsa, carteira ou caderno — e recorra a ele sempre que precisar recuperar a calma e a presença com fé. Imprima e tenha o passo a passo do Protocolo Corações ao Alto sempre com você.</p>
+                                <h3 className="font-bold text-amber-200 text-lg">Guia de Bolso Método Mente em Paz</h3>
+                                <p className="text-amber-100 mt-2">Um guia pronto para você imprimir, compacto e direto ao ponto para usar nos momentos de tensão ou quando a mente estiver acelerada. Imprima e guarde na bolsa, carteira ou caderno — e recorra a ele sempre que precisar recuperar a calma e a presença com fé. Imprima e tenha o passo a passo do Protocolo sempre com você.</p>
                             </div>
                         </Card>
                     </div>
@@ -212,12 +212,12 @@ export default function OfertaPage() {
                         </Card>
                         <Card className="bg-gray-800/50 p-4">
                              <h3 className="font-bold text-amber-200 text-lg flex items-center gap-2"><Star/>Bônus Exclusivo: SALA DE RESGATE</h3>
-                             <p className="text-amber-100 mt-2">Uma aula para quem precisa de socorro imediato da alma — e um lugar onde você será acolhido. Ao garantir seu acesso ao Protocolo Corações ao Alto, você recebe um ingresso exclusivo para entrar na Sala de Resgate — uma aula que já transformou a vida de milhares de católicos e pode ser o ponto de virada que você tanto espera.</p>
+                             <p className="text-amber-100 mt-2">Uma aula para quem precisa de socorro imediato da alma — e um lugar onde você será acolhido. Ao garantir seu acesso ao Método Mente em Paz, você recebe um ingresso exclusivo para entrar na Sala de Resgate — uma aula que já transformou a vida de milhares de católicos e pode ser o ponto de virada que você tanto espera.</p>
                               <p className="text-amber-100 mt-2 font-semibold">Nesta experiência única, você vai:</p>
                               <ul className="list-disc list-inside text-amber-100 mt-2 ml-4">
                                 <li>✅ Descobrir o que realmente causa sua ansiedade (e por que ela não é culpa sua)</li>
                                 <li>✅ Aprender a desligar o alarme emocional que dispara as crises antes que elas te dominem</li>
-                                <li>✅ Praticar, junto com Mateus, o exercício completo do protocolo</li>
+                                <li>✅ Praticar, junto com Mateus, o exercício completo do método</li>
                                 <li>✅ Ouvir testemunhos reais de libertação, de pessoas que estavam no fundo do poço e foram resgatadas</li>
                             </ul>
                         </Card>

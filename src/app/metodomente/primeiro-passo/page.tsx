@@ -14,7 +14,7 @@ const options = [
 
 export default function PrimeiroPassoPage() {
   return (
-    <div className="flex flex-col items-center justify-center text-center">
+    <div className="flex flex-col items-center justify-between min-h-[calc(100vh-10rem)] w-full">
       <Card className="w-full max-w-lg bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
           <Image
@@ -25,7 +25,7 @@ export default function PrimeiroPassoPage() {
             className="mx-auto"
             data-ai-hint="logo icon"
           />
-          <h1 className="text-2xl font-bold text-amber-300">Se você pudesse experimentar um passo simples com base na fé e na ciência para acalmar sua mente em apenas 3 minutos, toparia dar esse primeiro passo para retomar o controle?</h1>
+          <h1 className="text-2xl font-bold text-amber-300">Se você tivesse o direcionamento certo, acredita que conseguiria virar essa chave emocional e retomar o controle da sua mente?</h1>
           <div className="space-y-4">
             {options.map((option) => (
               <Link href="/metodomente/explicacao3" key={option} passHref className="block">
@@ -37,6 +37,9 @@ export default function PrimeiroPassoPage() {
           </div>
         </CardContent>
       </Card>
+       <footer className="w-full text-center py-4 text-amber-100 text-sm mt-8">
+        Método Mente em Paz todos os direitos reservados 2025.
+      </footer>
     </div>
   );
 }

@@ -37,7 +37,7 @@ const AgitationChart = () => (
 
 export default function Resultado1Page() {
   return (
-    <div className="flex flex-col items-center justify-center text-center">
+    <div className="flex flex-col items-center justify-between min-h-[calc(100vh-10rem)] w-full">
       <Card className="w-full max-w-3xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
           <Image
@@ -99,6 +99,9 @@ export default function Resultado1Page() {
           </Link>
         </CardContent>
       </Card>
+      <footer className="w-full text-center py-4 text-amber-100 text-sm mt-8">
+        Método Mente em Paz todos os direitos reservados 2025.
+      </footer>
     </div>
   );
 }

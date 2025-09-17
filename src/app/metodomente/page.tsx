@@ -32,7 +32,7 @@ export default function MetodoMentePage() {
             </p>
             <p className="flex items-start gap-3">
               <Check className="w-5 h-5 text-green-400 mt-1 shrink-0" />
-              <span>E se o Protocolo Corações ao Alto é indicado para você.</span>
+              <span>E se o Método Mente em Paz é indicado para você.</span>
             </p>
           </div>
 

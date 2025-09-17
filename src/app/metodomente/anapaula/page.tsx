@@ -36,7 +36,7 @@ export default function DepoimentoPage() {
           </p>
 
           <Link href="/metodomente/virada-de-chave" passHref>
-            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg">
+            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg whitespace-normal h-auto py-3">
               Eu também quero essa transformação
             </Button>
           </Link>

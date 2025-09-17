@@ -37,9 +37,6 @@ export default function FuturoPage() {
               </Link>
             ))}
           </div>
-          <Link href="/metodomente/consequencias" passHref>
-            <Button size="lg" className="w-full mt-4 bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold">Continuar</Button>
-          </Link>
         </CardContent>
       </Card>
     </div>

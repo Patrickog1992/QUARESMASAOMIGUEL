@@ -20,21 +20,15 @@ export default function DepoimentoPage() {
           />
           <h1 className="text-2xl md:text-3xl font-bold text-amber-300">Veja o depoimento da nossa querida Ana Paula</h1>
           
-          <div className="relative w-full max-w-lg mx-auto aspect-video rounded-lg overflow-hidden shadow-lg border-2 border-amber-400/50">
+          <div className="w-full max-w-lg mx-auto">
             <Image
                 src="https://i.imgur.com/FXZ2CKN.png"
                 alt="Depoimento de Ana Paula"
-                layout="fill"
-                objectFit="cover"
+                width={640}
+                height={360}
+                className="rounded-lg shadow-lg"
                 data-ai-hint="woman testimonial"
             />
-             <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <div className="bg-white/80 rounded-full p-4 cursor-pointer">
-                    <svg className="w-12 h-12 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M4 4l12 6-12 6V4z"></path>
-                    </svg>
-                </div>
-            </div>
           </div>
           
           <p className="text-lg text-amber-100 max-w-xl mx-auto italic">

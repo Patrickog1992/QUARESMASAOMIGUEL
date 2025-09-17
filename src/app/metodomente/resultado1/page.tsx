@@ -5,28 +5,28 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const AgitationChart = () => (
-    <div className="relative w-full h-48 bg-gray-700/50 rounded-lg p-4 flex flex-col">
-        <div className="flex justify-between text-xs text-amber-100">
+    <div className="relative w-full h-48 bg-gray-700/50 rounded-lg p-4 flex">
+        <div className="flex flex-col justify-between text-xs text-amber-100 h-full w-16 text-right pr-2">
             <span>Alto</span>
             <span>Médio</span>
             <span>Normal</span>
             <span>Aceitável</span>
             <span>Baixo</span>
         </div>
-        <div className="relative flex-grow mt-2">
+        <div className="relative flex-grow h-full">
             {/* Toboggan/Slide path */}
             <div 
                 className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500 via-yellow-500 to-green-500 opacity-80"
                 style={{
-                    clipPath: 'polygon(0 0, 15% 0, 100% 100%, 85% 100%)'
+                    clipPath: 'polygon(0 0, 100% 85%, 100% 100%, 0 15%)'
                 }}
             ></div>
             {/* "Você" marker */}
-            <div className="absolute top-[-8px] left-[5%]">
+            <div className="absolute top-[10%] left-[5%]">
                 <div className="relative">
-                    <div className="bg-white text-black text-xs font-bold px-2 py-1 rounded shadow-lg">Você</div>
-                    <div className="absolute left-1/2 -translate-x-1/2 mt-1 w-px h-2 bg-white"></div>
-                    <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-3 h-3 bg-white rounded-full border-2 border-black"></div>
+                    <div className="bg-white text-black text-xs font-bold px-2 py-1 rounded shadow-lg -translate-y-full -translate-x-1/2">Você</div>
+                    <div className="absolute top-0 left-1/2 w-px h-2 bg-white -translate-x-1/2"></div>
+                    <div className="absolute top-2 left-1/2 w-3 h-3 bg-white rounded-full border-2 border-black -translate-x-1/2"></div>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ export default function Resultado1Page() {
       <Card className="w-full max-w-3xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
           <p className="text-amber-100">O nível de agitação mental considerado aceitável para uma boa saúde mental fica em torno de 20 a 25 em uma escala de 0 a 100.</p>
-          <h1 className="text-2xl font-bold text-amber-300">Seu nível de agitação mental</h1>
+          <h1 className="text-2xl font-bold text-amber-300">Seu nível de agitação mental é 85 ALTO</h1>
           <p className="text-amber-100 text-sm">Uma análise com base em mais de 2 mil casos reais de pessoas que enfrentavam os mesmos sintomas.</p>
 
           <AgitationChart />

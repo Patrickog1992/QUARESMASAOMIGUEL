@@ -5,15 +5,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
-const VideoSection = () => {
-  const [showButton, setShowButton] = useState(false);
-
+const VideoPlayer = () => {
   useEffect(() => {
-    // Show button after 1 minute
-    const timer = setTimeout(() => {
-      setShowButton(true);
-    }, 60 * 1000);
-
     // Load video player script
     const scriptId = 'vid-68cafadfb90c8375abdc314f-script';
     if (!document.getElementById(scriptId)) {
@@ -23,28 +16,42 @@ const VideoSection = () => {
         script.async = true;
         document.head.appendChild(script);
     }
-
-    return () => clearTimeout(timer);
   }, []);
 
   const videoHtml = `<vturb-smartplayer id="vid-68cafadfb90c8375abdc314f" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>`;
   
   return (
-    <>
-      <div className="aspect-video w-full rounded-lg overflow-hidden">
-         <div dangerouslySetInnerHTML={{ __html: videoHtml }} />
-      </div>
-
-      {showButton && (
-        <Link href="/metodomente/resultado1" passHref>
-          <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-pulse">
-            QUERO VER MEU RESULTADO
-          </Button>
-        </Link>
-      )}
-    </>
+    <div className="aspect-video w-full rounded-lg overflow-hidden">
+       <div dangerouslySetInnerHTML={{ __html: videoHtml }} />
+    </div>
   );
 };
+
+const TimedButton = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    // Show button after 1 minute
+    const timer = setTimeout(() => {
+      setShowButton(true);
+    }, 60 * 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!showButton) {
+    // Reserve space to prevent layout shift
+    return <div className="h-[48px]" />;
+  }
+
+  return (
+    <Link href="/metodomente/resultado1" passHref>
+      <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-pulse">
+        QUERO VER MEU RESULTADO
+      </Button>
+    </Link>
+  );
+}
 
 
 export default function AnalisePage() {
@@ -55,7 +62,9 @@ export default function AnalisePage() {
           <h1 className="text-2xl font-bold text-amber-300">Quase lá!</h1>
           <p className="text-amber-100">Enquanto analisamos suas respostas e preparamos o seu resultado, assista esse vídeo:</p>
           
-          <VideoSection />
+          <VideoPlayer />
+
+          <TimedButton />
 
         </CardContent>
       </Card>

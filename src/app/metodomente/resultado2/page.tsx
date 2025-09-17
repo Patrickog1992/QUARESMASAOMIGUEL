@@ -49,11 +49,12 @@ export default function Resultado2Page() {
       <Card className="w-full max-w-2xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
           <h1 className="text-2xl font-bold text-green-400">Boa notícia: o Método Mente em Paz é um caminho simples que vai funcionar para você.</h1>
-          <p className="text-amber-100">Com base nas suas respostas, este é o resultado possível que você pode alcançar ao praticar o Protocolo Corações ao Alto diariamente.</p>
+          <p className="text-amber-100">Com base nas suas respostas, este é o resultado possível que você pode alcançar ao praticar o Método Mente em Paz diariamente.</p>
           
           <h2 className="text-xl font-bold text-amber-300">Nível de agitação mental</h2>
           <AgitationChart />
 
+          <p className="text-xl font-bold text-green-400">NÍVEL BAIXO</p>
           <p className="text-lg font-semibold text-amber-100">Em menos de 7 dias você conseguirá reduzir o seu nível de ansiedade, angústia e agitação.</p>
           
           <Link href="/metodomente/oferta" passHref>

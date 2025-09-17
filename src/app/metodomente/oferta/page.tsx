@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, BookOpen, Mic, FileText, Star, ShieldCheck } from 'lucide-react';
+import { Check, BookOpen, Mic, FileText, Star, ShieldCheck, ThumbsUp, Heart } from 'lucide-react';
 import Image from 'next/image';
 import {
   Accordion,
@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const ProgressBar = ({ label, percentage, color }: {label: string, percentage: number, color: string}) => (
     <div>
@@ -26,6 +27,42 @@ const ProgressBar = ({ label, percentage, color }: {label: string, percentage: n
             {percentage < 50 ? 'Fraco' : 'Ótimo'}
         </p>
     </div>
+);
+
+const testimonials = [
+    {
+        quote: "Estava sem esperança, com dívidas e sentindo um vazio. No terceiro dia de oração, uma porta se abriu e consegui um novo emprego. É um milagre, não tenho outra palavra!",
+        author: "Amanda R., Vitória - ES",
+        avatarUrl: 'https://thumbs2.imgbox.com/fc/13/RXzAe2rE_t.png',
+        avatarHint: 'woman portrait',
+    },
+    {
+        quote: "Meu casamento estava por um fio. Começamos a orar juntos e a paz voltou para nossa casa. É como se a oração limpasse toda a energia negativa.",
+        author: "José M., Belo Horizonte - MG",
+        avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg',
+        avatarHint: 'man portrait',
+    },
+    {
+        quote: "Sentia dores fortes no corpo que os médicos não explicavam. Depois que recebi o método, as dores diminuíram até desaparecer. Sinto a proteção divina comigo. Obrigada!",
+        author: "Eliane F., Guarulhos - SP",
+        avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg',
+        avatarHint: 'woman portrait',
+    }
+];
+
+const TestimonialCard = ({ quote, author, avatarUrl, avatarHint }: (typeof testimonials)[0]) => (
+    <Card className="bg-gray-800/50 p-4 shadow-lg text-left">
+        <div className="flex items-start gap-4">
+            <Avatar className="h-12 w-12 shrink-0">
+                <AvatarImage src={avatarUrl} alt={author} data-ai-hint={avatarHint}/>
+                <AvatarFallback>{author.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <div className="flex-1">
+                <p className="italic text-amber-100">“{quote}”</p>
+                <p className="font-bold text-amber-300 mt-2">- {author}</p>
+            </div>
+        </div>
+    </Card>
 );
 
 const faqItems = [
@@ -58,7 +95,7 @@ export default function OfertaPage() {
                             <CardTitle className="text-amber-300">Antes do Método Mente em Paz</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                            <Image src="https://media.inlead.cloud/uploads/36089/2025-09-01/md-j6wPd-masterclass-39.png" alt="Antes" width={400} height={225} className="rounded-lg mx-auto" />
+                            <Image src="https://media.inlead.cloud/uploads/36089/2025-09-01/md-j6wPd-masterclass-39.png" alt="Antes" width={400} height={225} className="rounded-lg mx-auto" data-ai-hint="anxious brain"/>
                             <ProgressBar label="Nível da Saúde Mental" percentage={20} color="bg-red-500" />
                             <ProgressBar label="Nível da sua confiança" percentage={22} color="bg-red-500" />
                         </CardContent>
@@ -68,13 +105,22 @@ export default function OfertaPage() {
                             <CardTitle className="text-amber-300">Depois do Método Mente em Paz</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                            <Image src="https://media.inlead.cloud/uploads/36089/2025-09-01/md-rIVJx-masterclass-40.png" alt="Depois" width={400} height={225} className="rounded-lg mx-auto" />
+                            <Image src="https://media.inlead.cloud/uploads/36089/2025-09-01/md-rIVJx-masterclass-40.png" alt="Depois" width={400} height={225} className="rounded-lg mx-auto" data-ai-hint="peaceful brain"/>
                              <ProgressBar label="Nível da Saúde Mental" percentage={96} color="bg-green-500" />
                             <ProgressBar label="Nível da sua confiança" percentage={100} color="bg-green-500" />
                         </CardContent>
                     </Card>
                 </div>
                 
+                <section>
+                    <h2 className="text-2xl font-bold text-amber-300 mb-6">Pessoas reais, resultados reais:</h2>
+                    <div className="space-y-6">
+                        {testimonials.map((testimonial, index) => (
+                            <TestimonialCard key={index} {...testimonial} />
+                        ))}
+                    </div>
+                </section>
+
                 <Card className="bg-amber-800/30 border-amber-400 p-6 rounded-xl">
                      <h2 className="text-2xl font-bold text-amber-200">Receba essa oferta exclusiva do resultado do quizz!</h2>
                      <p className="text-amber-100 my-4">Você destravou um desconto especial e temporário para começar sua jornada com o Método Mente em Paz.</p>
@@ -140,7 +186,7 @@ export default function OfertaPage() {
                             </div>
                         </Card>
                     </div>
-                </section>
+                 </section>
                 
                  <section>
                     <h2 className="text-2xl font-bold text-amber-300 mb-6">E MAIS... Você também vai receber:</h2>

@@ -3,26 +3,26 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
 
 const AgitationChart = () => (
-    <div className="relative w-full h-40 bg-gray-700/50 rounded-lg p-4">
-        <div className="flex flex-col justify-between h-full absolute left-4 top-0 text-xs text-amber-100">
+    <div className="relative w-full h-40 bg-gray-700/50 rounded-lg p-4 flex gap-4">
+        <div className="flex flex-col justify-between h-full text-xs text-amber-100 shrink-0">
             <span>Alto</span>
             <span>Médio</span>
             <span>Normal</span>
             <span>Aceitável</span>
             <span>Baixo</span>
         </div>
-        <div className="absolute top-0 bottom-0 left-16 right-4">
-            <div className="relative h-full w-full">
-                {/* Gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-b from-red-500 via-yellow-500 to-green-500 opacity-70 rounded-md"></div>
-                {/* "Você" marker */}
-                <div className="absolute top-[10%] left-1/2 -translate-x-1/2 text-center">
-                    <div className="bg-white text-black text-xs font-bold px-2 py-1 rounded">Você</div>
-                    <div className="w-px h-2 bg-white mx-auto"></div>
-                    <div className="w-3 h-3 bg-white rounded-full border-2 border-black mx-auto"></div>
+        <div className="relative flex-grow h-full">
+            <div className="absolute inset-0 bg-gradient-to-b from-red-500 via-yellow-500 to-green-500 opacity-70 rounded-md"></div>
+            {/* "Você" marker */}
+            <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-full px-2">
+                 <div className="relative w-full h-full">
+                    <div className="absolute -top-2 right-0 text-center">
+                        <div className="bg-white text-black text-xs font-bold px-2 py-1 rounded">Você</div>
+                        <div className="w-px h-2 bg-white mx-auto"></div>
+                        <div className="w-3 h-3 bg-white rounded-full border-2 border-black mx-auto"></div>
+                    </div>
                 </div>
             </div>
         </div>

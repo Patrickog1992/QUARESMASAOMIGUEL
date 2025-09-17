@@ -15,7 +15,7 @@ const options = [
 export default function Identificacao2Page() {
   return (
     <div className="flex flex-col items-center justify-between min-h-[calc(100vh-10rem)] w-full">
-      <Card className="w-full max-w-lg bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
+      <Card className="w-full max-w-lg bg-gray-800/50 backdrop-blur-sm border-amber-400/30 text-center">
         <CardContent className="p-6 md:p-8 space-y-6">
           <Image
             src="https://i.imgur.com/EfI6zuh.png"

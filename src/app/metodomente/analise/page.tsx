@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -24,6 +24,16 @@ const VideoPlayer = () => {
 
 
 export default function AnalisePage() {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowButton(true);
+    }, 60 * 1000); // 1 minute
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center text-center">
       <Card className="w-full max-w-2xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
@@ -35,11 +45,13 @@ export default function AnalisePage() {
              <VideoPlayer />
           </div>
 
-          <Link href="/metodomente/resultado1" passHref>
-            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg">
-              QUERO VER MEU RESULTADO
-            </Button>
-          </Link>
+          {showButton && (
+            <Link href="/metodomente/resultado1" passHref>
+              <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-pulse">
+                QUERO VER MEU RESULTADO
+              </Button>
+            </Link>
+          )}
         </CardContent>
       </Card>
     </div>

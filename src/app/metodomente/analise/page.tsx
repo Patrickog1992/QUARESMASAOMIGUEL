@@ -17,7 +17,9 @@ const VideoPlayer = () => {
     }
   }, []);
 
-  return <div id="vid-68cafadfb90c8375abdc314f" style={{ display: 'block', margin: '0 auto', width: '100%' }}></div>;
+  const videoHtml = `<vturb-smartplayer id="vid-68cafadfb90c8375abdc314f" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>`;
+  
+  return <div dangerouslySetInnerHTML={{ __html: videoHtml }} />;
 };
 
 

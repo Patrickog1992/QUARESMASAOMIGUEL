@@ -83,7 +83,7 @@ const faqItems = [
 export default function OfertaPage() {
 
     const handleCheckout = () => {
-        window.open('https://pay.kirvano.com/d9441a1a-3505-4c60-a03d-bf60ce6c3210', '_self');
+        window.open('https://pay.kirvano.com/45c712e5-0d56-4587-80a6-a0ae291fcfe5', '_self');
     };
 
     return (

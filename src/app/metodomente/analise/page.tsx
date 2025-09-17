@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
 
 const VideoPlayer = () => {
   useEffect(() => {
@@ -59,6 +60,14 @@ export default function AnalisePage() {
     <div className="flex flex-col items-center justify-center text-center">
       <Card className="w-full max-w-2xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
+          <Image
+            src="https://i.imgur.com/EfI6zuh.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mx-auto"
+            data-ai-hint="logo icon"
+          />
           <h1 className="text-2xl font-bold text-amber-300">Quase lá!</h1>
           <p className="text-amber-100">Enquanto analisamos suas respostas e preparamos o seu resultado, assista esse vídeo:</p>
           

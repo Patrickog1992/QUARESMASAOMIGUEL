@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
 
 const options = [
   'Vou sempre (domingos e dias de preceito)',
@@ -16,6 +17,14 @@ export default function MissaPage() {
     <div className="flex flex-col items-center justify-center text-center">
       <Card className="w-full max-w-lg bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
+          <Image
+            src="https://i.imgur.com/EfI6zuh.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mx-auto"
+            data-ai-hint="logo icon"
+          />
           <h1 className="text-xl font-bold text-amber-300">Sabemos que, em momentos de agitação, até a prática da fé pode ser afetada.</h1>
           <p className="text-amber-100">Por isso, queremos entender um pouco mais da sua realidade hoje:</p>
           <p className="text-amber-100 font-semibold text-lg">Como está sua frequência na Missa atualmente?</p>

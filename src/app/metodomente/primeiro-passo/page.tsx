@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
 
 const options = [
   'Sim, com certeza estou pronto(a) pra começar',
@@ -16,6 +17,14 @@ export default function PrimeiroPassoPage() {
     <div className="flex flex-col items-center justify-center text-center">
       <Card className="w-full max-w-lg bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
+          <Image
+            src="https://i.imgur.com/EfI6zuh.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mx-auto"
+            data-ai-hint="logo icon"
+          />
           <h1 className="text-2xl font-bold text-amber-300">Se você pudesse experimentar um passo simples com base na fé e na ciência para acalmar sua mente em apenas 3 minutos, toparia dar esse primeiro passo para retomar o controle?</h1>
           <div className="space-y-4">
             {options.map((option) => (

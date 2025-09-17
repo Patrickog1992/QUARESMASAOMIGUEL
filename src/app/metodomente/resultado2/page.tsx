@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
 
 const AgitationChart = () => (
     <div className="relative w-full h-48 bg-gray-700/50 rounded-lg p-4 flex flex-col">
@@ -48,6 +49,14 @@ export default function Resultado2Page() {
     <div className="flex flex-col items-center justify-center text-center">
       <Card className="w-full max-w-2xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
+          <Image
+            src="https://i.imgur.com/EfI6zuh.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mx-auto"
+            data-ai-hint="logo icon"
+          />
           <h1 className="text-2xl font-bold text-green-400">Boa notícia: o Método Mente em Paz é um caminho simples que vai funcionar para você.</h1>
           <p className="text-amber-100">Com base nas suas respostas, este é o resultado possível que você pode alcançar ao praticar o Método Mente em Paz diariamente.</p>
           

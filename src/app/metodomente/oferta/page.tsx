@@ -23,7 +23,7 @@ const ProgressBar = ({ label, percentage, color }: {label: string, percentage: n
                 {percentage}%
             </div>
         </div>
-        <p className="text-sm font-bold mt-1" style={{ color: color.split('-')[1] === 'red' ? '#f87171' : '#4ade80' }}>
+        <p className="text-sm font-bold mt-1" style={{ color: color.startsWith('bg-red') ? '#f87171' : '#4ade80' }}>
             {percentage < 50 ? 'Fraco' : 'Ótimo'}
         </p>
     </div>
@@ -89,6 +89,14 @@ export default function OfertaPage() {
     return (
         <div className="flex flex-col items-center justify-center text-center">
             <div className="w-full max-w-4xl space-y-12">
+                <Image
+                    src="https://i.imgur.com/EfI6zuh.png"
+                    alt="Logo"
+                    width={100}
+                    height={100}
+                    className="mx-auto"
+                    data-ai-hint="logo icon"
+                />
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                     <Card className="bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
                         <CardHeader>

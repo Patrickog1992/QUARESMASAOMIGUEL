@@ -18,6 +18,14 @@ export default function IdadePage() {
     <div className="flex flex-col items-center justify-center text-center">
       <Card className="w-full max-w-xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
+          <Image
+            src="https://i.imgur.com/EfI6zuh.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mx-auto"
+            data-ai-hint="logo icon"
+          />
           <h1 className="text-2xl font-bold text-amber-300">Qual a sua faixa etária?</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {ageOptions.map((option) => (

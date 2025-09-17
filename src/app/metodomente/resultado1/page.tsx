@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
 
 const AgitationChart = () => (
     <div className="relative w-full h-48 bg-gray-700/50 rounded-lg p-4 flex">
@@ -39,6 +40,14 @@ export default function Resultado1Page() {
     <div className="flex flex-col items-center justify-center text-center">
       <Card className="w-full max-w-3xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
+          <Image
+            src="https://i.imgur.com/EfI6zuh.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mx-auto"
+            data-ai-hint="logo icon"
+          />
           <p className="text-amber-100">O nível de agitação mental considerado aceitável para uma boa saúde mental fica em torno de 20 a 25 em uma escala de 0 a 100.</p>
           <h1 className="text-2xl font-bold text-amber-300">Seu nível de agitação mental é 85 ALTO</h1>
           <p className="text-amber-100 text-sm">Uma análise com base em mais de 2 mil casos reais de pessoas que enfrentavam os mesmos sintomas.</p>

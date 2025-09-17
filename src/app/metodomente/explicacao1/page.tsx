@@ -10,6 +10,14 @@ export default function Explicacao1Page() {
     <div className="flex flex-col items-center justify-center text-center">
       <Card className="w-full max-w-2xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
+          <Image
+            src="https://i.imgur.com/EfI6zuh.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mx-auto"
+            data-ai-hint="logo icon"
+          />
           <h1 className="text-2xl md:text-3xl font-bold text-amber-300">O que você sente tem uma causa científica real: seu cérebro está em modo de sobrevivência.</h1>
           <p className="text-lg text-amber-100">
             Esse estado de alerta faz sua mente acelerar mesmo quando não há perigo real.

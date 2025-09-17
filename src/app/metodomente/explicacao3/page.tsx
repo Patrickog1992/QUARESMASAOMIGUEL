@@ -10,6 +10,14 @@ export default function Explicacao3Page() {
     <div className="flex flex-col items-center justify-center text-center">
       <Card className="w-full max-w-2xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30">
         <CardContent className="p-6 md:p-8 space-y-6">
+          <Image
+            src="https://i.imgur.com/EfI6zuh.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="mx-auto"
+            data-ai-hint="logo icon"
+          />
           <h1 className="text-2xl md:text-3xl font-bold text-amber-300">Fé e Ciência Caminhando Juntas</h1>
           <p className="text-lg text-amber-100">Muitos que chegaram aqui relataram a mesma coisa: dificuldade de dormir, rezar, focar, conversar.</p>
           <p className="text-xl font-bold text-green-400">A boa notícia é que isso pode ser treinado.</p>

@@ -30,24 +30,9 @@ const VideoPlayer = () => {
 };
 
 const CheckoutButton = () => {
-    const [showButton, setShowButton] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowButton(true);
-        }, (40 * 60 + 29) * 1000); // 40 minutes and 29 seconds
-        
-        return () => clearTimeout(timer);
-    }, []);
-
     const handleCheckoutClick = () => {
         window.open('https://pay.kirvano.com/3131a301-2ace-4521-94e9-820f861b980b', '_self');
     };
-
-    if (!showButton) {
-        // Reserve space to prevent layout shift
-        return <div className="h-[92px] md:h-[108px]" />;
-    }
 
     return (
         <div className="my-8 text-center">

@@ -42,7 +42,7 @@ const CheckoutButton = () => {
                 className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center w-full max-w-lg"
                 onClick={handleCheckoutClick}
             >
-                QUERO TER ACESSO AGORA!
+                QUERO A FREQUÊNCIA DIVINA AGORA
             </Button>
         </div>
     );

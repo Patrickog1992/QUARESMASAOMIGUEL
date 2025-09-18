@@ -166,17 +166,17 @@ const TestimonialCard = ({ id, name, username, avatarUrl, avatarHint, text, like
     <div className="flex items-start gap-3 w-full text-left">
       <Avatar className="h-10 w-10 shrink-0">
         <AvatarImage src={avatarUrl} alt={name} data-ai-hint={avatarHint}/>
-        <AvatarFallback className="bg-blue-300 text-blue-900">{name.charAt(0)}</AvatarFallback>
+        <AvatarFallback className="bg-amber-300 text-amber-900">{name.charAt(0)}</AvatarFallback>
       </Avatar>
       <div className="flex-1">
-        <div className="bg-blue-800/50 rounded-xl p-3">
+        <div className="bg-gray-800/50 rounded-xl p-3">
           <p className="font-bold text-sm text-amber-300">
             {name}
-            {username && <span className="text-blue-300 font-normal ml-2">{username}</span>}
+            {username && <span className="text-amber-100 font-normal ml-2">{username}</span>}
           </p>
-          <p className="mt-1 text-sm text-blue-100">{text}</p>
+          <p className="mt-1 text-sm text-amber-100">{text}</p>
         </div>
-        <div className="flex items-center gap-3 text-xs text-blue-300 mt-1 px-2">
+        <div className="flex items-center gap-3 text-xs text-amber-200 mt-1 px-2">
           <button className="hover:underline font-bold">Curtir</button>
           <span aria-hidden="true">·</span>
           <button className="hover:underline font-bold">Responder</button>
@@ -196,22 +196,22 @@ const TestimonialCard = ({ id, name, username, avatarUrl, avatarHint, text, like
               <div key={reply.id} className="flex items-start gap-3 w-full pt-4">
                   <Avatar className="h-8 w-8 shrink-0">
                     <AvatarImage src={reply.avatarUrl} alt={reply.name} data-ai-hint={reply.avatarHint}/>
-                    <AvatarFallback className="bg-blue-300 text-blue-900 text-xs">{reply.name.charAt(0)}</AvatarFallback>
+                    <AvatarFallback className="bg-amber-300 text-amber-900 text-xs">{reply.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                    <div className="flex-1">
-                    <div className="bg-blue-800/50 rounded-xl p-2">
+                    <div className="bg-gray-800/50 rounded-xl p-2">
                       <p className="font-bold text-xs text-amber-300">
                         {reply.name}
-                        {reply.username && <span className="text-blue-300 font-normal ml-2">{reply.username}</span>}
+                        {reply.username && <span className="text-amber-100 font-normal ml-2">{reply.username}</span>}
                       </p>
-                      <p className="mt-1 text-xs text-blue-100">{reply.text}</p>
+                      <p className="mt-1 text-xs text-amber-100">{reply.text}</p>
                     </div>
-                     <div className="flex items-center gap-2 text-xs text-blue-300 mt-1 px-2">
+                     <div className="flex items-center gap-2 text-xs text-amber-200 mt-1 px-2">
                         <button className="hover:underline font-bold">Curtir</button>
                         <span aria-hidden="true">·</span>
                         <button className="hover:underline font-bold">Responder</button>
                          <span aria-hidden="true">·</span>
-                        <span>{reply.time}</span>
+                        <span>{time}</span>
                     </div>
                   </div>
               </div>

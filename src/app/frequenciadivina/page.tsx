@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { Footer } from '@/components/landing/footer';
 import { HebrewPattern } from '@/components/landing/hebrew-pattern';
+import { TopBanner } from '@/components/landing/top-banner';
 
 const VideoPlayer = () => {
   useEffect(() => {
@@ -29,6 +30,7 @@ const VideoPlayer = () => {
 export default function FrequenciaDivinaPage() {
   return (
     <div className="dark relative flex flex-col min-h-screen bg-amber-900 text-white overflow-x-hidden">
+      <TopBanner text="ATENÇÃO : Devido a grande quantidade de pessoas e poucas quaresmas esse vídeo irá sair do ar hoje : (Coloque a data que a pessoa está acessando)" />
       <HebrewPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 z-10">
         <div className="max-w-3xl mx-auto space-y-8 text-center">

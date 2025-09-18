@@ -6,6 +6,7 @@ import { HebrewPattern } from '@/components/landing/hebrew-pattern';
 import { TopBanner } from '@/components/landing/top-banner';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { TestimonialsSectionFrequenciaDivina } from '@/components/landing/testimonials-section-frequenciadivina';
 
 const VideoPlayer = () => {
   useEffect(() => {
@@ -78,6 +79,8 @@ export default function FrequenciaDivinaPage() {
             className="mx-auto"
             data-ai-hint="guarantee seal"
           />
+
+          <TestimonialsSectionFrequenciaDivina />
 
         </div>
       </main>

@@ -42,6 +42,7 @@ export default function FrequenciaDivinaPage() {
             <p className="text-lg md:text-xl font-medium text-amber-100">
                 Descubra como restaurar sua saúde e prosperidade agora
             </p>
+            <p className="font-bold text-amber-300 uppercase tracking-wider animate-pulse md:text-lg">Veja o vídeo abaixo ( ligue o som )</p>
           </section>
 
           <VideoPlayer />

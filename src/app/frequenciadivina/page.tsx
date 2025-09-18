@@ -31,9 +31,24 @@ const VideoPlayer = () => {
 };
 
 const CheckoutButton = () => {
+    const [showButton, setShowButton] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowButton(true);
+        }, (31 * 60 + 23) * 1000); // 31 minutes and 23 seconds
+        
+        return () => clearTimeout(timer);
+    }, []);
+
     const handleCheckoutClick = () => {
         window.open('https://pay.kirvano.com/3131a301-2ace-4521-94e9-820f861b980b', '_self');
     };
+
+    if (!showButton) {
+        // Reserve space to prevent layout shift
+        return <div className="h-[76px] md:h-[92px]" />;
+    }
 
     return (
         <div className="my-8 text-center">
@@ -52,7 +67,7 @@ const CheckoutButton = () => {
 export default function FrequenciaDivinaPage() {
   return (
     <div className="dark relative flex flex-col min-h-screen bg-amber-900 text-white overflow-x-hidden">
-      <TopBanner text="Devido a grande quantidade de pessoas e poucas frequências esse vídeo erá sair do ar hoje : (Coloque a data que a pessoa está acessando)" />
+      <TopBanner text="Devido a grande quantidade de pessoas e poucas frequências esse vídeo erá sair do ar hoje (Coloque a data que a pessoa está acessando)" />
       <HebrewPattern />
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12 z-10">
         <div className="max-w-3xl mx-auto space-y-8 text-center">

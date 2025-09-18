@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Footer } from '@/components/landing/footer';
 import { HebrewPattern } from '@/components/landing/hebrew-pattern';
 import { TopBanner } from '@/components/landing/top-banner';
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const VideoPlayer = () => {
   useEffect(() => {
@@ -27,6 +29,40 @@ const VideoPlayer = () => {
   );
 };
 
+const CheckoutButton = () => {
+    const [showButton, setShowButton] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowButton(true);
+        }, (40 * 60 + 29) * 1000); // 40 minutes and 29 seconds
+        
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleCheckoutClick = () => {
+        window.open('https://pay.kirvano.com/3131a301-2ace-4521-94e9-820f861b980b', '_self');
+    };
+
+    if (!showButton) {
+        // Reserve space to prevent layout shift
+        return <div className="h-[92px] md:h-[108px]" />;
+    }
+
+    return (
+        <div className="my-8 text-center">
+            <Button
+                size="lg"
+                className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal text-center w-full max-w-lg"
+                onClick={handleCheckoutClick}
+            >
+                QUERO TER ACESSO AGORA!
+            </Button>
+        </div>
+    );
+};
+
+
 export default function FrequenciaDivinaPage() {
   return (
     <div className="dark relative flex flex-col min-h-screen bg-amber-900 text-white overflow-x-hidden">
@@ -46,6 +82,17 @@ export default function FrequenciaDivinaPage() {
           </section>
 
           <VideoPlayer />
+          
+          <CheckoutButton />
+
+          <Image 
+            src="https://i.imgur.com/XH2eHXm.png"
+            alt="Garantia"
+            width={600}
+            height={200}
+            className="mx-auto"
+            data-ai-hint="guarantee seal"
+          />
 
         </div>
       </main>

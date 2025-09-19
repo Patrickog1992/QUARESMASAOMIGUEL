@@ -1,22 +1,23 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 import { BuyButtonArcanjoMiguel } from './buy-button-arcanjomiguel';
 
 const VideoPlayer = () => {
     useEffect(() => {
-        const scriptId = 'vid-68cd96d5713fc4a51325407c-script';
+        const scriptId = 'vid-68cd96d5713fc4a513258e56-script';
         if (!document.getElementById(scriptId)) {
             const script = document.createElement('script');
             script.id = scriptId;
-            script.src = 'https://scripts.converteai.net/b45e4a12-72fd-43f2-a7e4-73d6b242d5d9/players/68cd96d5713fc4a51325407c/v4/player.js';
+            script.src = 'https://scripts.converteai.net/b45e4a12-72fd-43f2-a7e4-73d6b242d5d9/players/68cd96d5713fc4a513258e56/v4/player.js';
             script.async = true;
             document.head.appendChild(script);
         }
     }, []);
 
-    const videoHtml = `<vturb-smartplayer id="vid-68cd96d5713fc4a51325407c" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>`;
+    const videoHtml = `<vturb-smartplayer id="vid-68cd96d5713fc4a513258e56" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
     
     return (
         <div 

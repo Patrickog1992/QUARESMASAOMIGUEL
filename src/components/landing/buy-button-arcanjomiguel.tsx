@@ -31,7 +31,7 @@ export function BuyButtonArcanjoMiguel() {
         className="w-full max-w-md mx-auto bg-green-600 hover:bg-green-700 text-white font-bold h-auto py-4 text-xl md:text-2xl animate-pulse whitespace-normal shadow-lg shadow-green-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/40 transform hover:scale-105"
         onClick={handleBuyClick}
         >
-            QUERO RECEBER AS ORAÇÕES AGORA
+            QUERO AS 50 ORAÇÕES AGORA
         </Button>
     </div>
   );

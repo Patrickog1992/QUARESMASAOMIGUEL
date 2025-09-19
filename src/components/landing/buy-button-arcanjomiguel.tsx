@@ -16,7 +16,7 @@ export function BuyButtonArcanjoMiguel() {
   }, []);
 
   const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/3a6ebdce-f5ce-4a44-896a-315d6c749bda', '_self');
+    window.open('https://pay.kirvano.com/d31e1786-289f-41de-a786-00b8925bdfa9', '_self');
   };
 
   if (!showBuyButton) {

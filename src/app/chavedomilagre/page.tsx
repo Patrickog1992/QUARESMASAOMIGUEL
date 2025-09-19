@@ -5,91 +5,70 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ThumbsUp, MessageCircle } from 'lucide-react';
 
-export default function ReportagemPage() {
-  const [articleDate, setArticleDate] = useState('');
-  const [headerDate, setHeaderDate] = useState('');
+export default function ChaveDoMilagrePage() {
+  const [timeLeft, setTimeLeft] = useState(100); // 1 minuto e 40 segundos
 
   useEffect(() => {
-    const now = new Date();
-    setHeaderDate(now.toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
-    setArticleDate(`${now.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' })} às ${now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}`);
-  }, []);
+    if (timeLeft <= 0) return;
 
+    const intervalId = setInterval(() => {
+      setTimeLeft((prevTime) => prevTime - 1);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [timeLeft]);
+
+  const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+  const seconds = String(timeLeft % 60).padStart(2, '0');
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <header className="bg-white shadow-md">
-        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
-           <Image 
-            src="https://i.imgur.com/KoCXCf6.png"
-            alt="G1 Logo"
-            width={80}
-            height={30}
-            data-ai-hint="news logo"
-           />
-           <div className="text-sm text-gray-500">
-            {headerDate}
-           </div>
-        </div>
-      </header>
-      <main className="container mx-auto px-4 py-8">
-        <Card className="max-w-3xl mx-auto">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 text-center">
+      <div className="flex-grow flex flex-col items-center justify-center">
+        <Image
+          src="https://i.imgur.com/oU1Etag.png"
+          alt="Manuscrito Sagrado"
+          width={500}
+          height={150}
+          className="mb-8 rounded-lg"
+          data-ai-hint="sacred manuscript"
+        />
+        <Card className="w-full max-w-md mx-auto shadow-lg">
           <CardContent className="p-6">
-            <p className="text-red-700 font-semibold mb-2">MAIS VOCÊ</p>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">"É de arrepiar!" diz Ana Maria Braga sobre Padre que benze água à distância e realiza milagres</h1>
-            <p className="text-gray-600 mb-4">Apresentadora compartilhou em seu programa matinal a história do Padre Elisio, que tem emocionado o Brasil com suas orações poderosas.</p>
-            <div className="border-t border-b border-gray-200 py-2 my-4 flex items-center justify-between text-sm">
-                <p className="text-gray-500">Por <span className="font-bold text-red-700">Redação G1</span></p>
-                <p className="text-gray-500">{articleDate}</p>
-            </div>
-            
             <Image
-              src="https://i.imgur.com/nnqWVLT.jpeg"
-              alt="Ana Maria Braga no programa Mais Você"
-              width={800}
-              height={450}
-              className="rounded-lg mb-6 shadow-md"
-              data-ai-hint="TV host"
+              src="https://i.imgur.com/31ubrhg.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="mx-auto"
+              data-ai-hint="logo icon"
             />
-
-            <article className="prose max-w-none text-gray-800 text-lg space-y-4">
-              <p>A apresentadora Ana Maria Braga surpreendeu seus telespectadores na manhã desta quarta-feira ao compartilhar a história do Padre Elisio, um religioso que vem ganhando notoriedade por suas orações que, segundo relatos, são capazes de realizar milagres financeiros e de saúde em poucos dias.</p>
-              
-              <p>"Eu recebi centenas de mensagens, gente. É uma coisa que arrepia. Pessoas contando que, depois de ouvir as palavras desse padre, a vida delas mudou completamente", comentou Ana Maria, visivelmente emocionada.</p>
-
-              <blockquote className="border-l-4 border-red-700 pl-4 italic text-gray-600">
-                "É a fé, né? Quando a gente acredita, quando a gente se conecta com algo maior, as coisas acontecem. E o que esse padre faz é resgatar essa fé nas pessoas", disse a apresentadora.
-              </blockquote>
-
-              <p>O Padre Elisio utiliza um método antigo, baseado em orações e na bênção da água, mesmo à distância, para quebrar o que ele chama de "maldições que travam a vida". Os testemunhos se espalham rapidamente pela internet, com pessoas relatando desde o pagamento de dívidas inesperadas até a cura de enfermidades.</p>
-              
-              <p>A equipe do G1 entrou em contato com fiéis que afirmam ter recebido milagres. "Eu estava desempregada há 2 anos, com o nome sujo. Ouvi a oração do Padre Elisio com um copo d'água na mão. No dia seguinte, uma empresa que eu nem lembrava que tinha mandado currículo me ligou. Hoje estou empregada", relatou Maria das Graças, de 54 anos, de Belo Horizonte.</p>
-              <p>Ao final da reportagem, Ana Maria Braga deixou uma mensagem de esperança: "Se você está precisando de um milagre, talvez essa seja a resposta que você tanto pediu. A fé não tem limites."</p>
-            </article>
-
-            <div className="mt-8 text-center border-t pt-6">
-                <h2 className="text-xl font-bold text-gray-800 mb-4">Você também quer receber a oração poderosa do Padre Elisio?</h2>
-                <p className="text-gray-600 mb-6">Milhares de brasileiros estão transformando suas vidas. Clique no botão abaixo para descobrir como.</p>
-                <Link href="/chavedomilagre/quiz-intro" passHref>
-                    <Button size="lg" className="bg-green-600 hover:bg-green-700 text-lg animate-pulse w-full max-w-md mx-auto">
-                        QUERO DESCOBRIR A ORAÇÃO
-                    </Button>
-                </Link>
-            </div>
-            <div className="mt-8 flex justify-between items-center text-gray-500">
-                <div className="flex gap-2 items-center">
-                    <button className="flex items-center gap-1 hover:text-blue-600"><ThumbsUp size={18} /> 1.2k</button>
-                    <button className="flex items-center gap-1 hover:text-blue-600"><MessageCircle size={18} /> 89</button>
-                </div>
-                <div>
-                    <p className="text-sm">Compartilhe essa bênção</p>
-                </div>
-            </div>
+            <p className="font-semibold text-gray-700 my-4">
+              A oração ficará disponível por <span className="text-red-600 font-bold">{minutes}:{seconds}</span>
+            </p>
+            <h1 className="text-xl font-bold text-red-700 uppercase">
+              Tem uma MALDIÇÃO escondida travando tua vida, e HOJE ela vai cair por terra!
+            </h1>
+            <p className="text-gray-600 my-4">Ouça essa oração poderosa do Padre Elisio</p>
+            <Image
+              src="https://i.imgur.com/bS30BjY.jpeg"
+              alt="Padre Elisio"
+              width={400}
+              height={300}
+              className="rounded-lg mx-auto"
+              data-ai-hint="priest praying"
+            />
+            <Link href="/chavedomilagre/nome" passHref>
+              <Button size="lg" className="w-full mt-6 bg-green-600 hover:bg-green-700 text-lg">
+                EU QUERO OUVIR A ORAÇÃO🙏
+              </Button>
+            </Link>
           </CardContent>
         </Card>
-      </main>
+      </div>
+      <footer className="w-full text-center py-4 text-gray-500 text-sm">
+        A chave do milagre todos os direitos reservados 2025
+      </footer>
     </div>
   );
 }

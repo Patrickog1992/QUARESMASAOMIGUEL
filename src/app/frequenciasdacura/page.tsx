@@ -65,7 +65,6 @@ const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }
   </div>
 );
 
-// This component now only handles the video player and does not re-render when the button appears.
 const VideoPlayer = () => {
     useEffect(() => {
         const scriptId = "vturb-player-script-68d55dd33cef69e1d154431b";
@@ -95,14 +94,13 @@ const VideoPlayer = () => {
     );
 }
 
-// This component manages its own state and visibility, separate from the main page.
 const TimedBuyButton = () => {
     const [showBuyButton, setShowBuyButton] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowBuyButton(true);
-        }, 10 * 1000); // 10 seconds
+        }, (36 * 60 + 38) * 1000); // 36 minutes and 38 seconds
 
         return () => clearTimeout(timer);
     }, []);
@@ -110,15 +108,17 @@ const TimedBuyButton = () => {
     const handleBuyClick = () => {
         window.open('https://pay.kirvano.com/42887aa4-262c-435e-b91c-42a8f8f4d849', '_self');
     };
+    
+    // Reserve space to prevent layout shift
+    if (!showBuyButton) {
+        return <div className="h-[76px] md:h-[92px]" />;
+    }
 
     return (
-        <div className="mt-8 text-center h-[76px] md:h-[92px]">
+        <div className="mt-8 text-center">
             <Button
                 size="lg"
-                className={cn(
-                    "bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto transition-opacity duration-500",
-                    showBuyButton ? "opacity-100" : "opacity-0 pointer-events-none"
-                )}
+                className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
                 onClick={handleBuyClick}
             >
                 EU QUERO ESSAS ORAÇÕES

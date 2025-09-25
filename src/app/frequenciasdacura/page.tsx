@@ -102,7 +102,7 @@ const TimedBuyButton = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowBuyButton(true);
-        }, 5 * 1000); // 5 seconds
+        }, 10 * 1000); // 10 seconds
 
         return () => clearTimeout(timer);
     }, []);

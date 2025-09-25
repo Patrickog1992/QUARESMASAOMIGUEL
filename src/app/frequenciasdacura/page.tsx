@@ -152,8 +152,8 @@ export default function FrequenciasDaCuraPage() {
             <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-68d55dd33cef69e1d154431b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>` }} />
           </div>
 
-          {showBuyButton && (
-            <div className="mt-8 text-center">
+          <div className="mt-8 text-center">
+            {showBuyButton ? (
               <Button
                 size="lg"
                 className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
@@ -161,8 +161,10 @@ export default function FrequenciasDaCuraPage() {
               >
                 EU QUERO ESSAS PALAVRAS
               </Button>
-            </div>
-          )}
+            ) : (
+              <div className="h-[76px] md:h-[92px]" />
+            )}
+          </div>
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">

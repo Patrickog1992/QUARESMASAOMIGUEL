@@ -100,7 +100,7 @@ const TimedBuyButton = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowBuyButton(true);
-        }, (36 * 60 + 38) * 1000); // 36 minutes and 38 seconds
+        }, 5 * 1000); // 5 seconds
 
         return () => clearTimeout(timer);
     }, []);
@@ -109,20 +109,19 @@ const TimedBuyButton = () => {
         window.open('https://pay.kirvano.com/42887aa4-262c-435e-b91c-42a8f8f4d849', '_self');
     };
     
-    // Reserve space to prevent layout shift
-    if (!showBuyButton) {
-        return <div className="h-[76px] md:h-[92px]" />;
-    }
-
     return (
         <div className="mt-8 text-center">
-            <Button
-                size="lg"
-                className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
-                onClick={handleBuyClick}
-            >
-                EU QUERO ESSAS ORAÇÕES
-            </Button>
+            {showBuyButton ? (
+                <Button
+                    size="lg"
+                    className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
+                    onClick={handleBuyClick}
+                >
+                    EU QUERO ESSAS ORAÇÕES
+                </Button>
+            ) : (
+                <div className="h-[76px] md:h-[92px]" />
+            )}
         </div>
     );
 };

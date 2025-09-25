@@ -150,12 +150,12 @@ export default function FrequenciasDaCuraPage() {
   }, []);
   
   useEffect(() => {
-    const scriptId = "vturb-player-script-685f710952325b14a81dc1dd";
+    const scriptId = "vturb-player-script-68d55dd33cef69e1d154431b";
     if (document.getElementById(scriptId)) return;
 
     const script = document.createElement("script");
     script.id = scriptId;
-    script.src = "https://scripts.converteai.net/62757a1b-3965-4814-8cfb-7803a2e429e1/players/685f710952325b14a81dc1dd/v4/player.js";
+    script.src = "https://scripts.converteai.net/b45e4a12-72fd-43f2-a7e4-73d6b242d5d9/players/68d55dd33cef69e1d154431b/v4/player.js";
     script.async = true;
     document.head.appendChild(script);
 
@@ -209,7 +209,7 @@ export default function FrequenciasDaCuraPage() {
             id="video-container"
             className="relative w-full bg-black aspect-video"
           >
-            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-685f710952325b14a81dc1dd" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>` }} />
+            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-68d55dd33cef69e1d154431b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>` }} />
           </div>
 
           {showBuyButton && (

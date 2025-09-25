@@ -69,18 +69,40 @@ const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }
   </div>
 );
 
-export default function FrequenciasDaCuraPage() {
-  const [viewerCount] = useState(55452);
-  const [liveTime, setLiveTime] = useState('');
-  const [showBuyButton, setShowBuyButton] = useState(false);
+const BuyButton = () => {
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowBuyButton(true);
+      setShow(true);
     }, 5 * 1000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);
+
+  const handleBuyClick = () => {
+    window.open('https://pay.kirvano.com/41881167-7fc6-4bc6-b37d-f24d683e3d32', '_self');
+  };
+
+  return (
+    <div className="h-[76px] md:h-[92px] flex items-center justify-center">
+        {show && (
+            <Button
+            size="lg"
+            className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
+            onClick={handleBuyClick}
+            >
+            EU QUERO ESSAS PALAVRAS
+            </Button>
+        )}
+    </div>
+  );
+};
+
+
+export default function FrequenciasDaCuraPage() {
+  const [viewerCount] = useState(55452);
+  const [liveTime, setLiveTime] = useState('');
 
   useEffect(() => {
     const now = new Date();
@@ -106,10 +128,6 @@ export default function FrequenciasDaCuraPage() {
       }
     };
   }, []);
-
-  const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/41881167-7fc6-4bc6-b37d-f24d683e3d32', '_self');
-  };
 
   return (
     <div className="bg-white text-black font-sans">
@@ -153,17 +171,7 @@ export default function FrequenciasDaCuraPage() {
           </div>
 
           <div className="mt-8 text-center">
-            {showBuyButton ? (
-              <Button
-                size="lg"
-                className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
-                onClick={handleBuyClick}
-              >
-                EU QUERO ESSAS PALAVRAS
-              </Button>
-            ) : (
-              <div className="h-[76px] md:h-[92px]" />
-            )}
+            <BuyButton />
           </div>
 
           <div className="mt-4">

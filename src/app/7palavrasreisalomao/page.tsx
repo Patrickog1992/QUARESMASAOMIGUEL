@@ -131,6 +131,34 @@ export default function FrequenciasDaCuraPage() {
 
   return (
     <div className="bg-white text-black font-sans">
+       <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 shrink-0">
+        <div className="flex items-center gap-4 shrink-0">
+          <Menu className="h-6 w-6 text-neutral-800" />
+          <Image
+            src="https://classic.exame.com/wp-content/uploads/2017/08/new-youtube-logo-840x402.jpg"
+            alt="YouTube Logo"
+            width={90}
+            height={20}
+            className="object-contain"
+            data-ai-hint="youtube logo"
+          />
+        </div>
+        <div className="hidden sm:flex flex-1 justify-center px-4">
+          <div className="w-full max-w-lg flex">
+            <Input
+              placeholder="Pesquisar"
+              className="bg-white border-neutral-300 rounded-l-full rounded-r-none h-10 px-4 flex-1 focus:ring-1 focus:ring-blue-500 border-r-0"
+            />
+            <Button variant="secondary" className="bg-white hover:bg-gray-100 rounded-r-full rounded-l-none h-10 px-6 border border-neutral-300 border-l-0">
+              <Search className="h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+        <div className="flex items-center gap-4 shrink-0">
+          <Search className="h-6 w-6 text-neutral-800 sm:hidden" />
+          <UserCircle className="h-8 w-8 text-neutral-800" />
+        </div>
+      </header>
       <main className="grid grid-cols-1 lg:grid-cols-[1fr_402px]">
         {/* Video and Info Section */}
         <div className="flex flex-col px-4 lg:px-6 py-4">

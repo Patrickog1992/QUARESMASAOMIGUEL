@@ -137,7 +137,7 @@ export default function FrequenciasDaCuraPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (36 * 60 + 38) * 1000); // 36 minutes and 38 seconds
+    }, 5 * 1000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -219,7 +219,7 @@ export default function FrequenciasDaCuraPage() {
                 className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
                 onClick={handleBuyClick}
               >
-                EU QUERO ESSAS ORAÇÕES
+                EU QUERO ESSAS PALAVRAS
               </Button>
             </div>
           )}

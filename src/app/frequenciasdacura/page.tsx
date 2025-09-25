@@ -65,18 +65,71 @@ const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }
   </div>
 );
 
+// This component now only handles the video player and does not re-render when the button appears.
+const VideoPlayer = () => {
+    useEffect(() => {
+        const scriptId = "vturb-player-script-68d55dd33cef69e1d154431b";
+        if (document.getElementById(scriptId)) return;
+
+        const script = document.createElement("script");
+        script.id = scriptId;
+        script.src = "https://scripts.converteai.net/b45e4a12-72fd-43f2-a7e4-73d6b242d5d9/players/68d55dd33cef69e1d154431b/v4/player.js";
+        script.async = true;
+        document.head.appendChild(script);
+
+        return () => {
+            const existingScript = document.getElementById(scriptId);
+            if (existingScript && existingScript.parentNode) {
+                existingScript.parentNode.removeChild(existingScript);
+            }
+        };
+    }, []);
+
+    return (
+        <div
+            id="video-container"
+            className="relative w-full bg-black aspect-video"
+        >
+            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-68d55dd33cef69e1d154431b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>` }} />
+        </div>
+    );
+}
+
+// This component manages its own state and visibility, separate from the main page.
+const TimedBuyButton = () => {
+    const [showBuyButton, setShowBuyButton] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowBuyButton(true);
+        }, 5 * 1000); // 5 seconds
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleBuyClick = () => {
+        window.open('https://pay.kirvano.com/42887aa4-262c-435e-b91c-42a8f8f4d849', '_self');
+    };
+
+    return (
+        <div className="mt-8 text-center h-[76px] md:h-[92px]">
+            <Button
+                size="lg"
+                className={cn(
+                    "bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto transition-opacity duration-500",
+                    showBuyButton ? "opacity-100" : "opacity-0 pointer-events-none"
+                )}
+                onClick={handleBuyClick}
+            >
+                EU QUERO ESSAS ORAÇÕES
+            </Button>
+        </div>
+    );
+};
+
 export default function FrequenciasDaCuraPage() {
   const [viewerCount] = useState(55452);
   const [liveTime, setLiveTime] = useState('');
-  const [showBuyButton, setShowBuyButton] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowBuyButton(true);
-    }, 5 * 1000); // 5 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     const now = new Date();
@@ -85,28 +138,6 @@ export default function FrequenciasDaCuraPage() {
     setLiveTime(`às ${time}, ${date}`);
   }, []);
   
-  useEffect(() => {
-    const scriptId = "vturb-player-script-68d55dd33cef69e1d154431b";
-    if (document.getElementById(scriptId)) return;
-
-    const script = document.createElement("script");
-    script.id = scriptId;
-    script.src = "https://scripts.converteai.net/b45e4a12-72fd-43f2-a7e4-73d6b242d5d9/players/68d55dd33cef69e1d154431b/v4/player.js";
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      const existingScript = document.getElementById(scriptId);
-      if (existingScript && existingScript.parentNode) {
-        existingScript.parentNode.removeChild(existingScript);
-      }
-    };
-  }, []);
-
-  const handleBuyClick = () => {
-    window.open('https://pay.kirvano.com/42887aa4-262c-435e-b91c-42a8f8f4d849', '_self');
-  };
-
   return (
     <div className="bg-white text-black font-sans">
       <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10">
@@ -141,25 +172,9 @@ export default function FrequenciasDaCuraPage() {
       <main className="grid grid-cols-1 lg:grid-cols-[1fr_402px]">
         {/* Video and Info Section */}
         <div className="flex flex-col px-4 lg:px-6 py-4">
-          <div
-            id="video-container"
-            className="relative w-full bg-black aspect-video"
-          >
-            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-68d55dd33cef69e1d154431b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>` }} />
-          </div>
-
-          <div className="mt-8 text-center h-[76px] md:h-[92px]">
-              <Button
-                  size="lg"
-                  className={cn(
-                      "bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto transition-opacity duration-500",
-                      showBuyButton ? "opacity-100" : "opacity-0 pointer-events-none"
-                  )}
-                  onClick={handleBuyClick}
-              >
-                  EU QUERO ESSAS ORAÇÕES
-              </Button>
-          </div>
+          <VideoPlayer />
+          
+          <TimedBuyButton />
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">

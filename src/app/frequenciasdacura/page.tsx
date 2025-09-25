@@ -226,7 +226,7 @@ export default function FrequenciasDaCuraPage() {
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">
-              Padre Fernando Lisboa | As Frequências da Cura: a oração escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
+              Foi revelado as orações do Rei Salomão para ganhar milagres e benção divina
             </h1>
             <div className="text-sm text-neutral-600 mb-4">
               <span className="font-bold">{viewerCount.toLocaleString('pt-BR')} assistindo agora</span>
@@ -234,11 +234,11 @@ export default function FrequenciasDaCuraPage() {
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-3">
                 <Avatar>
-                  <AvatarImage src="https://xn--oraaosecreta-mdb.site/live/images/osa_foto_perfil_padre.webp" alt="Fernando Lisboa" />
-                  <AvatarFallback>FL</AvatarFallback>
+                  <AvatarImage src="https://xn--oraaosecreta-mdb.site/live/images/osa_foto_perfil_padre.webp" alt="José Alvarenga" />
+                  <AvatarFallback>JA</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-semibold">Fernando Lisboa</p>
+                  <p className="font-semibold">José Alvarenga</p>
                   <p className="text-sm text-neutral-600">96 mil inscritos</p>
                 </div>
               </div>

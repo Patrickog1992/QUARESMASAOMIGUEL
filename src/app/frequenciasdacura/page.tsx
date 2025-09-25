@@ -72,7 +72,7 @@ export default function FrequenciasDaCuraPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBuyButton(true);
-    }, (36 * 60 + 38) * 1000); // 36 minutes and 38 seconds
+    }, 5 * 1000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);

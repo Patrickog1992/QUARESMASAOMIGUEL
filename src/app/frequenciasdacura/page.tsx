@@ -16,40 +16,40 @@ type ChatMessageData = {
 };
 
 const allChatMessages: ChatMessageData[] = [
-  { name: 'Roberto Silva', message: 'Que a sabedoria do Rei Salomão abençoe a todos! 🙏', avatarUrl: 'https://thumbs2.imgbox.com/14/e9/DUPvPss9_t.jpg', avatarHint: 'man portrait' },
-  { name: 'Carla Fernandes', message: 'Cheguei agora, já começou a revelação das orações?', avatarUrl: 'https://thumbs2.imgbox.com/dd/55/H0rZXQVM_t.jpg', avatarHint: 'woman portrait' },
-  { name: 'Terezinha Souza', message: 'Amém, meu Deus! Só Tu és fiel ❤️', avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg', avatarHint: 'woman portrait' },
-  { name: 'André Luiz', message: 'A sabedoria de Salomão é maravilhosa! Amém 🙌', avatarUrl: 'https://thumbs2.imgbox.com/7b/b0/gsYWvBdF_t.jpg', avatarHint: 'man portrait' },
-  { name: 'Regina Célia', message: 'Glória a Ti, Senhor! Estamos prontos para receber essa bênção 🙏', avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg', avatarHint: 'woman portrait' },
-  { name: 'Equipe de Suporte', message: 'Sim! Milhares de pessoas já estão relatando milagres financeiros e bênçãos com as orações do Rei Salomão. 🙌', isSupport: true },
-  { name: 'Joana Lima', message: 'Amém, glória a Deus!', avatarUrl: 'https://thumbs2.imgbox.com/87/54/0dMM6ESV_t.png', avatarHint: 'woman portrait' },
-  { name: 'Paulo Vieira', message: '😇😇😇😇😇😇', avatarUrl: 'https://thumbs2.imgbox.com/48/18/9JtnHEjz_t.png', avatarHint: 'man portrait' },
-  { name: 'Lucas Bernardes', message: 'Sou de Goiânia. Posso pedir uma oração para o meu negócio prosperar?', avatarUrl: 'https://thumbs2.imgbox.com/72/dc/GT3YxWwY_t.jpg', avatarHint: 'man portrait' },
-  { name: 'Marta Helena', message: 'Alguém mais sentindo uma paz diferente nesse momento?', avatarUrl: 'https://thumbs2.imgbox.com/da/67/ajSKP3eY_t.jpg', avatarHint: 'woman portrait' },
-  { name: 'Rosana Oliveira', message: 'Peço orações pela cura da minha mãe que está hospitalizada. Rei Salomão, interceda por nós!', avatarUrl: 'https://thumbs2.imgbox.com/eb/cb/zfODzSUu_t.png', avatarHint: 'woman portrait' },
-  { name: 'Carlos Eduardo', message: 'Ore pela minha mãe, por favor… ela está lutando contra um câncer e precisa de forças 🙏📿', avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg', avatarHint: 'man portrait' },
-  { name: 'Lívia Santos', message: 'Então é isso que os sábios usam há séculos pra atrair riqueza? 😮✨' },
-  { name: 'Ruth Cardoso', message: 'Eu sabia que os milionários tinham esses segredinhos.' },
-  { name: 'Carlos M.', message: 'Silvio Santos usa isso?? Nunca imaginei 😳' },
-  { name: 'Patrícia Gomes', message: 'Se isso ajudou até o Rei Salomão… 🙌 já quero ouvir essa oração!' },
-  { name: 'Cláudia Lima', message: 'Eu prometo usar essa oração pra ajudar minha família toda ❤️❤️' },
-  { name: 'Elizângela F.', message: 'Não é justo! A gente trabalhando todo dia e eles com esse segredo guardado. Graças a Deus foi revelado para nós.' },
-  { name: 'Camila Andrade', message: 'Sinto que essa live vai mudar minha vida. Estou aqui por um propósito divino! Gloria a Deus ❤️' },
-  { name: 'Fernanda Salomão', message: 'Obrigada por ter coragem de revelar isso, José! 🕊️' },
-  { name: 'João Batista', message: 'Tô curioso… nunca ouvi falar sobre isso de forma tão clara. 🙏' },
-  { name: 'Carmem Lúcia', message: 'Gente, segura a emoção… lá vem bênção forte!' },
-  { name: 'Mônica Vieira', message: 'Alguém mais tá com o coração batendo forte?' },
-  { name: 'Vera Lima', message: 'Que testemunhos lindos 🕊️😭' },
-  { name: 'Eduardo Lima', message: 'Essa sabedoria precisa ser espalhada pro mundo! Que coisa linda 😭' },
-  { name: 'Renata Campos', message: 'Isso não tem como ser coincidência. É Deus!' },
-  { name: 'Carlos Junior', message: 'quero esse milagre pra minha vida financeira também 🙏' },
-  { name: 'Tânia Rocha', message: 'Como faço pra ter acesso a todas as orações?' },
-  { name: 'Cícera Maria', message: 'A fé move montanhas! Já tô com lágrimas nos olhos 😭' },
-  { name: 'Francisco Silva', message: 'Amém Jesus! Que bênção ouvir esses relatos 🙏' },
-  { name: 'Denise F.', message: 'Essa oração veio direto do céu!' },
-  { name: 'Dona Nai', message: 'Eu também preciso de um milagre financeiro. Vou fazer essa oração com fé! 😢' },
-  { name: 'Gabriel Nogueira', message: 'Isso aqui tá diferente… não é uma live comum. É coisa divina mesmo 🙏' },
-  { name: 'Patrícia Silveira', message: 'É verdade que a oração funciona até pra quem tá afastado da fé? 😢' },
+    { name: 'Roberto Silva', message: 'Que a sabedoria do Rei Salomão abençoe a todos! 🙏', avatarUrl: 'https://thumbs2.imgbox.com/14/e9/DUPvPss9_t.jpg', avatarHint: 'man portrait' },
+    { name: 'Carla Fernandes', message: 'Cheguei agora, já começou a revelação das orações?', avatarUrl: 'https://thumbs2.imgbox.com/dd/55/H0rZXQVM_t.jpg', avatarHint: 'woman portrait' },
+    { name: 'Terezinha Souza', message: 'Amém, meu Deus! Só Tu és fiel ❤️', avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg', avatarHint: 'woman portrait' },
+    { name: 'André Luiz', message: 'A sabedoria de Salomão é maravilhosa! Amém 🙌', avatarUrl: 'https://thumbs2.imgbox.com/7b/b0/gsYWvBdF_t.jpg', avatarHint: 'man portrait' },
+    { name: 'Regina Célia', message: 'Glória a Ti, Senhor! Estamos prontos para receber essa bênção 🙏', avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg', avatarHint: 'woman portrait' },
+    { name: 'Equipe de Suporte', message: 'Sim! Milhares de pessoas já estão relatando milagres financeiros e bênçãos com as orações do Rei Salomão. 🙌', isSupport: true },
+    { name: 'Joana Lima', message: 'Amém, glória a Deus!', avatarUrl: 'https://thumbs2.imgbox.com/87/54/0dMM6ESV_t.png', avatarHint: 'woman portrait' },
+    { name: 'Paulo Vieira', message: '😇😇😇😇😇😇', avatarUrl: 'https://thumbs2.imgbox.com/48/18/9JtnHEjz_t.png', avatarHint: 'man portrait' },
+    { name: 'Lucas Bernardes', message: 'Sou de Goiânia. Posso pedir uma oração para o meu negócio prosperar?', avatarUrl: 'https://thumbs2.imgbox.com/72/dc/GT3YxWwY_t.jpg', avatarHint: 'man portrait' },
+    { name: 'Marta Helena', message: 'Alguém mais sentindo uma paz diferente nesse momento?', avatarUrl: 'https://thumbs2.imgbox.com/da/67/ajSKP3eY_t.jpg', avatarHint: 'woman portrait' },
+    { name: 'Rosana Oliveira', message: 'Peço orações pela cura da minha mãe que está hospitalizada. Rei Salomão, interceda por nós!', avatarUrl: 'https://thumbs2.imgbox.com/eb/cb/zfODzSUu_t.png', avatarHint: 'woman portrait' },
+    { name: 'Carlos Eduardo', message: 'Ore pela minha mãe, por favor… ela está lutando contra um câncer e precisa de forças 🙏📿', avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg', avatarHint: 'man portrait' },
+    { name: 'Lívia Santos', message: 'Então é isso que os sábios usam há séculos pra atrair riqueza? 😮✨' },
+    { name: 'Ruth Cardoso', message: 'Eu sabia que os milionários tinham esses segredinhos.' },
+    { name: 'Carlos M.', message: 'Silvio Santos usa isso?? Nunca imaginei 😳' },
+    { name: 'Patrícia Gomes', message: 'Se isso ajudou até o Rei Salomão… 🙌 já quero ouvir essa oração!' },
+    { name: 'Cláudia Lima', message: 'Eu prometo usar essa oração pra ajudar minha família toda ❤️❤️' },
+    { name: 'Elizângela F.', message: 'Não é justo! A gente trabalhando todo dia e eles com esse segredo guardado. Graças a Deus foi revelado para nós.' },
+    { name: 'Camila Andrade', message: 'Sinto que essa live vai mudar minha vida. Estou aqui por um propósito divino! Gloria a Deus ❤️' },
+    { name: 'Fernanda Salomão', message: 'Obrigada por ter coragem de revelar isso, José! 🕊️' },
+    { name: 'João Batista', message: 'Tô curioso… nunca ouvi falar sobre isso de forma tão clara. 🙏' },
+    { name: 'Carmem Lúcia', message: 'Gente, segura a emoção… lá vem bênção forte!' },
+    { name: 'Mônica Vieira', message: 'Alguém mais tá com o coração batendo forte?' },
+    { name: 'Vera Lima', message: 'Que testemunhos lindos 🕊️😭' },
+    { name: 'Eduardo Lima', message: 'Essa sabedoria precisa ser espalhada pro mundo! Que coisa linda 😭' },
+    { name: 'Renata Campos', message: 'Isso não tem como ser coincidência. É Deus!' },
+    { name: 'Carlos Junior', message: 'quero esse milagre pra minha vida financeira também 🙏' },
+    { name: 'Tânia Rocha', message: 'Como faço pra ter acesso a todas as orações?' },
+    { name: 'Cícera Maria', message: 'A fé move montanhas! Já tô com lágrimas nos olhos 😭' },
+    { name: 'Francisco Silva', message: 'Amém Jesus! Que bênção ouvir esses relatos 🙏' },
+    { name: 'Denise F.', message: 'Essa oração veio direto do céu!' },
+    { name: 'Dona Nai', message: 'Eu também preciso de um milagre financeiro. Vou fazer essa oração com fé! 😢' },
+    { name: 'Gabriel Nogueira', message: 'Isso aqui tá diferente… não é uma live comum. É coisa divina mesmo 🙏' },
+    { name: 'Patrícia Silveira', message: 'É verdade que a oração funciona até pra quem tá afastado da fé? 😢' },
 ];
 
 const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }: ChatMessageData) => (
@@ -108,7 +108,7 @@ export default function FrequenciasDaCuraPage() {
 
   return (
     <div className="bg-white text-black font-sans">
-      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 shrink-0">
+      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10">
         <div className="flex items-center gap-4 shrink-0">
           <Menu className="h-6 w-6 text-neutral-800" />
           <Image
@@ -147,17 +147,19 @@ export default function FrequenciasDaCuraPage() {
             <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-68d55dd33cef69e1d154431b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>` }} />
           </div>
 
-          {showBuyButton && (
-            <div className="mt-8 text-center">
-              <Button
-                size="lg"
-                className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
-                onClick={handleBuyClick}
-              >
-                EU QUERO ESSAS ORAÇÕES
-              </Button>
-            </div>
-          )}
+          <div className="mt-8 text-center">
+              {showBuyButton ? (
+                  <Button
+                      size="lg"
+                      className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
+                      onClick={handleBuyClick}
+                  >
+                      EU QUERO ESSAS ORAÇÕES
+                  </Button>
+              ) : (
+                  <div className="h-[76px] md:h-[92px]" />
+              )}
+          </div>
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">

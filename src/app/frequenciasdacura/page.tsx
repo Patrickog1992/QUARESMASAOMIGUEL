@@ -6,6 +6,7 @@ import { Menu, Search, Smile, UserCircle } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { cn } from '@/lib/utils';
 
 type ChatMessageData = {
   name: string;
@@ -147,18 +148,17 @@ export default function FrequenciasDaCuraPage() {
             <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-68d55dd33cef69e1d154431b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>` }} />
           </div>
 
-          <div className="mt-8 text-center">
-              {showBuyButton ? (
-                  <Button
-                      size="lg"
-                      className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto"
-                      onClick={handleBuyClick}
-                  >
-                      EU QUERO ESSAS ORAÇÕES
-                  </Button>
-              ) : (
-                  <div className="h-[76px] md:h-[92px]" />
-              )}
+          <div className="mt-8 text-center h-[76px] md:h-[92px]">
+              <Button
+                  size="lg"
+                  className={cn(
+                      "bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-6 md:px-12 uppercase animate-pulse shadow-lg h-auto whitespace-normal w-full max-w-lg mx-auto transition-opacity duration-500",
+                      showBuyButton ? "opacity-100" : "opacity-0 pointer-events-none"
+                  )}
+                  onClick={handleBuyClick}
+              >
+                  EU QUERO ESSAS ORAÇÕES
+              </Button>
           </div>
 
           <div className="mt-4">

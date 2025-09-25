@@ -173,7 +173,7 @@ export default function FrequenciasDaCuraPage() {
 
   return (
     <div className="bg-white text-black font-sans">
-      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 sticky top-0 shrink-0">
+      <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 shrink-0">
         <div className="flex items-center gap-4 shrink-0">
           <Menu className="h-6 w-6 text-neutral-800" />
           <Image

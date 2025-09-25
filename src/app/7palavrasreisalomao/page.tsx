@@ -75,7 +75,7 @@ const BuyButton = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
-    }, 5 * 1000); // 5 seconds
+    }, (22 * 60 + 34) * 1000); // 22 minutes and 34 seconds
 
     return () => clearTimeout(timer);
   }, []);

@@ -234,7 +234,7 @@ export default function FrequenciasDaCuraPage() {
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-3">
                 <Avatar>
-                  <AvatarImage src="https://xn--oraaosecreta-mdb.site/live/images/osa_foto_perfil_padre.webp" alt="José Alvarenga" />
+                  <AvatarImage src="https://media.atomicatpages.net/u/p4N19AiZlnhPlDEbsYMdAfxKjQk2/Pictures/share/pageHQGYeTB/iXjccx9971522.webp?quality=77#240159" alt="José Alvarenga" />
                   <AvatarFallback>JA</AvatarFallback>
                 </Avatar>
                 <div>

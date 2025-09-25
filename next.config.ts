@@ -82,6 +82,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'media.inlead.cloud',
       },
+      {
+        protocol: 'https',
+        hostname: 'media.atomicatpages.net',
+      },
     ],
   },
 };

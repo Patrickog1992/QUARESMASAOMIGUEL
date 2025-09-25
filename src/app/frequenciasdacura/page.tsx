@@ -16,105 +16,45 @@ type ChatMessageData = {
 };
 
 const allChatMessages: ChatMessageData[] = [
-  { name: 'Roberto Silva', message: 'Que Deus abençoe a todos! 🙏 Em nome de jesus', avatarUrl: 'https://thumbs2.imgbox.com/14/e9/DUPvPss9_t.jpg', avatarHint: 'man portrait' },
-  { name: 'Carla Fernandes', message: 'Cheguei agora, o que tá acontecendo? Já começou?', avatarUrl: 'https://thumbs2.imgbox.com/dd/55/H0rZXQVM_t.jpg', avatarHint: 'woman portrait' },
-  { name: 'Ediene Silva', message: 'ó Jesus e Maria fortalece minha vida e a de João Batista na união vinda de vós pelo espírito santo amém' },
-  { name: 'Terezinha Souza', message: 'Amém, meu Deus! Só Tu és fiel ❤️', avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg', avatarHint: 'woman portrait' },
-  { name: 'Sueli Andrade', message: 'Nossa, entrei bem na hora da oração… Graças a Deus 😇😇' },
-  { name: 'André Luiz', message: 'Deus é maravilhoso! Amém 🙌', avatarUrl: 'https://thumbs2.imgbox.com/7b/b0/gsYWvBdF_t.jpg', avatarHint: 'man portrait' },
-  { name: 'Paulo César', message: 'Senhor, guia nossos passos!' },
-  { name: 'Vera Lúcia', message: 'Abençoa, Senhor, cada família conectada nessa live 🙌🙌🙌' },
-  { name: 'Iracema Nogueira', message: '❤️❤️❤️❤️❤️' },
-  { name: 'Claudete Ferreira', message: 'Amén!! 🙏🙏🙏' },
-  { name: 'Gilberto Lima', message: 'Poxa interessante uma Oração de 800 anos? Só pode ser de Deus mesmo' },
-  { name: 'Regina Célia', message: 'Glória a Ti, Senhor! Estamos prontos 🙏', avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg', avatarHint: 'woman portrait' },
-  { name: 'Marta de Jesus', message: 'Comecei a assistir agora… alguém já usou essa oração?' },
-  { name: 'Eliane Ramos', message: '🙏🙏🙏' },
-  { name: 'Equipe de Suporte', message: 'Sim, Marta! Milhares de pessoas já estão relatando curas, bênçãos financeiras e restauração familiar com as Frequências da Cura. 🙌📿', isSupport: true },
+  { name: 'Roberto Silva', message: 'Que a sabedoria do Rei Salomão abençoe a todos! 🙏', avatarUrl: 'https://thumbs2.imgbox.com/14/e9/DUPvPss9_t.jpg', avatarHint: 'man portrait' },
+  { name: 'Carla Fernandes', message: 'Cheguei agora, já começou a revelação das orações?', avatarUrl: 'https://thumbs2.imgbox.com/dd/55/H0rZXQVM_t.jpg', avatarHint: 'woman portrait' },
+  { name: 'Terezinha Souza', message: 'Amém! Pronta para receber essa bênção e prosperidade ❤️', avatarUrl: 'https://thumbs2.imgbox.com/3d/ae/bHEFsuqi_t.jpg', avatarHint: 'woman portrait' },
+  { name: 'André Luiz', message: 'A sabedoria de Salomão é divina! Amém 🙌', avatarUrl: 'https://thumbs2.imgbox.com/7b/b0/gsYWvBdF_t.jpg', avatarHint: 'man portrait' },
+  { name: 'Regina Célia', message: 'Glória a Deus! Estamos prontos para a prosperidade 🙏', avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg', avatarHint: 'woman portrait' },
+  { name: 'Equipe de Suporte', message: 'Sim! Milhares de pessoas já estão relatando milagres financeiros e de saúde com as orações de Salomão. 🙌', isSupport: true },
   { name: 'Joana Lima', message: 'Amém, glória a Deus!', avatarUrl: 'https://thumbs2.imgbox.com/87/54/0dMM6ESV_t.png', avatarHint: 'woman portrait' },
-  { name: 'Neide Souza', message: 'Amém, amém, amém!!!' },
   { name: 'Paulo Vieira', message: '😇😇😇😇😇😇', avatarUrl: 'https://thumbs2.imgbox.com/48/18/9JtnHEjz_t.png', avatarHint: 'man portrait' },
-  { name: 'Ana Paula', message: 'Amém 🙏 Deus é fiel' },
-  { name: 'Adriana Gomes', message: 'Aleluia!!' },
-  { name: 'Jacinta Feitosa', message: 'Bom dia peço oração pela minha família, minha filha, meu esposo e a mim. Principalmente pela conversão do meu esposo, livrai-nos de todos os perigos. E que o Espírito Santo esteja conosco.' },
-  { name: 'Maria Rita', message: 'Aqui é a Maria Rita de Aparecida - SP. Peço oração para quitar 80 mil em dívidas de cartão de crédito e para abençoar os estudos dos netos…' },
-  { name: 'Severiana Amorim', message: 'peço orações pela minha família' },
-  { name: 'Cláudio Teixeira', message: 'Senhor, me ajuda a pagar meu aluguel esse mês.' },
-  { name: 'Lucas Bernardes', message: 'Sou de Goiânia. Posso pedir oração pelo meu negócio?', avatarUrl: 'https://thumbs2.imgbox.com/72/dc/GT3YxWwY_t.jpg', avatarHint: 'man portrait' },
-  { name: 'Marta Helena', message: 'Alguém mais sentindo uma paz diferente nesse momento?', avatarUrl: 'https://thumbs2.imgbox.com/da/67/ajSKP3eY_t.jpg', avatarHint: 'woman portrait' },
-  { name: 'Adriana Lins', message: 'Amados irmãos, vamos orar com fé 🙏' },
-  { name: 'Alex Rodrigues', message: 'A minha família é uma benção...' },
-  { name: 'Gerson Oliveira', message: 'Essa live vai ficar salva depois? Quero mandar pra minha mãe.' },
-  { name: 'José da Silva', message: 'Sou o José da Silva de Fortaleza. peço uma bênção de um emprego para tirar a família das dificuldades e realizar o sonho da casa própria…' },
-  { name: 'Henrique', message: 'Deus abençoe minha família, abre as portas de trabalho pra minha irmã Joyce.' },
-  { name: 'Sérgio Lima', message: 'Esse canal é novo? Como nunca vi isso antes? Que benção🙏' },
-  { name: 'Ivone Oliveira', message: 'Meu Senhor e Meu Deus,rezo hoje por todas as minhas intenções e por todos os que me pedem orações....' },
-  { name: 'Tiene Delvalles', message: 'pela saúde de meus filos' },
-  { name: 'Edhite Souza', message: 'Orações em ação de graças pela paz do mundo inteiro. 🙏' },
-  { name: 'Rosana Oliveira', message: 'Peço orações pela cura da minha mãe que se encontra hospitalizada em estado grave🥺JESUS EU CREI MAS AUMENTA A MINHA FÉ 😭😭😭', avatarUrl: 'https://thumbs2.imgbox.com/eb/cb/zfODzSUu_t.png', avatarHint: 'woman portrait' },
-  { name: 'Márcia Cardoso', message: 'Padre, sou a Márcia de BH. Peço oração pelo meu casamento e pelas minhas dores nas juntas e problemas de diabetes…' },
-  { name: 'Margarida Maria', message: 'Padre peço sua benção pra minha familia pela converssão de todos.❤️' },
-  { name: 'Beatriz Santos', message: 'pela cirurgia do coração da minha netinha Ária. Jesus eu confio em vós. 🙏🙏🙏🙏' },
-  { name: 'Denize Michelle', message: 'Pelo meu matrimônio, meus filhos' },
-  { name: 'Semirames', message: 'Rezo pela minha vida profissional, que Deus faça o melhor por mim.' },
-  { name: 'Sandra', message: 'Padre, reze pra trazer meu marido de volta… ele saiu de casa faz 2 meses 😢' },
-  { name: 'Carlos Eduardo', message: 'Ore pela minha mãe, Padre… ela está lutando contra um câncer e precisa de forças 🙏📿', avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg', avatarHint: 'man portrait' },
-  { name: 'Dona Terezinha', message: 'Peço oração pela minha filha que está com depressão… que Deus cure o coração dela 🙏' },
-  { name: 'Cida Ramos', message: 'Amém! Que bênção 🙏' },
-  { name: 'Elis Regina', message: 'A-M-É-M 🙌' },
-  { name: 'Moisés Ribeiro', message: '59 mil pessoas e todas unidas em oração… é emocionante.' },
-  { name: 'Marenilde Sousa', message: 'rezo pela minha família, pelos meus filhos, pela minha vida espiritual, financeira, sentimental e física' },
-  { name: 'Luciana Mendes', message: 'Só pode ser algo muito poderoso mesmo' },
-  { name: 'Roberto Carvalho', message: 'Acabei de pesquisar no Google, é realmente não tem anda parecido! que interessante Gloria a Deus' },
-  { name: 'Delvita Silva', message: 'peço oração pela minha mãe que fez 103 anos' },
-  { name: 'Eduardo Félix', message: 'Essa oração que tá sendo estudada pela Nasa? 😳' },
-  { name: 'Aline Torres', message: 'COMO ASSIM a NASA tá estudando uma oração??? Serioo! 😳' },
-  { name: 'Nogueira', message: '🙏🙏🙏🙏🫨🫨🫨' },
-  { name: 'Gabriel Diniz', message: 'Uau! Não sabia que até os cientistas estão estudando isso.❤️' },
-  { name: 'Cintia Barreto', message: 'Nunca ouvi nada parecido. Estou impactada.' },
-  { name: 'Carlos Eduardo', message: 'Cientistas ateus confirmando??? Deus mostrando que é real!' },
-  { name: 'Cristiane Luz', message: 'Isso é profético! 🙌' },
-  { name: 'Valdirene Costa', message: '2000 anos? Só pode ser de Deus mesmo!' },
-  { name: 'Everton Gomes', message: 'Agora faz sentido tudo que tenho vivido ultimamente' },
-  { name: 'Cida Reis', message: 'Misericórdia Senhor de todos nós vossos filhos e filhas.' },
-  { name: 'Douglas Ramos', message: 'Meu espírito confirma… isso é muito sério.' },
-  { name: 'Gilsandra de Oliveira', message: 'Obrigada, Deus 🙏🙏🙏' },
-  { name: 'Vania Lucia', message: 'SALVA o BRASIL Senhor JESUS 🙏🏻🙏🏻🙏🏻🇧🇷' },
-  { name: 'Priscila', message: '🙌🙌🙌' },
-  { name: 'Denise Rocha', message: 'Não é à toa que a Maçonaria escondeu isso' },
-  { name: 'Heloísa Cardoso', message: 'Deus escolheu o momento certo pra revelar isso' },
-  { name: 'Paulo G.', message: 'Eu sabia que os maçons escondiam algo secreto...' },
-  { name: 'Lívia Santos', message: 'Então é isso que os judeus usam há séculos pra atrair riqueza? 😮✨' },
-  { name: 'Ruth Cardoso', message: 'Eu sabia que o Neymar tinha esses segredinhos' },
-  { name: 'Carlos M.', message: 'Luciano Huck?? Nunca imaginei ele envolvido nisso 😳' },
-  { name: 'Patrícia Gomes', message: 'Se isso ajudou até Davi e Salomão… 🙌 já quero ouvir essa oração!' },
-  { name: 'Cláudia Lima', message: 'Eu prometo usar essa oração pra ajudar minha família toda ❤️❤️' },
-  { name: 'Tiene Delvalles', message: 'Meu Deus quanto famosos estão usando essa benção!!' },
-  { name: 'Elizângela F.', message: 'Não é justo! A gente ralando todo dia e eles com esse segredo guardado Graças a Deus o Padre esta mostrado para a gente' },
+  { name: 'Lucas Bernardes', message: 'Sou de Goiânia. Posso pedir prosperidade para o meu negócio?', avatarUrl: 'https://thumbs2.imgbox.com/72/dc/GT3YxWwY_t.jpg', avatarHint: 'man portrait' },
+  { name: 'Marta Helena', message: 'Alguém mais sentindo uma energia de riqueza nesse momento?', avatarUrl: 'https://thumbs2.imgbox.com/da/67/ajSKP3eY_t.jpg', avatarHint: 'woman portrait' },
+  { name: 'Rosana Oliveira', message: 'Peço as bênçãos de Salomão para a cura da minha mãe que está hospitalizada. EU CREIO! 🙏', avatarUrl: 'https://thumbs2.imgbox.com/eb/cb/zfODzSUu_t.png', avatarHint: 'woman portrait' },
+  { name: 'Carlos Eduardo', message: 'Ore pela minha mãe, ela está lutando contra um câncer e precisa de um milagre. 🙏📿', avatarUrl: 'https://thumbs2.imgbox.com/c3/9d/Qq4PQmYc_t.jpg', avatarHint: 'man portrait' },
+  { name: 'Lívia Santos', message: 'Então é isso que os sábios usam há séculos pra atrair riqueza? 😮✨' },
+  { name: 'Ruth Cardoso', message: 'Eu sabia que os grandes milionários tinham esses segredos.' },
+  { name: 'Carlos M.', message: 'Silvio Santos usa isso?? Nunca imaginei 😳' },
+  { name: 'Patrícia Gomes', message: 'Se ajudou até o Rei Salomão… 🙌 já quero ouvir essa oração!' },
+  { name: 'Cláudia Lima', message: 'Eu prometo usar essas orações pra ajudar minha família toda ❤️❤️' },
   { name: 'Camila Andrade', message: 'Sinto que essa live vai mudar minha vida. Estou aqui por um propósito divino! Gloria a Deus ❤️' },
-  { name: 'Fernanda Salomão', message: 'Obrigada por ter coragem de falar isso, padre! 🕊️' },
-  { name: 'João Batista', message: 'Tô curioso… nunca vi o Padre assim tão sério 🙏' },
+  { name: 'Fernanda Salomão', message: 'Obrigada por ter coragem de revelar isso! 🕊️' },
+  { name: 'João Batista', message: 'Tô curioso… nunca vi o José assim tão sério 🙏' },
   { name: 'Carmem Lúcia', message: 'Gente, segura a emoção… lá vem bênção forte!' },
-  { name: 'Mônica Vieira', message: 'Alguém mais tá com o coração batendo forte?' },
+  { name: 'Mônica Vieira', message: 'Alguém mais tá com o coração acelerado?' },
   { name: 'Paulo Sérgio', message: 'Algo me diz que isso vai mudar tudo… 🙌' },
   { name: 'Vera Lima', message: 'Que testemunhos lindos 🕊️😭' },
   { name: 'Eduardo Lima', message: 'Essa oração precisa ser espalhada pro mundo! Que coisa linda 😭' },
   { name: 'Renata Campos', message: 'Isso não tem como ser coincidência. É Deus!' },
   { name: 'Carlos Junior', message: 'quero esse milagre tbm 🙏' },
-  { name: 'Tânia Rocha', message: 'Padre, como faço pra ouvir a oração todo dia?' },
-  { name: 'Luciana Dantas', message: 'Amo vender doces também! Vou começar a fazer essa oração amanhã cedo' },
+  { name: 'Tânia Rocha', message: 'José, como faço pra ouvir a oração todo dia?' },
   { name: 'Carla Montes', message: 'Amém!! 🙏❤️' },
   { name: 'Cícera Maria', message: 'A fé move montanhas! Já tô com lágrimas nos olhos 😭' },
-  { name: 'Tainá Moura', message: 'Chorei aqui… o milagre do casamento restaurado me pegou 😭' },
+  { name: 'Tainá Moura', message: 'Chorei aqui… o milagre do casamento restaurado me tocou 😭' },
   { name: 'Francisco Silva', message: 'Amém Jesus! Que bênção ouvir esses relatos 🙏' },
-  { name: 'Neide Rodrigues', message: 'Amém! Que oração maravilhosa, quero escutar ouvi-la!' },
+  { name: 'Neide Rodrigues', message: 'Amém! Que oração maravilhosa, quero ouvi-la!' },
   { name: 'Denise F.', message: 'Essa oração veio direto do céu!' },
-  { name: 'Luciana Prado', message: 'Glória a Deus pela cura, padre! 🙏' },
+  { name: 'Luciana Prado', message: 'Glória a Deus pela cura! 🙏' },
   { name: 'Dona Nai', message: 'Eu também sinto dores fortes na coluna, vou fazer essa oração com fé! 😢' },
-  { name: 'Vanessa Ribeiro', message: 'Gente, o padre tá falando que vai mudar tudo o que sabemos sobre milagres… Tô arrepiada 🙏' },
-  { name: 'João Batista', message: 'Não conhecia o Padre Fernando, mas já senti uma paz só de ouvir ele 🙌' },
+  { name: 'Vanessa Ribeiro', message: 'Gente, ele tá falando que vai mudar tudo o que sabemos sobre milagres… Tô arrepiada 🙏' },
   { name: 'Gabriel Nogueira', message: 'Isso aqui tá diferente… não é live comum não. É coisa divina mesmo 🙏' },
-  { name: 'Patrícia Silveira', message: 'Padre, é verdade que a oração funciona até pra quem tá afastado da fé? 😢' },
+  { name: 'Patrícia Silveira', message: 'José, é verdade que a oração funciona até pra quem tá afastado da fé? 😢' },
 ];
 
 const ChatMessage = ({ name, message, avatarUrl, avatarHint, isSupport = false }: ChatMessageData) => (
@@ -226,7 +166,7 @@ export default function FrequenciasDaCuraPage() {
 
           <div className="mt-4">
             <h1 className="text-xl font-bold mb-1 break-words">
-              Padre Fernando Lisboa | As Frequências da Cura: a oração escondida pela Maçonaria por mais de 800 anos que tem trazido milagres a mais de 59 mil pessoas | Live Ao Vivo {liveTime && `${liveTime}.`}
+              Foi revelado as orações do Rei Salomão para ganhar milagres e benção divina
             </h1>
             <div className="text-sm text-neutral-600 mb-4">
               <span className="font-bold">{viewerCount.toLocaleString('pt-BR')} assistindo agora</span>
@@ -234,11 +174,11 @@ export default function FrequenciasDaCuraPage() {
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-3">
                 <Avatar>
-                  <AvatarImage src="https://xn--oraaosecreta-mdb.site/live/images/osa_foto_perfil_padre.webp" alt="Fernando Lisboa" />
-                  <AvatarFallback>FL</AvatarFallback>
+                  <AvatarImage src="https://media.atomicatpages.net/u/p4N19AiZlnhPlDEbsYMdAfxKjQk2/Pictures/share/pageHQGYeTB/iXjccx9971522.webp?quality=77#240159" alt="José Alvarenga" />
+                  <AvatarFallback>JA</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-semibold">Fernando Lisboa</p>
+                  <p className="font-semibold">José Alvarenga</p>
                   <p className="text-sm text-neutral-600">96 mil inscritos</p>
                 </div>
               </div>

@@ -21,11 +21,13 @@ export default function ArcanjoMiguelQuizStartPage() {
                     className="rounded-lg mx-auto shadow-lg"
                     data-ai-hint="curse broken light"
                 />
-                <Link href="/arcanjomiguel/quiz1" passHref>
-                    <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-pulse">
-                        EU QUERO OUVIR AS ORAÇÕES
-                    </Button>
-                </Link>
+                <div className="pt-4">
+                  <Link href="/arcanjomiguel/quiz1" passHref>
+                      <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite] shadow-lg shadow-amber-500/30">
+                          EU QUERO OUVIR AS ORAÇÕES
+                      </Button>
+                  </Link>
+                </div>
             </CardContent>
         </Card>
       </main>

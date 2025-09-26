@@ -18,11 +18,13 @@ export default function ArcanjoMiguelQuiz3Page() {
                         className="bg-gray-900/50 text-white border-amber-400/50 focus:ring-amber-400"
                         rows={4}
                     />
-                    <Link href="/arcanjomiguel/video" passHref>
-                        <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite] shadow-lg shadow-amber-500/30">
-                            QUERO MINHA BENÇÃO
-                        </Button>
-                    </Link>
+                    <div className="pt-4">
+                      <Link href="/arcanjomiguel/video" passHref>
+                          <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite] shadow-lg shadow-amber-500/30">
+                              QUERO MINHA BENÇÃO
+                          </Button>
+                      </Link>
+                    </div>
                 </CardContent>
             </Card>
         </main>

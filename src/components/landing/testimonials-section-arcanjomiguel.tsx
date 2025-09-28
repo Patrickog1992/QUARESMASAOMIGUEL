@@ -9,7 +9,7 @@ const testimonials = [
         name: 'Reginaldo Manzotti',
         avatarUrl: 'https://thumbs2.imgbox.com/b9/08/pB4d3kjj_t.png',
         avatarHint: 'priest portrait',
-        text: 'As 50 orações de São Miguel Arcanjo são um presente do céu para os momentos de batalha. Elas renovam a fé e trazem a certeza da proteção divina. Receba essa graça em sua vida!',
+        text: 'As orações de São Miguel Arcanjo são um presente do céu para os momentos de batalha. Elas renovam a fé e trazem a certeza da proteção divina. Receba essa graça em sua vida!',
         likes: 2134,
         time: '3 h',
         replies: [
@@ -69,7 +69,7 @@ const testimonials = [
         name: 'Luciana Silva',
         avatarUrl: 'https://thumbs2.imgbox.com/65/6a/L5JO7ilQ_t.jpg',
         avatarHint: 'woman portrait',
-        text: 'Tô arrepiada! Essas 50 orações de proteção do Arcanjo Miguel são surreais. 😭🌟',
+        text: 'Tô arrepiada! Essas 40 orações de proteção do Arcanjo Miguel são surreais. 😭🌟',
         likes: 267,
         time: '1 h',
     },

@@ -99,6 +99,37 @@ const BuyButton = () => {
   );
 };
 
+const VideoPlayer = () => {
+    useEffect(() => {
+        const scriptId = "vturb-player-script-68dbd1d0f7f0e9b5fd73217a";
+        if (document.getElementById(scriptId)) return;
+
+        const script = document.createElement("script");
+        script.id = scriptId;
+        script.src = "https://scripts.converteai.net/db159b27-2739-477e-a1ae-6458da34c980/players/68dbd1d0f7f0e9b5fd73217a/v4/player.js";
+        script.async = true;
+        document.head.appendChild(script);
+
+        return () => {
+            const existingScript = document.getElementById(scriptId);
+            if (existingScript && existingScript.parentNode) {
+                existingScript.parentNode.removeChild(existingScript);
+            }
+        };
+    }, []);
+
+    const videoHtml = `<vturb-smartplayer id="vid-68dbd1d0f7f0e9b5fd73217a" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+
+    return (
+        <div 
+            id="video-container"
+            className="relative w-full bg-black aspect-video"
+        >
+            <div dangerouslySetInnerHTML={{ __html: videoHtml }} />
+        </div>
+    );
+};
+
 
 export default function PalavrasReiSalomaoVideoPage() {
   const [viewerCount] = useState(55452);
@@ -111,24 +142,6 @@ export default function PalavrasReiSalomaoVideoPage() {
     setLiveTime(`às ${time}, ${date}`);
   }, []);
   
-  useEffect(() => {
-    const scriptId = "vturb-player-script-68d55dd33cef69e1d154431b";
-    if (document.getElementById(scriptId)) return;
-
-    const script = document.createElement("script");
-    script.id = scriptId;
-    script.src = "https://scripts.converteai.net/b45e4a12-72fd-43f2-a7e4-73d6b242d5d9/players/68d55dd33cef69e1d154431b/v4/player.js";
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      const existingScript = document.getElementById(scriptId);
-      if (existingScript && existingScript.parentNode) {
-        existingScript.parentNode.removeChild(existingScript);
-      }
-    };
-  }, []);
-
   return (
     <div className="bg-white text-black font-sans">
        <header className="flex items-center justify-between px-4 py-2 bg-white border-b border-neutral-200 z-10 shrink-0">
@@ -162,12 +175,7 @@ export default function PalavrasReiSalomaoVideoPage() {
       <main className="grid grid-cols-1 lg:grid-cols-[1fr_402px]">
         {/* Video and Info Section */}
         <div className="flex flex-col px-4 lg:px-6 py-4">
-          <div
-            id="video-container"
-            className="relative w-full bg-black aspect-video"
-          >
-            <div dangerouslySetInnerHTML={{ __html: `<vturb-smartplayer id="vid-68d55dd33cef69e1d154431b" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>` }} />
-          </div>
+          <VideoPlayer />
 
           <div className="mt-8 text-center">
             <BuyButton />

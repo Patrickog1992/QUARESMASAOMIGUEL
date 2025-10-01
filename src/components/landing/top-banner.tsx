@@ -26,7 +26,15 @@ export function TopBanner({ className, text }: TopBannerProps) {
   }
 
   const defaultText = `ATENÇÃO: Devido a grande quantidade de pessoas e poucas quaresmas esse vídeo irá sair do ar hoje: ${currentDate}`;
-  const bannerText = text ? text.replace('(Coloque a data que a pessoa está acessando)', currentDate) : defaultText;
+  let bannerText = text ? text : defaultText;
+  
+  if (text) {
+      if (text.includes('(coloque a data que a pessoa está acessando)')) {
+          bannerText = text.replace('(coloque a data que a pessoa está acessando)', currentDate);
+      } else if (text.includes('(Coloque a data que a pessoa está acessando)')) {
+           bannerText = text.replace('(Coloque a data que a pessoa está acessando)', currentDate);
+      }
+  }
 
   const textParts = bannerText.split(currentDate);
   

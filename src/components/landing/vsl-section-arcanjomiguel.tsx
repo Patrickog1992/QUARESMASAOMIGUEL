@@ -6,17 +6,17 @@ import { BuyButtonArcanjoMiguel } from './buy-button-arcanjomiguel';
 
 export function VSLSectionArcanjoMiguel() {
   useEffect(() => {
-    const scriptId = 'vid-68d6c97660f5e1ab216b2d22-script';
+    const scriptId = 'vid-68dd3c22f6488d2f4d4ebee4-script';
     if (!document.getElementById(scriptId)) {
         const script = document.createElement('script');
         script.id = scriptId;
-        script.src = 'https://scripts.converteai.net/b45e4a12-72fd-43f2-a7e4-73d6b242d5d9/players/68d6c97660f5e1ab216b2d22/v4/player.js';
+        script.src = 'https://scripts.converteai.net/db159b27-2739-477e-a1ae-6458da34c980/players/68dd3c22f6488d2f4d4ebee4/v4/player.js';
         script.async = true;
         document.head.appendChild(script);
     }
   }, []);
   
-  const videoHtml = `<vturb-smartplayer id="vid-68d6c97660f5e1ab216b2d22" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+  const videoHtml = `<vturb-smartplayer id="vid-68dd3c22f6488d2f4d4ebee4" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
   return (
     <section>

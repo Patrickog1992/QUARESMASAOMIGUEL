@@ -6,19 +6,17 @@ import { BuyButtonPadrePio } from './buy-button-padrepio';
 
 export function VSLSectionPadrePio() {
   useEffect(() => {
-    // Placeholder video script. Replace with the actual one for Padre Pio.
-    const scriptId = 'vid-padrepio-placeholder-script';
+    // Usando o mesmo vídeo do Arcanjo Miguel como placeholder
+    const scriptId = 'vid-68dd3c22f6488d2f4d4ebee4-script';
     if (!document.getElementById(scriptId)) {
         const script = document.createElement('script');
         script.id = scriptId;
-        // IMPORTANT: Replace this src with the correct video player URL for Padre Pio
         script.src = 'https://scripts.converteai.net/db159b27-2739-477e-a1ae-6458da34c980/players/68dd3c22f6488d2f4d4ebee4/v4/player.js';
         script.async = true;
         document.head.appendChild(script);
     }
   }, []);
   
-  // IMPORTANT: Replace this id with the correct video id for Padre Pio
   const videoHtml = `<vturb-smartplayer id="vid-68dd3c22f6488d2f4d4ebee4" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
   return (

@@ -16,49 +16,53 @@ const WhatsAppAudioPlayer = () => {
   const [currentTime, setCurrentTime] = useState(0);
 
   const togglePlayPause = () => {
-    if (audioRef.current) {
-        if (isPlaying) {
-            audioRef.current.pause();
-        } else {
-            audioRef.current.play().catch(e => console.error("Erro ao tocar áudio:", e));
-        }
-        setIsPlaying(!isPlaying);
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      // Se o áudio terminou, reinicia antes de tocar
+      if (audioRef.current.ended) {
+          audioRef.current.currentTime = 0;
+      }
+      audioRef.current.play().catch(e => console.error("Erro ao tocar áudio:", e));
     }
+    setIsPlaying(!isPlaying);
   };
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
+    
+    // Workaround for mobile browsers
+    audio.load();
 
     const setAudioData = () => {
       if (isFinite(audio.duration)) {
         setDuration(audio.duration);
       }
+    };
+
+    const setAudioTime = () => {
       setCurrentTime(audio.currentTime);
-    }
+    };
 
-    const setAudioTime = () => setCurrentTime(audio.currentTime);
+    const handleEnded = () => {
+      setIsPlaying(false);
+      setCurrentTime(duration); // Força a barra a ir para o final
+    };
 
+    audio.addEventListener('durationchange', setAudioData);
     audio.addEventListener('loadeddata', setAudioData);
     audio.addEventListener('timeupdate', setAudioTime);
-    audio.addEventListener('durationchange', setAudioData);
-
-    const handleEnded = () => setIsPlaying(false);
     audio.addEventListener('ended', handleEnded);
 
     return () => {
+      audio.removeEventListener('durationchange', setAudioData);
       audio.removeEventListener('loadeddata', setAudioData);
       audio.removeEventListener('timeupdate', setAudioTime);
-      audio.removeEventListener('durationchange', setAudioData);
       audio.removeEventListener('ended', handleEnded);
-    }
-  }, []);
-  
-  useEffect(() => {
-      if(audioRef.current) {
-          audioRef.current.crossOrigin = "anonymous";
-      }
-  }, [])
+    };
+  }, [duration]);
 
   const formatTime = (time: number) => {
     if (isNaN(time) || time === 0) return '0:00';
@@ -79,7 +83,7 @@ const WhatsAppAudioPlayer = () => {
         <div style={{ width: `${progress}%` }} className="bg-amber-400 h-1 rounded-full absolute top-0 left-0" />
         <div style={{ left: `${progress}%` }} className="w-3 h-3 bg-amber-300 rounded-full absolute top-1/2 -translate-x-1/2 -translate-y-1/2" />
       </div>
-      <span className="text-xs text-amber-100 w-10 text-right">{formatTime(isPlaying ? currentTime : (duration > 0 ? duration : 0))}</span>
+      <span className="text-xs text-amber-100 w-10 text-right">{formatTime(isPlaying || currentTime > 0 ? currentTime : duration)}</span>
     </div>
   )
 }

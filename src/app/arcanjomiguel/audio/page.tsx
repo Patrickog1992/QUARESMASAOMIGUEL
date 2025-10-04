@@ -9,7 +9,7 @@ import { Play, Pause } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 
 const WhatsAppAudioPlayer = () => {
-  const audioUrl = "https://media1.vocaroo.com/mp3/1ciPDe2qwAFf";
+  const audioUrl = "https://media.vocaroo.com/mp3/1ciPDe2qwAFf";
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -20,7 +20,7 @@ const WhatsAppAudioPlayer = () => {
         if (isPlaying) {
             audioRef.current.pause();
         } else {
-            audioRef.current.play();
+            audioRef.current.play().catch(e => console.error("Erro ao tocar áudio:", e));
         }
         setIsPlaying(!isPlaying);
     }
@@ -31,7 +31,10 @@ const WhatsAppAudioPlayer = () => {
     if (!audio) return;
 
     const setAudioData = () => {
-      setDuration(audio.duration);
+      // Check if duration is a valid number
+      if (isFinite(audio.duration)) {
+        setDuration(audio.duration);
+      }
       setCurrentTime(audio.currentTime);
     }
 
@@ -39,6 +42,7 @@ const WhatsAppAudioPlayer = () => {
 
     audio.addEventListener('loadeddata', setAudioData);
     audio.addEventListener('timeupdate', setAudioTime);
+    audio.addEventListener('durationchange', setAudioData);
 
     const handleEnded = () => setIsPlaying(false);
     audio.addEventListener('ended', handleEnded);
@@ -46,9 +50,17 @@ const WhatsAppAudioPlayer = () => {
     return () => {
       audio.removeEventListener('loadeddata', setAudioData);
       audio.removeEventListener('timeupdate', setAudioTime);
+      audio.removeEventListener('durationchange', setAudioData);
       audio.removeEventListener('ended', handleEnded);
     }
   }, []);
+  
+  // Add crossOrigin attribute to the audio element
+  useEffect(() => {
+      if(audioRef.current) {
+          audioRef.current.crossOrigin = "anonymous";
+      }
+  }, [])
 
   const formatTime = (time: number) => {
     if (isNaN(time) || time === 0) return '0:00';
@@ -69,7 +81,7 @@ const WhatsAppAudioPlayer = () => {
         <div style={{ width: `${progress}%` }} className="bg-amber-400 h-1 rounded-full absolute top-0 left-0" />
         <div style={{ left: `${progress}%` }} className="w-3 h-3 bg-amber-300 rounded-full absolute top-1/2 -translate-x-1/2 -translate-y-1/2" />
       </div>
-      <span className="text-xs text-amber-100 w-10 text-right">{formatTime(isPlaying ? currentTime : duration)}</span>
+      <span className="text-xs text-amber-100 w-10 text-right">{formatTime(isPlaying ? currentTime : (duration > 0 ? duration : 0))}</span>
     </div>
   )
 }
@@ -88,7 +100,7 @@ function AudioContent() {
                            Frei Gilson tem uma mensagem para você!
                         </h1>
                          <Image
-                            src="https://yt3.googleusercontent.com/ytc/AIdro_n0aj32pD82B215J-DBa5k-yQ2gq09sQZ2aCg=s900-c-k-c0x00ffffff-no-rj"
+                            src="https://yt3.ggpht.com/ytc/AIdro_k6a-0T5d62x4-a0iQ2R-4rD7m1Q-4rD7m1Q=s900-c-k-c0x00ffffff-no-rj"
                             alt="Frei Gilson"
                             width={120}
                             height={120}

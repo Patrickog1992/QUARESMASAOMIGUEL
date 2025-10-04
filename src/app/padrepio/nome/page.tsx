@@ -34,7 +34,7 @@ export default function PadrePioNomePage() {
                 className="text-center bg-gray-900/50 text-white border-amber-400/50 focus:ring-amber-400"
                 required
               />
-              <Button type="submit" size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold">
+              <Button type="submit" size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold animate-pulse">
                 Continuar
               </Button>
             </form>

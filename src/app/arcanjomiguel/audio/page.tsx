@@ -95,7 +95,7 @@ function AudioContent() {
                 <Card className="w-full max-w-md bg-gray-800/50 backdrop-blur-sm border-amber-400/30 text-center">
                     <CardContent className="p-6 md:p-8 space-y-6">
                         <h1 className="text-2xl font-bold text-amber-300">
-                           Frei Gilson tem uma mensagem para você!
+                           Ouça o que Frei Gilson tem para te falar
                         </h1>
                          <Image
                             src="https://i.imgur.com/KLKNKbg.jpeg"

@@ -31,7 +31,6 @@ const WhatsAppAudioPlayer = () => {
     if (!audio) return;
 
     const setAudioData = () => {
-      // Check if duration is a valid number
       if (isFinite(audio.duration)) {
         setDuration(audio.duration);
       }
@@ -55,7 +54,6 @@ const WhatsAppAudioPlayer = () => {
     }
   }, []);
   
-  // Add crossOrigin attribute to the audio element
   useEffect(() => {
       if(audioRef.current) {
           audioRef.current.crossOrigin = "anonymous";
@@ -100,7 +98,7 @@ function AudioContent() {
                            Frei Gilson tem uma mensagem para você!
                         </h1>
                          <Image
-                            src="https://yt3.ggpht.com/ytc/AIdro_k6a-0T5d62x4-a0iQ2R-4rD7m1Q-4rD7m1Q=s900-c-k-c0x00ffffff-no-rj"
+                            src="https://i.imgur.com/KLKNKbg.jpeg"
                             alt="Frei Gilson"
                             width={120}
                             height={120}
@@ -113,9 +111,9 @@ function AudioContent() {
                             </div>
                         </div>
 
-                        <Link href={`/arcanjomiguel/video`} passHref>
-                            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold">
-                                Continuar
+                        <Link href={`/arcanjomiguel/video`} passHref className="block mt-8">
+                            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold uppercase">
+                                QUERO AGORA
                             </Button>
                         </Link>
                     </CardContent>

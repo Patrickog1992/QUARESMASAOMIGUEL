@@ -9,7 +9,7 @@ import { Play, Pause } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 
 const WhatsAppAudioPlayer = () => {
-  const audioUrl = "https://media.vocaroo.com/mp3/1ciPDe2qwAFf";
+  const audioUrl = "https://archive.org/download/a-chave-do-milagre/A%20Chave%20Do%20Milagre.mp3";
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -111,11 +111,13 @@ function AudioContent() {
                             </div>
                         </div>
 
-                        <Link href={`/arcanjomiguel/video`} passHref className="block mt-8">
-                            <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold uppercase">
-                                QUERO AGORA
-                            </Button>
-                        </Link>
+                        <div className="pt-4">
+                            <Link href={`/arcanjomiguel/video`} passHref className="block">
+                                <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold uppercase animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite] shadow-lg">
+                                    QUERO AGORA
+                                </Button>
+                            </Link>
+                        </div>
                     </CardContent>
                 </Card>
             </main>

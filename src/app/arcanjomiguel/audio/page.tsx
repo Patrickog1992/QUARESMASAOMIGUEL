@@ -9,7 +9,7 @@ import { Play, Pause } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 
 const WhatsAppAudioPlayer = () => {
-  const audioUrl = "https://archive.org/download/a-chave-do-milagre/A%20Chave%20Do%20Milagre.mp3";
+  const audioUrl = "https://media.vocaroo.com/mp3/1ciPDe2qwAFf";
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);

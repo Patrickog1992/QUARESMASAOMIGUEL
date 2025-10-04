@@ -22,7 +22,7 @@ export default function PadrePioQuizStartPage() {
                     data-ai-hint="curse broken light"
                 />
                 <div className="pt-4">
-                  <Link href="/padrepio/quiz1" passHref>
+                  <Link href="/padrepio/nome" passHref>
                       <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold text-lg animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite] shadow-lg shadow-amber-500/30">
                           EU QUERO OUVIR AS ORAÇÕES
                       </Button>

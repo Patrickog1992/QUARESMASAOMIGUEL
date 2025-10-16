@@ -6,18 +6,17 @@ import { BuyButtonPadrePio } from './buy-button-padrepio';
 
 export function VSLSectionPadrePio() {
   useEffect(() => {
-    // Usando o mesmo vídeo do Arcanjo Miguel como placeholder
-    const scriptId = 'vid-68dd3c22f6488d2f4d4ebee4-script';
+    const scriptId = 'vid-68eb343ff14b2c1f241df258-script';
     if (!document.getElementById(scriptId)) {
         const script = document.createElement('script');
         script.id = scriptId;
-        script.src = 'https://scripts.converteai.net/db159b27-2739-477e-a1ae-6458da34c980/players/68dd3c22f6488d2f4d4ebee4/v4/player.js';
+        script.src = 'https://scripts.converteai.net/072b0676-85aa-49bb-b085-c507ba561c37/players/68eb343ff14b2c1f241df258/v4/player.js';
         script.async = true;
         document.head.appendChild(script);
     }
   }, []);
   
-  const videoHtml = `<vturb-smartplayer id="vid-68dd3c22f6488d2f4d4ebee4" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
+  const videoHtml = `<vturb-smartplayer id="vid-68eb343ff14b2c1f241df258" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>`;
 
   return (
     <section>

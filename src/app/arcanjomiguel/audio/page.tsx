@@ -7,8 +7,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const AudioComPlayer = () => {
-  const audioHtml = `<div style="height: 228px; width: 204px;"><iframe src="https://audio.com/embed/audio/1846508242931487?theme=image"
-    style="display:block; border-radius: 1px; border: none; height: 204px; width: 204px;"></iframe><a href='https://audio.com/hipno-1' style="text-align: center; display: block; color: #A4ABB6; font-size: 12px; font-family: sans-serif; line-height: 16px; margin-top: 8px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">@hipno-1</a></div>`;
+  const audioHtml = `<div style="height: 204px; width: 204px;"><iframe src="https://audio.com/embed/audio/1846508242931487?theme=image"
+    style="display:block; border-radius: 1px; border: none; height: 204px; width: 204px;"></iframe></div>`;
   return (
     <div className="flex justify-center my-4" dangerouslySetInnerHTML={{ __html: audioHtml }} />
   );

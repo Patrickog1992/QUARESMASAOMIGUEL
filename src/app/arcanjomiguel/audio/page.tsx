@@ -6,10 +6,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const VocarooPlayer = () => {
-  const vocarooHtml = `<iframe width="300" height="60" src="https://vocaroo.com/embed/1ciPDe2qwAFf?autoplay=0" frameborder="0" allow="autoplay"></iframe>`;
+const AudioComPlayer = () => {
+  const audioHtml = `<div style="height: 228px; width: 204px;"><iframe src="https://audio.com/embed/audio/1846506684604200?theme=dark" style="display:block; border-radius: 1px; border: none; height: 204px; width: 204px;"></iframe><a href='https://audio.com/geraldooliveira19921992' style="text-align: center; display: block; color: #A4ABB6; font-size: 12px; font-family: sans-serif; line-height: 16px; margin-top: 8px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">@geraldooliveira19921992</a></div>`;
   return (
-    <div className="flex justify-center my-4" dangerouslySetInnerHTML={{ __html: vocarooHtml }} />
+    <div className="flex justify-center my-4" dangerouslySetInnerHTML={{ __html: audioHtml }} />
   );
 }
 
@@ -32,11 +32,11 @@ function AudioContent() {
                             data-ai-hint="priest portrait"
                         />
                         
-                        <VocarooPlayer />
+                        <AudioComPlayer />
 
                         <div className="pt-4">
                             <Link href="/arcanjomiguel/video" passHref className="block">
-                                <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold uppercase animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite] shadow-lg">
+                                <Button size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold uppercase animate-pulse shadow-lg">
                                     QUERO AS ORAÇÕES
                                 </Button>
                             </Link>

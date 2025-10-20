@@ -8,7 +8,8 @@ import { Play, Pause } from 'lucide-react';
 import Image from 'next/image';
 
 const WhatsAppAudioPlayer = () => {
-  const audioUrl = "https://media.audio.com/1846506684604200.mp3";
+  // Switched to a reliable audio host to prevent playback errors
+  const audioUrl = "https://archive.org/download/frei-gilson-mensagem/frei-gilson-mensagem.mp3";
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);

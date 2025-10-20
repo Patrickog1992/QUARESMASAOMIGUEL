@@ -8,35 +8,21 @@ import { Play, Pause } from 'lucide-react';
 import Image from 'next/image';
 
 const WhatsAppAudioPlayer = () => {
-  // Switched to a reliable audio host to prevent playback errors
   const audioUrl = "https://archive.org/download/frei-gilson-mensagem/frei-gilson-mensagem.mp3";
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-
-  const togglePlayPause = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      if (audioRef.current.ended) {
-          audioRef.current.currentTime = 0;
-      }
-      audioRef.current.play().catch(e => console.error("Erro ao tocar áudio:", e));
-    }
-    setIsPlaying(!isPlaying);
-  };
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.load();
-
     const setAudioData = () => {
       if (isFinite(audio.duration)) {
         setDuration(audio.duration);
+        setIsLoaded(true);
       }
     };
 
@@ -46,24 +32,46 @@ const WhatsAppAudioPlayer = () => {
 
     const handleEnded = () => {
       setIsPlaying(false);
-      setCurrentTime(duration);
+      setCurrentTime(0);
     };
 
+    // Browsers might not load metadata immediately
+    audio.addEventListener('loadedmetadata', setAudioData);
     audio.addEventListener('durationchange', setAudioData);
-    audio.addEventListener('loadeddata', setAudioData);
     audio.addEventListener('timeupdate', setAudioTime);
     audio.addEventListener('ended', handleEnded);
 
+    // If metadata is already loaded
+    if (audio.readyState >= 1) {
+        setAudioData();
+    }
+
     return () => {
+      audio.removeEventListener('loadedmetadata', setAudioData);
       audio.removeEventListener('durationchange', setAudioData);
-      audio.removeEventListener('loadeddata', setAudioData);
       audio.removeEventListener('timeupdate', setAudioTime);
       audio.removeEventListener('ended', handleEnded);
     };
-  }, [duration]);
+  }, []);
+
+  const togglePlayPause = () => {
+    if (!audioRef.current) return;
+    const audio = audioRef.current;
+    
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      if (audio.currentTime >= audio.duration) {
+          audio.currentTime = 0;
+      }
+      audio.play().catch(e => console.error("Erro ao tocar o áudio:", e));
+    }
+    setIsPlaying(!isPlaying);
+  };
+
 
   const formatTime = (time: number) => {
-    if (isNaN(time) || time === 0) return '0:00';
+    if (!isLoaded || isNaN(time) || time < 0) return '0:00';
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;
@@ -81,7 +89,7 @@ const WhatsAppAudioPlayer = () => {
         <div style={{ width: `${progress}%` }} className="bg-amber-400 h-1 rounded-full absolute top-0 left-0" />
         <div style={{ left: `${progress}%` }} className="w-3 h-3 bg-amber-300 rounded-full absolute top-1/2 -translate-x-1/2 -translate-y-1/2" />
       </div>
-      <span className="text-xs text-amber-100 w-10 text-right">{formatTime(isPlaying || currentTime > 0 ? currentTime : duration)}</span>
+      <span className="text-xs text-amber-100 w-10 text-right">{isLoaded ? formatTime(duration - currentTime) : formatTime(duration)}</span>
     </div>
   );
 };

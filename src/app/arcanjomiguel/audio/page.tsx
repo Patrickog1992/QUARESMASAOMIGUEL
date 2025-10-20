@@ -35,13 +35,11 @@ const WhatsAppAudioPlayer = () => {
       setCurrentTime(0);
     };
 
-    // Browsers might not load metadata immediately
     audio.addEventListener('loadedmetadata', setAudioData);
     audio.addEventListener('durationchange', setAudioData);
     audio.addEventListener('timeupdate', setAudioTime);
     audio.addEventListener('ended', handleEnded);
 
-    // If metadata is already loaded
     if (audio.readyState >= 1) {
         setAudioData();
     }
@@ -89,7 +87,7 @@ const WhatsAppAudioPlayer = () => {
         <div style={{ width: `${progress}%` }} className="bg-amber-400 h-1 rounded-full absolute top-0 left-0" />
         <div style={{ left: `${progress}%` }} className="w-3 h-3 bg-amber-300 rounded-full absolute top-1/2 -translate-x-1/2 -translate-y-1/2" />
       </div>
-      <span className="text-xs text-amber-100 w-10 text-right">{isLoaded ? formatTime(duration - currentTime) : formatTime(duration)}</span>
+      <span className="text-xs text-amber-100 w-10 text-right">{isLoaded ? formatTime(duration - currentTime) : '0:00'}</span>
     </div>
   );
 };

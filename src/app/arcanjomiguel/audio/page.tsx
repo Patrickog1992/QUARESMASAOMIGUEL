@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useState, useRef, useEffect } from 'react';
@@ -10,7 +9,7 @@ import { Play, Pause } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 
 const CustomAudioPlayer = () => {
-  const audioUrl = "https://archive.org/download/a-chave-do-milagre/A%20Chave%20Do%20Milagre.mp3";
+  const audioUrl = "https://ia601509.us.archive.org/33/items/frei-gilson/FREI%20GILSON.mp3";
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 

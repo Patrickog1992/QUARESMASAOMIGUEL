@@ -1,15 +1,76 @@
+
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Play, Pause } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 
-const AudioComPlayer = () => {
-  const audioHtml = `<div style="height: 228px; width: 204px;"><iframe src="https://audio.com/embed/audio/1846506684604200?theme=image" style="display:block; border-radius: 1px; border: none; height: 204px; width: 204px;"></iframe></div>`;
+const CustomAudioPlayer = () => {
+  const audioUrl = "https://archive.org/download/a-chave-do-milagre/A%20Chave%20Do%20Milagre.mp3";
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlayPause = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Evita que o clique se propague para outros elementos
+    if (!audioRef.current) return;
+    
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      if (audioRef.current.ended) {
+          audioRef.current.currentTime = 0;
+      }
+      audioRef.current.play().catch(error => console.error("Error playing audio:", error));
+    }
+    setIsPlaying(!isPlaying);
+  };
+  
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleAudioEnd = () => {
+      setIsPlaying(false);
+      // Opcional: resetar o áudio para o início
+      if(audioRef.current) {
+        audioRef.current.currentTime = 0;
+      }
+    };
+
+    audio.addEventListener('ended', handleAudioEnd);
+    return () => {
+      audio.removeEventListener('ended', handleAudioEnd);
+    };
+  }, []);
+
   return (
-    <div className="flex justify-center my-4" dangerouslySetInnerHTML={{ __html: audioHtml }} />
+    <div className="relative w-52 h-52 mx-auto cursor-pointer" onClick={togglePlayPause}>
+      <audio ref={audioRef} src={audioUrl} preload="metadata" />
+      <Image
+        src="https://i.imgur.com/KLKNKbg.jpeg"
+        alt="Frei Gilson"
+        layout="fill"
+        objectFit="cover"
+        className="rounded-lg shadow-lg"
+        data-ai-hint="priest portrait"
+      />
+      <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-lg">
+        <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+            <Button
+            onClick={togglePlayPause}
+            variant="ghost"
+            size="icon"
+            className="h-16 w-16 rounded-full bg-white/80 hover:bg-white text-black"
+            >
+            {isPlaying ? <Pause className="w-8 h-8" /> : <Play className="w-8 h-8 ml-1" />}
+            </Button>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -23,16 +84,8 @@ function AudioContent() {
                         <h1 className="text-2xl font-bold text-amber-300">
                            ESCUTE ESSA MENSAGEM DE FREI GILSON
                         </h1>
-                        <Image
-                            src="https://i.imgur.com/KLKNKbg.jpeg"
-                            alt="Frei Gilson"
-                            width={120}
-                            height={120}
-                            className="rounded-full mx-auto shadow-lg border-2 border-amber-400"
-                            data-ai-hint="priest portrait"
-                        />
                         
-                        <AudioComPlayer />
+                        <CustomAudioPlayer />
 
                         <div className="pt-4">
                             <Link href="/arcanjomiguel/video" passHref className="block">

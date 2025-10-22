@@ -69,7 +69,7 @@ const quizSteps = [
   },
   {
     type: 'question',
-    title: 'Se eu te dissesse que nos próximos 6 minutos você vai descobrir exatamente como acessar esta oração secreta que pode acabar com sua pobreza para sempre, você:',
+    title: 'Se eu te dissesse que nos próximos 6 minutos você vai descobrir exatamente como acessar esta oração secreta que pode ac﻿abar com sua pobreza para sempre, você:',
     options: [
       { emoji: '⚡', text: 'Assistiria IMEDIATAMENTE - estou desesperado' },
       { emoji: '🎯', text: 'Prestaria atenção total - é minha última esperança' },
@@ -114,7 +114,7 @@ const VideoPlayer = () => {
   const videoHtml = `<vturb-smartplayer id="vid-68f915e8b6eef1c8dc741e6f" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>`;
   
   return (
-    <div dangerouslySetInnerHTML={{ __html: videoHtml }} />
+    <div className="w-full max-w-lg mx-auto aspect-video rounded-lg overflow-hidden shadow-lg border-2 border-amber-400/50" dangerouslySetInnerHTML={{ __html: videoHtml }} />
   );
 };
 
@@ -134,15 +134,15 @@ export default function SaoCiprianoQuizPage() {
       <div className="absolute inset-0 bg-black/70"></div>
       
       <main className="relative flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center z-10">
-        <Card className="w-full max-w-2xl bg-gray-900/70 backdrop-blur-sm border-amber-500/50 text-center shadow-2xl shadow-amber-500/10">
-          <CardContent className="p-6 md:p-8 space-y-6">
+        <div className="w-full max-w-2xl bg-gray-900/70 backdrop-blur-sm border-amber-500/50 text-center shadow-2xl shadow-amber-500/10 rounded-lg">
+          <div className="p-6 md:p-8 space-y-6">
             {stepData.type === 'intro' && (
               <>
                 <h1 className="text-xl md:text-2xl font-bold text-amber-300">{stepData.title}</h1>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-row gap-4 justify-center">
                   {stepData.options.map((option, index) => (
                     <button key={index} onClick={handleNextStep} className="group flex-1">
-                      <Image src={option.image!} alt={option.text} width={200} height={200} className="rounded-lg border-2 border-transparent group-hover:border-amber-400 transition-all duration-300" />
+                      <Image src={option.image!} alt={option.text} width={150} height={150} className="rounded-lg border-2 border-transparent group-hover:border-amber-400 transition-all duration-300 mx-auto" />
                       <p className="mt-2 font-semibold text-amber-200">{option.text}</p>
                     </button>
                   ))}
@@ -198,13 +198,11 @@ export default function SaoCiprianoQuizPage() {
                 <>
                     <h1 className="text-xl md:text-2xl font-bold text-amber-300">{stepData.title}</h1>
                     <p className="text-red-500 font-semibold">{stepData.warning}</p>
-                    <div className="w-full max-w-lg mx-auto aspect-video">
-                        <VideoPlayer />
-                    </div>
+                    <VideoPlayer />
                 </>
              )}
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </main>
     </div>
   );

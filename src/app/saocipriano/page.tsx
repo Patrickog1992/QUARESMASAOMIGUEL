@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -69,7 +70,7 @@ const quizSteps = [
   },
   {
     type: 'question',
-    title: 'Se eu te dissesse que nos próximos 6 minutos você vai descobrir exatamente como acessar esta oração secreta que pode ac﻿abar com sua pobreza para sempre, você:',
+    title: 'Se eu te dissesse que nos próximos 6 minutos você vai descobrir exatamente como acessar esta oração secreta que pode ac\ufeffabar com sua pobreza para sempre, você:',
     options: [
       { emoji: '⚡', text: 'Assistiria IMEDIATAMENTE - estou desesperado' },
       { emoji: '🎯', text: 'Prestaria atenção total - é minha última esperança' },
@@ -90,7 +91,7 @@ const quizSteps = [
     title: 'PARABÉNS! Você foi APROVADO para receber a revelação mais poderosa dos últimos 1.700 anos',
     warning: 'Esta revelação só estará disponível nas próximas 2 horas. Apenas 47 pessoas receberão acesso hoje. Depois de meia-noite, este conhecimento será selado novamente.',
     buttonText: 'QUERO ASSISTIR AGORA !',
-    subText: '👇 CLIQUE ABAIXO PARA ASSISTIR À REVELAÇÃO SECRETA\n(2 minutos que podem mudar sua vida para sempre)',
+    subText: '👇 CLIQUE ABAIXO PARA ASSISTIR À REVELAÇÃO SECRETA\n\ufeff(2 minutos que podem mudar sua vida para sempre)',
   },
   {
     type: 'video',
@@ -121,6 +122,17 @@ const VideoPlayer = () => {
 
 export default function SaoCiprianoQuizPage() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('pt-BR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+    setCurrentDate(formattedDate);
+  }, []);
 
   const handleNextStep = () => {
     setCurrentStep((prev) => prev + 1);
@@ -196,6 +208,9 @@ export default function SaoCiprianoQuizPage() {
 
              {stepData.type === 'video' && (
                 <>
+                    <div className="bg-red-600 text-white p-2 rounded-md mb-4 font-semibold">
+                        Devido ao grande sigilo dessas orações essa página irá sair do ar no dia : <span className="text-yellow-300 font-bold">{currentDate}</span>
+                    </div>
                     <h1 className="text-xl md:text-2xl font-bold text-amber-300">{stepData.title}</h1>
                     <p className="text-red-500 font-semibold">{stepData.warning}</p>
                     <VideoPlayer />

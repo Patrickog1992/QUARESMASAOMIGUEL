@@ -183,10 +183,11 @@ export default function SaoCiprianoQuizPage() {
             {stepData.type === 'intro' && (
               <>
                 <h1 className="text-xl md:text-2xl font-bold text-amber-300">{stepData.title}</h1>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <p className="text-xs text-amber-200 mt-2">(Escolha seu gênero)</p>
+                <div className="flex flex-row gap-4 justify-center">
                   {stepData.options.map((option, index) => (
                     <button key={index} onClick={handleNextStep} className="group flex-1">
-                      <Image src={option.image!} alt={option.text} width={150} height={150} className="rounded-lg border-2 border-transparent group-hover:border-amber-400 transition-all duration-300 mx-auto" />
+                      <Image src={option.image!} alt={option.text} width={120} height={120} className="rounded-lg border-2 border-amber-400/50 group-hover:border-amber-400 transition-all duration-300 mx-auto" />
                       <p className="mt-2 font-semibold text-amber-200">{option.text}</p>
                     </button>
                   ))}

@@ -130,8 +130,7 @@ const TimedCheckoutButton = () => {
     }, []);
 
     const handleCheckoutClick = () => {
-        // Placeholder para o link de checkout
-        window.open('https://pay.kirvano.com/39389143-6901-4927-a06f-39574549f0f2', '_self');
+        window.open('https://pay.kirvano.com/fe965bfe-cc78-44cf-b421-ed8c2f666b6c', '_self');
     };
 
     if (!showButton) {
@@ -184,7 +183,7 @@ export default function SaoCiprianoQuizPage() {
             {stepData.type === 'intro' && (
               <>
                 <h1 className="text-xl md:text-2xl font-bold text-amber-300">{stepData.title}</h1>
-                <div className="flex flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   {stepData.options.map((option, index) => (
                     <button key={index} onClick={handleNextStep} className="group flex-1">
                       <Image src={option.image!} alt={option.text} width={150} height={150} className="rounded-lg border-2 border-transparent group-hover:border-amber-400 transition-all duration-300 mx-auto" />
@@ -242,7 +241,7 @@ export default function SaoCiprianoQuizPage() {
              {stepData.type === 'video' && (
                 <>
                     <div className="bg-red-600 text-white p-2 rounded-md mb-4 font-semibold">
-                        Devido ao grande sigilo dessas orações essa página irá sair do ar no dia : <span className="text-yellow-300 font-bold">{currentDate}</span>
+                       Devido ao grande sigilo dessas orações essa página irá sair do ar no dia : <span className="text-yellow-300 font-bold">{currentDate}</span>
                     </div>
                     <h1 className="text-xl md:text-2xl font-bold text-amber-300">{stepData.title}</h1>
                     <p className="text-red-500 font-semibold">{stepData.warning}</p>

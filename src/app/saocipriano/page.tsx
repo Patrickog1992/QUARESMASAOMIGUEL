@@ -178,7 +178,7 @@ export default function SaoCiprianoQuizPage() {
       <div className="absolute inset-0 bg-black/70"></div>
       
       <main className="relative flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center z-10">
-        <div className="w-full max-w-2xl bg-gray-900/70 backdrop-blur-sm border-amber-500/50 text-center shadow-2xl shadow-amber-500/10 rounded-lg">
+        <div className="w-full max-w-2xl bg-gray-900/70 backdrop-blur-sm border-amber-500/50 text-center shadow-2xl shadow-amber-500/10 rounded-lg pb-10">
           <div className="p-6 md:p-8 space-y-6">
             {stepData.type === 'intro' && (
               <>

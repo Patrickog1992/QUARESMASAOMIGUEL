@@ -100,26 +100,24 @@ const quizSteps = [
 ];
 
 const VideoPlayer = () => {
-    useEffect(() => {
-        const scriptId = 'vid-68f915e8b6eef1c8dc741e6f-script';
-        if (document.getElementById(scriptId)) return;
+  useEffect(() => {
+    const scriptId = 'vid-68f915e8b6eef1c8dc741e6f-script';
+    if (document.getElementById(scriptId)) return;
 
-        const script = document.createElement("script");
-        script.id = scriptId;
-        script.src = "https://scripts.converteai.net/072b0676-85aa-49bb-b085-c507ba561c37/players/68f915e8b6eef1c8dc741e6f/v4/player.js";
-        script.async = true;
-        document.head.appendChild(script);
-
-        return () => {
-            const existingScript = document.getElementById(scriptId);
-            if (existingScript && existingScript.parentNode) {
-                existingScript.parentNode.removeChild(existingScript);
-            }
-        };
-    }, []);
-
-    return <div id="vid-68f915e8b6eef1c8dc741e6f" style={{ display: 'block', margin: '0 auto', width: '100%' }}></div>;
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.src = "https://scripts.converteai.net/072b0676-85aa-49bb-b085-c507ba561c37/players/68f915e8b6eef1c8dc741e6f/v4/player.js";
+    script.async = true;
+    document.head.appendChild(script);
+  }, []);
+  
+  const videoHtml = `<vturb-smartplayer id="vid-68f915e8b6eef1c8dc741e6f" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>`;
+  
+  return (
+    <div dangerouslySetInnerHTML={{ __html: videoHtml }} />
+  );
 };
+
 
 export default function SaoCiprianoQuizPage() {
   const [currentStep, setCurrentStep] = useState(0);

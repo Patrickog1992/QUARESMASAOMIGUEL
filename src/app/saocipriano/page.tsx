@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -9,6 +8,7 @@ const quizSteps = [
   {
     type: 'intro',
     title: 'FAÇA ESSE TESTE DE 30 SEGUNDOS E VEJA SE VOCÊ ESTÁ PRONTO PARA RECEBER A ORAÇÃO DA PROSPERIDADE DE SÃO CIPRIANO',
+    subTitle: 'Escolha seu gênero',
     options: [
       { text: 'Homem', image: 'https://i.imgur.com/XvOJd97.png' },
       { text: 'Mulher', image: 'https://i.imgur.com/GeUUAzw.png' },
@@ -69,7 +69,7 @@ const quizSteps = [
   },
   {
     type: 'question',
-    title: 'Se eu te dissesse que nos próximos 6 minutos você vai descobrir exatamente como acessar esta oração secreta que pode ac\ufeffabar com sua pobreza para sempre, você:',
+    title: 'Se eu te dissesse que nos próximos 6 minutos você vai descobrir exatamente como acessar esta oração secreta que pode acabar com sua pobreza para sempre, você:',
     options: [
       { emoji: '⚡', text: 'Assistiria IMEDIATAMENTE - estou desesperado' },
       { emoji: '🎯', text: 'Prestaria atenção total - é minha última esperança' },
@@ -173,17 +173,16 @@ export default function SaoCiprianoQuizPage() {
   const stepData = quizSteps[currentStep];
 
   return (
-    <div className="dark relative flex flex-col min-h-screen items-center justify-center bg-black text-white p-4 overflow-x-hidden">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{backgroundImage: "url('https://i.imgur.com/SMRs4Vd.jpeg')"}}></div>
-      <div className="absolute inset-0 bg-black/70"></div>
+    <div className="dark relative flex flex-col min-h-screen items-center justify-center bg-amber-900 text-white p-4 overflow-x-hidden">
+      <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
       
       <main className="relative flex-grow container mx-auto px-4 py-8 md:py-12 flex flex-col items-center justify-center text-center z-10">
-        <div className="w-full max-w-2xl bg-gray-900/70 backdrop-blur-sm border-amber-500/50 text-center shadow-2xl shadow-amber-500/10 rounded-lg pb-10">
+        <div className="w-full max-w-2xl bg-gray-800/50 backdrop-blur-sm border-amber-400/30 text-center shadow-2xl shadow-amber-500/10 rounded-lg pb-10">
           <div className="p-6 md:p-8 space-y-6">
             {stepData.type === 'intro' && (
               <>
                 <h1 className="text-xl md:text-2xl font-bold text-amber-300">{stepData.title}</h1>
-                <p className="text-xs text-amber-200 mt-2">(Escolha seu gênero)</p>
+                <p className="text-xs text-amber-200 mt-2">{stepData.subTitle}</p>
                 <div className="flex flex-row gap-4 justify-center">
                   {stepData.options.map((option, index) => (
                     <button key={index} onClick={handleNextStep} className="group flex-1">

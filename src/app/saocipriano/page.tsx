@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 
 const quizSteps = [
@@ -119,6 +118,40 @@ const VideoPlayer = () => {
   );
 };
 
+const TimedCheckoutButton = () => {
+    const [showButton, setShowButton] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowButton(true);
+        }, (9 * 60 + 17) * 1000); // 9 minutes and 17 seconds
+        
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleCheckoutClick = () => {
+        // Placeholder para o link de checkout
+        window.open('https://pay.kirvano.com/39389143-6901-4927-a06f-39574549f0f2', '_self');
+    };
+
+    if (!showButton) {
+        // Reserva espaço para evitar pulo no layout
+        return <div className="h-[52px]" />;
+    }
+
+    return (
+        <div className="my-8 text-center">
+            <Button
+                size="lg"
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-xl h-auto py-4 animate-pulse"
+                onClick={handleCheckoutClick}
+            >
+                EU QUERO AS ORAÇÕES
+            </Button>
+        </div>
+    );
+};
+
 
 export default function SaoCiprianoQuizPage() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -214,6 +247,7 @@ export default function SaoCiprianoQuizPage() {
                     <h1 className="text-xl md:text-2xl font-bold text-amber-300">{stepData.title}</h1>
                     <p className="text-red-500 font-semibold">{stepData.warning}</p>
                     <VideoPlayer />
+                    <TimedCheckoutButton />
                 </>
              )}
           </div>

@@ -2,7 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
+import { Textarea } from '@/components/ui/textarea';
+import { Input } from '@/components/ui/input';
 
 const quizSteps = [
   {
@@ -57,7 +60,7 @@ const quizSteps = [
   },
   {
     type: 'revelation',
-    title: 'SEGREDO EXPLOSIVO: A Igreja mantém o livro secreto de São Cipriano no Vaticano há 1.700 anos. Mas os Rockefeller - família mais rica do mundo há 150 anos, que controla bancos e governos - conseguiu acesso através de doações bilionárias secretas ao Vaticano.',
+    title: 'SEGREDO EXPLOSIVO: A Igreja mantém o livro secreto de São Cipriano no Vaticano há 1.700 anos.\nMas os Rockefeller - família mais rica do mundo há 150 anos, que controla bancos e governos - conseguiu acesso através de doações bilionárias secretas ao Vaticano.',
     subTitle: 'Em troca de financiar a Igreja por décadas, receberam acesso aos arquivos secretos, incluindo a oração de prosperidade de São Cipriano.\n\nPor isso continuam imensamente ricos geração após geração, enquanto bilhões lutam na pobreza.\n\nComo você se sente sabendo que a elite comprou acesso ao poder de São Cipriano enquanto você sofre financeiramente?',
     image: 'https://i.imgur.com/CFSDIHq.jpeg',
     options: [
@@ -66,6 +69,12 @@ const quizSteps = [
       { emoji: '😢', text: 'Triste - me sinto traído pela elite e Igreja' },
       { emoji: '🤔', text: 'Curioso - preciso entender esse acordo secreto' },
     ],
+  },
+  {
+    type: 'form',
+    title: 'Digite seu nome',
+    subTitle: 'Escreva aqui o que mais sente falta na sua vida espiritual',
+    buttonText: 'Continuar',
   },
   {
     type: 'question',
@@ -88,7 +97,7 @@ const quizSteps = [
   {
     type: 'approved',
     title: 'PARABÉNS! Você foi APROVADO para receber a revelação mais poderosa dos últimos 1.700 anos',
-    warning: 'Esta revelação só estará disponível nas próximas 2 horas. Apenas 47 pessoas receberão acesso hoje. Depois de meia-noite, este conhecimento será selado novamente.',
+    warning: 'Esta revelação só estará disponível nas próximas 2 horas.\nApenas 47 pessoas receberão acesso hoje.\nDepois de meia-noite, este conhecimento será selado novamente.',
     buttonText: 'QUERO ASSISTIR AGORA !',
     subText: '👇 CLIQUE ABAIXO PARA ASSISTIR À REVELAÇÃO SECRETA\n\ufeff(2 minutos que podem mudar sua vida para sempre)',
   },
@@ -224,12 +233,31 @@ export default function SaoCiprianoQuizPage() {
               </>
             )}
 
+            {stepData.type === 'form' && (
+              <form onSubmit={(e) => { e.preventDefault(); handleNextStep(); }}>
+                  <h1 className="text-xl md:text-2xl font-bold text-amber-300 mb-2">{stepData.title}</h1>
+                  <Input 
+                      placeholder="Digite seu nome" 
+                      className="text-center bg-gray-900/50 text-white border-amber-400/50 focus:ring-amber-400 mb-4"
+                  />
+                  <h2 className="text-lg font-semibold text-amber-300 mb-2">{stepData.subTitle}</h2>
+                  <Textarea 
+                      placeholder="Digite aqui..." 
+                      className="text-center bg-gray-900/50 text-white border-amber-400/50 focus:ring-amber-400 mb-4" 
+                      rows={4} 
+                  />
+                  <Button type="submit" size="lg" className="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-bold">
+                      {stepData.buttonText}
+                  </Button>
+              </form>
+            )}
+
             {stepData.type === 'approved' && (
                 <>
                     <h1 className="text-2xl md:text-3xl font-bold text-green-400">{stepData.title}</h1>
                     <div className="bg-red-900/50 border border-red-500 rounded-lg p-4 space-y-2">
                         <p className="font-bold text-red-400 text-lg">⚠️ ATENÇÃO CRÍTICA:</p>
-                        <p className="text-white">{stepData.warning}</p>
+                        <p className="text-white whitespace-pre-line">{stepData.warning}</p>
                     </div>
                     <p className="text-amber-200 font-semibold whitespace-pre-line">{stepData.subText}</p>
                     <Button onClick={handleNextStep} size="lg" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-xl h-auto py-4 animate-pulse">

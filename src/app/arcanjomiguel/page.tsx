@@ -14,7 +14,7 @@ export default function ArcanjoMiguelQuizStartPage() {
             <CardContent className="p-6 md:p-8 space-y-6">
                 <h1 className="text-2xl font-bold text-amber-300">Tem uma MALDIÇÃO escondida travando tua vida, e HOJE ela vai cair por terra!</h1>
                 <Image
-                    src="https://i.imgur.com/UC7Mkql.png"
+                    src="https://i.imgur.com/QjT6TH3.jpeg"
                     alt="Maldição sendo quebrada"
                     width={400}
                     height={225}
